@@ -22,8 +22,8 @@
 <!--===============================================================================================-->
 </head>
 <body>
-    <div class="limiter">
-        <div class="container-login100" background="bookwall.jpg">
+    <div class="bg">
+        <div class="container-login100">
             <div class="wrap-login100">
                 <form class="login100-form validate-form" method="POST" action="{{ route('login') }}">
                     @csrf

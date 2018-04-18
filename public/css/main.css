@@ -150,6 +150,18 @@ iframe {
 
 /*//////////////////////////////////////////////////////////////////
 [ login ]*/
+.bg{
+  background-image:url("../images/bookwall.jpg");
+  
+  /*Full height*/
+  height:100%;
+
+  /*Center and scale the image nicely*/
+  background-position : center;
+  background-repeat : no-repeat;
+  background-size : cover;
+}
+
 
 .limiter {
   width: 100%;
@@ -168,7 +180,7 @@ iframe {
   justify-content: center;
   align-items: center;
   padding: 15px;
-  background: #000000;
+  background-image:{{url("/images/bookwall.jpg")}};
 }
 
 .wrap-login100 {

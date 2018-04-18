@@ -29,9 +29,9 @@
                     @csrf
 
                     <div class="form-group row">
-                        <h1 style=" text-align:center; "> Let's Start </h1><br> 
-                    <span class="login100-form-title"><h4>
-                        Login</h4>
+                        <h1 style=" text-align:center; "> Let's Start </h1>
+                    <span class="login100-form-title"><h5>
+                        Login</h5><br>
                     </span>
                           
 
@@ -91,7 +91,8 @@
             
                 <form class="login100-form validate-form" method="POST" action="{{ route('register') }}">
                     @csrf
-                    <h1 style=" text-align:center; "> Create Account </h1><br>
+                   <span class="login100-form-title"><h4>
+                        Create Account</h4> <br>
                  
 
                     <div class="form-group row">

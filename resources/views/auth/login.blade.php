@@ -1,6 +1,6 @@
-<!doctype html>
-<html lang="{{ app()->getLocale() }}">
-    <head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
     <title>Login V1</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -19,99 +19,98 @@
 <!--===============================================================================================-->
     <link rel="stylesheet" type="text/css" href="css/util.css">
     <link rel="stylesheet" type="text/css" href="css/main.css">
-<!--===========================================================================-->
-    </head>
-    <body>
-        <div class="limiter">
-            <div class="container-login100" background="bookwall.jpg">
-                <div class="wrap-login100">
-                    
-                    <form method="POST" action="{{ route('register') }}" class="login100-form validate-form">
-                        @csrf
-                        <h1 style=" text-align:center; "> Join Us! </h1><br>
-                        <span class="login100-form-title">
-                            Create Account
-                        </span>
+<!--===============================================================================================-->
+</head>
+<body>
+    <div class="bg">
+        <div class="container-login100">
+            <div class="wrap-login100">
+                <form class="login100-form validate-form" method="POST" action="{{ route('login') }}">
+                    @csrf
+
+                    <div class="form-group row">
+                        <h1 style=" text-align:center; "> Let's Start </h1>
+                    <span class="login100-form-title"><h5>
+                        Login</h5><br>
+                    </span>
+                          
 
                         <div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
-                            <input id="r_name" class="input100" type="text" name="r_name" placeholder="Your Name?">
-                            <span class="focus-input100"></span>
-                            <span class="symbol-input100">
-                                <i class="fa fa-user-circle" aria-hidden="true"></i>
-                            </span>
-
-                            @if ($errors->has('r_name'))
-                                <span class="invalid-feedback">
-                                    <strong>{{ $errors->first('r_name') }}</strong>
-                                </span>
-                            @endif
-                        </div>
-                        
-                        <div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
-                            <input id="r_email" class="input100" type="text" name="r_email" placeholder="Your Email?">
+                            <input id="email" type="email" class="input100" name="email" value="{{ old('email') }}" required autofocus placeholder="Email">
                             <span class="focus-input100"></span>
                             <span class="symbol-input100">
                                 <i class="fa fa-envelope" aria-hidden="true"></i>
                             </span>
-                            @if ($errors->has('r_email'))
-                                    <span class="invalid-feedback">
-                                        <strong>{{ $errors->first('r_email') }}</strong>
-                                    </span>
-                            @endif
-                            
                         </div>
+                        @if ($errors->has('email'))
+                                <span class="invalid-feedback">
+                                    <strong>{{ $errors->first('email') }}</strong>
+                                </span>
+                        @endif
+                    </div>
 
-                        <div class="wrap-input100 validate-input" data-validate = "Password is required!">
-                            <input class="input100" type="password" name="pass" placeholder="Give it a unique password!">
+                    <div class="form-group row">
+
+                        <div  class="wrap-input100 validate-input" data-validate = "Password is required">
+                            <input id="password" type="password" class="input100" name="password" required placeholder="Password">
                             <span class="focus-input100"></span>
                             <span class="symbol-input100">
                                 <i class="fa fa-lock" aria-hidden="true"></i>
                             </span>
-                            @if ($errors->has('pass'))
-                                    <span class="invalid-feedback">
-                                        <strong>{{ $errors->first('pass') }}</strong>
-                                    </span>
+
+                            @if ($errors->has('password'))
+                                <span class="invalid-feedback">
+                                    <strong>{{ $errors->first('password') }}</strong>
+                                </span>
                             @endif
                         </div>
-                        
-                        <div class="wrap-input100 validate-input" data-validate = "Password is required!">
-                            <input class="input100" type="password" name="pass" placeholder="Confirm Password">
-                            <span class="focus-input100"></span>
-                            <span class="symbol-input100">
-                                <i class="fa fa-lock" aria-hidden="true"></i>
-                            </span>
+                    </div>
+
+                    <div class="form-group row">
+                        <div class="col-md-6 offset-md-4">
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> Remember Me
+                                </label>
+                            </div>
                         </div>
-                        
-                        
-                        <div class="container-login100-form-btn">
-                            <button class="login100-form-btn">
-                                Create My Account!
-                            </button>
-                        </div>
-                    </form>
-                </div>
+                    </div>
+
+                    <div class="container-login100-form-btn">
+                        <button class="login100-form-btn">
+                            Login
+                        </button>
+                    </div>
+
+                    <div class="text-center p-t-12">
+                        <a class="txt2" href="{{route('password.request')}}">
+                            Forgot Username / Password?
+                        </a>
+                    </div>
+                </form>    
             </div>
         </div>
-        
-        
+    </div>
+    
+    
 
-        
-    <!--===============================================================================================-->  
-        <script src="vendor/jquery/jquery-3.2.1.min.js"></script>
-    <!--===============================================================================================-->
-        <script src="vendor/bootstrap/js/popper.js"></script>
-        <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-    <!--===============================================================================================-->
-        <script src="vendor/select2/select2.min.js"></script>
-    <!--===============================================================================================-->
-        <script src="vendor/tilt/tilt.jquery.min.js"></script>
-        <script >
-            $('.js-tilt').tilt({
-                scale: 1.1
-            })
-        </script>
-    <!--===============================================================================================-->
-        <script src="js/main.js"></script>
+    
+<!--===============================================================================================-->  
+    <script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+    <script src="vendor/bootstrap/js/popper.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+    <script src="vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+    <script src="vendor/tilt/tilt.jquery.min.js"></script>
+    <script >
+        $('.js-tilt').tilt({
+            scale: 1.1
+        })
+    </script>
+<!--===============================================================================================-->
+    <script src="js/main.js"></script>
 
-    </body>
+</body>
 </html>

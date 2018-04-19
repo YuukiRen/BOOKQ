@@ -25,13 +25,13 @@
     <div class="bg">
         <div class="container-login100">
             <div class="wrap-login100">
-                <form class="login100-form validate-form" method="POST" action="{{ route('login') }}">
+                <form class="login100-form validate-form" method="POST" action="{{ route('admin.login') }}">
                     @csrf
 
                     <div class="form-group row">
-                        <h1 style=" text-align:center; "> Let's Start </h1>
+                        <h1 style=" text-align:center; "> Welcome back Master</h1>
                     <span class="login100-form-title"><h5>
-                        Login</h5><br>
+                        Admin Login</h5><br>
                     </span>
                           
 
@@ -41,12 +41,12 @@
                             <span class="symbol-input100">
                                 <i class="fa fa-envelope" aria-hidden="true"></i>
                             </span>
-                            @if ($errors->has('email'))
+                        </div>
+                        @if ($errors->has('email'))
                                 <span class="invalid-feedback">
                                     <strong>{{ $errors->first('email') }}</strong>
                                 </span>
-                            @endif
-                        </div>
+                        @endif
                     </div>
 
                     <div class="form-group row">
@@ -83,89 +83,9 @@
                     </div>
 
                     <div class="text-center p-t-12">
-                        <a class="txt2" href="#">
+                        <a class="txt2" href="{{route('admin.password.request')}}">
                             Forgot Username / Password?
                         </a>
-                    </div>
-                </form>
-            
-                <form class="login100-form validate-form" method="POST" action="{{ route('register') }}">
-                    @csrf
-                   <span class="login100-form-title"><h4>
-                        Create Account</h4> <br>
-                 
-
-                    <div class="form-group row">
-
-                        <div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
-                            <input  id="name" type="text" class="input100" name="name" value="{{ old('name') }}" placeholder="Name" required autofocus>
-                            <span class="focus-input100"></span>
-                            <span class="symbol-input100">
-                            <i class="fa fa-user-circle" aria-hidden="true"></i>
-                    </span>
-
-                            @if ($errors->has('name'))
-                                <span class="invalid-feedback">
-                                    <strong>{{ $errors->first('name') }}</strong>
-                                </span>
-                            @endif
-                        </div>
-                    </div>
-
-                    <div class="form-group row">
-
-                        <div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
-                            <input id="email" type="email" class="input100" name="email" value="{{ old('email') }}" required
-                            placeholder="Email">
-                            <span class="focus-input100"></span>
-                        <span class="symbol-input100">
-                            <i class="fa fa-envelope" aria-hidden="true"></i>
-                        </span>
-
-                            @if ($errors->has('email'))
-                                <span class="invalid-feedback">
-                                    <strong>{{ $errors->first('email') }}</strong>
-                                </span>
-                            @endif
-                        </div>
-                    </div>
-
-                    <div class="form-group row">
-                    
-
-                        <div class="wrap-input100 validate-input" data-validate = "Password is required!">
-                            <input id="password" type="password" class="input100" name="password" placeholder="Password" required>
-                            <span class="focus-input100"></span>
-                        <span class="symbol-input100">
-                            <i class="fa fa-lock" aria-hidden="true"></i>
-                        </span>
-
-
-                            @if ($errors->has('password'))
-                                <span class="invalid-feedback">
-                                    <strong>{{ $errors->first('password') }}</strong>
-                                </span>
-                            @endif
-                        </div>
-                    </div>
-
-                    <div class="form-group row">
-
-                        <div class="wrap-input100 validate-input" data-validate = "Password is required!">
-                            <input id="password-confirm" type="password" class="input100" name="password_confirmation"  placeholder="Confirm Password"required>
-                        <span class="focus-input100"></span>
-                        <span class="symbol-input100">
-                            <i class="fa fa-lock" aria-hidden="true"></i>
-                        </span>
-
-                        </div>
-                    </div>
-
-                    <div class="container-login100-form-btn">
-                    <button class="login100-form-btn">
-                        Create My Account!
-                    </button>
-                        </div>
                     </div>
                 </form>    
             </div>

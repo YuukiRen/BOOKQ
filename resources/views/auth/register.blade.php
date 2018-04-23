@@ -24,75 +24,12 @@
 <body>
     <div class="bg">
         <div class="container-login100">
-            <div class="wrap-login100">
-                <form class="login100-form validate-form" method="POST" action="{{ route('login') }}">
-                    @csrf
-
-                    <div class="form-group row">
-                        <h1 style=" text-align:center; "> Let's Start </h1>
-                    <span class="login100-form-title"><h5>
-                        Login</h5><br>
-                    </span>
-                          
-
-                        <div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
-                            <input id="email" type="email" class="input100" name="email" value="{{ old('email') }}" required autofocus placeholder="Email">
-                            <span class="focus-input100"></span>
-                            <span class="symbol-input100">
-                                <i class="fa fa-envelope" aria-hidden="true"></i>
-                            </span>
-                            @if ($errors->has('email'))
-                                <span class="invalid-feedback">
-                                    <strong>{{ $errors->first('email') }}</strong>
-                                </span>
-                            @endif
-                        </div>
-                    </div>
-
-                    <div class="form-group row">
-
-                        <div  class="wrap-input100 validate-input" data-validate = "Password is required">
-                            <input id="password" type="password" class="input100" name="password" required placeholder="Password">
-                            <span class="focus-input100"></span>
-                            <span class="symbol-input100">
-                                <i class="fa fa-lock" aria-hidden="true"></i>
-                            </span>
-
-                            @if ($errors->has('password'))
-                                <span class="invalid-feedback">
-                                    <strong>{{ $errors->first('password') }}</strong>
-                                </span>
-                            @endif
-                        </div>
-                    </div>
-
-                    <div class="form-group row">
-                        <div class="col-md-6 offset-md-4">
-                            <div class="checkbox">
-                                <label>
-                                    <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> Remember Me
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="container-login100-form-btn">
-                        <button class="login100-form-btn">
-                            Login
-                        </button>
-                    </div>
-
-                    <div class="text-center p-t-12">
-                        <a class="txt2" href="#">
-                            Forgot Username / Password?
-                        </a>
-                    </div>
-                </form>
-            
+            <div class="container-login200">
                 <form class="login100-form validate-form" method="POST" action="{{ route('register') }}">
                     @csrf
+                    <h1 style=" text-align:center; "> Come Join Us! </h1>
                    <span class="login100-form-title"><h4>
-                        Create Account</h4> <br>
+                        Register</h4> <br>
                  
 
                     <div class="form-group row">

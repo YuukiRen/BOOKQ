@@ -24,7 +24,8 @@
 <body>
     <div class="bg">
         <div class="container-login100">
-            <div class="wrap-login100">
+            <div class="container-login200">
+            <div class="card">
                 <form class="login100-form validate-form" method="POST" action="{{ route('login') }}">
                     @csrf
 
@@ -86,9 +87,20 @@
                         <a class="txt2" href="{{route('password.request')}}">
                             Forgot Username / Password?
                         </a>
+                     </div>
+                     <br>
+
                     </div>
-                </form>    
-            </div>
+                </form>
+                
+                        <h4 style=" text-align:center; "> Don't Have An Account? </h4>    
+                     
+                        <a type="button" class="login100-form-btn" href="create" style="text-decoration:none"> Register Now 
+                        </a>   
+            		
+            	</div>
+                  </div>
+             </div>
         </div>
     </div>
     

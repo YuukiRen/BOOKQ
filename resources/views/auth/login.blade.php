@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Login V1</title>
+    <title>BookQ Login Page</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->  
@@ -32,7 +32,7 @@
                     <div class="form-group row">
                         <h1 style=" text-align:center; "> Let's Start </h1>
                     <span class="login100-form-title"><h5>
-                        Login</h5><br>
+                        Login</h5>
                     </span>
                           
 
@@ -92,12 +92,12 @@
 
                     </div>
                 </form>
-                
+               <div class="row" style="position:relative; top:-30px;padding:7px;border:2px solid black;border-radius:20px">
                         <h4 style=" text-align:center; "> Don't Have An Account? </h4>    
-                     
+                        
                         <a type="button" class="login100-form-btn" href="create" style="text-decoration:none"> Register Now 
                         </a>   
-            		
+            		</div>
             	</div>
                   </div>
              </div>

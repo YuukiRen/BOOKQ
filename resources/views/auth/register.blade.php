@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Login V1</title>
+    <title>BookQ Register Page</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->  
@@ -25,15 +25,14 @@
     <div class="bg">
         <div class="container-login100">
             <div class="container-login200">
+                <div class="card">
+                        <div class="form-group row">
                 <form class="login100-form validate-form" method="POST" action="{{ route('register') }}">
                     @csrf
                     <h1 style=" text-align:center; "> Come Join Us! </h1>
                    <span class="login100-form-title"><h4>
-                        Register</h4> <br>
-                 
-
-                    <div class="form-group row">
-
+                        Register</h4>
+                    <div class="form-group row" style="position:relative;top:8px">
                         <div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
                             <input  id="name" type="text" class="input100" name="name" value="{{ old('name') }}" placeholder="Name" required autofocus>
                             <span class="focus-input100"></span>
@@ -48,7 +47,7 @@
                             @endif
                         </div>
                     </div>
-
+                </div>
                     <div class="form-group row">
 
                         <div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
@@ -104,8 +103,19 @@
                     </button>
                         </div>
                     </div>
+                   
                 </form>    
+                <div class="row" style="position:relative; top:0px;padding:7px;border:2px solid black;border-radius:20px">
+                        <h4 style=" text-align:center; "> Already Have An Account? </h4>    
+                        
+                        <a type="button" class="login100-form-btn" href="login" style="text-decoration:none"> Login using existing account
+                        </a>   
+                    </div>
             </div>
+                </div>
+                
+            </div>
+            
         </div>
     </div>
     

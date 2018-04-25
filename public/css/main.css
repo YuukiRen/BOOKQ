@@ -179,8 +179,38 @@ iframe {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+
+}
+.container-login200 {
+  width: 30%;  
+  min-height: 80vh;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  background: white;
+  border: 5px solid black;
+  padding: 10px;
+  border-radius: 75px 30px;
+}
+
+.below{
+   width: 30%;  
+  min-height: 80vh;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
   padding: 15px;
-  background-image:{{url("/images/bookwall.jpg")}};
+  background: white;
 }
 
 .wrap-login100 {
@@ -236,6 +266,7 @@ iframe {
   z-index: 1;
   margin-bottom: 10px;
 }
+
 
 .input100 {
   font-family: Poppins-Medium;
@@ -297,6 +328,7 @@ iframe {
   align-items: center;
   position: absolute;
   border-radius: 25px;
+  border: 1px solid black;
   bottom: 0;
   left: 0;
   width: 100%;
@@ -328,6 +360,7 @@ iframe {
   flex-wrap: wrap;
   justify-content: center;
   padding-top: 20px;
+  
 }
 
 .login100-form-btn {
@@ -349,6 +382,7 @@ iframe {
   justify-content: center;
   align-items: center;
   padding: 0 25px;
+  border: 2px solid black;
 
   -webkit-transition: all 0.4s;
   -o-transition: all 0.4s;
@@ -467,4 +501,14 @@ iframe {
     visibility: visible;
     opacity: 1;
   }
+}
+hr { 
+  display: block;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  margin-left: auto;
+  margin-right: auto;
+  border-style: inset;
+  border-width: 1px;
+  background-color: black;
 }

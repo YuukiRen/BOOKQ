@@ -15,9 +15,15 @@ Route::get('/', function () {
     return view('auth.login');
 });
 
-Auth::routes();
+Route::get('/home', function () {
+    return view('home');
+});
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/create', function () {
+    return view('auth.register');
+});
+
+Auth::routes();
 
 Route::GET('admin/home','AdminController@index');
 Route::GET('admin','Admin\LoginController@showLoginForm')->name('admin.login');

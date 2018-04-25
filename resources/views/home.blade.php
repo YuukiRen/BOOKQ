@@ -1,23 +1,203 @@
-@extends('layouts.app')
+<!DOCTYPE html>
+<html lang="en">
 
-@section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">Dashboard</div>
+  <head>
 
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success">
-                            {{ session('status') }}
-                        </div>
-                    @endif
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-                    You are logged in!
-                </div>
-            </div>
+    <title>BookQ Homepage</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+
+    <!-- Custom fonts for this template -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+
+    <!-- Custom styles for this template -->
+    <link href="css/agency.min.css" rel="stylesheet">
+
+  </head>
+
+  <body id="page-top">
+
+    <!-- Header -->
+    <header class="masthead">
+      <div class="container">
+        <div class="intro-text">
+          <h4 > <span style="background-color: black; border-radius: 15px;padding: 5px 20px; opacity: 0.8; filter: alpha(opacity=80);"> Having trouble finding books that you want to read? </span></h4>
+          <div class="intro-heading text-uppercase" style="-webkit-text-stroke: 3px black;">BookQ</div>
+          <a class="btn btn-info btn-xl text-uppercase js-scroll-trigger" href="#services" style="border: 5px solid black">Login</a>
         </div>
+      </div>
+    </header>
+    <!-- Services -->
+    <div class="container" style="margin-top: 50px;margin-bottom: 30px;">
+      <div class="row">
+        <div class="col-lg-12 text-center">
+          <h2 class="section-heading text-uppercase">What can you do?</h2>
+          <h5 class="section-subheading text-muted">Users can act either as a lender or a borrower</h5>
+        </div>
+      </div>
+      <div class="row text-center">
+        <div class="col-md-4">
+          <span class="fa-stack fa-4x">
+            <i class="fa fa-circle fa-stack-2x"></i>
+            <i class="fa fa-book fa-stack-1x fa-inverse"></i>
+          </span>
+          <h4 class="service-heading">Lend a Book</h4>
+          <p class="text-muted">Users can lend their books so that it can be borrowed by another user. The books that are lended by the user is added to our database.</p>
+        </div>
+        <div class="col-md-4">
+          <span class="fa-stack fa-4x">
+            <i class="fa fa-circle fa-stack-2x "></i>
+            <i class="fas fa-people-carry fa-stack-1x fa-inverse"></i>
+          </span>
+          <h4 class="service-heading">Borrow a Book</h4>
+          <p class="text-muted">Users can borrow a book that are available in our database. Lenders will be connected to borrower, make an agreement, and then lend the book.</p>
+        </div>
+        <div class="col-md-4">
+          <span class="fa-stack fa-4x">
+            <i class="fa fa-circle fa-stack-2x"></i>
+            <i class="fa fa-star fa-stack-1x fa-inverse"></i>
+          </span>
+          <h4 class="service-heading">Rate a Book</h4>
+          <p class="text-muted">Users can give their thoughts on the book that are available in our database.</p>
+        </div>
+      </div>
+      <br>
+      <hr style="border-color:black;margin:7px 0px"/>
     </div>
-</div>
-@endsection
+    
+
+    <!-- Services -->
+    
+      <div class="container">
+          
+        <div class="row">
+          <div class="col-lg-12 text-center"><br>
+            <h2 class="section-heading text-uppercase">What can we do?</h2>
+            <h5 class="section-subheading text-muted">BookQ connecting lenders and borrowers</h5>
+        </div>
+        <div class="row text-center">
+          <div class="col-md-4">
+            <span class="fa-stack fa-4x">
+              <i class="fa fa-circle fa-stack-2x"></i>
+              <i class="fa fa-link fa-stack-1x fa-inverse"></i>
+            </span>
+            <h4 class="service-heading">Connect</h4>
+            <p class="text-muted">BookQ connects you to another user who wants to borrow your book, or lend you a book.</p>
+          </div>
+          <div class="col-md-4">
+            <span class="fa-stack fa-4x">
+              <i class="fa fa-circle fa-stack-2x "></i>
+              <i class="fa fa-cogs fa-stack-1x fa-inverse"></i>
+            </span>
+            <h4 class="service-heading">Control</h4>
+            <p class="text-muted">We control the flow. Maintaining the availabilty of the books, act as a supervisor, and keeping you comfortable with optimal user experience.</p>
+          </div>
+          <div class="col-md-4">
+            <span class="fa-stack fa-4x">
+              <i class="fa fa-circle fa-stack-2x"></i>
+         /     <i class="fa fa-wrench fa-stack-1x fa-inverse"></i>
+            </span>
+            <h4 class="service-heading">Secure</h4>
+            <p class="text-muted">We protect user's information and make sure the transaction is safe and secured.</p>
+          </div>
+        </div>
+      </div>
+      <br>
+      <hr style="border-color:black;margin:7px 0px"/>
+
+    <!-- Team -->
+    
+      <div class="container" style="margin-top: 30px;">
+        <div class="row">
+          <div class="col-lg-12 text-center">
+            <h2 class="section-heading text-uppercase">Our Team</h2>
+            <h3 class="section-subheading text-muted">Bogor Agricultural University Student</h3>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-3">
+            <div class="team-member">
+              <img class="mx-auto rounded-circle" src="img/team/1.jpg" alt="" style="border: 3px solid black">
+              <h4>Alvin<br>Reinaldo</h4>
+              <p> G64160065 </p>
+              <p class="text-muted">Back-End</p>
+              
+            </div>
+          </div>
+          <div class="col-sm-3">
+            <div class="team-member">
+              <img class="mx-auto rounded-circle" src="img/team/3.png" alt="">
+              <h4>Maulvi<br>Alfansuri</h4>
+              <p> G64160087 </p>
+              <p class="text-muted">Back-End</p>
+              
+            </div>
+          </div>
+          <div class="col-sm-3">
+            <div class="team-member">
+              <img class="mx-auto rounded-circle" src="img/team/3.jpg" alt="" style="border: 3px solid black">
+              <h4>Rheisa<br>Gusmendasari</h4>
+              <p> G64160035 </p>
+              <p class="text-muted">Front-End</p>
+
+            </div>
+          </div>
+        <div class="col-sm-3">
+            <div class="team-member">
+              <img class="mx-auto rounded-circle" src="img/team/4.jpg" alt="" style="border: 3px solid black">
+              <h4>Faldi<br>Sulistiawan</h4>
+              <p> G64160068 </p>
+              <p class="text-muted">Front-End</p>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-8 mx-auto text-center">
+            <p class="large text-muted">Our team consists of students who are still learning about web development. We are Bogor Agricultural University Student, Department of Computer Science.</p>
+          </div>
+        </div>
+      </div>
+
+    <!-- Footer -->
+    <!-- <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <span class="copyright">Copyright &copy; Your Website 2018</span>
+          </div>
+        </div>
+      </div>
+    </footer> -->
+
+   
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Contact form JavaScript -->
+    <script src="js/jqBootstrapValidation.js"></script>
+    <script src="js/contact_me.js"></script>
+
+    <!-- Custom scripts for this template -->
+    <script src="js/agency.min.js"></script>
+
+  </body>
+
+</html>

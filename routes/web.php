@@ -11,15 +11,19 @@
 |
 */
 
-Route::get('/', function () {
+Route::get('/login', function () {
     return view('auth.login');
 });
 
-Route::get('/home', function () {
+Route::get('/', function () {
     return view('home');
 });
 
-Route::get('/create', function () {
+Route::get('/test', function () {
+    return view('auth.home');
+});
+
+Route::get('/register', function () {
     return view('auth.register');
 });
 

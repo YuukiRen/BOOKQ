@@ -36,7 +36,7 @@
         <div class="intro-text">
           <h4 > <span style="background-color: black; border-radius: 15px;padding: 5px 20px; opacity: 0.8; filter: alpha(opacity=80);"> Having trouble finding books that you want to read? </span></h4>
           <div class="intro-heading text-uppercase" style="-webkit-text-stroke: 3px black;">BookQ</div>
-          <a class="btn btn-info btn-xl text-uppercase js-scroll-trigger" href="#services" style="border: 5px solid black">Login</a>
+          <a class="btn btn-info btn-xl text-uppercase js-scroll-trigger" href='{{url("/login")}}' style="border: 5px solid black">Login</a>
         </div>
       </div>
     </header>

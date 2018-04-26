@@ -19,7 +19,7 @@ Route::get('/', function () {
     return view('home');
 });
 
-Route::get('/test', function () {
+Route::get('/home', function () {
     return view('auth.home');
 });
 

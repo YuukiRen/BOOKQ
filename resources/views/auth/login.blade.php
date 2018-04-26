@@ -95,7 +95,7 @@
                <div class="row" style="position:relative; top:-30px;padding:7px;border:2px solid black;border-radius:20px">
                         <h4 style=" text-align:center; "> Don't Have An Account? </h4>    
                         
-                        <a type="button" class="login100-form-btn" href="create" style="text-decoration:none"> Register Now 
+                        <a type="button" class="login100-form-btn" href="register" style="text-decoration:none"> Register Now 
                         </a>   
             		</div>
             	</div>

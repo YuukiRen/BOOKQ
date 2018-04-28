@@ -17,7 +17,7 @@ Route::get('/login', function () {
 
 Route::get('/', function () {
     return view('home');
-});
+});//guest page
 
 Route::get('/home', function () {
     return view('auth.home');
@@ -26,7 +26,19 @@ Route::get('/home', function () {
 Route::get('/register', function () {
     return view('auth.register');
 });
+/*
+Route::get('/lend',function(){
+	return view('lend');
+});
 
+Route::get('/search',function(){
+	return view('search');
+});
+
+Route::get('/borrow',function(){
+	return view('borrow');
+});
+*/
 Auth::routes();
 
 Route::GET('admin/home','AdminController@index');

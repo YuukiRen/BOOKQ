@@ -1,26 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <title>BookQ Login Page</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-<!--===============================================================================================-->  
-    <link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
-<!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
-<!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
-<!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
-<!--===============================================================================================-->  
-    <link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
-<!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
-<!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="css/util.css">
-    <link rel="stylesheet" type="text/css" href="css/main.css">
-<!--===============================================================================================-->
-</head>
+@include('layouts.partial.loginhead')
 <body>
     <div class="bg">
         <div class="container-login100">
@@ -71,7 +49,7 @@
                         <div class="col-md-6 offset-md-4">
                             <div class="checkbox">
                                 <label>
-                                    <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> Remember Me
+                                    <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> <b> Remember Me </b>
                                 </label>
                             </div>
                         </div>
@@ -85,17 +63,17 @@
 
                     <div class="text-center p-t-12">
                         <a class="txt2" href="{{route('password.request')}}">
-                            Forgot Username / Password?
+                        <b>    Forgot Username / Password? </b>
                         </a>
                      </div>
                      <br>
 
                     </div>
                 </form>
-               <div class="row" style="position:relative; top:-30px;padding:7px;border:2px solid black;border-radius:20px">
+               <div class="row" style="position:relative; top:-30px;padding:7px;">
                         <h4 style=" text-align:center; "> Don't Have An Account? </h4>    
                         
-                        <a type="button" class="login100-form-btn" href="register" style="text-decoration:none"> Register Now 
+                        <a type="button" class="login100-form-btn" href="register" style="text-decoration:none;background:blue"> Register Now 
                         </a>   
             		</div>
             	</div>

@@ -8,15 +8,15 @@ p {
 }
 
 a {
-  color: #fed136;
+  color: white;
 }
 
 a:hover {
-  color: #fec503;
+  color: #87CEFA;
 }
 
 .text-primary {
-  color: #fed136 !important;
+  color: #3366ff !important;
 }
 
 h1,
@@ -65,8 +65,8 @@ section h3.section-subheading {
 }
 
 .btn-primary {
-  background-color: #fed136;
-  border-color: #fed136;
+  background-color: #3366ff;
+  border-color: #3366ff;
 }
 
 .btn-primary:active, .btn-primary:focus, .btn-primary:hover {
@@ -80,12 +80,12 @@ section h3.section-subheading {
 }
 
 ::-moz-selection {
-  background: #fed136;
+  background: #3366ff;
   text-shadow: none;
 }
 
 ::selection {
-  background: #fed136;
+  background: #3366ff;
   text-shadow: none;
 }
 
@@ -108,17 +108,17 @@ img::-moz-selection {
   text-transform: uppercase;
   color: white;
   border: 0;
-  background-color: #fed136;
+  background-color: #3366ff;
   font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
 #mainNav .navbar-brand {
-  color: #fed136;
+  color: #3366ff;
   font-family: 'Kaushan Script', 'Helvetica Neue', Helvetica, Arial, cursive;
 }
 
 #mainNav .navbar-brand.active, #mainNav .navbar-brand:active, #mainNav .navbar-brand:focus, #mainNav .navbar-brand:hover {
-  color: #fec503;
+  color: #3366ff;
 }
 
 #mainNav .navbar-nav .nav-item .nav-link {
@@ -131,7 +131,7 @@ img::-moz-selection {
 }
 
 #mainNav .navbar-nav .nav-item .nav-link.active, #mainNav .navbar-nav .nav-item .nav-link:hover {
-  color: #fed136;
+  color: #3366ff;
 }
 
 @media (min-width: 992px) {

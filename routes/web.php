@@ -31,15 +31,17 @@ Route::get('/lend',function(){
 	return view('lend');
 });
 
-Route::get('/search',function(){
-	return view('search');
-});
+Route::get('/search','BooksController@show');
 
 Route::get('/viewbook',function(){
 	return view('viewbook');
 });
 
+Route::post('/coba',function(){
 
+	return view('coba');
+
+});
 /*
 Route::get('/borrow',function(){
 	return view('borrow');
@@ -47,7 +49,7 @@ Route::get('/borrow',function(){
 */
 
 //prototypw
-Route::post('/addbook','BooksController@addBook');
+Route::get('/lend','BooksController@show');
 Auth::routes();
 
 Route::GET('admin/home','AdminController@index');

@@ -7,17 +7,18 @@ use App\Http\Controllers\Controller;
 
 class BooksController extends Controller
 {
-    public function __construct(){
-    	$this->middleware('auth');
-    }
+    // public function __construct(){
+    // 	$this->middleware('auth');
+    // }
     public function show(){
-    	$books=Book::orderByTitle();
-
+    	$books=Book::all();
     	return view('search', compact('books'));//ganti search ama halaman search/ yang nampilin semua buku
     }
 
     public function addBook(Request $request){
-    	$this->validate($request,[
+    	
+        // dd($request);
+        $this->validate($request,[
     		'title'=>'required',
     		'isbn'=>'required',
     		'author'=>'required',
@@ -35,7 +36,7 @@ class BooksController extends Controller
     	$books->publisher = $request->input('publisher');
     	$books->description = $request->input('description');
     	$books->save();
-    	return redirect('/home')->with('info','Book Saved Successfully!');
+    	return redirect('/lend')->with('info','Book Saved Successfully!');
     }
 
 

@@ -91,107 +91,26 @@
   </div>
 </div>
 <br>
-
+      <?php $counter=0; ?>
+      @if(count($books)>0)
+        @foreach($books->all() as $book) <?php $counter++;?> 
+      
       <div class="row">
         <div class="col-lg-3 col-md-4 col-sm-6 portfolio-item">
           <div class="card h-100">
             <a href="#"><img class="card-img-top" src="images/buku1.png" alt=""></a>
             <div class="card-body">
               <h5 class="card-title">
-                <a href="viewbook">99 Hari Melesatkan Bisnis</h5></a>
-              <p class="card-text">“If opportunity doesn’t knock, build a door.” Ya, ketika kesempatan tidak datang mengetuk, Anda perlu membangun pintu untuk menuju keberhasilan yang Anda idamkan. Membangun usaha tentu tidak semudah membalikkan telapak tangan.
-        </p>
+                <a href="viewbook">{{$book->title}}</h5></a>
+              <p class="card-text">{{$book->description}}
+            </p>
          <a href="#" class="btn btn-success"  >Borrow This Book</a>
             </div>
           </div>
         </div>
-        <div class="col-lg-3 col-md-4 col-sm-6 portfolio-item">
-          <div class="card h-100">
-            <a href="#"><img class="card-img-top" src="images/buku2.jpg" alt=""></a>
-            <div class="card-body">
-              <h5 class="card-title">
-                <a href="#">Sang Pemimpi</a>
-              </h5>
-              <p class="card-text">Novel ini menceritakan tentang perjuangan tiga orang laki-laki yang telah lulus SMP, melanjutkan belajar ke SMA yang bukan main. Disinilah perjuangan dan cita-cita ketiga laki-laki ini di mulai yakni Ikal, Arai dan Jimron.</p>
-               <a href="#" class="btn btn-success">Borrow This Book</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-4 col-sm-6 portfolio-item">
-          <div class="card h-100">
-            <a href="#"><img class="card-img-top" src="images/buku3.jpg" alt=""></a>
-            <div class="card-body">
-              <h5 class="card-title">
-                <a href="#">Sejarah dan Budaya</a>
-              </h5>
-              <p class="card-text">Buku ini diterjemahkan dari Gramsci's Prison Notebooks, sebuah catatan-catatan pengalaman politik dan intelektual yang membentuk, mendukung dan melatarbelakangi gagasan dan pemikiran Gramsci ketika berada di penjara, terutama pemikiran-pemikirannya tentang hegemoni.
-             </p>
-             <a href="#" class="btn btn-success"  >Borrow This Book</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-4 col-sm-6 portfolio-item">
-          <div class="card h-100">
-            <a href="#"><img class="card-img-top" src="images/buku4.jpg" alt=""></a>
-            <div class="card-body">
-              <h5 class="card-title">
-                <a href="#">Tentang Kamu</a>
-              </h5>
-              <p class="card-text">Tentang Kamu adalah novel terbaru Tere Liye. Sebuah karya yang tak hanya akan membawa pembacanya menyelami sebuah petualangan yang seru dan sarat emosi, tapi juga memberikan nilai positif sehingga membuat hidup serasa lebih patut disyukuri.</p>
-              <a href="#" class="btn btn-success"  >Borrow This Book</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-4 col-sm-6 portfolio-item">
-          <div class="card h-100">
-            <a href="#"><img class="card-img-top" src="images/buku5.jpg" alt=""></a>
-            <div class="card-body">
-              <h4 class="card-title">
-                <a href="#">Mudah Belajar Java</a>
-              </h4>
-              <p class="card-text">Java merupakan bahasa pemrograman yang saat ini sedang “naik daun” dan banyak digunakan oleh para programmer dan software developer untuk mengembangkan berbagai tipe aplikasi, mulai dari aplikasi console, aplikasi desktop, applet (aplikasi yang berjalan di lingkungan web browser), sampai ke aplikasi-aplikasi yang berskala enterprise.</p>
-              <a href="#" class="btn btn-success">Borrow This Book</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-4 col-sm-6 portfolio-item">
-          <div class="card h-100">
-            <a href="#"><img class="card-img-top" src="images/buku6.jpg" alt=""></a>
-            <div class="card-body">
-              <h4 class="card-title">
-                <a href="#">La taghdhab</a>
-              </h4>
-              <p class="card-text">Buku ini sebagaimana ditegaskan . penulisnya, merupakan karya berharga yang lahir setelah ditulisnya buku fenomenal La Tahzan. Buku La Tahzan sebagai terapi untuk kesedihan, sementara buku La Taghdhab sebagai terapi untuk mengatasi suhu panas hati. Jangan bersedih agar Anda tidak menentang takdir, dan jangan marah agar Anda tidak menodai kesabaran. Selamat menikmati sajian khas Dr. 'Aidh Al-Qarni untuk membeningkan hati dari pekatnya amarah!</p>
-              <a href="#" class="btn btn-success"  >Borrow This Book</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-4 col-sm-6 portfolio-item">
-          <div class="card h-100">
-            <a href="#"><img class="card-img-top" src="images/buku7.jpg" alt=""></a>
-            <div class="card-body">
-              <h4 class="card-title">
-                <a href="#">Psikologi Remaja</a>
-              </h4>
-              <p class="card-text">Untuk memahami jiwa remaja dan mencari solusi yang tepat bagi permasalahannya, maka penting bagi kita memahami remaja dan perkembangan psikologinya, yaitu konsep diri, intelegensi, emosi, seksual, motif sosial, dan religinya. Buku ini dapat menjadi referensi yang penting bagi mahasiswa, pendidik, konsultan, dan aparat yang berkecimpung dalam permasalahan remaja, serta yang tidak kalah pentingnya adalah orang tua.</p>
-              <a href="#" class="btn btn-success"  >Borrow This Book</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-4 col-sm-6 portfolio-item">
-          <div class="card h-100">
-            <a href="#"><img class="card-img-top" src="images/buku8.jpg" alt=""></a>
-            <div class="card-body">
-              <h4 class="card-title">
-                <a href="#">Ketika Cinta Bertasbih</a>
-              </h4>
-              <p class="card-text">"Selain mengajak untuk menyucikan jiwa, dwilogi Ketika Cinta Bertasbih ini menyadarkan apa makna prestasi yang sesungguhnya. Novel yang dahsyat dn benar-benar berbeda !" ---Ishak Ibrahim Hasan, Sastrawan
-              </p>
-              <a href="#" class="btn btn-success"  >Borrow This Book</a>
-            </div>
-          </div>
-        </div>
-      </div>
+        @endforeach  
+      @endif
+        
       <!-- /.row -->
 
       <!-- Pagination -->

@@ -18,7 +18,7 @@ class SkemaPinjam extends Migration
                     $table->string('user_lender');
                     $table->string('user_booker');
                     $table->string('id_buku');
-                    $table->int('status');
+                    $table->integer('status');
                     $table->date('tanggal_pinjam');
                     $table->date('tanggal_kembali');
                 });

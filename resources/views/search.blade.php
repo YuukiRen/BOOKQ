@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>4 Col Portfolio - Start Bootstrap Template</title>
+    <title>Search Your Book</title>
 
     <!-- Bootstrap core CSS -->
     <link href="../vendor/bootstrap_search/css/bootstrap.min.css" rel="stylesheet">

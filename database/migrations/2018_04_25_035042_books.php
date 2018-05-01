@@ -6,7 +6,7 @@ use Illuminate\Database\Migrations\Migration;
 
 class Books extends Migration
 {
-{
+
     /**
      * Run the migrations.
      *
@@ -20,7 +20,7 @@ class Books extends Migration
             $table->string('author');
             $table->string('title');
             $table->string('synopsis');
-            $table->integer('year', 4);
+            $table->integer('year');
             $table->string('publisher');
             $table->longText('description');
             // $table->string('cover')->default('no-cover.jpg');//uncomment kalo mau ada gambar

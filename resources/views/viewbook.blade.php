@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Start Bootstrap Template</title>
+    <title>99 Hari Melesatkan Bisnis</title>
 
     <!-- Bootstrap core CSS -->
     <link href="../vendor/bootstrap_search/css/bootstrap.min.css" rel="stylesheet">

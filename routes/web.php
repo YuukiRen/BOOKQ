@@ -38,11 +38,16 @@ Route::get('/search',function(){
 Route::get('/viewbook',function(){
 	return view('viewbook');
 });
+
+
 /*
 Route::get('/borrow',function(){
 	return view('borrow');
 });
 */
+
+//prototypw
+Route::post('/addbook','BooksController@addBook');
 Auth::routes();
 
 Route::GET('admin/home','AdminController@index');

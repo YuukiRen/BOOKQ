@@ -87,7 +87,7 @@
           </ul>
         </div>
         <div class="col-md-6">
-        <a href="">
+        <a href="search">
           <span class="fa-stack fa-4x">
             <i class="fa fa-circle fa-stack-2x " style="color:darkblue"></i>
             <i class="fas fa-people-carry fa-stack-1x fa-inverse"></i>

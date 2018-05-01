@@ -26,7 +26,7 @@ Route::get('/home', function () {
 Route::get('/register', function () {
     return view('auth.register');
 });
-/*
+
 Route::get('/lend',function(){
 	return view('lend');
 });
@@ -35,6 +35,10 @@ Route::get('/search',function(){
 	return view('search');
 });
 
+Route::get('/viewbook',function(){
+	return view('viewbook');
+});
+/*
 Route::get('/borrow',function(){
 	return view('borrow');
 });

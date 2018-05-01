@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>99 Hari Melesatkan Bisnis</title>
+    <title>{{$books->title}}</title>
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
@@ -39,25 +39,24 @@
         </div>
 
         <div class="card-body mt-4 col-md-6">
-          <h3 class="card-title">99 hari melesatkan bisnis</h3>
+          <h3 class="card-title">{{$books->title}}</h3>
           <table class="table1">
             <tr>
-              <td> Author </td> <td>  :  </td>  <td> Imelda Saputra </td>
+              <td> Author </td> <td>  :  </td>  <td> {{$books->author}} </td>
             </tr> 
             <tr>
-              <td> Penerbit </td><td>  :  </td><td> Gramedia </td>
+              <td> Penerbit </td><td>  :  </td><td> {{$books->publisher}} </td>
             </tr> 
             <tr>
-              <td> Tahun </td><td>  :  </td><td> 2018 </td></tr>
+              <td> Tahun </td><td>  :  </td><td> {{$books->year}} </td></tr>
               <tr>
-              <td> Kategori </td> <td>  :  </td> <td> Bisnis </td>
+              <td> Kategori </td> <td>  :  </td> <td> Lorem Ipsum </td>
             </tr>
         </table>
         </div>
       </div>
               <h3 class="card-title">Deskripsi</h3>
-              <p class="card-text">“If opportunity doesn’t knock, build a door.” Ya, ketika kesempatan tidak datang mengetuk, Anda perlu membangun pintu untuk menuju keberhasilan yang Anda idamkan. Membangun usaha tentu tidak semudah membalikkan telapak tangan.
-Butuh persiapan panjang untuk itu. Namun jelas yang diperlukan setiap orang bukan saja modal yang besar, tapi mindset yang benar pula. Buku 99 Hari Melesatkan Bisnis, hadir untuk membantu Anda bagaimana mengelola cara pandang, sikap, perilaku, soft skill Anda sebelum membangun usaha. Baca, renungkan, terapkan. Dan Anda pun akan semakin diperlengkapi untuk menjadi pengusaha yang kompeten.
+              <p class="card-text">{{$books->description}}
 </p>
               <span class="text-warning">&#9733; &#9733; &#9733; &#9733; &#9734;</span>
               <p>4.0 stars</p>

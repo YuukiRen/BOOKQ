@@ -73,8 +73,12 @@
             <a href="#"><img class="card-img-top" src="images/buku1.png" alt=""></a>
             <div class="card-body">
               <h5 class="card-title">
-                <a href="viewbook" class="text-dark">{{$book->title}}</h5></a>
-              <p class="card-text">{{$book->description}}
+                <a href="viewbook/{{$book->isbn}}" class="text-dark">{{$book->title}}</h5></a>
+              <p class="card-text">
+
+                {{str_limit( $book->description, $limit = 300, $end = '
+                ...
+                ')}}
                <!-- </p> -->
          <a href="#" class="btn btn-success"  >Borrow This Book</a>
             </div>

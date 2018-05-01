@@ -13,10 +13,21 @@ class BooksController extends Controller
     public function show(){
     	// $books=Book::all();
         //membuat paginasi
-        $books=\DB::table('books')->paginate(3);
+        $books=\DB::table('books')->paginate(4);
 
     	return view('search', compact('books'));
         //ganti search ama halaman search/ yang nampilin semua buku
+    }
+
+
+    //controller untuk ngeliat satu buku
+    public function show_detail(Request $request, $isbn){
+
+        //query cari buku
+        $books=Book::where('isbn', $isbn)->first();
+
+        //ke detailed view
+        return view('viewbook', compact('books'));
     }
 
     public function addBook(Request $request){

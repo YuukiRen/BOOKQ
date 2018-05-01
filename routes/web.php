@@ -33,14 +33,17 @@ Route::get('/lend',function(){
 
 Route::get('/search','BooksController@show');
 
-Route::get('/viewbook',function(){
-	return view('viewbook');
-});
+// Route::get('/viewbook',function(){
+	// return view('viewbook');
+// });
+
+Route::get('/viewbook/{isbn}', 'BooksController@show_detail');
+	// return view('viewbook');
+// });
+
 
 Route::post('/coba',function(){
-
 	return view('coba');
-
 });
 /*
 Route::get('/borrow',function(){

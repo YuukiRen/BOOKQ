@@ -65,11 +65,8 @@
   </div>
 </div>
 <br>
-      <?php $counter=0; ?>
-      @if(count($books)>0)
-        @foreach($books->all() as $book) <?php $counter++;?> 
-      
-      <div class="row">
+        @foreach($books->all() as $book)
+        <div class="row">
         <div class="col-lg-3 col-md-4 col-sm-6 portfolio-item">
           <div class="card h-100">
             <a href="#"><img class="card-img-top" src="images/buku1.png" alt=""></a>
@@ -83,12 +80,11 @@
           </div>
         </div>
         @endforeach  
-      @endif
         
       <!-- /.row -->
 
       <!-- Pagination -->
-      <ul class="pagination justify-content-center">
+      <!-- <ul class="pagination justify-content-center">
         <li class="page-item">
           <a class="page-link" href="#" aria-label="Previous">
             <span aria-hidden="true">&laquo;</span>
@@ -110,9 +106,11 @@
             <span class="sr-only">Next</span>
           </a>
         </li>
-      </ul>
-
+      </ul> -->
+      
+      
     </div>
+    {{$books->links()}}
     <!-- /.container -->
 
 

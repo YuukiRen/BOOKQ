@@ -7,12 +7,15 @@ use App\Http\Controllers\Controller;
 
 class BooksController extends Controller
 {
-    // public function __construct(){
+    public function __construct(){
     // 	$this->middleware('auth');
-    // }
+    }
     public function show(){
-    	$books=Book::all();
-    	return view('search', compact('books'));//ganti search ama halaman search/ yang nampilin semua buku
+    	// $books=Book::all();
+        $books=\DB::table('books')->paginate(5);
+
+    	return view('search', compact('books'));
+        //ganti search ama halaman search/ yang nampilin semua buku
     }
 
     public function addBook(Request $request){

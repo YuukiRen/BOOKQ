@@ -1,5 +1,5 @@
 <script src="{{ asset('js/app.js') }}"></script>
-<nav id="app" class="navbar navbar-expand-md bg-dark navbar-laravel ">
+<nav id="app" class="navbar navbar-expand-md bg-dark navbar-laravel fixed-top">
     <div class="container">
         <a class="navbar-brand" href="#">
           <b>  BookQ </b>

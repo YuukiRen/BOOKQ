@@ -49,7 +49,6 @@ Route::get('/borrow',function(){
 */
 
 //prototypw
-Route::get('/lend','BooksController@show');
 Auth::routes();
 
 Route::GET('admin/home','AdminController@index');

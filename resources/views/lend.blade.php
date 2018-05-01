@@ -1,60 +1,98 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <title>BookQ Login Page</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-</head>
+@include('layouts.partial.head')
 <body>
-             <table class="table table-hover">
-              <thead>
-                <tr>
-                  <th scope="col">No</th>
-                  <th scope="col">Title</th>
-                  <th scope="col">Description</th>
-                  <th scope="col">Action</th>
-                </tr>
-              </thead>
-              <tbody>
-                <?php
-                $counter=0;
-                ?>
-                @if(count($books)>0)
-                    @foreach($books->all() as $book)
-                <?php
-                $counter++;
-                ?>  
-                    
-                <tr class="table-active">
-                  <th scope="row">{{ $counter }}</th>
-                  <td>{{ $book->title }}</td>
-                  <td>{{ $book->description }}</td>
-                  
-                </tr>
-                    @endforeach
-                @endif
-              </tbody>
-            </table>
-    
+    @include('layouts.partial.header')
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                    <div class="panel panel-info" style="border-color:black">
+                            <h1 class="my-4">Lend a Book
+                                    <font size=3>Share your Knowledge!</font>
+                                  </h1>
+                        <div class="panel-body">
+                            <form class="" action="" method="post">
+                                    {{ csrf_field() }}
+                                    <div class="row">
+                                    <div class="col-4">
+                                            Book image: <br>
+                                            <div style="border:1px solid black;height:200px;width:140px"></div>
+                                            <input type="file" name="pic" id="pic"> <br><br>
+                                            <div class="form-group has-feedback{{ $errors->has('title') ? 'has-error' : '' }}">
+                                                    <label for="">Tag</label>
+                                                    <input type="text" class="form-control" name="title">
+                                                        {{-- @if($errors->has('title'))
+                                                            <span style="color:red" class="help-block">
+                                                            <p>{{ $errors->first('title') }}</p>
+                                                            </span>
+                                                        @endif --}}
+                                            </div> 
+                                            <div class="form-group">
+                                                <label for="genre">Choose your topic :</label>
+                                                <select name="categories_id" id="" class="form-control" style="width: 250px;height: 30px" >
+                                                    {{-- @foreach ($categories as $categories)
+                                                    <option value="{{ $categories->id }}"> {{ $categories->name }}</option>
+                                                    @endforeach --}}
+                                                </select>
+                                            </div>
+                                    </div>
+                                    <div class="col-6">
+                                    <div class="form-group has-feedback{{ $errors->has('title') ? 'has-error' : '' }}">
+                                    <label for="">Title</label>
+                                    <input type="text" class="form-control" name="title">
+                                        {{-- @if($errors->has('title'))
+                                            <span style="color:red" class="help-block">
+                                            <p>{{ $errors->first('title') }}</p>
+                                            </span>
+                                        @endif --}}
+                                    </div>
+                                    <div class="form-group has-feedback{{ $errors->has('title') ? 'has-error' : '' }}">
+                                        <label for="">Author</label>
+                                        <input type="text" class="form-control" name="title">
+                                            {{-- @if($errors->has('title'))
+                                                <span style="color:red" class="help-block">
+                                                <p>{{ $errors->first('title') }}</p>
+                                                </span>
+                                            @endif --}}
+                                        </div>
+                                        
+                                    {{--                                
+                                    <div class="form-group">
+                                        <label for="genre">Choose your topic :</label>
+                                        <select name="categories_id" id="" class="form-control" style="width: 150px;height: 30px" >
+                                            @foreach ($categories as $categories)
+                                            <option value="{{ $categories->id }}"> {{ $categories->name }}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                         --}}       
+                                    <div class="form-group  has-feedback{{ $errors->has('content') ? 'has-error' : '' }}">
+                                        <label for="Content">Description</label>
+                                        <textarea name="content" rows="10" class="form-control"></textarea>
+                                        {{-- @if($errors->has('content'))
+                                            <span style="color:red" class="help-block">
+                                                <p>{{ $errors->first('content') }}</p>
+                                            </span>
+                                        @endif --}}
+                                    </div>
+                                    <div class="form-group  has-feedback{{ $errors->has('content') ? 'has-error' : '' }}">
+                                    <label for="Content">Review</label>
+                                    <textarea name="content" rows="5" class="form-control"></textarea>
+                                    {{-- @if($errors->has('content'))
+                                        <span style="color:red" class="help-block">
+                                            <p>{{ $errors->first('content') }}</p>
+                                        </span>
+                                    @endif --}}
+                                </div>
+                                <div class="form-group">
+                                    <input type="submit" class="btn btn-primary btn-block" style="border-color:black;" value="SUBMIT" >
+                                  </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+            </div>
+        </div>
 
-    
-<!--===============================================================================================-->  
-    <script src="vendor/jquery/jquery-3.2.1.min.js"></script>
-<!--===============================================================================================-->
-    <script src="vendor/bootstrap/js/popper.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-<!--===============================================================================================-->
-    <script src="vendor/select2/select2.min.js"></script>
-<!--===============================================================================================-->
-    <script src="vendor/tilt/tilt.jquery.min.js"></script>
-    <script >
-        $('.js-tilt').tilt({
-            scale: 1.1
-        })
-    </script>
-<!--===============================================================================================-->
-    <script src="js/main.js"></script>
-
+       
+    </div>
 </body>
-</html>

@@ -11,7 +11,7 @@
       </div>
       <div class="row text-center">
         <div class="col-md-6">
-            <a href="">
+            <a href="lend">
           <span class="fa-stack fa-4x ">
             <i class="fa fa-circle fa-stack-2x" style="color:darkblue"></i>
             <i class="fa fa-book fa-stack-1x fa-inverse" ></i>

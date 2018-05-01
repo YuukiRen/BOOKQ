@@ -25,8 +25,9 @@ class bookseeder extends Seeder
         		'year'=> '2018',
         		'publisher'=> 'Grasindo (Gramedia Widia Sarana Indonesia)',
         		'description'=> '“If opportunity doesn’t knock, build a door.” Ya, ketika kesempatan tidak datang mengetuk, Anda perlu membangun pintu untuk menuju keberhasilan yang Anda idamkan. Membangun usaha tentu tidak semudah membalikkan telapak tangan.
-Butuh persiapan panjang untuk itu. Namun jelas yang diperlukan setiap orang bukan saja modal yang besar, tapi mindset yang benar pula. Buku 99 Hari Melesatkan Bisnis, hadir untuk membantu Anda bagaimana mengelola cara pandang, sikap, perilaku, soft skill Anda sebelum membangun usaha. Baca, renungkan, terapkan. Dan Anda pun akan semakin diperlengkapi untuk menjadi pengusaha yang kompeten.'
-        	],
+Butuh persiapan panjang untuk itu. Namun jelas yang diperlukan setiap orang bukan saja modal yang besar, tapi mindset yang benar pula. Buku 99 Hari Melesatkan Bisnis, hadir untuk membantu Anda bagaimana mengelola cara pandang, sikap, perilaku, soft skill Anda sebelum membangun usaha. Baca, renungkan, terapkan. Dan Anda pun akan semakin diperlengkapi untuk menjadi pengusaha yang kompeten.',
+        	   'cover' => 'buku1.png'
+            ],
         	[
         		'id' => '2',
         		'isbn' => '9786028811118',
@@ -41,7 +42,8 @@ Tampak komikal pada awalnya, selayaknya kenakalan remaja biasa, tapi kemudian ta
 
 “Kita tak kan pernah mendahului nasib!” teriak Arai.
 “Kita akan sekolah ke Prancis, menjelajahi Eropa sampai ke Afrika! Apa pun yang terjadi!”
-'
+',
+               'cover' => 'buku2.jpg'
         	],
         	[
         		'id' => '3',
@@ -55,6 +57,9 @@ Tampak komikal pada awalnya, selayaknya kenakalan remaja biasa, tapi kemudian ta
 (Antonio Gramsci)
 Buku ini diterjemahkan dari Gramsci\'s Prison Notebooks, sebuah catatan-catatan pengalaman politik dan intelektual yang membentuk, mendukung dan melatarbelakangi gagasan dan pemikiran Gramsci ketika berada di penjara, terutama pemikiran-pemikirannya tentang hegemoni.
 Banyak pengamat menganggap pemikiran-pemikiran Gramsci tidak gampang dicerna. Itu karena tulisan-tulisannya banyak menggunakan kata-kata yang tidak langsung menohok permasalahan, sehingga penuh dengan ungkapan-ungkapan kiasan. Semua ini ia lakukan untuk dapat meloloskan tulisan-tulisannya dari sensor penjara.'
+ ,
+               'cover' => 'buku3.jpg'
+ 
         	],
         	[
         		'id' => '4',
@@ -71,7 +76,9 @@ Banyak pengamat menganggap pemikiran-pemikiran Gramsci tidak gampang dicerna. It
 Atas dasar pekerjaan, Zaman Zulkarnaen harus menelusuri hidup seorang kliennya, perempuan pemegang paspor Inggris yang barusan meninggal dan mewariskan harta yang jumlahnya bisa menyaingi kekayaan Ratu Inggris. Tiga negara, lima kota, beribu luka. Hingga akhirnya Zaman mengerti, bahwa ini bukan sekadar perkara mengerti jalan hidup seorang klien, melainkan pengejawantahan prinsip kuat di tengah cobaan yang terus mendera.
 
 Tentang Kamu adalah novel terbaru Tere Liye. Sebuah karya yang tak hanya akan membawa pembacanya menyelami sebuah petualangan yang seru dan sarat emosi, tapi juga memberikan nilai positif sehingga membuat hidup serasa lebih patut disyukuri.'
-        	],
+        	   ,
+               'cover' => 'buku4.jpg'
+            ],
 
 
         	[
@@ -87,6 +94,8 @@ Buku Mudah Belajar Java (Revisi Kedua) ini akan membahas semua teknik pemrograma
 
 Buku ini cocok untuk siapa saja yang berminat mempelajari dan mengimplementasikan semua konsep pemrograman Java secara mudah dan cepat. Semua materi dalam buku ini disuguhkan dalam “logat” tutorial dan langsung disertai dengan contoh program sehingga akan mudah untuk dipahami. Tujuan akhir dari buku ini adalah mengantarkan, menuntun, dan memandu Anda untuk menjadi seorang programmer Java.
 '
+,
+               'cover' => 'buku5.jpg'
         	],
         	[
         		'id' => '6',
@@ -98,6 +107,8 @@ Buku ini cocok untuk siapa saja yang berminat mempelajari dan mengimplementasika
         		'publisher'=> 'Gema Insani',
         		'description'=> 'Rasulullah saw pernah memberikan wasiat kepada kita, "La taghdhab jangan marah)!" Sebuah wasiat yang singkat, namun memuat kebaikan yang begitu padat. Karena, tak mudah mengatasi amarah, bahkan kebanyakan orang malah tenggelam di dalamnya. Jika Anda bisa mengatasi amarah, maka itu sebuah pencapaian besar, akhlak nabawi nan mulia, dan manhaj kehidupan nan lurus. Karena amarah melahirkan setumpuk bahaya yang tak terkira. Akan tetapi, amarah juga bisa diolah menjadi energi kebaikan, power kesuksesan, bahan baku kebahagiaan, dan beragam manfaat lainnya. Buku ini sebagaimana ditegaskan . penulisnya, merupakan karya berharga yang lahir setelah ditulisnya buku fenomenal La Tahzan. Buku La Tahzan sebagai terapi untuk kesedihan, sementara buku La Taghdhab sebagai terapi untuk mengatasi suhu panas hati. Jangan bersedih agar Anda tidak menentang takdir, dan jangan marah agar Anda tidak menodai kesabaran. Selamat menikmati sajian khas Dr. \'Aidh Al-Qarni untuk membeningkan hati dari pekatnya amarah!
 '
+,
+               'cover' => 'buku6.jpg'
         	],
         	[
         		'id' => '7',
@@ -108,7 +119,9 @@ Buku ini cocok untuk siapa saja yang berminat mempelajari dan mengimplementasika
         		'year'=> '2017',
         		'publisher'=> 'Gramedia',
         		'description'=> 'Untuk memahami jiwa remaja dan mencari solusi yang tepat bagi permasalahannya, maka penting bagi kita memahami remaja dan perkembangan psikologinya, yaitu konsep diri, intelegensi, emosi, seksual, motif sosial, dan religinya. Buku ini dapat menjadi referensi yang penting bagi mahasiswa, pendidik, konsultan, dan aparat yang berkecimpung dalam permasalahan remaja, serta yang tidak kalah pentingnya adalah orang tua.'
-        	],
+        	,
+               'cover' => 'buku7.jpg'
+            ],
 			
 			[
 				'id' => '8',
@@ -121,7 +134,9 @@ Buku ini cocok untuk siapa saja yang berminat mempelajari dan mengimplementasika
 				'description'=> '"Selain mengajak untuk menyucikan jiwa, dwilogi Ketika Cinta Bertasbih ini menyadarkan apa makna prestasi yang sesungguhnya. Novel yang dahsyat dn benar-benar berbeda !" ---Ishak Ibrahim Hasan, Sastrawan
 "Inilah novel yang mencerahkan. Luar biasa! isinya saya rasakan begitu kuat memotivasi pembaca untuk berani hidup mandiri, untuk tidak mudah menyerah, untuk terus maju meraih anugerah Allah." ---Sarwedi Hasibuan, Mahasiswa Program Pascasarjana University of Malaya
 "Dwilogi Ketika Cinta Bertasbih ini tidak sekadar novel romantis, ini juga novel fikih yang ditulis dalam alur cerita yang tak mudah ditebak. Kang Abik melakukan terobosan baru menjelaskan kaidah-kaidah fikih melalui novel. Salut!" ---KH. Mifdhaul Muthahhar, Ketua IKADI & Pengasuh Ponpes Al Hikmah'
-			],        	
+			,
+               'cover' => 'buku8.jpg'
+            ]        	
         ]);
     }
 }

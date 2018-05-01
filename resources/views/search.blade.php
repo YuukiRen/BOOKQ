@@ -65,16 +65,17 @@
   </div>
 </div>
 <br>
-        @foreach($books->all() as $book)
         <div class="row">
+        @foreach($books->all() as $book)
+        
         <div class="col-lg-3 col-md-4 col-sm-6 portfolio-item">
           <div class="card h-100">
             <a href="#"><img class="card-img-top" src="images/buku1.png" alt=""></a>
             <div class="card-body">
               <h5 class="card-title">
-                <a href="viewbook">{{$book->title}}</h5></a>
+                <a href="viewbook" class="text-dark">{{$book->title}}</h5></a>
               <p class="card-text">{{$book->description}}
-            </p>
+               <!-- </p> -->
          <a href="#" class="btn btn-success"  >Borrow This Book</a>
             </div>
           </div>

@@ -24,6 +24,7 @@ class Books extends Migration
             $table->string('publisher');
             $table->longText('description');
             $table->string('category');
+            $table->string('tag');
             $table->string('cover')->default('no-cover.jpg');//uncomment kalo mau ada gambar
             $table->timestamps();
         });

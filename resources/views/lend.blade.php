@@ -4,11 +4,11 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-8 offset-md-2">
-                    <div class="panel panel-info" style="border-color:black">
+                    <div class="panel panel-info" >
                             <h1 class="my-4">Lend a Book
                                     <font size=3>Share your Knowledge!</font>
                                   </h1>
-                        <div class="panel-body">
+                        <div class="panel-body" style="border:1px solid black; padding:10px; border-radius:10px">
                             <form class="" action="" method="post">
                                     {{ csrf_field() }}
                                     <div class="row">
@@ -18,7 +18,7 @@
                                             <input type="file" name="pic" id="pic"> <br><br>
                                             <div class="form-group">
                                                 <label for="genre">Category :</label>
-                                                <select name="categories_id" id="" class="form-control" style="width:auto;overflow:hidden" >
+                                                <select name="category" id="" class="form-control" style="width:auto;overflow:hidden" >
                                                     @foreach ($category as $categories)
                                                     <option value="{{ $categories->id }}"> {{ $categories->name }}</option>
                                                     @endforeach
@@ -26,7 +26,7 @@
                                             </div>
                                             <div class="form-group has-feedback{{ $errors->has('title') ? 'has-error' : '' }}">
                                                     <label for="">Tag</label>
-                                                    <input type="text" class="form-control" name="title">
+                                                    <input type="text" class="form-control" name="tag">
                                                         {{-- @if($errors->has('title'))
                                                             <span style="color:red" class="help-block">
                                                             <p>{{ $errors->first('title') }}</p>
@@ -53,7 +53,7 @@
                                                 </span>
                                             @endif --}}
                                         </div>
-                                        
+                                    
                                     {{--                                
                                     <div class="form-group">
                                         <label for="genre">Choose your topic :</label>
@@ -73,6 +73,15 @@
                                                 </span>
                                             @endif --}}
                                     </div>
+                                    <div class="form-group has-feedback{{ $errors->has('Year') ? 'has-error' : '' }}">
+                                            <label for="">Year</label>
+                                            <input type="text" class="form-control" name=Year">
+                                                {{-- @if($errors->has('title'))
+                                                    <span style="color:red" class="help-block">
+                                                    <p>{{ $errors->first('title') }}</p>
+                                                    </span>
+                                                @endif --}}
+                                            </div>
                                     <div class="form-group  has-feedback{{ $errors->has('description') ? 'has-error' : '' }}">
                                         <label for="Content">Description</label>
                                         <textarea name="description" rows="10" class="form-control"></textarea>

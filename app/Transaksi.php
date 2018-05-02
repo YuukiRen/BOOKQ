@@ -19,5 +19,5 @@ class Transaksi extends Model
     ];
     protected $hidden=[
     	'id_transaksi'
-    ]
+	];
 }

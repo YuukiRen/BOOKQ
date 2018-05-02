@@ -24,7 +24,7 @@
   <body>
 
     <!-- Navigation -->
-    @include('layouts.partial.searchheader')
+    @include('layouts.partial.header')
 
      <!-- Page Content -->
     <div class="container">

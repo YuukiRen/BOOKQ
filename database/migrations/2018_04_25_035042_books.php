@@ -19,7 +19,7 @@ class Books extends Migration
             $table->string('book_id')->unique();
             $table->string('author');
             $table->string('title');
-            $table->string('synopsis');
+            $table->string('review');
             $table->integer('year');
             $table->string('publisher');
             $table->longText('description');

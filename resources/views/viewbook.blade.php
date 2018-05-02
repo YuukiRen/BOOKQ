@@ -35,7 +35,7 @@
         <div class="card col-lg-9"> 
           <div class="row">
         <div class="col-md-6 mt-4">
-          <img class="card-body" width=75% height=100% align=center src="images/buku1.png" alt="">
+          <img class="card-body" width=75% height=100% align=center src="images/{{$books->cover}}" alt="">
         </div>
 
         <div class="card-body mt-4 col-md-6">

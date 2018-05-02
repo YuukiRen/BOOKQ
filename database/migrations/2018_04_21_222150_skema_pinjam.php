@@ -13,11 +13,11 @@ class SkemaPinjam extends Migration
      */
     public function up()
     {
-            Schema::create('transaksi', function (Blueprint $table) {
-                    $table->string('id_transaksi')->primary();
+            Schema::create('transaction', function (Blueprint $table) {
+                    $table->string('transaction_id')->primary();
                     $table->string('user_lender');
                     $table->string('user_booker')->nullable();
-                    $table->string('id_buku');
+                    $table->string('book_id');
                     $table->integer('status')->nullable();
                     $table->date('tanggal_pinjam');
                     $table->date('tanggal_kembali');
@@ -32,6 +32,6 @@ class SkemaPinjam extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('transaksi');
+        Schema::dropIfExists('transaction');
     }
 }

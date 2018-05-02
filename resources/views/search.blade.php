@@ -73,7 +73,7 @@
             <a href="#"><img class="card-img-top" src="images/{{$book->cover}}" alt=""></a>
             <div class="card-body">
               <h5 class="card-title">
-                <a href="viewbook/{{$book->isbn}}" class="text-dark">{{$book->title}}</h5></a>
+                <a href="viewbook/{{$book->book_id}}" class="text-dark">{{$book->title}}</h5></a>
               <p class="card-text">
 
                 {{str_limit( $book->description, $limit = 300, $end = '

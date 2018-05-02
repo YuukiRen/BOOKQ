@@ -4,9 +4,9 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Genre extends Model
+class Category extends Model
 {
-	protected $table = 'genres';
+	protected $table = 'category';
 
 	protected $fillable=[
 		'name', 'id', 'slug'
@@ -18,11 +18,12 @@ class Genre extends Model
     	// $this->attributes['id'] =   count(\DB::table('genres'));	
         // $this->attributes['name'] = $value;
         // $this->attributes['slug'] = str_slug($value);
-    	$genre = new Genre;
-    	$genre->id 	=  count(\DB::table('genres')) ;
-    	$genre->name = 'alfan';
-    	$genre->slug = $value;
-    	$genre->save();
+    // 	$category = new Category;
+    // 	$category->id 	=  count(\DB::table('category')) ;
+    // 	$category->name = 'alfan';
+    // 	$category->slug = $value;
+    // 	$category->save();
+    // NOT WORKED
     }
 
 }

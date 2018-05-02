@@ -321,9 +321,9 @@ class ComposerStaticInit19fde438174b58228cb8016883dfd104
     public static $classMap = array (
         'App\\Admin' => __DIR__ . '/../..' . '/app/Admin.php',
         'App\\Book' => __DIR__ . '/../..' . '/app/Book.php',
+        'App\\Category' => __DIR__ . '/../..' . '/app/Category.php',
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
-        'App\\Genre' => __DIR__ . '/../..' . '/app/Genre.php',
         'App\\Http\\Controllers\\AdminController' => __DIR__ . '/../..' . '/app/Http/Controllers/AdminController.php',
         'App\\Http\\Controllers\\Admin\\ForgotPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/ForgotPasswordController.php',
         'App\\Http\\Controllers\\Admin\\LoginController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/LoginController.php',
@@ -334,8 +334,8 @@ class ComposerStaticInit19fde438174b58228cb8016883dfd104
         'App\\Http\\Controllers\\Auth\\RegisterController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/RegisterController.php',
         'App\\Http\\Controllers\\Auth\\ResetPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ResetPasswordController.php',
         'App\\Http\\Controllers\\BooksController' => __DIR__ . '/../..' . '/app/Http/Controllers/BooksController.php',
+        'App\\Http\\Controllers\\CategoryController' => __DIR__ . '/../..' . '/app/Http/Controllers/CategoryController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
-        'App\\Http\\Controllers\\GenreController' => __DIR__ . '/../..' . '/app/Http/Controllers/GenreController.php',
         'App\\Http\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/HomeController.php',
         'App\\Http\\Controllers\\TransaksiController' => __DIR__ . '/../..' . '/app/Http/Controllers/TransaksiController.php',
         'App\\Http\\Controllers\\lend' => __DIR__ . '/../..' . '/app/Http/Controllers/lend.php',
@@ -352,6 +352,7 @@ class ComposerStaticInit19fde438174b58228cb8016883dfd104
         'App\\Providers\\BroadcastServiceProvider' => __DIR__ . '/../..' . '/app/Providers/BroadcastServiceProvider.php',
         'App\\Providers\\EventServiceProvider' => __DIR__ . '/../..' . '/app/Providers/EventServiceProvider.php',
         'App\\Providers\\RouteServiceProvider' => __DIR__ . '/../..' . '/app/Providers/RouteServiceProvider.php',
+        'App\\Tag' => __DIR__ . '/../..' . '/app/Tag.php',
         'App\\Transaksi' => __DIR__ . '/../..' . '/app/Transaksi.php',
         'App\\User' => __DIR__ . '/../..' . '/app/User.php',
         'Carbon\\Carbon' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/Carbon.php',
@@ -3626,6 +3627,8 @@ class ComposerStaticInit19fde438174b58228cb8016883dfd104
         'phpDocumentor\\Reflection\\Types\\String_' => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src/Types/String_.php',
         'phpDocumentor\\Reflection\\Types\\This' => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src/Types/This.php',
         'phpDocumentor\\Reflection\\Types\\Void_' => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src/Types/Void_.php',
+        'seedcategory' => __DIR__ . '/../..' . '/database/seeds/seedcategory.php',
+        'userseed' => __DIR__ . '/../..' . '/database/seeds/userseed.php',
     );
 
     public static function getInitializer(ClassLoader $loader)

@@ -16,15 +16,6 @@
                                             Book image: <br>
                                             <div style="border:1px solid black;height:200px;width:140px"></div>
                                             <input type="file" name="pic" id="pic"> <br><br>
-                                            <div class="form-group has-feedback{{ $errors->has('title') ? 'has-error' : '' }}">
-                                                    <label for="">Tag</label>
-                                                    <input type="text" class="form-control" name="title">
-                                                        {{-- @if($errors->has('title'))
-                                                            <span style="color:red" class="help-block">
-                                                            <p>{{ $errors->first('title') }}</p>
-                                                            </span>
-                                                        @endif --}}
-                                            </div> 
                                             <div class="form-group">
                                                 <label for="genre">Category :</label>
                                                 <select name="categories_id" id="" class="form-control" style="width:auto;overflow:hidden" >
@@ -33,8 +24,17 @@
                                                     @endforeach
                                                 </select>
                                             </div>
+                                            <div class="form-group has-feedback{{ $errors->has('title') ? 'has-error' : '' }}">
+                                                    <label for="">Tag</label>
+                                                    <input type="text" class="form-control" name="title">
+                                                        {{-- @if($errors->has('title'))
+                                                            <span style="color:red" class="help-block">
+                                                            <p>{{ $errors->first('title') }}</p>
+                                                            </span>
+                                                        @endif --}}
+                                            </div>
                                     </div>
-                                    <div class="col-6">
+                                    <div class="col-8">
                                     <div class="form-group has-feedback{{ $errors->has('title') ? 'has-error' : '' }}">
                                     <label for="">Title</label>
                                     <input type="text" class="form-control" name="title">
@@ -44,9 +44,9 @@
                                             </span>
                                         @endif --}}
                                     </div>
-                                    <div class="form-group has-feedback{{ $errors->has('title') ? 'has-error' : '' }}">
+                                    <div class="form-group has-feedback{{ $errors->has('author') ? 'has-error' : '' }}">
                                         <label for="">Author</label>
-                                        <input type="text" class="form-control" name="title">
+                                        <input type="text" class="form-control" name="author">
                                             {{-- @if($errors->has('title'))
                                                 <span style="color:red" class="help-block">
                                                 <p>{{ $errors->first('title') }}</p>
@@ -64,18 +64,28 @@
                                         </select>
                                     </div>
                          --}}       
-                                    <div class="form-group  has-feedback{{ $errors->has('content') ? 'has-error' : '' }}">
+                                    <div class="form-group  has-feedback{{ $errors->has('publisher') ? 'has-error' : '' }}">
+                                        <label for="">Publisher</label>
+                                        <input type="text" class="form-control" name="publisher">
+                                            {{-- @if($errors->has('title'))
+                                                <span style="color:red" class="help-block">
+                                                <p>{{ $errors->first('title') }}</p>    
+                                                </span>
+                                            @endif --}}
+                                    </div>
+                                    <div class="form-group  has-feedback{{ $errors->has('description') ? 'has-error' : '' }}">
                                         <label for="Content">Description</label>
-                                        <textarea name="content" rows="10" class="form-control"></textarea>
+                                        <textarea name="description" rows="10" class="form-control"></textarea>
                                         {{-- @if($errors->has('content'))
                                             <span style="color:red" class="help-block">
                                                 <p>{{ $errors->first('content') }}</p>
                                             </span>
                                         @endif --}}
                                     </div>
+                                    
                                     <div class="form-group  has-feedback{{ $errors->has('content') ? 'has-error' : '' }}">
                                     <label for="Content">Review</label>
-                                    <textarea name="content" rows="5" class="form-control"></textarea>
+                                    <textarea name="review" rows="5" class="form-control"></textarea>
                                     {{-- @if($errors->has('content'))
                                         <span style="color:red" class="help-block">
                                             <p>{{ $errors->first('content') }}</p>

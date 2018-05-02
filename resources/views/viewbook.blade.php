@@ -55,7 +55,7 @@
         </table>
         </div>
       </div>
-              <h3 class="card-title">Deskripsi</h3>
+              <h3 class="card-title">Description</h3>
               <p class="card-text">{{$books->description}}
 </p>
               <span class="text-warning">&#9733; &#9733; &#9733; &#9733; &#9734;</span>

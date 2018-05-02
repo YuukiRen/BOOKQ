@@ -13,7 +13,7 @@ class BooksController extends Controller
     public function show(){
     	// $books=Book::all();
         //membuat paginasi
-        $books=\DB::table('books')->paginate(4);
+        $books=\DB::table('books')->paginate(8);
         // var_dump($books);
     	return view('search', compact('books'));
         //ganti search ama halaman search/ yang nampilin semua buku

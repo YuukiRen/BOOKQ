@@ -2,40 +2,45 @@
 
 namespace App\Http\Controllers;
 use App\Book;
+use App\Category;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
 class BooksController extends Controller
 {
     public function __construct(){
-    // 	$this->middleware('auth');
+    	$this->middleware('auth');
     }
     public function show(){
     	// $books=Book::all();
         //membuat paginasi
-        $books=\DB::table('books')->paginate(4);
-
+        $books=\DB::table('books')->paginate(8);
+        // var_dump($books);
     	return view('search', compact('books'));
         //ganti search ama halaman search/ yang nampilin semua buku
     }
 
 
     //controller untuk ngeliat satu buku
-    public function show_detail(Request $request, $isbn){
+    public function show_detail(Request $request, $book_id){
 
         //query cari buku
-        $books=Book::where('isbn', $isbn)->first();
+        $books=Book::where('book_id', $book_id)->first();
 
         //ke detailed view
         return view('viewbook', compact('books'));
     }
-
+	public function lendBook(Request $request){
+		$category = Category::all();
+		return view('lend',compact('category'));
+		dd($category);
+	}
     public function addBook(Request $request){
     	
         // dd($request);
         $this->validate($request,[
     		'title'=>'required',
-    		'isbn'=>'required',
+    		'book_id'=>'required',
     		'author'=>'required',
     		'description'=>'required',
     		'synopsis'=>'required',
@@ -44,7 +49,7 @@ class BooksController extends Controller
     	]);
     	$books = new Book;
     	$books->title = $request->input('title');
-    	$books->isbn = $request->input('isbn');
+    	$books->book_id = $request->input('book_id');
     	$books->author = $request->input('author');
     	$books->synopsis = $request->input('synopsis');
     	$books->year = $request->input('year');
@@ -54,16 +59,17 @@ class BooksController extends Controller
     	return redirect('/lend')->with('info','Book Saved Successfully!');
     }
 
+   
 
-    public function update($isbn){
-        $books = Book::find($isbn);
+    public function update($book_id){
+        $books = Book::find($book_id);
         return view('update', ['books'=>$books]);
     }
 
-    public function edit(Request $request, $isbn){
+    public function edit(Request $request, $book_id){
     	$this->validate($request,[
     		'title'=>'required',
-    		'isbn'=>'required',
+    		'book_id'=>'required',
     		'author'=>'required',
     		'description'=>'required',
     		'synopsis'=>'required',
@@ -78,7 +84,7 @@ class BooksController extends Controller
     		'year'=>$request->input('year'),
     		'publisher'=>$request->input('publisher')
     	);
-        Book::where('isbn',$isbn)->update($data);
+        Book::where('book_id',$book_id)->update($data);
         return redirect('/home')->with('info','Books Updated Successfully!');
     }
 

@@ -30,6 +30,9 @@ Route::get('/register', function () {
 Route::get('/lend',function(){
 	return view('lend');
 });
+Route::get('/lend','BooksController@lendBook')->name('lendBook');
+Route::post('/lend','BooksController@addBook');
+
 
 Route::get('/search','BooksController@show');
 
@@ -45,6 +48,11 @@ Route::get('/viewbook/{isbn}', 'BooksController@show_detail');
 Route::post('/coba',function(){
 	return view('coba');
 });
+
+// For testing newfeature
+// Route::post('/beta', );
+
+
 /*
 Route::get('/borrow',function(){
 	return view('borrow');

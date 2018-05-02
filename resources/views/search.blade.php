@@ -67,32 +67,50 @@
 <br>
         <div class="row">
         @foreach($books->all() as $book)
-        
         <div class="col-lg-3 col-md-4 col-sm-6 portfolio-item">
-          <div class="card h-100">
-            <a href="#"><img class="card-img-top" src="images/{{$book->cover}}" alt=""></a>
+          <div class="card h-100" style="border:1px solid black">
+            <a href="viewbook/{{$book->book_id}}"><img height=350px class="card-img-top" src="images/{{$book->cover}}" alt=""></a>
+            <center> <font size=1><u>Click the image to see the details</u></font></center>
             <div class="card-body">
-              <h5 class="card-title">
-                <a href="viewbook/{{$book->isbn}}" class="text-dark">{{$book->title}}</h5></a>
-              <p class="card-text">
-
-                {{str_limit( $book->description, $limit = 300, $end = '
-                ...
-                ')}}
-               <!-- </p> -->
-         <a href="#" class="btn btn-success"  >Borrow This Book</a>
+              <div style="positon:relative;bottom:0px">
+              <font size=3 class="card-title"> <b> {{$book->title}} </b></font></a> <br> 
+              <table style="font-size:small">
+                  <tr>
+                      <td valign="top">Category</td>
+                      <td valign="top">&nbsp;:&nbsp;</td>
+                      <td>{{$book->category}}</td>
+                    </tr>    
+                <tr>
+                  <td valign="top">Author</td>
+                  <td valign="top">&nbsp;:&nbsp;</td>
+                  <td>{{$book->author}}</td>
+                </tr>
+                <tr>
+                    <td valign="top">Publisher</td>
+                    <td valign="top">&nbsp;:&nbsp;</td>
+                    <td>{{$book->publisher}}</td>
+                  </tr>
+                  <tr>
+                      <td valign="top">Year</td>
+                      <td valign="top">&nbsp;:&nbsp;</td>
+                      <td>{{$book->year}}</td>
+                    </tr>
+              </table>
+        </div>
             </div>
           </div>
         </div>
         @endforeach  
       
     </div>
-    {{$books->links()}}
+    <div class="text-justify-center">
+        {{$books->links()}}  
+    </div> 
     <!-- /.container -->
 
 
     <!-- Bootstrap core JavaScript -->
-    <script src="../vendor/jquery_search/jquery.min.js"></script>
+    <script src="../vendor/jquery_search/jquery.  js"></script>
     <script src="../vendor/bootstrap_search/js/bootstrap.bundle.min.js"></script>
 
   </body>

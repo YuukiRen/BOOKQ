@@ -42,7 +42,6 @@
       <br>
       <hr style="border-color:black;margin:7px 0px"/>
     </div>
-    //Sementara, cuma buat routing
     <!-- Footer -->
     <!-- <footer>
       <div class="container">

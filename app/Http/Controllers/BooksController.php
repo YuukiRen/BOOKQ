@@ -21,10 +21,10 @@ class BooksController extends Controller
 
 
     //controller untuk ngeliat satu buku
-    public function show_detail(Request $request, $isbn){
+    public function show_detail(Request $request, $book_id){
 
         //query cari buku
-        $books=Book::where('isbn', $isbn)->first();
+        $books=Book::where('book_id', $book_id)->first();
 
         //ke detailed view
         return view('viewbook', compact('books'));
@@ -35,7 +35,7 @@ class BooksController extends Controller
         // dd($request);
         $this->validate($request,[
     		'title'=>'required',
-    		'isbn'=>'required',
+    		'book_id'=>'required',
     		'author'=>'required',
     		'description'=>'required',
     		'synopsis'=>'required',
@@ -44,7 +44,7 @@ class BooksController extends Controller
     	]);
     	$books = new Book;
     	$books->title = $request->input('title');
-    	$books->isbn = $request->input('isbn');
+    	$books->book_id = $request->input('book_id');
     	$books->author = $request->input('author');
     	$books->synopsis = $request->input('synopsis');
     	$books->year = $request->input('year');
@@ -54,16 +54,17 @@ class BooksController extends Controller
     	return redirect('/lend')->with('info','Book Saved Successfully!');
     }
 
+   
 
-    public function update($isbn){
-        $books = Book::find($isbn);
+    public function update($book_id){
+        $books = Book::find($book_id);
         return view('update', ['books'=>$books]);
     }
 
-    public function edit(Request $request, $isbn){
+    public function edit(Request $request, $book_id){
     	$this->validate($request,[
     		'title'=>'required',
-    		'isbn'=>'required',
+    		'book_id'=>'required',
     		'author'=>'required',
     		'description'=>'required',
     		'synopsis'=>'required',
@@ -78,7 +79,7 @@ class BooksController extends Controller
     		'year'=>$request->input('year'),
     		'publisher'=>$request->input('publisher')
     	);
-        Book::where('isbn',$isbn)->update($data);
+        Book::where('book_id',$book_id)->update($data);
         return redirect('/home')->with('info','Books Updated Successfully!');
     }
 

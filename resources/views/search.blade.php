@@ -69,7 +69,7 @@
         @foreach($books->all() as $book)
         <div class="col-lg-3 col-md-4 col-sm-6 portfolio-item">
           <div class="card h-100" style="border:1px solid black">
-            <a href="viewbook/{{$book->isbn}}"><img height=350px class="card-img-top" src="images/{{$book->cover}}" alt=""></a>
+            <a href="viewbook/{{$book->book_id}}"><img height=350px class="card-img-top" src="images/{{$book->cover}}" alt=""></a>
             <center> <font size=1><u>Click the image to see the details</u></font></center>
             <div class="card-body">
               <div style="positon:relative;bottom:0px">
@@ -78,7 +78,7 @@
                   <tr>
                       <td valign="top">Category</td>
                       <td valign="top">&nbsp;:&nbsp;</td>
-                      <td>{{$book->categorie}}</td>
+                      <t>{{$book->categorie}}</t d>
                     </tr>    
                 <tr>
                   <td valign="top">Author</td>

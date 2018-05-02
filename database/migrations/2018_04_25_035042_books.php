@@ -23,6 +23,7 @@ class Books extends Migration
             $table->integer('year');
             $table->string('publisher');
             $table->longText('description');
+            $table->string('categorie');
             $table->string('cover')->default('no-cover.jpg');//uncomment kalo mau ada gambar
             $table->timestamps();
         });

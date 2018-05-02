@@ -16,9 +16,9 @@ class SkemaPinjam extends Migration
             Schema::create('transaksi', function (Blueprint $table) {
                     $table->string('id_transaksi')->primary();
                     $table->string('user_lender');
-                    $table->string('user_booker');
+                    $table->string('user_booker')->nullable();
                     $table->string('id_buku');
-                    $table->integer('status');
+                    $table->integer('status')->nullable();
                     $table->date('tanggal_pinjam');
                     $table->date('tanggal_kembali');
                 });

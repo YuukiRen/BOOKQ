@@ -8,13 +8,13 @@ use App\Http\Controllers\Controller;
 class BooksController extends Controller
 {
     public function __construct(){
-    // 	$this->middleware('auth');
+    	$this->middleware('auth');
     }
     public function show(){
     	// $books=Book::all();
         //membuat paginasi
         $books=\DB::table('books')->paginate(4);
-
+        // var_dump($books);
     	return view('search', compact('books'));
         //ganti search ama halaman search/ yang nampilin semua buku
     }

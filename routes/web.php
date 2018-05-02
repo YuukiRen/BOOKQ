@@ -30,7 +30,7 @@ Route::get('/register', function () {
 Route::get('/lend',function(){
 	return view('lend');
 });
-
+Route::get('/lend','BooksController@lendBook')->name('lendBook');
 Route::post('/lend','BooksController@addBook');
 
 

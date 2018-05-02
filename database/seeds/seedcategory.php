@@ -13,7 +13,7 @@ class seedcategory extends Seeder
     public function run()
     {
         Category::truncate();
-        $gen = ['bisnis', 'sejarah', 'edukasi', 'lifestyle', 'novel', 'komik', 'health', 'teknologi', 'religi','entertainment'];
+        $gen = ['Business', 'Historical', 'Education', 'Lifestyle', 'Novel', 'Comic', 'Health', 'Technology', 'Religion','Entertainment'];
     	foreach ($gen as $genr) {
     		// Category::setNameAttribute('aaaa');
     		Category::insertGetId(

@@ -27,10 +27,10 @@
                                             </div> 
                                             <div class="form-group">
                                                 <label for="genre">Category :</label>
-                                                <select name="categories_id" id="" class="form-control" style="width: 250px;height: 30px" >
-                                                    {{-- @foreach ($categories as $categories)
+                                                <select name="categories_id" id="" class="form-control" style="width:auto;overflow:hidden" >
+                                                    @foreach ($category as $categories)
                                                     <option value="{{ $categories->id }}"> {{ $categories->name }}</option>
-                                                    @endforeach --}}
+                                                    @endforeach
                                                 </select>
                                             </div>
                                     </div>

@@ -10,12 +10,11 @@ class Book extends Model
 		'book_id',
 		'author',
 		'title',
-		'synopsis',
+		'review',
 		'year',
 		'publisher',
-		'categorie',
-		'cover',
-		'categorie',		
+		'category',
+		'image',		
 		'description'
 	];
 

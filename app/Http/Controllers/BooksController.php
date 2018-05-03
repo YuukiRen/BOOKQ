@@ -78,7 +78,7 @@ class BooksController extends Controller
     		'book_id'=>'required',
     		'author'=>'required',
     		'description'=>'required',
-    		'synopsis'=>'required',
+    		'review'=>'required',
     		'year'=>'required',
     		'publisher'=>'required'
     	]);
@@ -86,7 +86,7 @@ class BooksController extends Controller
 			'title'=>$request->input('title'),
     		'author'=>$request->input('author'),
     		'description'=>$request->input('description'),
-    		'synopsis'=>$request->input('synopsis'),
+    		'review'=>$request->input('review'),
     		'year'=>$request->input('year'),
     		'publisher'=>$request->input('publisher')
     	);

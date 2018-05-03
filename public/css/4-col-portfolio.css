@@ -3,7 +3,7 @@
  * Copyright 2013-2017 Start Bootstrap
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-4-col-portfolio/blob/master/LICENSE)
  */
-
+ @import url('https://fonts.googleapis.com/css?family=Montserrat');
 body {
   padding-top: 54px;
 }
@@ -11,11 +11,22 @@ body {
 @media (min-width: 992px) {
   body {
     padding-top: 56px;
+    font-family : Montserrat,  sans-serif;
   }
 }
-
+.cover{
+    max-height:250px;
+    min-height:250px;
+    max-width: 170px;
+}
+.card{
+    width: 105%;
+}
+.card-body{
+    padding:10px;
+}
 .portfolio-item {
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
 
 .pagination {
@@ -37,7 +48,7 @@ body {
 .dropmenu li a {
     color: #fff;
     display: block;
-    font: 12px arial, verdana, sans-serif;
+    font: 12px;
     font-weight: bold;
     padding: 9px 20px;
     text-decoration: none;

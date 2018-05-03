@@ -34,6 +34,7 @@
 	box-sizing: border-box;
 }
 
+
 body, html {
 	height: 100%;
 	font-family: Poppins-Regular, sans-serif;
@@ -510,4 +511,14 @@ hr {
   border-style: inset;
   border-width: 1px;
   background-color: black;
+}
+
+.bold{
+  font-weight: bold;
+}
+
+.center {
+  margin: 0 auto;
+  width: 100%;
+  text-align: center;
 }

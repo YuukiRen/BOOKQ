@@ -12,8 +12,8 @@
                         <form class="form-horizontal" method="POST" action="{{ url('/save') }}" >
                                 {{ csrf_field() }}
                                             <div class="form-group">
-                                                 <!-- <label for="">   Book image : </label>
-                                                    <input type="file" name="image" id="pic"> -->
+                                                 <label for="">   Book image : </label>
+                                                    <input type="file" name="image" id="pic">
                                                     <div class="form-group has-feedback{{ $errors->has('title') ? 'has-error' : '' }}">
                                                             <label for="">Title</label>
                                                             <input type="text" class="form-control" name="title">

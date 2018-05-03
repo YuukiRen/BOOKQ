@@ -21,10 +21,10 @@ class Books extends Migration
             $table->string('review');
             $table->integer('year');
             $table->string('publisher');
-            $table->string('description');
+            $table->longText('description');
             $table->string('category');
             $table->string('tag');
-            // $table->string('image')->default('no-cover.jpg');//uncomment kalo mau ada gambar
+            $table->string('image')->default('no-cover.jpg');//uncomment kalo mau ada gambar
             $table->timestamps();
         });
     }

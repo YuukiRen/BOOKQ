@@ -9,7 +9,7 @@ use App\Http\Controllers\Controller;
 class BooksController extends Controller
 {
     public function __construct(){
-    	$this->middleware('auth');
+    	// $this->middleware('auth');
     }
     public function show(){
     	// $books=Book::all();
@@ -33,30 +33,34 @@ class BooksController extends Controller
 	public function lendBook(Request $request){
 		$category = Category::all();
 		return view('lend',compact('category'));
-		dd($category);
+		// dd($category);
 	}
     public function addBook(Request $request){
     	
-        // dd($request);
+        
+			
         $this->validate($request,[
     		'title'=>'required',
-    		'book_id'=>'required',
     		'author'=>'required',
-    		'description'=>'required',
-    		'synopsis'=>'required',
     		'year'=>'required',
-    		'publisher'=>'required'
-    	]);
+    		'publisher'=>'required',
+    		'description'=>'required',
+    		'review'=>'required',
+    		'tag'=>'required',
+    		'category'=>'required'
+		]);
+		// dd($request);
     	$books = new Book;
     	$books->title = $request->input('title');
-    	$books->book_id = $request->input('book_id');
-    	$books->author = $request->input('author');
-    	$books->synopsis = $request->input('synopsis');
+		$books->author = $request->input('author');
     	$books->year = $request->input('year');
     	$books->publisher = $request->input('publisher');
-    	$books->description = $request->input('description');
-    	$books->save();
-    	return redirect('/lend')->with('info','Book Saved Successfully!');
+		$books->description = $request->input('description');
+		$books->review = $request->input('review');
+		$books->tag = $request->input('tag');
+    	$books->category = $request->input('category');
+		$books->save();		
+    	return redirect('/home')->with('info','Book Saved Successfully!');
     }
 
    

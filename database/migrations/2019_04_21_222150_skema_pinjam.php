@@ -22,11 +22,11 @@ class SkemaPinjam extends Migration
                 $table->integer('status')->nullable();
                 $table->date('tanggal_pinjam');
                 $table->date('tanggal_kembali');
-                $table->foreign('user_lender')->references('id')->on('users');
+                // $table->foreign('user_lender')->references('id')->on('users');
                 
-                $table->foreign('user_booker')->references('id')->on('users');
+                // $table->foreign('user_booker')->references('id')->on('users');
                 
-                $table->foreign('book_id')->references('book_id')->on('books');
+                // $table->foreign('book_id')->references('book_id')->on('books');
         });
 
     }

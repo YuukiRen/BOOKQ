@@ -9,11 +9,11 @@
                             <font size=3>Share your Knowledge!</font>
                             </h1>
                     <div class="panel-body">
-                        <form class="" action="" method="post">
+                        <form class="form-horizontal" method="POST" action="{{ url('/save') }}" >
                                 {{ csrf_field() }}
                                             <div class="form-group">
-                                                 <label for="">   Book image : </label>
-                                                    <input type="file" name="pic" id="pic">
+                                                 <!-- <label for="">   Book image : </label>
+                                                    <input type="file" name="image" id="pic"> -->
                                                     <div class="form-group has-feedback{{ $errors->has('title') ? 'has-error' : '' }}">
                                                             <label for="">Title</label>
                                                             <input type="text" class="form-control" name="title">
@@ -22,16 +22,18 @@
                                                                     <p>{{ $errors->first('title') }}</p>
                                                                     </span>
                                                                 @endif --}}
-                                                        </div>
+                                                    </div>
                                                 <div class="row">
                                                     <div class="col-4">
                                                         <div class="form-group">
+                                                            <!-- <label for="">Category</label>
+                                                            <input type="text" class="form-control" name="category"> -->
                                                             <label for="genre">Category :</label>
                                                             <select name="category" id="" class="form-control" style="margin:0 auto; width:100%" >
                                                                 @foreach ($category as $categories)
                                                                 <option value="{{ $categories->id }}"> {{ $categories->name }}</option>
                                                                 @endforeach
-                                                            </select>
+                                                            </select> 
                                                         </div>
                                                     </div>
                                                     <div class="col-4">

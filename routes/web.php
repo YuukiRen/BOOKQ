@@ -27,11 +27,12 @@ Route::get('/register', function () {
     return view('auth.register');
 });
 
-Route::get('/lend',function(){
-	return view('lend');
-});
-Route::get('/lend','BooksController@lendBook')->name('lendBook');
-Route::post('/lend','BooksController@addBook');
+// Route::get('/lend',function(){
+// 	return view('lend');
+// });
+
+Route::get('/lend','BooksController@lendBook');//siapa yg bikin ini?
+Route::post('/save','BooksController@addBook');
 
 
 Route::get('/search','BooksController@show');

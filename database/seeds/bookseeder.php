@@ -17,24 +17,24 @@ class bookseeder extends Seeder
         // inserting data
         Book::insert([
         	[
-        		'id' => '1',
-        		'book_id' => '9786020501611',
+        		'book_id' => '1',
         		'author'=> 'Imelda Saputra',
         		'title'=> '99 hari melesatkan bisnis',
-        		'synopsis'=> 'loremipsum',
+				'tag' => 'haha',
+				'review'=> 'loremipsum',
         		'year'=> '2018',
                 'category' => 'bisnis',
         		'publisher'=> 'Grasindo (Gramedia Widia Sarana Indonesia)',
         		'description'=> '“If opportunity doesn’t knock, build a door.” Ya, ketika kesempatan tidak datang mengetuk, Anda perlu membangun pintu untuk menuju keberhasilan yang Anda idamkan. Membangun usaha tentu tidak semudah membalikkan telapak tangan.
 Butuh persiapan panjang untuk itu. Namun jelas yang diperlukan setiap orang bukan saja modal yang besar, tapi mindset yang benar pula. Buku 99 Hari Melesatkan Bisnis, hadir untuk membantu Anda bagaimana mengelola cara pandang, sikap, perilaku, soft skill Anda sebelum membangun usaha. Baca, renungkan, terapkan. Dan Anda pun akan semakin diperlengkapi untuk menjadi pengusaha yang kompeten.',
-        	   'cover' => 'buku1.png'
+        	//    'cover' => 'buku1.png'
             ],
         	[
-        		'id' => '2',
-        		'book_id' => '9786028811118',
+        		'book_id' => '2',
         		'author'=> 'Andrea Hirata',
         		'title'=> 'Sang Pemimpi',
-        		'synopsis'=> 'loremipsum',
+				'tag' => 'haha',
+				'review'=> 'loremipsum',
         		'year'=> '2006',
                 'category' => 'novel',
         		'publisher'=> 'Yogyakarta: Bentang Pustaka',
@@ -45,14 +45,14 @@ Tampak komikal pada awalnya, selayaknya kenakalan remaja biasa, tapi kemudian ta
 “Kita tak kan pernah mendahului nasib!” teriak Arai.
 “Kita akan sekolah ke Prancis, menjelajahi Eropa sampai ke Afrika! Apa pun yang terjadi!”
 ',
-               'cover' => 'buku2.jpg'
+            //    'cover' => 'buku2.jpg'
         	],
         	[
-        		'id' => '3',
-        		'book_id' => '9789791684286',
+        		'book_id' => '3',
         		'author'=> 'Antonio ramsci',
         		'title'=> 'Sejarah dan Budaya',
-        		'synopsis'=> 'Lorem ipsum',
+				'tag' => 'haha',
+				'review'=> 'Lorem ipsum',
         		'year'=> '2017',
         		'publisher'=> 'Gramedia',
                 'category' => 'sejarah',
@@ -61,15 +61,15 @@ Tampak komikal pada awalnya, selayaknya kenakalan remaja biasa, tapi kemudian ta
 Buku ini diterjemahkan dari Gramsci\'s Prison Notebooks, sebuah catatan-catatan pengalaman politik dan intelektual yang membentuk, mendukung dan melatarbelakangi gagasan dan pemikiran Gramsci ketika berada di penjara, terutama pemikiran-pemikirannya tentang hegemoni.
 Banyak pengamat menganggap pemikiran-pemikiran Gramsci tidak gampang dicerna. Itu karena tulisan-tulisannya banyak menggunakan kata-kata yang tidak langsung menohok permasalahan, sehingga penuh dengan ungkapan-ungkapan kiasan. Semua ini ia lakukan untuk dapat meloloskan tulisan-tulisannya dari sensor penjara.'
  ,
-               'cover' => 'buku3.jpg'
+            //    'cover' => 'buku3.jpg'
  
         	],
         	[
-        		'id' => '4',
-        		'book_id' => '9786020822341',
+        		'book_id' => '4',
         		'author'=> 'Tere Liye',
         		'title'=> 'Tentang Kamu',
-        		'synopsis'=> 'Lorem ipsum',
+				'tag' => 'haha',
+				'review'=> 'Lorem ipsum',
         		'year'=> '2016',
         		'publisher'=> 'Republika',
                 'category' => 'novel',
@@ -81,16 +81,16 @@ Atas dasar pekerjaan, Zaman Zulkarnaen harus menelusuri hidup seorang kliennya, 
 
 Tentang Kamu adalah novel terbaru Tere Liye. Sebuah karya yang tak hanya akan membawa pembacanya menyelami sebuah petualangan yang seru dan sarat emosi, tapi juga memberikan nilai positif sehingga membuat hidup serasa lebih patut disyukuri.'
         	   ,
-               'cover' => 'buku4.jpg'
+            //    'cover' => 'buku4.jpg'
             ],
 
 
         	[
-        		'id' => '5',
-        		'book_id' => '9789792724370',
+        		'book_id' => '5',
         		'author'=> 'Imam Heryanto,Budi Raharjo.Arif Haryono',
         		'title'=> 'Mudah belajar JAVA',
-        		'synopsis'=> 'Lorem ipsum',
+				'tag' => 'haha',
+				'review'=> 'Lorem ipsum',
         		'year'=> '2012',
         		'publisher'=> 'INFORMATIKA',
                 'category' => 'edukasi',
@@ -100,42 +100,42 @@ Buku Mudah Belajar Java (Revisi Kedua) ini akan membahas semua teknik pemrograma
 Buku ini cocok untuk siapa saja yang berminat mempelajari dan mengimplementasikan semua konsep pemrograman Java secara mudah dan cepat. Semua materi dalam buku ini disuguhkan dalam “logat” tutorial dan langsung disertai dengan contoh program sehingga akan mudah untuk dipahami. Tujuan akhir dari buku ini adalah mengantarkan, menuntun, dan memandu Anda untuk menjadi seorang programmer Java.
 '
 ,
-               'cover' => 'buku5.jpg'
+            //    'cover' => 'buku5.jpg'
         	],
         	[
-        		'id' => '6',
-        		'book_id' => '9786029176520',
+        		'book_id' => '6',
         		'author'=> 'Dr. Aid Abdullah al-Qorni',
         		'title'=> 'La taghdhab',
-        		'synopsis'=> 'Lorem ipsum',
+				'tag' => 'haha',
+				'review'=> 'Lorem ipsum',
         		'year'=> '2017',
                 'category' => 'religi',
         		'publisher'=> 'Gema Insani',
         		'description'=> 'Rasulullah saw pernah memberikan wasiat kepada kita, "La taghdhab jangan marah)!" Sebuah wasiat yang singkat, namun memuat kebaikan yang begitu padat. Karena, tak mudah mengatasi amarah, bahkan kebanyakan orang malah tenggelam di dalamnya. Jika Anda bisa mengatasi amarah, maka itu sebuah pencapaian besar, akhlak nabawi nan mulia, dan manhaj kehidupan nan lurus. Karena amarah melahirkan setumpuk bahaya yang tak terkira. Akan tetapi, amarah juga bisa diolah menjadi energi kebaikan, power kesuksesan, bahan baku kebahagiaan, dan beragam manfaat lainnya. Buku ini sebagaimana ditegaskan . penulisnya, merupakan karya berharga yang lahir setelah ditulisnya buku fenomenal La Tahzan. Buku La Tahzan sebagai terapi untuk kesedihan, sementara buku La Taghdhab sebagai terapi untuk mengatasi suhu panas hati. Jangan bersedih agar Anda tidak menentang takdir, dan jangan marah agar Anda tidak menodai kesabaran. Selamat menikmati sajian khas Dr. \'Aidh Al-Qarni untuk membeningkan hati dari pekatnya amarah!
 '
 ,
-               'cover' => 'buku6.jpg'
+            //    'cover' => 'buku6.jpg'
         	],
         	[
-        		'id' => '7',
-        		'book_id' => '9794211974',
+        		'book_id' => '7',
         		'author'=> 'Sarlito W. Sarwono',
         		'title'=> 'Psikologi Remaja',
-        		'synopsis'=> 'Lorem ipsum',
+				'tag' => 'haha',
+				'review'=> 'Lorem ipsum',
         		'year'=> '2017',
                 'category' => 'lifestyle',
         		'publisher'=> 'Gramedia',
         		'description'=> 'Untuk memahami jiwa remaja dan mencari solusi yang tepat bagi permasalahannya, maka penting bagi kita memahami remaja dan perkembangan psikologinya, yaitu konsep diri, intelegensi, emosi, seksual, motif sosial, dan religinya. Buku ini dapat menjadi referensi yang penting bagi mahasiswa, pendidik, konsultan, dan aparat yang berkecimpung dalam permasalahan remaja, serta yang tidak kalah pentingnya adalah orang tua.'
         	,
-               'cover' => 'buku7.jpg'
+            //    'cover' => 'buku7.jpg'
             ],
 			
 			[
-				'id' => '8',
-				'book_id' => '97897936004022',
+				'book_id' => '8',
 				'author'=> 'Habiburrahman El Shirazy',
 				'title'=> 'Ketika Cinta Bertasbih',
-				'synopsis'=> 'Lorem ipsum',
+				'tag' => 'haha',
+				'review'=> 'Lorem ipsum',
 				'year'=> '2017',
                 'category' => 'novel',
 				'publisher'=> 'Gramedia',
@@ -143,7 +143,7 @@ Buku ini cocok untuk siapa saja yang berminat mempelajari dan mengimplementasika
 "Inilah novel yang mencerahkan. Luar biasa! isinya saya rasakan begitu kuat memotivasi pembaca untuk berani hidup mandiri, untuk tidak mudah menyerah, untuk terus maju meraih anugerah Allah." ---Sarwedi Hasibuan, Mahasiswa Program Pascasarjana University of Malaya
 "Dwilogi Ketika Cinta Bertasbih ini tidak sekadar novel romantis, ini juga novel fikih yang ditulis dalam alur cerita yang tak mudah ditebak. Kang Abik melakukan terobosan baru menjelaskan kaidah-kaidah fikih melalui novel. Salut!" ---KH. Mifdhaul Muthahhar, Ketua IKADI & Pengasuh Ponpes Al Hikmah'
 			,
-               'cover' => 'buku8.jpg'
+            //    'cover' => 'buku8.jpg'
             ]        	
         ]);
     }

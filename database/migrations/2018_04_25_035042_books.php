@@ -15,24 +15,23 @@ class Books extends Migration
     public function up()
     {
         Schema::create('books', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('book_id')->unique();
+            $table->increments('book_id');
             $table->string('author');
             $table->string('title');
             $table->string('review');
             $table->integer('year');
             $table->string('publisher');
-            $table->longText('description');
+            $table->string('description');
             $table->string('category');
             $table->string('tag');
-            $table->string('cover')->default('no-cover.jpg');//uncomment kalo mau ada gambar
+            // $table->string('image')->default('no-cover.jpg');//uncomment kalo mau ada gambar
             $table->timestamps();
         });
     }
 
     /**
      * Reverse the migrations.
-     *
+     **  *
      * @return void
      */
     public function down()

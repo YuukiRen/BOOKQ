@@ -9,7 +9,7 @@
                             <font size=3>Share your Knowledge!</font>
                             </h1>
                     <div class="panel-body">
-                        <form class="form-horizontal" method="POST" action="{{ url('/save') }}" >
+                        <form class="form-horizontal" method="POST"  action="{{ url('/save') }}" enctype="multipart/form-data" >
                                 {{ csrf_field() }}
                                             <div class="form-group">
                                                  <label for="">   Book image : </label>

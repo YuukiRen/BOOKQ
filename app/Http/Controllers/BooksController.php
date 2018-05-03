@@ -40,6 +40,7 @@ class BooksController extends Controller
         
 			
         $this->validate($request,[
+			'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
     		'title'=>'required',
     		'author'=>'required',
     		'year'=>'required',
@@ -50,7 +51,8 @@ class BooksController extends Controller
     		'category'=>'required'
 		]);
 		// dd($request);
-    	$books = new Book;
+		$books = new Book;
+		$file = Input::file('file');
     	$books->title = $request->input('title');
 		$books->author = $request->input('author');
     	$books->year = $request->input('year');

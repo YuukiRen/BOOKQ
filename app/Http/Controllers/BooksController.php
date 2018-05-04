@@ -26,7 +26,7 @@ class BooksController extends Controller
 
         //query cari buku
         $books=Book::where('book_id', $book_id)->first();
-
+		//dd($books);
         //ke detailed view
         return view('viewbook', compact('books'));
     }
@@ -36,9 +36,7 @@ class BooksController extends Controller
 		// dd($category);
 	}
     public function addBook(Request $request){
-    	
-        
-			
+
         $this->validate($request,[
 			'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
     		'title'=>'required',
@@ -78,7 +76,7 @@ class BooksController extends Controller
     		'book_id'=>'required',
     		'author'=>'required',
     		'description'=>'required',
-    		'synopsis'=>'required',
+    		'review'=>'required',
     		'year'=>'required',
     		'publisher'=>'required'
     	]);
@@ -86,7 +84,7 @@ class BooksController extends Controller
 			'title'=>$request->input('title'),
     		'author'=>$request->input('author'),
     		'description'=>$request->input('description'),
-    		'synopsis'=>$request->input('synopsis'),
+    		'review'=>$request->input('review'),
     		'year'=>$request->input('year'),
     		'publisher'=>$request->input('publisher')
     	);

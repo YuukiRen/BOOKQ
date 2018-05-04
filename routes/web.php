@@ -27,6 +27,10 @@ Route::get('/register', function () {
     return view('auth.register');
 });
 
+Route::get('/profile', function () {
+    return view('profile');
+});
+
 // Route::get('/lend',function(){
 // 	return view('lend');
 // });

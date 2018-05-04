@@ -14,9 +14,9 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous"> 
 
     <!-- Custom styles for this template -->
-    <link href="css/4-col-portfolio.css" rel="stylesheet">
     <link href="css/agency.css" rel="stylesheet">
 
   </head>
@@ -32,38 +32,51 @@
       <div class="row">
 
      
-        <div class="card col-lg-9"> 
+        <div class="center card col-lg-10"> 
           <div class="row">
         <div class="col-md-6 mt-4">
-          <img class="card-body" width=75% height=100% align=center src="images/{{$books->cover}}" alt="">
+        <img width=75% height=100% align=center src="images/book2.jpg">
         </div>
 
         <div class="card-body mt-4 col-md-6">
           <h3 class="card-title">{{$books->title}}</h3>
           <table class="table1">
-            <tr>
-              <td> Author </td> <td>  :  </td>  <td> {{$books->author}} </td>
-            </tr> 
-            <tr>
-              <td> Penerbit </td><td>  :  </td><td> {{$books->publisher}} </td>
-            </tr> 
-            <tr>
-              <td> Tahun </td><td>  :  </td><td> {{$books->year}} </td></tr>
               <tr>
-              <td> Kategori </td> <td>  :  </td> <td> Lorem Ipsum </td>
-            </tr>
+                  <td> Category </td> <td>&nbsp;:&nbsp;</td> <td> {{$books->category}} </td>
+                </tr>
+            <tr>
+              <td> Author </td> <td>&nbsp;:&nbsp;</td>  <td> {{$books->author}} </td>
+            </tr> 
+            <tr>
+              <td> Publisher </td><td>&nbsp;:&nbsp;</td><td> {{$books->publisher}} </td>
+            </tr> 
+            <tr>
+              <td> Published </td><td>&nbsp;:&nbsp;</td><td> {{$books->year}} </td></tr>
         </table>
         </div>
       </div>
               <h3 class="card-title">Description</h3>
-              <p class="card-text">{{$books->description}}
-</p>
-              <span class="text-warning">&#9733; &#9733; &#9733; &#9733; &#9734;</span>
-              <p>4.0 stars</p>
+              <p class="card-text">{{$books->description}}</p>
+                
+                <h3 class="card-title">Rating</h3>
+                <div class="row">
+                <div class="col-1">
+                <span class="fas fa-star fa-3x center checked text-warning"></span>
+                </div>
+                <div class="col">             
+                <h4 class="center">(NilaiFloating) / 10</h4>
+                </div>                  
+              </div>
               <br>
                <div class="card-footer">
-              <a class="btn btn-primary btn-lg" href="#">Borrow This Book</a>
-              <a class="btn btn-primary btn-lg" href="#">Report This Book</a>
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#borrowmodal">
+                  Borrow this Book?
+                </button>          
+                @include('layouts.partial.borrowmodal')    
+                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#reportbookmodal">
+                  Report this Book
+                </button>          
+                @include('layouts.partial.reportbookmodal')
             </div>
             </div>
           </div>

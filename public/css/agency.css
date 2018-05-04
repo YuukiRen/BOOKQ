@@ -1,14 +1,28 @@
-/* Nyoba Nyusu */
+/* Addition aside from original template */
 .center {
   margin: 0 auto;
   width: 100%;
 }
 
-/* */
+.thick{
+  font-weight: 600;
+}
 
+table{
+  font-size:small;
+  font-weight: 600;
+}
+.h-100{
+  box-shadow: 7px 7px 7px silver;
+} 
+
+/* Font Used */
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+/* Main Template, picked from startbootstrap */
 body {
   overflow-x: hidden;
-  font-family: 'Roboto Slab', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family : Montserrat,  sans-serif;
 }
 
 p {

@@ -25,7 +25,7 @@
 
     <!-- Navigation -->
     @include('layouts.partial.header')
-
+    <br>
      <!-- Page Content -->
     <div class="container">
       
@@ -34,13 +34,13 @@
      
         <div class="center card col-lg-10"> 
           <div class="row">
-        <div class="col-md-6 mt-4">
-        <img width=75% height=100% align=center src="images/book2.jpg">
+        <div class="col-md-4 mt-4">
+        <img align=center src="{{asset($books->image)}}" alt="">
         </div>
 
-        <div class="card-body mt-4 col-md-6">
+        <div class="card-body mt-4 col-md-8">
           <h3 class="card-title">{{$books->title}}</h3>
-          <table class="table1">
+          <table>
               <tr>
                   <td> Category </td> <td>&nbsp;:&nbsp;</td> <td> {{$books->category}} </td>
                 </tr>
@@ -53,20 +53,21 @@
             <tr>
               <td> Published </td><td>&nbsp;:&nbsp;</td><td> {{$books->year}} </td></tr>
         </table>
+             <h4 class="card-title">Rating</h4>
+            <div class="row">
+            <div class="col-1">
+            <span class="fas fa-star fa-2x center checked text-warning"></span>
+            </div>
+            <div class="col">             
+            <h4>&nbsp;(NilaiFloating) / 10</h4>
+            </div>                  
+          </div>
         </div>
       </div>
               <h3 class="card-title">Description</h3>
               <p class="card-text">{{$books->description}}</p>
                 
-                <h3 class="card-title">Rating</h3>
-                <div class="row">
-                <div class="col-1">
-                <span class="fas fa-star fa-3x center checked text-warning"></span>
-                </div>
-                <div class="col">             
-                <h4 class="center">(NilaiFloating) / 10</h4>
-                </div>                  
-              </div>
+                
               <br>
                <div class="card-footer">
                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#borrowmodal">

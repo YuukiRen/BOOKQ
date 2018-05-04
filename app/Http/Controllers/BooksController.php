@@ -26,7 +26,7 @@ class BooksController extends Controller
 
         //query cari buku
         $books=Book::where('book_id', $book_id)->first();
-
+		//dd($books);
         //ke detailed view
         return view('viewbook', compact('books'));
     }
@@ -36,9 +36,7 @@ class BooksController extends Controller
 		// dd($category);
 	}
     public function addBook(Request $request){
-    	
-        
-			
+
         $this->validate($request,[
 			'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
     		'title'=>'required',

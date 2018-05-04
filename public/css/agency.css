@@ -4,12 +4,16 @@
   width: 100%;
 }
 
+.thick{
+  font-weight: 600;
+}
+
 table{
   font-size:small;
   font-weight: 600;
 }
 .h-100{
-  box-shadow: 7px 7px 4px silver;
+  box-shadow: 7px 7px 7px silver;
 } 
 
 /* Font Used */

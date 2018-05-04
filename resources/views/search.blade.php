@@ -38,22 +38,22 @@
     <div class="row">    
         <div class="col-xs-8 col-xs-offset-2">
         <div class="input-group">
-          <div class="dropdown">
-                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-                      Category
-                    </button>
-                    <div class="dropdown-menu" role="menu">
-                      <a href="#Business">Business</a>
-                      <a href="#Novel">Novel</a>
-                      <a href="#Comic">Comic </a>
-                      <a href="#Health">Health </a>
-                      <a href="#Lifestyle">Lifestyle </a>
-                      <a href="#Education">Education </a>
-                      <a href="#Technology">Technology  </a>
-                      <a href="#Religion">Religion  </a>
-                      <a href="#History">History</a>
-                    </div>
-                </div>
+          <div class="dropdown show">
+          <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Category
+          </a>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+              <a class="dropdown-item" href="#Business">Business</a>
+              <a class="dropdown-item" href="#Novel">Novel</a>
+              <a class="dropdown-item" href="#Comic">Comic </a>
+              <a class="dropdown-item" href="#Health">Health </a>
+              <a class="dropdown-item" href="#Lifestyle">Lifestyle </a>
+              <a class="dropdown-item" href="#Education">Education </a>
+              <a class="dropdown-item" href="#Technology">Technology  </a>
+              <a class="dropdown-item" href="#Religion">Religion  </a>
+              <a class="dropdown-item" href="#History">History</a>
+          </div>
+        </div>
                 <input type="hidden" name="search_param" value="all" id="search_param">         
                 <input type="text" class="form-control" name="x" placeholder="Search Book">
                 <span class="input-group-btn">

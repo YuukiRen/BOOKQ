@@ -1,7 +1,7 @@
 @include('layouts.partial.head')
 <body>
     @include('layouts.partial.header')
-    <div class="container-fluid">
+    <div class="container-fluid thick">
         <div class="row">
             <div class="center col-md-8">
                 <div class="panel panel-info" >

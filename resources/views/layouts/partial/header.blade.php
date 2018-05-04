@@ -1,7 +1,7 @@
 <script src="{{ asset('js/app.js') }}"></script>
 <nav id="app" class="navbar navbar-expand-md bg-dark navbar-laravel ">
     <div class="container">
-        <a class="navbar-brand" href="home">
+        <a class="navbar-brand" href="\home">
           <b>  BookQ </b>
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

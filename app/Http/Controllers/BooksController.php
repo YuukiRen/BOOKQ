@@ -5,7 +5,7 @@ use App\Book;
 use App\Category;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-
+use Illuminate\Support\Facades\Storage;
 class BooksController extends Controller
 {
     public function __construct(){
@@ -35,10 +35,17 @@ class BooksController extends Controller
 		return view('lend',compact('category'));
 		// dd($category);
 	}
+	public function dummy(Request $request){
+		// $name=$request->image->getClientOriginalName();
+		$name = $request->image->store('public');
+		
+		dd($request);
+		return $path;
+		//return Storage::putFile('public',$request->file('image'));
+	}
     public function addBook(Request $request){
-
         $this->validate($request,[
-			'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+			'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
     		'title'=>'required',
     		'author'=>'required',
     		'year'=>'required',
@@ -50,7 +57,10 @@ class BooksController extends Controller
 		]);
 		// dd($request);
 		$books = new Book;
-		$books = Input::file('file');
+		
+		$name = $request->image->store('public');
+		$path = Storage::url($name);
+		$books->image = $path;
     	$books->title = $request->input('title');
 		$books->author = $request->input('author');
     	$books->year = $request->input('year');

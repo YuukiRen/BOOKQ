@@ -16,9 +16,12 @@ class CreateComment extends Migration
         Schema::create('comment', function (Blueprint $table) {
             $table->increments('id');
             $table->unsignedInteger('id_book');
-            $table->string('user_borrow');
-            $table->string('user_comment');
+            $table->unsignedInteger('user_borrow');
+            $table->longText('user_comment');
             $table->timestamps();
+
+            // $table->foreign('id_book')->references('book_id')->on('books')->onDelete('CASCADE');
+            // $table->foreign('user_borrow')->references('id')->on('users')->onDelete('CASCADE');
         });
     }
 

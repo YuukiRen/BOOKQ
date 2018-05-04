@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class Books extends Migration
+class CreateBooks extends Migration
 {
 
     /**
@@ -26,6 +26,7 @@ class Books extends Migration
             $table->string('tag');
             $table->string('image')->default('no-cover.jpeg');//uncomment kalo mau ada gambar
             $table->timestamps();
+
         });
     }
 

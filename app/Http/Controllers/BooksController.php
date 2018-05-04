@@ -52,7 +52,7 @@ class BooksController extends Controller
 		]);
 		// dd($request);
 		$books = new Book;
-		$file = Input::file('file');
+		$books = Input::file('file');
     	$books->title = $request->input('title');
 		$books->author = $request->input('author');
     	$books->year = $request->input('year');

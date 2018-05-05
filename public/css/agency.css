@@ -15,7 +15,11 @@ table{
   font-size:small;
   font-weight: 600;
 }
-
+.alert{
+  padding: 0px 10px;
+  position: relative;
+  top: 10px;
+}
 .h-100{
   box-shadow: 7px 7px 7px silver;
 } 
@@ -25,6 +29,25 @@ img{
   min-width: 100px;
   min-height: 150px;
 }
+a .fa-circle{
+  color:blue;
+  transition: 0.3s;
+}
+a:hover .fa-circle{
+  color:darkblue;
+  
+}
+a:active .fa,a:active .fas{
+  color:blue;
+}
+#navb{
+  font-family : Montserrat,  sans-serif;
+}
+.title{
+  border-left: 10px solid #343A40;
+  background-color: whitesmoke ;
+  border-top: 1px solid #343A40;
+}
 
 /* Font Used */
 @import url('https://fonts.googleapis.com/css?family=Montserrat');
@@ -32,7 +55,7 @@ img{
 /* Main Template, picked from startbootstrap */
 body {
   overflow-x: hidden;
-  font-family : Montserrat,  sans-serif;
+  font-family : 'Montserrat',  sans-serif;
 }
 
 p {
@@ -58,7 +81,7 @@ h4,
 h5,
 h6 {
   font-weight: 700;
-  font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }
 
 section {
@@ -87,7 +110,7 @@ section h3.section-subheading {
 }
 
 .btn {
-  font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-weight: 700;
 }
 
@@ -136,7 +159,7 @@ img::-moz-selection {
 
 #mainNav .navbar-brand {
   color: #3366ff;
-  font-family: 'Kaushan Script', 'Helvetica Neue', Helvetica, Arial, cursive;
+  font-family : 'Montserrat',  sans-serif;
 }
 
 #mainNav .navbar-brand.active, #mainNav .navbar-brand:active, #mainNav .navbar-brand:focus, #mainNav .navbar-brand:hover {
@@ -719,4 +742,82 @@ ul.social-buttons li a:active, ul.social-buttons li a:focus, ul.social-buttons l
   background-color: #ede8e8;
   padding: 5px 5px;
   border-radius:10px
+}
+
+.cover{
+  max-height:250px;
+  min-height:250px;
+  max-width: 170px;
+}
+.card{
+  width: 105%;
+}
+.card-body{
+  padding:10px;
+}
+.portfolio-item {
+margin-bottom: 20px;
+}
+
+.pagination {
+margin-bottom: 30px;
+}
+
+.dropmenu {
+  background: #616161;
+  height: 30px;
+  list-style-type: none;
+  margin: 0;
+  padding: 0px;
+}
+.dropmenu li {
+  border-right: solid 1px white;
+  float: left;
+  height: 30px;
+}
+.dropmenu li a {
+  color: #fff;
+  display: block;
+  font: 12px;
+  font-weight: bold;
+  padding: 9px 20px;
+  text-decoration: none;
+}
+.dropmenu li:hover { background: #778899; position: relative; }
+.dropmenu li:hover a { text-decoration: underline; }
+.dropmenu li:hover ul {
+  background-color: #3f4a54;
+  border: 1px solid grey;
+  left: 0px;
+  padding: 3px;
+  top: 30px;
+  width: 160px;
+}
+.dropmenu li:hover ul li { border: none; height: 18px; }
+.dropmenu li:hover ul li a {
+  background-color: #778899;
+  border: 1px solid transparent;
+  color: #fff;
+  display: block;
+  font-size: 11px;
+  height: 18px;
+  line-height: 18px;
+  padding: 0px;
+  text-decoration: none;
+  text-indent: 5px;
+  width: 158px;
+  padding: 3px;
+}
+.dropmenu li:hover ul li a:hover {
+  background: silver;
+  border: solid 1px #444;
+  color: #000;
+  height: 18px;
+  padding: 3px;
+}
+.dropmenu ul {
+  left: -9999px;
+  list-style-type: none;
+  position: absolute;
+  top: -9999px;
 }

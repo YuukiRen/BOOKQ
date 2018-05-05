@@ -1,9 +1,10 @@
 <script src="{{ asset('js/app.js') }}"></script>
-<nav id="app" class="navbar navbar-expand-md bg-dark navbar-laravel ">
+<nav id="navb" class="navbar navbar-expand-md bg-dark navbar-laravel ">
     <div class="container">
         <a class="navbar-brand" href="\home">
-          <b>  BookQ </b>
+          <strong>  BookQ </strong>
         </a>
+        @include('layouts.partial._alert')
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>

@@ -5,9 +5,11 @@
         <div class="row">
             <div class="center col-md-8">
                 <div class="panel panel-info" >
-                    <h1 class="my-4">Lend a Book
+                    
+                    <h1 class="my-4"><span class="title px-3">Lend a Book
                             <font size=3>Share your Knowledge!</font>
-                            </h1>
+                        </span></h1>
+                        
                     <div class="panel-body">
                         <form class="form-horizontal" method="POST"  action="{{ url('/save') }}" enctype="multipart/form-data" >
                                 {{ csrf_field() }}

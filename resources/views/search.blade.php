@@ -14,30 +14,30 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
-
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
     
     <!-- Custom styles for this template -->
-    <link href="css/4-col-portfolio.css" rel="stylesheet">
-    <link href="css/agency.css" rel="stylesheet">
+    <link href="{{ asset('css/agency.css') }}" rel="stylesheet">
 
   </head>
 
   <body>
 
     <!-- Navigation -->
-    @include('layouts.partial.searchheader')
+    @include('layouts.partial.header')
 
     <!-- Page Content -->
     <div class="container">
-
+      <div class="row">
+        <div class="col">
       <!-- Page Heading -->
-      <h1 class="my-4">Choose Your Book
-        <font size=3>Explore The World!</font>
-      </h1>
-  <div class="container">
-    <div class="row">    
+      <h1 class="my-4"><span class="title px-2">Choose your Book
+        <font size=3>Explore the World!</font>
+    </span></h1>
+  </div>
         <div class="col-xs-8 col-xs-offset-2">
-        <div class="input-group">
+        <div class="input-group my-4">
           <div class="dropdown show">
           <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Category
@@ -61,8 +61,7 @@
                 </span>
             </div>
         </div>
-  </div>
-</div>
+
 <br>
         <div class="row">
         @foreach($books->all() as $book)

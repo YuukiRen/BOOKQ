@@ -23,7 +23,7 @@ table{
 .h-100{
   box-shadow: 7px 7px 7px silver;
 } 
-img{
+.img-book{
   max-width: 200px;
   max-height: 299px;
   min-width: 100px;
@@ -47,6 +47,20 @@ a:active .fa,a:active .fas{
   border-left: 10px solid #343A40;
   background-color: whitesmoke ;
   border-top: 1px solid #343A40;
+}
+#userTab{
+  color:black;
+}
+.nav-tabs a{
+  color:black;
+  font-weight: 600;
+}
+.nav-tabs a:hover{
+  color:black;
+  font-weight: 700;
+}
+.nav-tabs a:target{
+  color: #343A40;
 }
 
 /* Font Used */

@@ -25,7 +25,7 @@
         <div class="center card col-lg-10"> 
           <div class="row">
         <div class="col-md-3 mt-4">
-        <img align=center src="{{asset($books->image)}}" alt="">
+        <img align=center class="img-responsive img-book" src="{{asset($books->image)}}" alt="">
         </div>
 
         <div class="card-body mt-4 col-md-9">

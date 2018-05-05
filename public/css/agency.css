@@ -1,20 +1,30 @@
 /* Addition aside from original template */
 .center {
-  margin: 0 auto;
+  margin-left: auto;
+  margin-right: auto;
   width: 100%;
 }
-
+.middle {
+  top:10px;
+  width: 100%;
+}
 .thick{
   font-weight: 600;
 }
-
 table{
   font-size:small;
   font-weight: 600;
 }
+
 .h-100{
   box-shadow: 7px 7px 7px silver;
 } 
+img{
+  max-width: 200px;
+  max-height: 299px;
+  min-width: 100px;
+  min-height: 150px;
+}
 
 /* Font Used */
 @import url('https://fonts.googleapis.com/css?family=Montserrat');
@@ -89,16 +99,6 @@ section h3.section-subheading {
 .btn-primary {
   background-color: #3366ff;
   border-color: #3366ff;
-}
-
-.btn-primary:active, .btn-primary:focus, .btn-primary:hover {
-  background-color: #fec810 !important;
-  border-color: #fec810 !important;
-  color: white;
-}
-
-.btn-primary:active, .btn-primary:focus {
-  box-shadow: 0 0 0 0.2rem rgba(254, 209, 55, 0.5) !important;
 }
 
 ::-moz-selection {

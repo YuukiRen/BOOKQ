@@ -29,7 +29,7 @@
                                                             <!-- <label for="">Category</label>
                                                             <input type="text" class="form-control" name="category"> -->
                                                             <label for="genre">Category :</label>
-                                                            <select name="category" id="" class="form-control" style="margin:0 auto; width:100%" >
+                                                            <select name="category" id="" class="form-control center">
                                                                 @foreach ($category as $categories)
                                                                 <option value="{{ $categories->id }}"> {{ $categories->name }}</option>
                                                                 @endforeach

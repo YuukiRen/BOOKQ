@@ -38,9 +38,7 @@ Route::get('/profile', function () {
 Route::get('/lend','BooksController@lendBook');//siapa yg bikin ini?
 Route::post('/save','BooksController@addBook');
 
-Route::get('/dum', function () {
-    return view('dum');
-});
+Route::get('/dum', 'BooksController@own');
 
 Route::post('/store','BooksController@dummy');//dummy
 

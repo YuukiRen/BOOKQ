@@ -321,7 +321,8 @@ class ComposerStaticInit19fde438174b58228cb8016883dfd104
     public static $classMap = array (
         'App\\Admin' => __DIR__ . '/../..' . '/app/Admin.php',
         'App\\Book' => __DIR__ . '/../..' . '/app/Book.php',
-        'App\\Category' => __DIR__ . '/../..' . '/app/Category.php',
+        'App\\Commen' => __DIR__ . '/../..' . '/app/Commen.php',
+        'App\\Comment' => __DIR__ . '/../..' . '/app/Comment.php',
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
         'App\\Http\\Controllers\\AdminController' => __DIR__ . '/../..' . '/app/Http/Controllers/AdminController.php',
@@ -352,6 +353,8 @@ class ComposerStaticInit19fde438174b58228cb8016883dfd104
         'App\\Providers\\BroadcastServiceProvider' => __DIR__ . '/../..' . '/app/Providers/BroadcastServiceProvider.php',
         'App\\Providers\\EventServiceProvider' => __DIR__ . '/../..' . '/app/Providers/EventServiceProvider.php',
         'App\\Providers\\RouteServiceProvider' => __DIR__ . '/../..' . '/app/Providers/RouteServiceProvider.php',
+        'App\\Rating' => __DIR__ . '/../..' . '/app/Rating.php',
+        'App\\Request' => __DIR__ . '/../..' . '/app/Request.php',
         'App\\Tag' => __DIR__ . '/../..' . '/app/Tag.php',
         'App\\Transaksi' => __DIR__ . '/../..' . '/app/Transaksi.php',
         'App\\User' => __DIR__ . '/../..' . '/app/User.php',

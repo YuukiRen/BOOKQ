@@ -13,12 +13,13 @@ class bookseeder extends Seeder
     public function run()
     {
         // delete all row
-        Book::truncate();
+        // Book::truncate();
         // inserting data
         Book::insert([
         	[
-        		'book_id' => '1',
-        		'author'=> 'Imelda Saputra',
+        		'id' => '1',
+        		'owner_id'=>'2',
+                'author'=> 'Imelda Saputra',
         		'title'=> '99 hari melesatkan bisnis',
 				'tag' => 'haha',
 				'review'=> 'loremipsum',
@@ -30,8 +31,9 @@ Butuh persiapan panjang untuk itu. Namun jelas yang diperlukan setiap orang buka
         	   'image' => 'storage/buku1.png'
             ],
         	[
-        		'book_id' => '2',
-        		'author'=> 'Andrea Hirata',
+        		'id' => '2',
+        		'owner_id'=>'2',
+                'author'=> 'Andrea Hirata',
         		'title'=> 'Sang Pemimpi',
 				'tag' => 'haha',
 				'review'=> 'loremipsum',
@@ -48,8 +50,9 @@ Tampak komikal pada awalnya, selayaknya kenakalan remaja biasa, tapi kemudian ta
                'image' => 'storage/buku2.jpg'
         	],
         	[
-        		'book_id' => '3',
-        		'author'=> 'Antonio ramsci',
+        		'id' => '3',
+        		'owner_id'=>'2',
+                'author'=> 'Antonio ramsci',
         		'title'=> 'Sejarah dan Budaya',
 				'tag' => 'haha',
 				'review'=> 'Lorem ipsum',
@@ -65,8 +68,9 @@ Banyak pengamat menganggap pemikiran-pemikiran Gramsci tidak gampang dicerna. It
  
         	],
         	[
-        		'book_id' => '4',
-        		'author'=> 'Tere Liye',
+        		'id' => '4',
+        		'owner_id'=>'2',
+                'author'=> 'Tere Liye',
         		'title'=> 'Tentang Kamu',
 				'tag' => 'haha',
 				'review'=> 'Lorem ipsum',
@@ -86,8 +90,9 @@ Tentang Kamu adalah novel terbaru Tere Liye. Sebuah karya yang tak hanya akan me
 
 
         	[
-        		'book_id' => '5',
-        		'author'=> 'Imam Heryanto,Budi Raharjo.Arif Haryono',
+        		'id' => '5',
+        		'owner_id'=>'2',
+                'author'=> 'Imam Heryanto,Budi Raharjo.Arif Haryono',
         		'title'=> 'Mudah belajar JAVA',
 				'tag' => 'haha',
 				'review'=> 'Lorem ipsum',
@@ -103,8 +108,9 @@ Buku ini cocok untuk siapa saja yang berminat mempelajari dan mengimplementasika
                'image' => 'storage/buku5.jpg'
         	],
         	[
-        		'book_id' => '6',
-        		'author'=> 'Dr. Aid Abdullah al-Qorni',
+        		'id' => '6',
+        		'owner_id'=>'2',
+                'author'=> 'Dr. Aid Abdullah al-Qorni',
         		'title'=> 'La taghdhab',
 				'tag' => 'haha',
 				'review'=> 'Lorem ipsum',
@@ -117,8 +123,9 @@ Buku ini cocok untuk siapa saja yang berminat mempelajari dan mengimplementasika
                'image' => 'storage/buku6.jpg'
         	],
         	[
-        		'book_id' => '7',
-        		'author'=> 'Sarlito W. Sarwono',
+        		'id' => '7',
+        		'owner_id'=>'2',
+                'author'=> 'Sarlito W. Sarwono',
         		'title'=> 'Psikologi Remaja',
 				'tag' => 'haha',
 				'review'=> 'Lorem ipsum',
@@ -131,8 +138,9 @@ Buku ini cocok untuk siapa saja yang berminat mempelajari dan mengimplementasika
             ],
 			
 			[
-				'book_id' => '8',
-				'author'=> 'Habiburrahman El Shirazy',
+				'id' => '8',
+				'owner_id'=>'2',
+                'author'=> 'Habiburrahman El Shirazy',
 				'title'=> 'Ketika Cinta Bertasbih',
 				'tag' => 'haha',
 				'review'=> 'Lorem ipsum',

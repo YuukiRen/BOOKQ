@@ -3,9 +3,12 @@
 namespace App\Http\Controllers;
 use App\Book;
 use App\Category;
+use App\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Storage;
+use Auth;
+
 class BooksController extends Controller
 {
     public function __construct(){
@@ -20,7 +23,6 @@ class BooksController extends Controller
         //ganti search ama halaman search/ yang nampilin semua buku
     }
 
-
     //controller untuk ngeliat satu buku
     public function show_detail(Request $request, $book_id){
 
@@ -30,11 +32,13 @@ class BooksController extends Controller
         //ke detailed view
         return view('viewbook', compact('books'));
     }
+
 	public function lendBook(Request $request){
 		$category = Category::all();
 		return view('lend',compact('category'));
 		// dd($category);
 	}
+
 	public function dummy(Request $request){
 		// $name=$request->image->getClientOriginalName();
 		$name = $request->image->store('public');
@@ -43,6 +47,7 @@ class BooksController extends Controller
 		return $path;
 		//return Storage::putFile('public',$request->file('image'));
 	}
+
     public function addBook(Request $request){
         $this->validate($request,[
 			'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
@@ -61,6 +66,7 @@ class BooksController extends Controller
 		$name = $request->image->store('public');
 		$path = Storage::url($name);
 		$books->image = $path;
+        $books->owner_id=Auth::user()->id;
     	$books->title = $request->input('title');
 		$books->author = $request->input('author');
     	$books->year = $request->input('year');

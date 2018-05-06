@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Book extends Model
 {
 	protected $fillable=[
-		'book_id',
+		'id',
 		'author',
 		'title',
 		'review',
@@ -15,19 +15,17 @@ class Book extends Model
 		'publisher',
 		'category',
 		'image',		
-		'description'
+		'description',
+		'owner_id'
 	];
 
 /*
 Prototype
 */
-	public function owner(){
-		return $this->belongsTo(User::class,'owner','name');
-	}
-
-	public function edit(){
-		return route('books.edit', [
-            'book' => $this->id
-        ]);
-	}
+	// public function comment(){
+	// 	return $this->hasMany(Comment::class);
+	// }
+	public function user(){
+		return $this->belongsTo(User::class);
+	}	
 }

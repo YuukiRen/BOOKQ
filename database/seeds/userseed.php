@@ -13,7 +13,7 @@ class userseed extends Seeder
 
     public function run()
     {
-        User::truncate();
+        // User::truncate();
 
         User::insert([
         	[
@@ -27,6 +27,17 @@ class userseed extends Seeder
         		'id_line'		=> 'aaaa',
         		'nomor_hp'		=> '0897654321',
         	],
+            [
+                'id'            => '2',
+                'name'          => 'alvinreinaldo',
+                'password'      => bcrypt("secret"),
+                'email'         => 'coba@coba.com',
+                'nama_lengkap'  => 'Alvin Reinaldo',
+                'nim'           => 'G64160067',
+                'alamat'        => 'Depok',
+                'id_line'       => 'alvinreinaldoo',
+                'nomor_hp'      => '0812910480999',
+            ],
             
         ]);
         

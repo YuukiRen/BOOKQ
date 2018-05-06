@@ -68,11 +68,11 @@
         <div class="col-lg-2 col-md-3 col-sm-4 portfolio-item">
           <div class="card h-100" >
             <div>
-            <a href="viewbook/{{$book->book_id}}"><img class="card-img-top cover" src="{{asset($book->image)}}" alt=""></a>
+            <a href="viewbook/{{$book->id}}"><img class="card-img-top cover" src="{{asset($book->image)}}" alt=""></a>
             
           </div>
             <div class="card-body">
-              <a href="viewbook/{{$book->book_id}}"> <font size=2 class="card-title text-dark"> <b> {{str_limit($book->title, 70, '...')}} </b></font></a> <br> </a>
+              <a href="viewbook/{{$book->id}}"> <font size=2 class="card-title text-dark"> <b> {{str_limit($book->title, 70, '...')}} </b></font></a> <br> </a>
                 <table>
                     <tr>
                         <td><font size=1 class="text-muted">{{$book->author}}</font></td>

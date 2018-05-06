@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Book;
 use App\Category;
 use App\User;
+use App\Comment;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Storage;
@@ -24,13 +25,14 @@ class BooksController extends Controller
     }
 
     //controller untuk ngeliat satu buku
-    public function show_detail(Request $request, $book_id){
+    public function show_detail(Request $request, $id){
 
         //query cari buku
-        $books=Book::where('book_id', $book_id)->first();
+        $books=Book::where('id', $id)->first();
+        $comments= Comment::where('book_id',$id)->take(20)->get();//comment pertama
 		//dd($books);
         //ke detailed view
-        return view('viewbook', compact('books'));
+        return view('viewbook', compact('books','comments'));
     }
 
 	public function lendBook(Request $request){

@@ -18,7 +18,7 @@ class bookseeder extends Seeder
         Book::insert([
         	[
         		'id' => '1',
-        		'owner_id'=>'2',
+        		'user_id'=>'2',
                 'author'=> 'Imelda Saputra',
         		'title'=> '99 hari melesatkan bisnis',
 				'tag' => 'haha',
@@ -32,7 +32,7 @@ Butuh persiapan panjang untuk itu. Namun jelas yang diperlukan setiap orang buka
             ],
         	[
         		'id' => '2',
-        		'owner_id'=>'2',
+        		'user_id'=>'2',
                 'author'=> 'Andrea Hirata',
         		'title'=> 'Sang Pemimpi',
 				'tag' => 'haha',
@@ -51,7 +51,7 @@ Tampak komikal pada awalnya, selayaknya kenakalan remaja biasa, tapi kemudian ta
         	],
         	[
         		'id' => '3',
-        		'owner_id'=>'2',
+        		'user_id'=>'2',
                 'author'=> 'Antonio ramsci',
         		'title'=> 'Sejarah dan Budaya',
 				'tag' => 'haha',
@@ -69,7 +69,7 @@ Banyak pengamat menganggap pemikiran-pemikiran Gramsci tidak gampang dicerna. It
         	],
         	[
         		'id' => '4',
-        		'owner_id'=>'2',
+        		'user_id'=>'2',
                 'author'=> 'Tere Liye',
         		'title'=> 'Tentang Kamu',
 				'tag' => 'haha',
@@ -91,7 +91,7 @@ Tentang Kamu adalah novel terbaru Tere Liye. Sebuah karya yang tak hanya akan me
 
         	[
         		'id' => '5',
-        		'owner_id'=>'2',
+        		'user_id'=>'2',
                 'author'=> 'Imam Heryanto,Budi Raharjo.Arif Haryono',
         		'title'=> 'Mudah belajar JAVA',
 				'tag' => 'haha',
@@ -109,7 +109,7 @@ Buku ini cocok untuk siapa saja yang berminat mempelajari dan mengimplementasika
         	],
         	[
         		'id' => '6',
-        		'owner_id'=>'2',
+        		'user_id'=>'2',
                 'author'=> 'Dr. Aid Abdullah al-Qorni',
         		'title'=> 'La taghdhab',
 				'tag' => 'haha',
@@ -124,7 +124,7 @@ Buku ini cocok untuk siapa saja yang berminat mempelajari dan mengimplementasika
         	],
         	[
         		'id' => '7',
-        		'owner_id'=>'2',
+        		'user_id'=>'2',
                 'author'=> 'Sarlito W. Sarwono',
         		'title'=> 'Psikologi Remaja',
 				'tag' => 'haha',
@@ -139,7 +139,7 @@ Buku ini cocok untuk siapa saja yang berminat mempelajari dan mengimplementasika
 			
 			[
 				'id' => '8',
-				'owner_id'=>'2',
+				'user_id'=>'2',
                 'author'=> 'Habiburrahman El Shirazy',
 				'title'=> 'Ketika Cinta Bertasbih',
 				'tag' => 'haha',

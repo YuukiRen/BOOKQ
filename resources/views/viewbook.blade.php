@@ -90,21 +90,18 @@
               People's Thoughts
             </div>
             <div class="card-body">
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis et enim aperiam inventore, similique necessitatibus neque non! Doloribus, modi sapiente laboriosam aperiam fugiat laborum. Sequi mollitia, necessitatibus quae sint natus.</p>
-              <small class="text-muted">Posted by {{$comment->user_id}} on 3/1/17</small>
+              @foreach($comments->all() as $comment)
+              <p>{{$comment->comment}}</p>
+              <small class="text-muted">Posted by {{App\User::find($comment->user_id)->name}} on {{$comment->updated_at}}</small>
               <hr>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis et enim aperiam inventore, similique necessitatibus neque non! Doloribus, modi sapiente laboriosam aperiam fugiat laborum. Sequi mollitia, necessitatibus quae sint natus.</p>
-              <small class="text-muted">Posted by Anonymous on 3/1/17</small>
-              <hr>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis et enim aperiam inventore, similique necessitatibus neque non! Doloribus, modi sapiente laboriosam aperiam fugiat laborum. Sequi mollitia, necessitatibus quae sint natus.</p>
-              <small class="text-muted">Posted by Anonymous on 3/1/17</small>
-              <hr>
+              @endforeach
               <button class="btn btn-success" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
                   Leave a Review
                 </button> 
                 <div class="collapse" id="collapseExample">
                     <div class="card card-body">
-                        <form class="form-horizontal" method="POST"  action="" enctype="" >
+                        <form class="form-horizontal" method="POST"  action='{{ url("/post/{$books->id}") }}' >
+                          {{csrf_field()}}
                           <div class="row">
                             <div class="col-10">
                               <div class="form-group  has-feedback{{ $errors->has('review') ? 'has-error' : '' }}">

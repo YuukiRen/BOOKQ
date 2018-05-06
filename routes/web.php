@@ -44,6 +44,7 @@ Route::post('/store','BooksController@dummy');//dummy
 
 
 Route::get('/search','BooksController@show');
+Route::post('/post/{id}','BooksController@AddComment');
 
 // Route::get('/viewbook',function(){
 	// return view('viewbook');

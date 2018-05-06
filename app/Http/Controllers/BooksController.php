@@ -35,6 +35,22 @@ class BooksController extends Controller
         return view('viewbook', compact('books','comments'));
     }
 
+    public function AddComment(Request $request, $id){
+        // dd($request);
+        $this->validate($request,[
+            'review' => 'required',
+        ]);
+        //query cari buku
+        $comments = new Comment;
+        $comments->book_id = $id; 
+        $comments->user_id = Auth::user()->id; 
+        $comments->comment = $request->input('review');
+        $comments->save();
+        //dd($books);
+        //ke detailed view
+        return redirect('/viewbook/{$id}')->with('info','Comment added Successfully');
+    }
+
 	public function lendBook(Request $request){
 		$category = Category::all();
 		return view('lend',compact('category'));
@@ -68,7 +84,7 @@ class BooksController extends Controller
 		$name = $request->image->store('public');
 		$path = Storage::url($name);
 		$books->image = $path;
-        $books->owner_id=Auth::user()->id;
+        $books->user_id=Auth::user()->id;
     	$books->title = $request->input('title');
 		$books->author = $request->input('author');
     	$books->year = $request->input('year');

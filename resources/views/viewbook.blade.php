@@ -53,7 +53,7 @@
             <span class="fas fa-star fa-4x center checked" style="color:#FFDF00"></span>
           </div>
           <div class="col">            
-            <h1 style="margin-top:10px">&nbsp;X / 5</h1>
+            <h1 style="margin-top:10px">&nbsp;{{$ratings}} / 5</h1>
           </div>                  
         </div>
       </div>

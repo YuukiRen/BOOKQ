@@ -29,12 +29,14 @@ class BooksController extends Controller
     public function show_detail(Request $request, $id){
 
         //query cari buku
-        $books=Book::where('id', $id)->first();
-        $comments= Comment::where('book_id',$id)->take(20)->get();//comment pertama
-		$users=Auth::user()->id;
+        $books = Book::where('id', $id)->first();
+        $comments = Comment::where('book_id',$id)->get();//comment pertama
+		$users = Auth::user()->id;
+        $tabs = Rating::where('book_id',$id)->get();
+        $ratings = $tabs->avg('rate');
         //dd($books);
         //ke detailed view
-        return view('viewbook', compact('books','comments','users'));
+        return view('viewbook', compact('books','comments','users','ratings'));
     }
 
     public function AddComment(Request $request, $id){
@@ -58,9 +60,8 @@ class BooksController extends Controller
             $ratings->rate = $request->input('rating');
             $ratings->save();
         }//ke detailed view
-        return redirect('/viewbook/{id}')->with('info','Review added Successfully');
+        return redirect('/viewbook/'.$id)->with('info','Review added Successfully');
     }
-
 
 	public function lendBook(Request $request){
 		$category = Category::all();

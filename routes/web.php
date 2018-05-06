@@ -50,7 +50,7 @@ Route::post('/post/{id}','BooksController@AddComment');
 	// return view('viewbook');
 // });
 
-Route::get('/viewbook/{isbn}', 'BooksController@show_detail');
+Route::get('/viewbook/{id}', 'BooksController@show_detail')->name('viewbook');
 	// return view('viewbook');
 // });
 

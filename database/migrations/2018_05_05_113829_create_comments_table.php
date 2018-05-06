@@ -18,6 +18,7 @@ class CreateCommentsTable extends Migration
             $table->unsignedInteger('book_id');
             $table->unsignedInteger('user_id');
             $table->longText('comment');
+            $table->integer('before')->default('0');
             $table->timestamps();
 
             $table->foreign('book_id')->references('id')->on('books')->onDelete('CASCADE');

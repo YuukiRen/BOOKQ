@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Book;
 use App\Category;
 use App\User;
+use App\Rating;
 use App\Comment;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -30,9 +31,10 @@ class BooksController extends Controller
         //query cari buku
         $books=Book::where('id', $id)->first();
         $comments= Comment::where('book_id',$id)->take(20)->get();//comment pertama
-		//dd($books);
+		$users=Auth::user()->id;
+        //dd($books);
         //ke detailed view
-        return view('viewbook', compact('books','comments'));
+        return view('viewbook', compact('books','comments','users'));
     }
 
     public function AddComment(Request $request, $id){
@@ -40,16 +42,25 @@ class BooksController extends Controller
         $this->validate($request,[
             'review' => 'required',
         ]);
-        //query cari buku
+
+        //bagian comment
         $comments = new Comment;
         $comments->book_id = $id; 
         $comments->user_id = Auth::user()->id; 
         $comments->comment = $request->input('review');
+        $comments->before = "1";
         $comments->save();
-        //dd($books);
-        //ke detailed view
-        return redirect('/viewbook/{$id}')->with('info','Comment added Successfully');
+        //bagian rating
+        if($request->has('rating')){
+            $ratings = new Rating;
+            $ratings->book_id = $id; 
+            $ratings->user_id = Auth::user()->id; 
+            $ratings->rate = $request->input('rating');
+            $ratings->save();
+        }//ke detailed view
+        return redirect('/viewbook/{id}')->with('info','Review added Successfully');
     }
+
 
 	public function lendBook(Request $request){
 		$category = Category::all();

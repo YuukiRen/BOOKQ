@@ -15,6 +15,10 @@ class CreateRatingsTable extends Migration
     {
         Schema::create('ratings', function (Blueprint $table) {
             $table->increments('id');
+            $table->unsignedInteger('book_id');
+            $table->unsignedInteger('user_id');
+            $table->integer('rate');
+
             $table->timestamps();
         });
     }

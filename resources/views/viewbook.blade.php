@@ -114,6 +114,7 @@
                                   @endif --}}
                               </div>
                             </div>
+                            @if(!(App\Comment::where('user_id', $users)->first()))
                             <div class="col-2">
                                 <div class="form-group">
                                     <label for="genre" class="thick">Rating</label>
@@ -126,6 +127,9 @@
                                     </select> 
                                 </div>
                             </div>
+                            @endif
+
+
                           </div>
                             <div class="row">
                               <div class="center col-md-10">

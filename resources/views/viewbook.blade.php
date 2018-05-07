@@ -114,7 +114,7 @@
                                   @endif --}}
                               </div>
                             </div>
-                            @if(!(App\Comment::where('user_id', $users)->first()))
+                            @if(! ( ( App\Comment::where('user_id', $users)->first() ) && (App\Comment::where('book_id', $books->id)->first()) ) )
                             <div class="col-2">
                                 <div class="form-group">
                                     <label for="genre" class="thick">Rating</label>

@@ -72,10 +72,12 @@ class BooksController extends Controller
 
 	public function dummy(Request $request){
 		// $name=$request->image->getClientOriginalName();
-		$name = $request->image->store('public');
+		// return $name = $request->image;
+		// return Storage::disk('uploads')->put('filename', $file_content);
+		// dd($request);
+		// $name = $request->image->store('local');
 		
-		dd($request);
-		return $path;
+		// return $path;
 		//return Storage::putFile('public',$request->file('image'));
 	}
 
@@ -93,10 +95,8 @@ class BooksController extends Controller
 		]);
 		// dd($request);
 		$books = new Book;
-		
-		$name = $request->image->store('public');
-		$path = Storage::url($name);
-		$books->image = $path;
+		$name = Storage::disk('local')->put('images', $request->image);
+		$books->image = $name;
         $books->user_id=Auth::user()->id;
     	$books->title = $request->input('title');
 		$books->author = $request->input('author');

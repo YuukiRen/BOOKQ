@@ -1,7 +1,7 @@
 <script src="{{ asset('js/app.js') }}"></script>
 <nav id="navb" class="navbar navbar-expand-md bg-dark navbar-laravel ">
     <div class="container">
-        <a class="navbar-brand" href="\home">
+        <a class="navbar-brand" href="{{url('/home')}}">
           <strong>  BookQ </strong>
         </a>
         @include('layouts.partial._alert')

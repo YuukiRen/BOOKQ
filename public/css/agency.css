@@ -31,21 +31,21 @@ table{
 }
 a .fa-circle{
   color:blue;
-  /* transition: 0.3s; */
+  transition: 0.3s;
 }
 a:hover .fa-circle{
   color:darkblue;
   
 }
-a:active .fa,a:active .fas{
-  color:blue;
-}
+
 #navb{
   font-family : Montserrat,  sans-serif;
 }
 .title{
   border-left: 10px solid #343A40;
   background-color: whitesmoke ;
+  border-right: 1px solid #343A40;
+  border-bottom: 1px solid #343A40;
   border-top: 1px solid #343A40;
 }
 #userTab{

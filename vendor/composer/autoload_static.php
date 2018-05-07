@@ -357,6 +357,7 @@ class ComposerStaticInit19fde438174b58228cb8016883dfd104
         'App\\Rating' => __DIR__ . '/../..' . '/app/Rating.php',
         'App\\Request' => __DIR__ . '/../..' . '/app/Request.php',
         'App\\Tag' => __DIR__ . '/../..' . '/app/Tag.php',
+        'App\\Transaction' => __DIR__ . '/../..' . '/app/Transaction.php',
         'App\\Transaksi' => __DIR__ . '/../..' . '/app/Transaksi.php',
         'App\\User' => __DIR__ . '/../..' . '/app/User.php',
         'Carbon\\Carbon' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/Carbon.php',

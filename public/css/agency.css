@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
 /* Addition aside from original template */
 .center {
   margin-left: auto;
@@ -24,28 +25,30 @@ table{
   box-shadow: 7px 7px 7px silver;
 } 
 .img-book{
-  max-width: 200px;
+  max-width: 207px;
   max-height: 299px;
   min-width: 100px;
-  min-height: 150px;
+  min-height: 151px;
 }
 a .fa-circle{
   color:blue;
-  /* transition: 0.3s; */
+  transition: 0.3s;
 }
 a:hover .fa-circle{
   color:darkblue;
-  
 }
-a:active .fa,a:active .fas{
+a:active .fa-circle{
   color:blue;
 }
+
 #navb{
   font-family : Montserrat,  sans-serif;
 }
 .title{
   border-left: 10px solid #343A40;
   background-color: whitesmoke ;
+  border-right: 1px solid #343A40;
+  border-bottom: 1px solid #343A40;
   border-top: 1px solid #343A40;
 }
 #userTab{
@@ -64,7 +67,6 @@ a:active .fa,a:active .fas{
 }
 
 /* Font Used */
-@import url('https://fonts.googleapis.com/css?family=Montserrat');
 
 /* Main Template, picked from startbootstrap */
 body {

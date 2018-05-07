@@ -39,7 +39,7 @@ Route::get('/search','SearchController@index');
 Route::get('/lend','BooksController@lendBook');//siapa yg bikin ini?
 Route::post('/save','BooksController@addBook');
 
-Route::get('/dum', 'BooksController@own');
+Route::get('/dum/{id}', 'TransaksiController@back');
 
 Route::post('/store','BooksController@dummy');//dummy
 

@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Transaksi extends Model
+class Transaction extends Model
 {
     protected $fillable=[
     	'user_lender',
@@ -17,7 +17,4 @@ class Transaksi extends Model
     	'tanggal_pinjam',
     	'tanggal_kembali'
     ];
-    protected $hidden=[
-    	'id_transaksi'
-	];
 }

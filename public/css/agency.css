@@ -31,7 +31,7 @@ table{
 }
 a .fa-circle{
   color:blue;
-  transition: 0.3s;
+  /* transition: 0.3s; */
 }
 a:hover .fa-circle{
   color:darkblue;

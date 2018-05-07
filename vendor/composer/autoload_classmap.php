@@ -44,6 +44,7 @@ return array(
     'App\\Rating' => $baseDir . '/app/Rating.php',
     'App\\Request' => $baseDir . '/app/Request.php',
     'App\\Tag' => $baseDir . '/app/Tag.php',
+    'App\\Transaction' => $baseDir . '/app/Transaction.php',
     'App\\Transaksi' => $baseDir . '/app/Transaksi.php',
     'App\\User' => $baseDir . '/app/User.php',
     'Carbon\\Carbon' => $vendorDir . '/nesbot/carbon/src/Carbon/Carbon.php',

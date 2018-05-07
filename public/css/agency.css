@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
 /* Addition aside from original template */
 .center {
   margin-left: auto;
@@ -24,10 +25,10 @@ table{
   box-shadow: 7px 7px 7px silver;
 } 
 .img-book{
-  max-width: 200px;
+  max-width: 207px;
   max-height: 299px;
   min-width: 100px;
-  min-height: 150px;
+  min-height: 151px;
 }
 a .fa-circle{
   color:blue;
@@ -35,7 +36,9 @@ a .fa-circle{
 }
 a:hover .fa-circle{
   color:darkblue;
-  
+}
+a:active .fa-circle{
+  color:blue;
 }
 
 #navb{
@@ -64,7 +67,6 @@ a:hover .fa-circle{
 }
 
 /* Font Used */
-@import url('https://fonts.googleapis.com/css?family=Montserrat');
 
 /* Main Template, picked from startbootstrap */
 body {

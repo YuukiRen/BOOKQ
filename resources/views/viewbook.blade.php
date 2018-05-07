@@ -9,8 +9,8 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous"> 
-
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
     <!-- Custom styles for this template -->
     <link href="{{asset('css/agency.css')}}" rel="stylesheet">
 
@@ -66,7 +66,7 @@
       </div>
       <div class="row"> 
           <div class="col"> <br>
-            <h4 class="card-title">Book Owner's Review</h4>
+            <h5 class="card-title">Book Owner's Review</h5>
             <p class="card-text">{{$books->review}}</p>
           </div>
       </div>
@@ -86,7 +86,7 @@
         </div>
           <!-- /.card -->
 
-          <div class="card card-outline-secondary my-4 col-11 center">
+          <div class="card card-outline-secondary my-4 col-9 center">
             <div class="card-header">
            <label for="" class="thick"> Book Reviews </label>  
             </div>

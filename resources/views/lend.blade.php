@@ -52,10 +52,6 @@
                                             <label for="">Publisher</label>
                                             <input type="text" class="input100 form-control" required autofocus name="publisher">
                                         </div>
-                                        <div class="form-group wrap-input100 validate-input" data-validate = "Valid Description is required">
-                                            <label for="Content">Description</label>
-                                            <textarea name="description" rows="10" class="input100 form-control" required autofocus name="description"></textarea>
-                                        </div>
                                         <div class="form-group wrap-input100 validate-input">
                                             <label for="Content">Review</label>
                                             <textarea name="review" rows="5" class="input100 form-control" required autofocus name="review"></textarea>

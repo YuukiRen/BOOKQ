@@ -18,10 +18,11 @@ class CreateTransactionsTable extends Migration
                 $table->unsignedInteger('id_lender');
                 $table->unsignedInteger('id_booker');
                 $table->unsignedInteger('book_id');
-                $table->integer('status')->nullable();//0= requesting, 1=accepted, 2=returned
+                $table->integer('status')->nullable();//0= requesting, 1=accepted, 2=returned //3=rejected
                 $table->dateTime('request_date')->nullable();
                 $table->dateTime('lend_date')->nullable();
                 $table->dateTime('return_date')->nullable();//{{ date('Y-m-d H:i:s') }}
+                $table->dateTime('reject_date')->nullable();
                 $table->timestamps();
                 $table->foreign('id_lender')->references('id')->on('users');
                 

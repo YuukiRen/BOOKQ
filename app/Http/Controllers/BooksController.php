@@ -11,6 +11,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\UploadedFile;
 use Auth;
+use App\Transaction;
 
 class BooksController extends Controller
 {

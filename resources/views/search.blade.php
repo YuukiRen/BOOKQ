@@ -71,25 +71,27 @@
 <br>
         <div id="example1" class="row">
         @foreach($books->all() as $book)
-        <div class="col-lg-2 col-md-3 col-sm-4 portfolio-item">
-          <div class="card h-100" >
-            <div class="img-frame">
-            <a href="viewbook/{{$book->id}}"><img class="card-img-top img-responsive img-cover" src="{{asset($book->image)}}" alt=""></a>
-            
-          </div>
-            <div class="card-body">
-             </a>
-                <table id="example1">
-                  <tr>
-                   <td><a href="viewbook/{{$book->id}}"> <font size=2 class="card-title text-dark"> <b> {{str_limit($book->title, 70, '...')}} </b></font></a></td>
-                 </tr>
+        @if(($book->show==1))
+          <div class="col-lg-2 col-md-3 col-sm-4 portfolio-item">
+            <div class="card h-100" >
+              <div class="img-frame">
+              <a href="viewbook/{{$book->id}}"><img class="card-img-top img-responsive img-cover" src="{{asset($book->image)}}" alt=""></a>
+              
+            </div>
+              <div class="card-body">
+               </a>
+                  <table id="example1">
                     <tr>
-                        <td><font size=1 class="text-muted">{{$book->author}}</font></td>
-                      </tr> 
-                </table>
+                     <td><a href="viewbook/{{$book->id}}"> <font size=2 class="card-title text-dark"> <b> {{str_limit($book->title, 70, '...')}} </b></font></a></td>
+                   </tr>
+                      <tr>
+                          <td><font size=1 class="text-muted">{{$book->author}}</font></td>
+                        </tr> 
+                  </table>
+              </div>
             </div>
           </div>
-        </div>
+        @endif
         @endforeach  
       
     </div>

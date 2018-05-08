@@ -88,11 +88,12 @@ class UserController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    public function edit(Request $request, $id){        
-        $user=Auth::user();
+    public function edit(Request $request, $id){
+
+        $users=Auth::user();
         $category=Category::all();
         // dd($category);
-        return view('editprofile',compact('category','user'));
+        return view('editprofile',compact('category','users'));
     }
 
     public function edit_profile(Request $request)

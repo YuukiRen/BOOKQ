@@ -28,7 +28,7 @@
         <img class="img-responsive img-book img-center" src="{{asset($books->image)}}" alt="">
         <div class="row center" style="margin-top:10px">
           <button type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#borrowmodal">
-            Borrow this Book?
+            Borrow this Book
           </button>       
         </div>   
                   <!-- Modal -->
@@ -36,7 +36,7 @@
             <div class="modal-dialog modal-dialog-centered" role="document">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h5 class="modal-title" id="borrowmodalLongTitle">Borrow</h5>
+                  <h5 class="modal-title" id="borrowmodalLongTitle">Book Information</h5>
                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                   </button>
@@ -60,7 +60,7 @@
                 <div class="modal-footer">
 
                   <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                  <a href='{{ url("/request/$books->id") }}' class="btn btn-primary">Save changes</a>
+                  <a href='{{ url("/request/$books->id") }}' class="btn btn-primary">Send Request</a>
                 </div>
               </div>
             </div>

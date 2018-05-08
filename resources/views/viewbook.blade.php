@@ -24,8 +24,8 @@
       <div class="row"> 
         <div class="center card col-lg-10"> 
           <div class="row">
-        <div class="col-md-3 mt-4">
-        <img align=center class="img-responsive img-book" src="{{asset($books->image)}}" alt="">
+        <div class="col-md-4 mt-4">
+        <img class="img-responsive img-book img-center" src="{{asset($books->image)}}" alt="">
         <div class="row center" style="margin-top:10px">
           <button type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#borrowmodal">
             Borrow this Book?
@@ -34,7 +34,7 @@
         @include('layouts.partial.borrowmodal')
         </div>
 
-        <div class="card-body mt-4 col-md-9">
+        <div class="card-body mt-4 col-md-8">
           
           <h3 class="card-title">{{$books->title}}</h3>
           <div class="row">

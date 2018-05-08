@@ -6,14 +6,11 @@
             <div class="card">
                 <form class="login100-form validate-form" method="POST" action="{{ route('login') }}">
                     @csrf
-
                     <div class="form-group row">
                         <h1 style=" text-align:center; "> Let's Start </h1>
                     <span class="login100-form-title"><h5>
                         Login</h5>
                     </span>
-                          
-
                         <div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
                             <input id="email" type="email" class="input100" name="email" value="{{ old('email') }}" required autofocus placeholder="Email">
                             <span class="focus-input100"></span>
@@ -46,7 +43,7 @@
                     </div>
 
                     <div class="form-group row">
-                        <div class="col-md-6 offset-md-4">
+                        <div class="col-md-6 center">
                             <div class="checkbox">
                                 <label>
                                     <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> <b> Remember Me </b>

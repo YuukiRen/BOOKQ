@@ -67,8 +67,8 @@
         @foreach($books->all() as $book)
         <div class="col-lg-2 col-md-3 col-sm-4 portfolio-item">
           <div class="card h-100" >
-            <div>
-            <a href="viewbook/{{$book->id}}"><img class="card-img-top cover" src="{{asset($book->image)}}" alt=""></a>
+            <div class="img-frame">
+            <a href="viewbook/{{$book->id}}"><img class="card-img-top img-responsive img-cover" src="{{asset($book->image)}}" alt=""></a>
             
           </div>
             <div class="card-body">

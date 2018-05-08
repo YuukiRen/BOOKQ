@@ -18,7 +18,7 @@
           </span>
         </a>
           <h4 class="service-heading">Lender</h4>
-          <ul class="" style="list-style-type:none">
+          <ul  style="list-style-type:none; padding-left: 0;">
               <li> Take a role as a lender. </li>
               <li> Enlist your book to our database, so others can see!</li>
               <li> Let them gain the knowledge and experience you had!</li>
@@ -32,7 +32,7 @@
           </span>
         </a>
         <h4 class="service-heading">Borrower</h4>
-        <ul class="" style="list-style-type:none">
+        <ul class="" style="list-style-type:none; padding-left: 0;">
                 <li> Take a role as a borrower. </li>
                 <li> Pick a book from our database, then connect to the owner.</li>
                 <li> Gain the knowledge and experience they had!</li>

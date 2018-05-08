@@ -25,10 +25,38 @@ table{
   box-shadow: 7px 7px 7px silver;
 } 
 .img-book{
-  max-width: 207px;
-  max-height: 299px;
-  min-width: 100px;
+  max-width: 280px;
+  min-width: 280px; 
+  max-height: 440px;
   min-height: 151px;
+}
+.img-frame{
+  width: 171.25px;
+  height: 250px;
+  position: relative;
+  overflow: hidden;
+}
+.img-center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+.img-cover{
+  max-height:250px;
+  min-height:100px;
+  max-width: 171.25px;
+  min-width; 171.25px;
+}
+.img-frame .img-cover {
+  max-height: 100%;  
+  max-width: 100%; 
+  position: absolute;  
+  top: 0;  
+  bottom: 0;  
+  left: 0;  
+  right: 0;  
+  margin: auto;
 }
 a .fa-circle{
   color:blue;
@@ -760,11 +788,7 @@ ul.social-buttons li a:active, ul.social-buttons li a:focus, ul.social-buttons l
   border-radius:10px
 }
 
-.cover{
-  max-height:250px;
-  min-height:250px;
-  max-width: 170px;
-}
+
 .card{
   width: 105%;
 }

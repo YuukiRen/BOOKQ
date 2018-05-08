@@ -15,8 +15,8 @@
                                 {{ csrf_field() }}
                                             <div class="form-group">
                                                  <label for="">   Book image : </label>
-                                                    <input type="file" name="image" id="pic">
-                                                    <div class="form-group wrap-input100 validate-input" data-validate = "Valid Title is required" has-feedback{{ $errors->has('title') ? 'has-error' : '' }}">
+                                                    <input type="file" name="image" id="pic" data-validate = "Valid Title is required">
+                                                    <div class="form-group wrap-input100 validate-input" data-validate = "Valid Title is required">
                                                             <label for="">Title</label>
                                                             <input type="text"  class="form-control input100" required autofocus name="title">
                                                                 {{-- @if($errors->has('title'))
@@ -41,7 +41,12 @@
                                                     <div class="col-4">
                                                         <div class="form-group wrap-input100 validate-input" data-validate = "Valid Year is required">
                                                             <label for="genre">Year</label>
-                                                            <input type="number" min="0" max="2100" class="form-control" name="year">
+                                                            <input type="text" class="form-control" name="year" onkeydown="return ( event.ctrlKey || event.altKey 
+                                                                                                                            || (47<event.keyCode && event.keyCode<58 && event.shiftKey==false) 
+                                                                                                                            || (95<event.keyCode && event.keyCode<106)
+                                                                                                                            || (event.keyCode==8) || (event.keyCode==9) 
+                                                                                                                            || (event.keyCode>34 && event.keyCode<40) 
+                                                                                                                            || (event.keyCode==46) )">
                                                         </div>
                                                     </div>
 
@@ -53,7 +58,7 @@
                                                         </div>
                                                 </div>
                                         
-                                        <div class="form-group wrap-input100 validate-input" data-validate = "Valid author is required" has-feedback{{ $errors->has('author') ? 'has-error' : '' }}">
+                                        <div class="form-group wrap-input100 validate-input" data-validate = "Valid author is required">
                                             <label for="">Author</label>
                                             <input type="text" class="input100 form-control" required autofocus name="author">
                                                 {{-- @if($errors->has('title'))
@@ -63,7 +68,7 @@
                                                 @endif --}}
                                         </div>
                                       
-                                        <div class="form-group wrap-input100 validate-input" data-validate = "Valid Publisher is required" has-feedback{{ $errors->has('publisher') ? 'has-error' : '' }}">
+                                        <div class="form-group wrap-input100 validate-input" data-validate = "Valid Publisher is required">
                                             <label for="">Publisher</label>
                                             <input type="text" class="input100 form-control" required autofocus name="publisher">
                                                 {{-- @if($errors->has('title'))
@@ -76,18 +81,18 @@
                                                 @endif
                                                 @endif --}}
                                         </div>
-                                        <div class="form-group wrap-input100 validate-input" has-feedback{{ $errors->has('description') ? 'has-error' : '' }}">
+                                        <div class="form-group wrap-input100 validate-input" data-validate = "Valid Description is required">
                                             <label for="Content">Description</label>
-                                            <textarea name="description" rows="10" class="form-control"></textarea>
+                                            <textarea name="description" rows="10" class="input100 form-control" required autofocus name="description"></textarea>
                                             {{-- @if($errors->has('content'))
                                                 <span style="color:red" class="help-block">
                                                     <p>{{ $errors->first('content') }}</p>
                                                 </span>
                                             @endif --}}
                                         </div>
-                                        <div class="form-group wrap-input100 validate-input" has-feedback{{ $errors->has('content') ? 'has-error' : '' }}">
+                                        <div class="form-group wrap-input100 validate-input">
                                             <label for="Content">Review</label>
-                                            <textarea name="review" rows="5" class="form-control"></textarea>
+                                            <textarea name="review" rows="5" class="input100 form-control" required autofocus name="review"></textarea>
                                             {{-- @if($errors->has('content'))
                                                 <span style="color:red" class="help-block">
                                                     <p>{{ $errors->first('content') }}</p>

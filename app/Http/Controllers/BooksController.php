@@ -94,8 +94,13 @@ class BooksController extends Controller
 		]);
 		// dd($request);
 		$books = new Book;
-		$name = Storage::disk('local')->put('images', $request->image);
-		$books->image = $name;
+        if($request->image === NULL){
+          $name = "images/no_cover.jpg";  
+        }
+        else{
+		  $name = Storage::disk('local')->put('images', $request->image);
+        }
+        $books->image = $name;
         $books->user_id=Auth::user()->id;
     	$books->title = $request->input('title');
 		$books->author = $request->input('author');

@@ -21,11 +21,13 @@ class CreateUsersTable extends Migration
             $table->rememberToken();
 
             // Profile
-            $table->string('nama_lengkap')->nullable();
+            $table->string('complete_name')->nullable();
             $table->string('nim')->nullable();
-            $table->string('alamat')->nullable();
-            $table->string('id_line')->nullable();
-            $table->string('nomor_hp')->nullable();
+            $table->string('address')->nullable();
+            $table->string('line_id')->nullable();
+            $table->string('phone_number')->nullable();
+            $table->string('fav_book')->nullable();
+            $table->longText('about_me')->nullable();
             
             $table->timestamps();
         });

@@ -49,7 +49,7 @@ class UserController extends Controller
     public function show(Request $request,$id)
     {
         $users = Auth::user();
-        // dd($users);
+
         return view('profile', compact('users'));
     }
 
@@ -59,9 +59,38 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit_profile(Request $request)
     {
-        //
+
+        $this->validate($request,[
+            'user_image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'complete_name' => 'required',
+            'nim' => 'required',
+            'address' => 'required',
+            'line_id' => 'required',
+            'phone_number' => 'required',
+            'fav_book' => 'required',
+        ]);
+        // dd($request);
+        $users = User::find(Auth::user()->id);
+        if($request->user_image === NULL){
+          $name = "images/no_cover.jpg";  
+        }
+        else{
+          $name = Storage::disk('local')->put('images', $request->image);
+        }
+        $users->user_image = $name;
+        $users->id = Auth::user()->id;
+        $users->complete_name = $request->input('complete_name');
+        $users-> = $request->input('nim');
+        $users->address = $request->input('address');
+        $users->line_id = $request->input('line_id');
+        $users->phone_number = $request->input('phone_number');
+        $users->about_me = $request->input('about_me');
+        $users->fav_book = $request->input('fav_book');
+        $users->save();     
+ 
+        return redirect('/home')->with('info','New profile saved');    
     }
 
     /**

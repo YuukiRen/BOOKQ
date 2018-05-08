@@ -44,9 +44,9 @@
                 <div class="modal-body">
                     <table>
                       <tr>
-                        <td valign="top"> Owner </td> <td valign="top">&nbsp;:&nbsp;</td> <td> {{$books->user_id}} </td>
+                        <td valign="top"> Owner </td> <td valign="top">&nbsp;:&nbsp;</td> <td> {{App\User::find($books->user_id)->name}} </td>
                       </tr>
-                      {{-- <tr>
+                      <tr>
                         <td valign="top"> Author </td> <td valign="top">&nbsp;:&nbsp;</td>  <td> {{$books->author}} </td>
                       </tr> 
                       <tr>
@@ -54,7 +54,7 @@
                       </tr> 
                       <tr>
                         <td valign="top"> Published </td><td valign="top">&nbsp;:&nbsp;</td><td> {{$books->year}} </td>
-                      </tr> --}}
+                      </tr> 
                   </table>
                 </div>
                 <div class="modal-footer">

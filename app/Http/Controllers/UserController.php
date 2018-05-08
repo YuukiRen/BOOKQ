@@ -71,7 +71,7 @@ class UserController extends Controller
         $users=Auth::user();
         $category=Category::all();
         // dd($category);
-        return view('editprofile',compact('category','user'));
+        return view('editprofile',compact('category','users'));
     }
 
     public function edit_profile(Request $request)

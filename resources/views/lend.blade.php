@@ -24,7 +24,7 @@
                                                     <label for="genre">Category :</label>
                                                     <select name="category" id="" class="form-control center">
                                                         @foreach ($category as $categories)
-                                                        <option value="{{ $categories->id }}"> {{ $categories->name }}</option>
+                                                        <option value="{{ $categories->name }}"> {{ $categories->name }}</option>
                                                         @endforeach
                                                     </select> 
                                                 </div>

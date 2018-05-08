@@ -38,13 +38,13 @@
                                         <input type="file" name="image" id="pic" >
                                     <div class="form-group wrap-input100 validate-input" data-validate = "Valid complete_name is required">
                                             <label for="">Full Name</label>
-                                            <input type="text"  class="form-control input100" required autofocus name="complete_name">
+                                            <input type="text"  class="form-control input100" required autofocus name="complete_name" value="{{$users->complete_name}}">
                                     </div>
                                     <div class="row">
                                         <div class="col-6">
                                                 <div class="form-group">
                                                     <label for="nim">NIM</label>
-                                                    <input type="text" class="form-control" name="nim">
+                                                    <input type="text" class="form-control" name="nim" value="{{$users->nim}}">
                                                 </div>
                                             </div>
                                         <div class="col-6">
@@ -52,7 +52,7 @@
                                                 <label for="fav_book">Favorite Book Category :</label>
                                                 <select name="fav_book" id="" class="form-control center">
                                                     @foreach ($category as $categories)
-                                                    <option value="{{ $categories->id }}"> {{ $categories->name }}</option>
+                                                    <option value="{{ $categories->name }}"> {{ $categories->name }}</option>
                                                     @endforeach
                                                 </select> 
                                             </div>
@@ -62,24 +62,24 @@
                                             <div class="col-6">
                                                     <div class="form-group">
                                                         <label for="phone_number">Phone Number</label>
-                                                        <input type="text" class="form-control" name="phone_number">
+                                                        <input type="text" class="form-control" name="phone_number" value="{{$users->phone_number}}">
                                                     </div>
                                                 </div>
                                             <div class="col-6">
                                                 <div class="form-group">
                                                     <label for="line_id">Line ID</label>
-                                                    <input type="text" class="form-control" name="line_id"> 
+                                                    <input type="text" class="form-control" name="line_id" value="{{$users->line_id}}"> 
                                                 </div>
                                             </div>
                                         </div>
                                     <div class="form-group wrap-input100 validate-input" data-validate = "Valid address is required">
                                         <label for="address">Address</label>
-                                        <input type="text" class="input100 form-control" required autofocus name="address">
+                                        <input type="text" class="input100 form-control" required autofocus name="address" value="{{$users->address}}">
                                     </div>
                                     
                                     <div class="form-group wrap-input100 validate-input" data-validate = "Valid about_me is required">
                                         <label for="about_me">About Me</label>
-                                        <input type="text" class="input100 form-control" required autofocus name="about_me">
+                                        <textarea type="text" rows=5 class="input100 form-control" required autofocus name="about_me" value="{{$users->aboutme}}"></textarea>
                                     </div>
                                     <div class="form-group">
                                             <input type="submit" class="btn btn-primary btn-block" value="SAVE" >

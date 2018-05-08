@@ -74,7 +74,7 @@
                 <div class="row"> 
                     <div class="col"> <br>
                         <h4 class="card-title">About Me</h4>
-                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis deserunt adipisci aliquam praesentium, consectetur impedit iste ipsum deleniti, neque voluptate suscipit. Placeat, porro praesentium? Illum debitis adipisci doloribus consectetur ad!</p>
+                        <p class="card-text">{{ $users->about_me }}</p>
                     </div>
                 </div>
              </div>
@@ -89,12 +89,6 @@
                 <ul class="nav nav-tabs" id="userTab" role="tablist">
                     <li class="nav-item">
                         <a class="nav-link active" id="history-tab" data-toggle="tab" href="#history" role="tab" aria-controls="history" aria-selected="true">Recent Activities(history)</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" id="borrow-tab" data-toggle="tab" href="#borrow" role="tab" aria-controls="borrow" aria-selected="false">Borrow</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" id="lend-tab" data-toggle="tab" href="#lend" role="tab" aria-controls="lend" aria-selected="false">Lend</a>
                     </li>
                     </ul>
                     <div class="tab-content" id="myTabContent">
@@ -113,40 +107,7 @@
                                 @endforeach
                         </div>    
                     </div>
-                    <div class="tab-pane fade" id="borrow" role="tabpanel" aria-labelledby="borrow-tab">
-                        <div class="card-body">
-                                @foreach($requests_borrow->all() as $request_b)
-                                @if($request_b->status==0)
-                                <p><small class="text-muted">{{ $request_b->request_date }} </small>Sent request to {{App\User::find($request_b->id_lender)->name}} to borrow {{ App\Book::find($request_b->book_id)->title }}</p>
-                                @endif
-                                @if($request_b->status==1)
-                                <p><small class="text-muted">{{ $request_b->lend_date }} </small>{{App\User::find($request_b->id_lender)->name}} accepted your request for borrowing "{{ App\Book::find($request_b->book_id)->title }}"!</p>
-                                @endif
-                                @if($request_b->status==2)
-                                <p><small class="text-muted">{{ $request_b->return_date }} </small>You have returned {{App\User::find($request_b->id_lender)->name}}'s "{{ App\Book::find($request_b->book_id)->title }}" book</p>
-                                @endif
-                                @endforeach
-                        </div>    
-                    </div>
-                    <div class="tab-pane fade" id="lend" role="tabpanel" aria-labelledby="lend-tab">
-                        <div class="card-body">
-                                @foreach($requests_lend->all() as $request_l)
-                                @if($request_l->status==0)
-                                    <p><small class="text-muted">{{ $request_l->request_date }} </small>{{App\User::find($request_l->id_booker)->name}} wants to borrow "{{ App\Book::find($request_l->book_id)->title }}"</p>
-                                    <a href='{{ url("/accept/{$request_l->id}") }}' class="btn btn-primary">See Details</a>
-                                @endif
-                                @if($request_l->status==1)
-                                <p><small class="text-muted">{{ $request_l->lend_date }} </small>You lended "{{ App\Book::find($request_l->book_id)->title }}" to {{App\User::find($request_l->id_booker)->name}}</p>
-                                <a href='{{ url("/return/{$request_l->id}") }}' class="btn btn-primary">See Details</a>
-                                @endif
-                                @if($request_l->status==2)
-                                <p><small class="text-muted">{{ $request_l->return_date }} </small>{{App\User::find($request_l->id_booker)->name}} have returned your "{{ App\Book::find($request_l->book_id)->title }}"</p>
-                                @endif
-                                @endforeach
-                                
-                            <hr>
-                        </div>    
-                    </div>
+                    
                     </div>
         </div>
     </div>

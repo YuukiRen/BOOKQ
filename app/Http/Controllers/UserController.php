@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\UploadedFile;
 use App\User;
+use Illuminate\Support\Facades\Storage;
 use App\Book;
 use App\Category;
 use App\Transaction;
@@ -50,14 +51,34 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Request $request,$id)
-    {
+    public function show(Request $request)
+    {   
         $users = Auth::user();
+        $id = $users->id;
         $requests_lend = Transaction::where('id_lender',$id)->get();
         $requests_borrow = Transaction::where('id_booker',$id)->get();
         $activities = Transaction::where('id_booker',$id)->OrWhere('id_lender',$id)->get();
+        
+        return view('myProfile', compact('users','requests_lend','requests_borrow','activities'));
+        
         // dd($users);
-        return view('profile', compact('users','requests_lend','requests_borrow','activities'));
+        
+    }
+    public function showother(Request $request,$id)
+    {
+        $users = Auth::user();
+
+        $requests_lend = Transaction::where('id_lender',$id)->get();
+        $requests_borrow = Transaction::where('id_booker',$id)->get();
+        $activities = Transaction::where('id_booker',$id)->OrWhere('id_lender',$id)->get();
+        if($users->id == $id){
+            return view('myProfile', compact('users','requests_lend','requests_borrow','activities'));
+        }
+        else{
+            $users = User::find($id);
+            return view('otherProfile', compact('users','activities'));
+        }
+        // dd($users);
     }
 
     /**
@@ -68,10 +89,10 @@ class UserController extends Controller
      */
 
     public function edit(Request $request, $id){        
-        $users=Auth::user();
+        $user=Auth::user();
         $category=Category::all();
         // dd($category);
-        return view('editprofile',compact('category','users'));
+        return view('editprofile',compact('category','user'));
     }
 
     public function edit_profile(Request $request)
@@ -87,18 +108,18 @@ class UserController extends Controller
         ]);
         // dd($request);
         $users = User::find(Auth::user()->id);
-        if($request->user_image === NULL){
-          $name = "images/no-cover.jpeg";  
-        }
-        else{
-          $name = Storage::disk('local')->put('images', $request->image);
-        }
-        //bisa kaya gini juga
-        // if($request->hasFile('user_image')){
-        //     $name = Storage::disk('local')->put('images', $request->image);
-        //     $users->user_image = $name;
+        // if($request->user_image === NULL){
+        //   $name = "images/no-cover.jpeg";  
         // }
-        $users->user_image = $name;
+        // else{
+        //   $name = Storage::disk('local')->put('images', $request->image);
+        // }
+        //bisa kaya gini juga
+
+        if($request->hasFile('user_image')){
+            $name = Storage::disk('local')->put('images', $request->user_image);
+            $users->user_image = $name;
+        }
         $users->id = Auth::user()->id;
         $users->complete_name = $request->input('complete_name');
         $users->nim = $request->input('nim');

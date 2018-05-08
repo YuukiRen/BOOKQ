@@ -35,7 +35,7 @@
                             {{ csrf_field() }}
                                 <div class="form-group">
                                         <label for="">   User image : </label>
-                                        <input type="file" name="image" id="pic" >
+                                        <input type="file" name="user_image" id="pic" >
                                     <div class="form-group wrap-input100 validate-input" data-validate = "Valid complete_name is required">
                                             <label for="">Full Name</label>
                                             <input type="text"  class="form-control input100" required autofocus name="complete_name" value="{{$users->complete_name}}">

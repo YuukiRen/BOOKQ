@@ -50,7 +50,8 @@ Route::post('/post/{id}','BooksController@AddComment');
 Route::get('/viewbook/{id}', 'BooksController@show_detail')->name('viewbook');
 	// return view('viewbook');
 // });
-Route::get('/profile/{id}','UserController@show')->name('profile');
+Route::get('/profile/','UserController@show');
+Route::get('/profile/{id}','UserController@showother');
 Route::get('/profile/{id}/edit','UserController@edit')->name('editprofile');
 Route::post('/profile/edit/save','UserController@edit_profile');
 

@@ -89,7 +89,6 @@ class BooksController extends Controller
     		'year'=>'required',
     		'publisher'=>'required',
     		'description'=>'required',
-    		'review'=>'required',
     		'tag'=>'required',
     		'category'=>'required'
 		]);
@@ -123,7 +122,6 @@ class BooksController extends Controller
     		'book_id'=>'required',
     		'author'=>'required',
     		'description'=>'required',
-    		'review'=>'required',
     		'year'=>'required',
     		'publisher'=>'required'
     	]);

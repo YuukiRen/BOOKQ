@@ -35,6 +35,7 @@ Route::get('/profile', function () {
 // 	return view('lend');
 // });
 
+Route::get('/search','SearchController@index');
 Route::get('/lend','BooksController@lendBook');//siapa yg bikin ini?
 Route::post('/save','BooksController@addBook');
 

@@ -28,6 +28,8 @@ class userseed extends Seeder
     		    'phone_number'	=> '0897654321',
                 'fav_book'      => 'CP',
                 'about_me'      => 'i dunno',
+                'user_image'    => 'images/no-cover.jpeg',
+
         	],
             [
                 'id'            => '2',
@@ -41,6 +43,7 @@ class userseed extends Seeder
                 'phone_number'  => '0812910480999',
                 'fav_book'      => 'CP',
                 'about_me'      => 'i dunno',
+                'user_image'    => 'images/no-cover.jpeg',
             ],
             
         ]);

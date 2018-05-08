@@ -26,6 +26,7 @@ class CreateUsersTable extends Migration
             $table->string('address')->nullable();
             $table->string('line_id')->nullable();
             $table->string('phone_number')->nullable();
+            $table->string('user_image')->default('images/no-cover.jpeg');
             $table->string('fav_book')->nullable();
             $table->longText('about_me')->nullable();
             

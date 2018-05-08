@@ -34,8 +34,8 @@
                         <form class="form-horizontal login100-form validate-form" method="POST"  action="{{ url('/profile/edit/save') }}" enctype="multipart/form-data" >
                             {{ csrf_field() }}
                                 <div class="form-group">
-                                        {{-- <label for="">   User image : </label>
-                                        <input type="file" name="image" id="pic" data-validate = "Valid Title is required"> --}}
+                                        <label for="">   User image : </label>
+                                        <input type="file" name="image" id="pic" >
                                     <div class="form-group wrap-input100 validate-input" data-validate = "Valid complete_name is required">
                                             <label for="">Full Name</label>
                                             <input type="text"  class="form-control input100" required autofocus name="complete_name">

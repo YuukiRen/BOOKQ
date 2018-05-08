@@ -103,24 +103,26 @@
                     </div>
                     <div class="tab-pane fade" id="borrow" role="tabpanel" aria-labelledby="borrow-tab">
                         <div class="card-body">
-                            <p><small class="text-muted">5/1/17 </small>Sent Request to (user) to borrow (book)</p>
-                            <hr>
-                            <p><small class="text-muted">6/1/17 </small>Sent Request to (user) to borrow (book)</p>
-                            <hr>
-                            <p><small class="text-muted">7/1/17 </small>Sent Request to (user) to borrow (book)</p>
-                            <hr>
+                            {{-- @if($transaction->status==0)
+                                <p><small class="text-muted">5/1/17 </small>Sent Request to {{$books->user_id->name}} to borrow {{$books->title}}</p>
+                            @if($transaction->status==1)
+                                <p><small class="text-muted">6/1/17 </small>{{$books->user_id->name}} accepted your request!</p>
+                            @if($transaction->status==2)
+                                <p><small class="text-muted">7/1/17 </small>You have returned {{$books->user_id->name}}'s book</p>
+                            @endif --}}
                         </div>    
                     </div>
                     <div class="tab-pane fade" id="lend" role="tabpanel" aria-labelledby="lend-tab">
                         <div class="card-body">
-                            <p><small class="text-muted">12/1/17 </small>(user) wants to borrow your (book)</p> 
-                            <button>See Details</button>
-                            <hr>
-                            <p><small class="text-muted">14/1/17 </small>(user) wants to borrow your (book)</p>
-                            <button>See Details</button>
-                            <hr>
-                            <p><small class="text-muted">15/1/17 </small>(user) wants to borrow your (book)</p>
-                            <button>See Details</button>
+                            {{-- @if($transaction->status==0)
+                                <p><small class="text-muted">5/1/17 </small>{{$books->user_id->name}} wants to borrow "{{$books->title}}"</p>
+                                <button>See Details</button>
+                                @include('layouts.partial.transactionlend')
+                            @if($transaction->status==1)
+                                 <p><small class="text-muted">6/1/17 </small>You lended "{{$book->name}}" to {{lender}}</p>
+                            @if($transaction->status==2)
+                                <p><small class="text-muted">7/1/17 </small>{{lender}} have returned your "{{$books->user_id->name}}"</p>
+                            @endif --}}
                             <hr>
                         </div>    
                     </div>

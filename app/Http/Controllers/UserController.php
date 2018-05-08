@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Http\UploadedFile;
 use App\User;
 use App\Book;
 use App\Transaction;
@@ -79,11 +80,16 @@ class UserController extends Controller
         // dd($request);
         $users = User::find(Auth::user()->id);
         if($request->user_image === NULL){
-          $name = "images/no_cover.jpg";  
+          $name = "images/no-cover.jpeg";  
         }
         else{
           $name = Storage::disk('local')->put('images', $request->image);
         }
+        //bisa kaya gini juga
+        // if($request->hasFile('user_image')){
+        //     $name = Storage::disk('local')->put('images', $request->image);
+        //     $users->user_image = $name;
+        // }
         $users->user_image = $name;
         $users->id = Auth::user()->id;
         $users->complete_name = $request->input('complete_name');

@@ -9,6 +9,7 @@ use App\Comment;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Http\UploadedFile;
 use Auth;
 
 class BooksController extends Controller
@@ -94,23 +95,21 @@ class BooksController extends Controller
 		]);
 		// dd($request);
 		$books = new Book;
-        if($request->image === NULL){
-          $name = "images/no_cover.jpg";  
+            
+        if($request->hasFile('image')){
+            $name = Storage::disk('local')->put('images', $request->image);
+            $books->image = $name;     
         }
-        else{
-		  $name = Storage::disk('local')->put('images', $request->image);
-        }
-        $books->image = $name;
         $books->user_id=Auth::user()->id;
-    	$books->title = $request->input('title');
-		$books->author = $request->input('author');
-    	$books->year = $request->input('year');
-    	$books->publisher = $request->input('publisher');
-		$books->description = $request->input('description');
-		$books->review = $request->input('review');
-		$books->tag = $request->input('tag');
-    	$books->category = $request->input('category');
-		$books->save();		
+        $books->title = $request->input('title');
+        $books->author = $request->input('author');
+        $books->year = $request->input('year');
+        $books->publisher = $request->input('publisher');
+        $books->description = $request->input('description');
+        $books->review = $request->input('review');
+        $books->tag = $request->input('tag');
+        $books->category = $request->input('category');
+        $books->save();
     	return redirect('/home')->with('info','Book Saved Successfully!');
     }
 

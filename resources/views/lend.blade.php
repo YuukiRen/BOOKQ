@@ -15,7 +15,7 @@
                                 {{ csrf_field() }}
                                             <div class="form-group">
                                                  <label for="">   Book image : </label>
-                                                    <input type="file" name="image" id="pic" data-validate = "Valid Title is required">
+                                                    <input type="file" name="image" id="pic"    data-validate = "Valid Title is required">
                                                     <div class="form-group wrap-input100 validate-input" data-validate = "Valid Title is required">
                                                             <label for="">Title</label>
                                                             <input type="text"  class="form-control input100" required autofocus name="title">

@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Nama User</title>
+    <title>{{$users->name}}'s Profile</title>
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
@@ -28,34 +28,41 @@
             {{-- <img align=center class="img-responsive" src="{{asset($books->image)}}" alt=""> --}}Foto User
             </div>
             <div class="card-body mt-4 col-md-9">
-                <h3 class="card-title">Nama User</h3>
+                <h3 class="card-title">{{$users->name}}</h3>
                 <div class="row">
                     <div class="col-md-6">
                         <table>
                             <tr>
-                                <td valign="top"> NIM </td> <td valign="top">&nbsp;:&nbsp;</td> <td> NIM </td>
+                                @if ( !empty ( $users->nim ) ) 
+                                    <td valign="top"> NIM </td> <td valign="top">&nbsp;:&nbsp;</td> <td> {{$users->nim}} </td>
+                                
+                                @else
+                                    <td valign="top"> NIM </td> <td valign="top">&nbsp;:&nbsp;</td> <td> - </td>
+                                @endif
                             </tr>
                             <tr>
-                                <td valign="top"> Adress </td> <td valign="top">&nbsp;:&nbsp;</td>  <td> - </td>
+                                @if ( !empty ( $users->alamat ) ) 
+                                    <td valign="top"> Address </td> <td valign="top">&nbsp;:&nbsp;</td> <td> {{$users->alamat}} </td>
+                                @else
+                                    <td valign="top"> Address </td> <td valign="top">&nbsp;:&nbsp;</td> <td> - </td>
+                                @endif
                             </tr> 
                             <tr>
-                                <td valign="top"> LINE ID </td><td valign="top">&nbsp;:&nbsp;</td><td> - </td>
+                                @if ( !empty ( $users->id_line ) )
+                                    <td valign="top"> Line ID </td> <td valign="top">&nbsp;:&nbsp;</td> <td> {{$users->id_line}} </td>
+                                @else
+                                    <td valign="top"> Line ID </td> <td valign="top">&nbsp;:&nbsp;</td> <td> - </td>
+                                @endif
                             </tr> 
                             <tr>
-                                <td valign="top"> Phone No. </td><td valign="top">&nbsp;:&nbsp;</td><td> - </td>
+                                @if ( !empty ( $users->nomor_hp) )
+                                        <td valign="top"> Phone No. </td> <td valign="top">&nbsp;:&nbsp;</td> <td> {{$users->nim}} </td>
+                                @else
+                                    <td valign="top"> Phone No. </td> <td valign="top">&nbsp;:&nbsp;</td> <td> - </td>
+                                @endif
                             </tr>
                         </table>
                     </div>
-                        {{-- <div id="rating" class="col-md-6">
-                            <div class="row">
-                            <div class="col-3">
-                                <span class="fas fa-star fa-4x center checked" style="color:#FFDF00"></span>
-                            </div>
-                            <div class="col">            
-                                <h1 style="margin-top:10px">&nbsp;X / 5</h1>
-                            </div>                  
-                            </div>
-                        </div> --}}
                 </div>
                 <div class="row"> 
                     <div class="col"> <br>
@@ -65,20 +72,6 @@
                 </div>
              </div>
          </div> <br>
-              {{-- <h4 class="card-title">Description</h4>
-              <p class="card-text">{{$books->description}}</p>
-                
-              <br>
-               <div class="card-footer">
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#borrowmodal">
-                  Borrow this Book?
-                </button>          
-                @include('layouts.partial.borrowmodal')    
-                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#reportbookmodal">
-                  Report this Book
-                </button>          
-                @include('layouts.partial.reportbookmodal')
-            </div> --}}
             </div>
           </div>
         </div>

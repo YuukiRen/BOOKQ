@@ -17,7 +17,7 @@ class SearchController extends Controller
     {
     	if($request->ajax())
     	{
-    		$customers
+    		$customer;
     	}
     }
 }

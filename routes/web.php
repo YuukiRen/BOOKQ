@@ -27,10 +27,6 @@ Route::get('/register', function () {
     return view('auth.register');
 });
 
-Route::get('/profile', function () {
-    return view('profile');
-});
-
 // Route::get('/lend',function(){
 // 	return view('lend');
 // });
@@ -54,7 +50,7 @@ Route::post('/post/{id}','BooksController@AddComment');
 Route::get('/viewbook/{id}', 'BooksController@show_detail')->name('viewbook');
 	// return view('viewbook');
 // });
-
+Route::get('/profile/{id}','UserController@show')->name('profile');
 
 Route::post('/coba',function(){
 	return view('coba');

@@ -10,7 +10,7 @@ use App\Book;
 
 class TransaksiController extends Controller
 {
-    public function borrow($id){
+    public function borrow($id){//id book
         $trans = new Transaction;
         $trans->request_date = date('Y-m-d H:i:s');
         $trans->status = 0;
@@ -21,7 +21,7 @@ class TransaksiController extends Controller
         //return ke mana kek
         return 'request sent';
     }
-    public function lend($id){
+    public function lend($id){//id transaksi
         $data = Transaction::find($id);
         $data->status = 1;
         $data->lend_date = date('Y-m-d H:i:s');
@@ -29,8 +29,11 @@ class TransaksiController extends Controller
         //return apalah
         return 'accepted nigga';  
     }
+    public function reject($id){
+        return 'bye nigga';  
+    }
 
-    public function back($id){
+    public function back($id){//id transaksi
         $data = Transaction::find($id);
         $data->status = 2;
         $data->return_date = date('Y-m-d H:i:s');

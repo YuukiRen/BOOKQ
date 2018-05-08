@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\User;
 use App\Book;
+use App\Transaction;
 use Auth;
 
 class UserController extends Controller
@@ -50,8 +51,11 @@ class UserController extends Controller
     public function show(Request $request,$id)
     {
         $users = Auth::user();
-
-        return view('profile', compact('users'));
+        $requests_lend = Transaction::where('id_lender',$id)->get();
+        $requests_borrow = Transaction::where('id_booker',$id)->get();
+        $activities = Transaction::where('id_booker',$id)->OrWhere('id_lender',$id)->get();
+        // dd($users);
+        return view('profile', compact('users','requests_lend','requests_borrow','activities'));
     }
 
     /**
@@ -83,7 +87,7 @@ class UserController extends Controller
         $users->user_image = $name;
         $users->id = Auth::user()->id;
         $users->complete_name = $request->input('complete_name');
-        $users-> = $request->input('nim');
+        $users->nim = $request->input('nim');
         $users->address = $request->input('address');
         $users->line_id = $request->input('line_id');
         $users->phone_number = $request->input('phone_number');

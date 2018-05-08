@@ -65,6 +65,13 @@ Route::get('/borrow',function(){
 	return view('borrow');
 });
 */
+//main function
+
+Route::get('/request/{id}','TransaksiController@borrow');
+Route::get('/accept/{id}','TransaksiController@lend');
+Route::get('/reject/{id}','TransaksiController@reject');
+Route::get('/return/{id}','TransaksiController@back');
+
 
 //prototypw
 Auth::routes();

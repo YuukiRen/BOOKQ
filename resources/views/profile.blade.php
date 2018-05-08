@@ -93,6 +93,17 @@
                     <div class="tab-content" id="myTabContent">
                     <div class="tab-pane fade show active" id="history" role="tabpanel" aria-labelledby="history-tab">
                         <div class="card-body">
+                            @foreach($activities->all() as $activity)
+                                @if($activity->status==0)
+                                <p><small class="text-muted">{{ $activity->request_date }} </small>Sent request to {{App\User::find($activity->id_lender)->name}} to borrow {{ App\Book::find($activity->book_id)->title }}</p>
+                                @endif
+                                @if($activity->status==1)
+                                <p><small class="text-muted">{{ $activity->lend_date }} </small>{{App\User::find($activity->id_lender)->name}} accepted your request for borrowing "{{ App\Book::find($activity->book_id)->title }}"!</p>
+                                @endif
+                                @if($activity->status==2)
+                                <p><small class="text-muted">{{ $activity->return_date }} </small>You have returned {{App\User::find($activity->id_lender)->name}}'s "{{ App\Book::find($activity->book_id)->title }}" book</p>
+                                @endif
+                                @endforeach
                             <p><small class="text-muted">3/1/17 </small>Borrowed a book from (user)</p>
                             <hr>
                             <p><small class="text-muted">3/1/17 </small>Lended a book to (user)</p>
@@ -103,26 +114,37 @@
                     </div>
                     <div class="tab-pane fade" id="borrow" role="tabpanel" aria-labelledby="borrow-tab">
                         <div class="card-body">
-                            {{-- @if($transaction->status==0)
-                                <p><small class="text-muted">5/1/17 </small>Sent Request to {{$books->user_id->name}} to borrow {{$books->title}}</p>
-                            @if($transaction->status==1)
-                                <p><small class="text-muted">6/1/17 </small>{{$books->user_id->name}} accepted your request!</p>
-                            @if($transaction->status==2)
-                                <p><small class="text-muted">7/1/17 </small>You have returned {{$books->user_id->name}}'s book</p>
-                            @endif --}}
+                                @foreach($requests_borrow->all() as $request_b)
+                                @if($request_b->status==0)
+                                <p><small class="text-muted">{{ $request_b->request_date }} </small>Sent request to {{App\User::find($request_b->id_lender)->name}} to borrow {{ App\Book::find($request_b->book_id)->title }}</p>
+                                @endif
+                                @if($request_b->status==1)
+                                <p><small class="text-muted">{{ $request_b->lend_date }} </small>{{App\User::find($request_b->id_lender)->name}} accepted your request for borrowing "{{ App\Book::find($request_b->book_id)->title }}"!</p>
+                                @endif
+                                @if($request_b->status==2)
+                                <p><small class="text-muted">{{ $request_b->return_date }} </small>You have returned {{App\User::find($request_b->id_lender)->name}}'s "{{ App\Book::find($request_b->book_id)->title }}" book</p>
+                                @endif
+                                @endforeach
+                  
+                            
                         </div>    
                     </div>
                     <div class="tab-pane fade" id="lend" role="tabpanel" aria-labelledby="lend-tab">
                         <div class="card-body">
-                            {{-- @if($transaction->status==0)
-                                <p><small class="text-muted">5/1/17 </small>{{$books->user_id->name}} wants to borrow "{{$books->title}}"</p>
-                                <button>See Details</button>
-                                @include('layouts.partial.transactionlend')
-                            @if($transaction->status==1)
-                                 <p><small class="text-muted">6/1/17 </small>You lended "{{$book->name}}" to {{lender}}</p>
-                            @if($transaction->status==2)
-                                <p><small class="text-muted">7/1/17 </small>{{lender}} have returned your "{{$books->user_id->name}}"</p>
-                            @endif --}}
+                                @foreach($requests_lend->all() as $request_l)
+                                @if($request_l->status==0)
+                                    <p><small class="text-muted">{{ $request_l->request_date }} </small>{{App\User::find($request_l->id_booker)->name}} wants to borrow "{{ App\Book::find($request_l->book_id)->title }}"</p>
+                                    <a href='{{ url("/accept/{$request_l->id}") }}' class="btn btn-primary">See Details</a>
+                                @endif
+                                @if($request_l->status==1)
+                                <p><small class="text-muted">{{ $request_l->lend_date }} </small>You lended "{{ App\Book::find($request_l->book_id)->title }}" to {{App\User::find($request_l->id_booker)->name}}</p>
+                                <a href='{{ url("/return/{$request_l->id}") }}' class="btn btn-primary">See Details</a>
+                                @endif
+                                @if($request_l->status==2)
+                                <p><small class="text-muted">{{ $request_l->return_date }} </small>{{App\User::find($request_l->id_booker)->name}} have returned your "{{ App\Book::find($request_l->book_id)->title }}"</p>
+                                @endif
+                                @endforeach
+                                
                             <hr>
                         </div>    
                     </div>

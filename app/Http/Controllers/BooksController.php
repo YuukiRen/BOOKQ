@@ -46,7 +46,6 @@ class BooksController extends Controller
         $this->validate($request,[
             'review' => 'required',
         ]);
-
         //bagian comment
         $comments = new Comment;
         $comments->book_id = $id; 

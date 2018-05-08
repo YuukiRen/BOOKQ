@@ -27,7 +27,7 @@ class CreateBooks extends Migration
             $table->string('tag');
             $table->string('image')->default('images/no-cover.jpeg');//uncomment kalo mau ada gambar
             $table->timestamps();
-
+            
         });
     }
 

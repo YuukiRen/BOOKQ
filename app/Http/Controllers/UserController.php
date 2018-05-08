@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\UploadedFile;
 use App\User;
 use App\Book;
+use App\Category;
 use App\Transaction;
 use Auth;
 
@@ -65,9 +66,16 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+
+    public function edit(Request $request, $id){
+        $users=Auth::where('id', $id)->first();
+        $category=Category::all();
+        dd($category);
+        return view('editprofile',compact('category','user'));
+    }
+
     public function edit_profile(Request $request)
     {
-
         $this->validate($request,[
             'user_image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'complete_name' => 'required',

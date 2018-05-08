@@ -104,12 +104,6 @@
                                 <p><small class="text-muted">{{ $activity->return_date }} </small>You have returned {{App\User::find($activity->id_lender)->name}}'s "{{ App\Book::find($activity->book_id)->title }}" book</p>
                                 @endif
                                 @endforeach
-                            <p><small class="text-muted">3/1/17 </small>Borrowed a book from (user)</p>
-                            <hr>
-                            <p><small class="text-muted">3/1/17 </small>Lended a book to (user)</p>
-                            <hr>
-                            <p><small class="text-muted">3/1/17 </small>Added (book) to the database!</p>
-                            <hr>
                         </div>    
                     </div>
                     <div class="tab-pane fade" id="borrow" role="tabpanel" aria-labelledby="borrow-tab">
@@ -125,8 +119,6 @@
                                 <p><small class="text-muted">{{ $request_b->return_date }} </small>You have returned {{App\User::find($request_b->id_lender)->name}}'s "{{ App\Book::find($request_b->book_id)->title }}" book</p>
                                 @endif
                                 @endforeach
-                  
-                            
                         </div>    
                     </div>
                     <div class="tab-pane fade" id="lend" role="tabpanel" aria-labelledby="lend-tab">

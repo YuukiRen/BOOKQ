@@ -13,13 +13,13 @@ class CreateMessagesTable extends Migration
      */
     public function up()
     {
-        Schema::create('messages', function (Blueprint $table) {
+        Schema::create('messages_ts', function (Blueprint $table) {
             $table->increments('id');
             $table->string('signature');
-            $table->int('from');
-            $table->int('to');
-            $table->int('read_from')->nullable(); // 0 -> not read; 1 -> read
-            $table->int('read_to')->nullable()  ; // 0 -> not read; 1 -> read
+            $table->integer('from');
+            $table->integer('to');
+            $table->integer('read_from')->default(0); // 0 -> not read; 1 -> read
+            $table->integer('read_to')->default(0) ; // 0 -> not read; 1 -> read
             $table->longText('messages');
             $table->timestamps();
         });
@@ -32,7 +32,7 @@ class CreateMessagesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('messages');
+        Schema::dropIfExists('messages_ts');
     }
 
 }

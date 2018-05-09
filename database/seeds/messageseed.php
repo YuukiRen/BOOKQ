@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use App\Messages;
+use App\Messages_t;
 
 class messageseed extends Seeder
 {
@@ -24,7 +24,7 @@ class messageseed extends Seeder
                 else{
                     $signat = strval($j).':'.strval($i);    
                 }
-                Messages::insert( 
+                Messages_t::insert( 
                     [
                         'signature' => $signat,
                         'id'    => $x,
@@ -46,14 +46,13 @@ class messageseed extends Seeder
                 else{
                     $signat = strval($j).':'.strval($i);    
                 }
-                Messages::insert( 
+                Messages_t::insert( 
                     [
                         'signature' => $signat,
                         'messages'=> 'lorem ipsum',
                         'id'    => $x,
                         'from'  => $i,
                         'to'    => $j,
-                        'messages'=> 'whehe',                        
                         'created_at' => date('Y-m-d H:i:s'),
                         'updated_at' => date('Y-m-d H:i:s')
                     ]

@@ -4,14 +4,13 @@ namespace App\Http\Controllers;
 use App\Book;
 use App\Category;
 use App\User;
+use Auth;
 use App\Rating;
 use App\Comment;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\UploadedFile;
-use Auth;
-use App\Transaction;
 
 class BooksController extends Controller
 {
@@ -99,12 +98,12 @@ class BooksController extends Controller
     		'author'=>'required',
     		'year'=>'required',
     		'publisher'=>'required',
-    		'description'=>'required',
     		'tag'=>'required',
     		'category'=>'required'
 		]);
 		// dd($request);
 		$books = new Book;
+        // dd($books);
             
         if($request->hasFile('image')){
             $name = Storage::disk('local')->put('images', $request->image);
@@ -115,7 +114,9 @@ class BooksController extends Controller
         $books->author = $request->input('author');
         $books->year = $request->input('year');
         $books->publisher = $request->input('publisher');
-        $books->description = $request->input('description');
+        if($request->input('description') !== NULL){
+            $books->description = $request->input('description');
+        }
         $books->review = $request->input('review');
         $books->tag = $request->input('tag');
         $books->category = $request->input('category');

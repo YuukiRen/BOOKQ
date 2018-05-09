@@ -3,7 +3,7 @@
     $(".alert").fadeTo(200, 0).slideUp(200, function(){
         $(this).remove(); 
     });
-}, 2000);
+}, 3170);
 </script>
 @if (session('success'))
 <div class="row">

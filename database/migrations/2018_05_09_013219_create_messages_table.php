@@ -18,8 +18,7 @@ class CreateMessagesTable extends Migration
             $table->string('signature');
             $table->integer('from');
             $table->integer('to');
-            $table->integer('read_from')->default(0); // 0 -> not read; 1 -> read
-            $table->integer('read_to')->default(0) ; // 0 -> not read; 1 -> read
+            $table->integer('read_status')->default(0); // 0 -> not read; 1 -> read
             $table->longText('messages');
             $table->timestamps();
         });

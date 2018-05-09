@@ -126,6 +126,10 @@
                                 @if($request_b->status==2)
                                 <p><small class="text-muted">{{ $request_b->return_date }} </small>You have returned {{App\User::find($request_b->id_lender)->name}}'s "{{ App\Book::find($request_b->book_id)->title }}" book</p>
                                 @endif
+                                @if($request_b->status==3)
+                                <p><small class="text-muted">{{ $request_b->reject_date }} </small>{{App\User::find($request_b->id_lender)->name}} have declined Your request for "{{ App\Book::find($request_b->book_id)->title }}"</p>
+                                @endif
+                                
                                 @endforeach
                         </div>    
                     </div>
@@ -134,14 +138,18 @@
                                 @foreach($requests_lend->all() as $request_l)
                                 @if($request_l->status==0)
                                     <p><small class="text-muted">{{ $request_l->request_date }} </small>{{App\User::find($request_l->id_booker)->name}} wants to borrow "{{ App\Book::find($request_l->book_id)->title }}"</p>
-                                    <a href='{{ url("/accept/{$request_l->id}") }}' class="btn btn-primary">See Details</a>
+                                    <a href='{{ url("/accept/{$request_l->id}") }}' class="btn btn-primary">Accept</a>
+                                    <a href='{{ url("/reject/{$request_l->id}") }}' class="btn btn-primary">Decline</a>
                                 @endif
                                 @if($request_l->status==1)
                                 <p><small class="text-muted">{{ $request_l->lend_date }} </small>You lended "{{ App\Book::find($request_l->book_id)->title }}" to {{App\User::find($request_l->id_booker)->name}}</p>
-                                <a href='{{ url("/return/{$request_l->id}") }}' class="btn btn-primary">See Details</a>
+                                <a href='{{ url("/return/{$request_l->id}") }}' class="btn btn-primary">I have Recieved my Book back</a>
                                 @endif
                                 @if($request_l->status==2)
                                 <p><small class="text-muted">{{ $request_l->return_date }} </small>{{App\User::find($request_l->id_booker)->name}} have returned your "{{ App\Book::find($request_l->book_id)->title }}"</p>
+                                @endif
+                                @if($request_l->status==3)
+                                <p><small class="text-muted">{{ $request_l->reject_date }} </small>You have declined {{App\User::find($request_l->id_booker)->name}}'s request for "{{ App\Book::find($request_l->book_id)->title }}"</p>
                                 @endif
                                 @endforeach
                                 

@@ -22,7 +22,7 @@
      <!-- Page Content -->
     <div class="container">
       <div class="row"> 
-        <div class="center card col-lg-10"> 
+        <div class="center card col-lg-10 pb-2"> 
           <div class="row">
             <div class="col-md-4 mt-4">
                 <img class="img-responsive img-user img-center" src="{{asset($users->user_image)}}" alt="">
@@ -31,7 +31,7 @@
                 </div>
             </div>
             <div class="card-body mt-4 col-md-8">
-                <h3 class="card-title">{{$users->name}} <a href="" class="btn btn-primary btn-sm">Edit Profile</a></h3> 
+                <h3 class="card-title">{{$users->name}} <a href="{{url("/profile/{$users->id}/edit")}}" class="btn btn-primary btn-sm">Edit Profile</a></h3> 
                 <div class="row">
                     <div class="col-md-6">
                         <table>

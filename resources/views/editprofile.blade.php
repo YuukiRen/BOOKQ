@@ -35,7 +35,7 @@
                             {{ csrf_field() }}
                                 <div class="form-group">
                                         <label for="">   User image : </label>
-                                        <input type="file" name="user_image" id="pic" >
+                                <input type="file" name="user_image" id="pic" value="{{$users->user_image}}">
                                     <div class="form-group wrap-input100 validate-input" data-validate = "Valid complete_name is required">
                                             <label for="">Full Name</label>
                                             <input type="text"  class="form-control input100" required autofocus name="complete_name" value="{{$users->complete_name}}">
@@ -76,10 +76,14 @@
                                         <label for="address">Address</label>
                                         <input type="text" class="input100 form-control" required autofocus name="address" value="{{$users->address}}">
                                     </div>
-                                    
-                                    <div class="form-group wrap-input100 validate-input" data-validate = "Valid about_me is required">
+                                    <script>
+                                            function myFunction() {
+                                                document.getElementById("about_me").value = {{$users->about_me}};
+                                            }
+                                    </script>
+                                    <div class="form-group wrap-input100 validate-input" onclick="myFunction()" data-validate = "Valid about_me is required">
                                         <label for="about_me">About Me</label>
-                                        <textarea type="text" rows=5 class="input100 form-control" required autofocus name="about_me" value="{{$users->aboutme}}"></textarea>
+                                        <textarea type="text" id="about_me" rows=5 class="input100 form-control" required autofocus name="about_me" value="{{$users->about_me}}"></textarea>
                                     </div>
                                     <div class="form-group">
                                             <input type="submit" class="btn btn-primary btn-block" value="SAVE" >
@@ -93,6 +97,11 @@
             </div>
         </div>
     </div>
+    <script>
+            function myFunction() {
+                document.getElementById("about_me").value = "{{$users->about_me}}";
+            }
+    </script>
 <!--===============================================================================================-->  
     <script src="../vendor/jquery/jquery-3.2.1.min.js"></script>
 <!--===============================================================================================-->

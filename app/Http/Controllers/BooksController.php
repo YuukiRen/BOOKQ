@@ -31,14 +31,24 @@ class BooksController extends Controller
     public function show_detail(Request $request, $id){
 
         //query cari buku
+        
         $books = Book::where('id', $id)->first();
+        
+        if($books === NULL){
+            // $books=\DB::table('books')->paginate(12);
+            // dd($books);
+            // var_dump($books);
+            return redirect('/search')->with('danger','No book found');
+        }
         $comments = Comment::where('book_id',$id)->get();//comment pertama
 		$users = Auth::user()->id;
         $tabs = Rating::where('book_id',$id)->get();
         $ratings = $tabs->avg('rate');
-        //dd($books);
+        // dd($books);
         //ke detailed view
+
         return view('viewbook', compact('books','comments','users','ratings'));
+
     }
 
     public function AddComment(Request $request, $id){

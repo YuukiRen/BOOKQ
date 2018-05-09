@@ -32,12 +32,7 @@
                                             <div class="col-4">
                                                 <div class="form-group wrap-input100 validate-input" data-validate = "Valid Year is required">
                                                     <label for="genre">Year</label>
-                                                    <input type="text" class="form-control" name="year" onkeydown="return ( event.ctrlKey || event.altKey 
-                                                                                                                    || (47<event.keyCode && event.keyCode<58 && event.shiftKey==false) 
-                                                                                                                    || (95<event.keyCode && event.keyCode<106)
-                                                                                                                        || (event.keyCode==8) || (event.keyCode==9) 
-                                                                                                                    || (event.keyCode>34 && event.keyCode<40) 
-                                                                                                                    || (event.keyCode==46) )">
+                                                    <input type="text" class="form-control" name="year" onkeydown="return ( event.ctrlKey || event.altKey || (event.keyCode==46) )">
                                                 </div>
                                             </div>
 

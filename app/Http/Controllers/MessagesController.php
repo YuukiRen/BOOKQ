@@ -31,14 +31,14 @@ class MessagesController extends Controller
 
     public function send(Request $request, messages_t $messages)
     {
-         $to_id   = $request['to'];
+         $to_id   = $request->input('to');
          $from_id = Auth::user()->id;
          $sign = $this->create_signature($to_id, $from_id);
          if($sign === NULL){
              return 'error. You can\'t send yourself message to yourself';
          }                
 
-         $message = $request['messages'];
+         $message = $request->input('message');
          $new_message = new Messages_t;
          $new_message->signature = $sign;
          $new_message->messages  = $message;

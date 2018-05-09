@@ -25,4 +25,18 @@ class AdminController extends Controller
     {
         return view('admin.home');
     }
+
+
+    public function reject_report(){
+
+
+    }
+
+
+    public function accept_report(){
+
+
+    }
+
+    
 }

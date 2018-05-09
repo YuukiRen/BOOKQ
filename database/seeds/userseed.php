@@ -45,7 +45,34 @@ class userseed extends Seeder
                 'about_me'      => 'i dunno',
                 'user_image'    => 'images/no-cover.jpeg',
             ],
-            
+            [
+                'id'            => '3',
+                'name'          => 'jajaja',
+                'password'      => bcrypt("secret"),
+                'email'         => 'ww@coba.com',
+                'complete_name' => 'Alvin Reinaldo',
+                'nim'           => 'G64160067',
+                'address'       => 'Depok',
+                'line_id'       => 'alvinreinaldoo',
+                'phone_number'  => '0812910480999',
+                'fav_book'      => 'CP',
+                'about_me'      => 'i dunno',
+                'user_image'    => 'images/no-cover.jpeg',
+            ],
+            [
+                'id'            => '4',
+                'name'          => 'nangid',
+                'password'      => bcrypt("secret"),
+                'email'         => 'cc@coba.com',
+                'complete_name' => 'Alvin Reinaldo',
+                'nim'           => 'G64160067',
+                'address'       => 'Depok',
+                'line_id'       => 'alvinreinaldoo',
+                'phone_number'  => '0812910480999',
+                'fav_book'      => 'CP',
+                'about_me'      => 'i dunno',
+                'user_image'    => 'images/no-cover.jpeg',
+            ],
         ]);
         
     }

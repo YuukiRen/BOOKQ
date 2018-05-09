@@ -13,11 +13,23 @@
                                 {{ csrf_field() }}
                                     <div class="form-group">
                                             <label for="">   Book image : </label>
+
                                             <input type="file" name="image" id="pic"    data-validate = "Valid Title is required">
                                             <div class="form-group wrap-input100 validate-input" data-validate = "Valid Title is required">
-                                                    <label for="">Title</label>
+                                                    <label for=""> Title </label>
+<!--                                                     @if ($errors->any())
+                                                        <div class="alert alert-danger">
+                                                            <ul>
+                                                                @foreach ($errors->all() as $error)
+                                                                    <li>{{ $error }}</li>
+                                                                @endforeach
+                                                            </ul>
+                                                        </div>
+                                                    @endif -->
                                                     <input type="text"  class="form-control input100" required autofocus name="title">
                                             </div>
+
+
                                         <div class="row">
                                             <div class="col-4">
                                                 <div class="form-group">

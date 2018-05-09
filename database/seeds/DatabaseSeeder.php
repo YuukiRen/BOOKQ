@@ -15,5 +15,6 @@ class DatabaseSeeder extends Seeder
         $this->call(userseed::class);
         $this->call(seedcategory::class);
         $this->call(commentseed::class);
+        $this->call(messageseed::class);
     }
 }

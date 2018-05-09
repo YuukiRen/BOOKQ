@@ -15,7 +15,7 @@ class CreateMessagesTable extends Migration
     {
         Schema::create('messages', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('signature');
+            $table->string('signature')->nullable();
             $table->string('from');
             $table->string('to');
             $table->longText('messages');
@@ -32,4 +32,5 @@ class CreateMessagesTable extends Migration
     {
         Schema::dropIfExists('messages');
     }
+
 }

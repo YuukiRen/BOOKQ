@@ -22,10 +22,10 @@
      <!-- Page Content -->
     <div class="container">
       <div class="row"> 
-        <div class="center card col-lg-10"> 
+        <div class="center card col-lg-10 pb-2"> 
           <div class="row">
             <div class="col-md-4 mt-4">
-                <img class="img-responsive img-book img-center" src="{{asset($users->user_image)}}" alt="">
+                    <img class="img-responsive img-user img-center" src="{{asset($users->user_image)}}" alt="">
                 <div class="row">
                 {{-- <a href="{{route('/profile/edit')}}" class="btn btn-primary center btn-sm"></a> --}}
                 </div>
@@ -71,8 +71,10 @@
                         </table>
                     </div>
                 </div>
+            </div>
                 <div class="row"> 
-                    <div class="col"> <br>
+                    <div class="col-1"></div>
+                  <div class="col"> <br>
                         <h4 class="card-title">About Me</h4>
                         <p class="card-text">{{ $users->about_me }}</p>
                     </div>
@@ -85,7 +87,7 @@
         <br>
           <!-- /.card -->
           <div class="row">
-            <div class="card col-11 center">
+            <div class="card col-9 center">
                 <ul class="nav nav-tabs" id="userTab" role="tablist">
                     <li class="nav-item">
                         <a class="nav-link active" id="history-tab" data-toggle="tab" href="#history" role="tab" aria-controls="history" aria-selected="true">Recent Activities(history)</a>

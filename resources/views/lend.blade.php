@@ -32,12 +32,7 @@
                                             <div class="col-4">
                                                 <div class="form-group wrap-input100 validate-input" data-validate = "Valid Year is required">
                                                     <label for="genre">Year</label>
-                                                    <input type="text" class="form-control" name="year" onkeydown="return ( event.ctrlKey || event.altKey 
-                                                                                                                    || (47<event.keyCode && event.keyCode<58 && event.shiftKey==false) 
-                                                                                                                    || (95<event.keyCode && event.keyCode<106)
-                                                                                                                        || (event.keyCode==8) || (event.keyCode==9) 
-                                                                                                                    || (event.keyCode>34 && event.keyCode<40) 
-                                                                                                                    || (event.keyCode==46) )">
+                                                    <input type="text" class="form-control" name="year" onkeydown="return ( event.ctrlKey || event.altKey || (event.keyCode==46) )">
                                                 </div>
                                             </div>
 
@@ -56,10 +51,6 @@
                                         <div class="form-group wrap-input100 validate-input" data-validate = "Valid Publisher is required">
                                             <label for="">Publisher</label>
                                             <input type="text" class="input100 form-control" required autofocus name="publisher">
-                                        </div>
-                                        <div class="form-group wrap-input100 validate-input" data-validate = "Valid Description is required">
-                                            <label for="Content">Description</label>
-                                            <textarea name="description" rows="10" class="input100 form-control" required autofocus name="description"></textarea>
                                         </div>
                                         <div class="form-group wrap-input100 validate-input">
                                             <label for="Content">Review</label>

@@ -41,6 +41,7 @@ Route::post('/store','BooksController@dummy');//dummy
 
 
 Route::get('/search','BooksController@show');
+Route::post('/search_book','SearchController@search');
 Route::post('/post/{id}','BooksController@AddComment');
 
 // Route::get('/viewbook',function(){
@@ -50,7 +51,7 @@ Route::post('/post/{id}','BooksController@AddComment');
 Route::get('/viewbook/{id}', 'BooksController@show_detail')->name('viewbook');
 	// return view('viewbook');
 // });
-Route::get('/profile/','UserController@show');
+Route::get('/profile/','UserController@show')->name('profile');
 Route::get('/profile/{id}','UserController@showother');
 Route::get('/profile/{id}/edit','UserController@edit')->name('editprofile');
 Route::post('/profile/edit/save','UserController@edit_profile');

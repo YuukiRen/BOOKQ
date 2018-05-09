@@ -22,14 +22,18 @@
      <!-- Page Content -->
     <div class="container">
       <div class="row"> 
-        <div class="center card col-lg-10"> 
+        <div class="center card col-lg-10 px-2 py-2"> 
           <div class="row">
         <div class="col-md-4 mt-4">
         <img class="img-responsive img-book img-center" src="{{asset($books->image)}}" alt="">
         <div class="row center" style="margin-top:10px">
           <button type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#borrowmodal">
             Borrow this Book
-          </button>       
+          </button> 
+          <button type="button" class="btn btn-danger btn-block " data-toggle="modal" data-target="#reportbookmodal">
+              Report this Book
+            </button>          
+            @include('layouts.partial.reportbookmodal')     
         </div>   
                   <!-- Modal -->
           <div class="modal fade" id="borrowmodal" tabindex="-1" role="dialog" aria-labelledby="borrowmodalTitle" aria-hidden="true">
@@ -109,17 +113,14 @@
             <p class="card-text">{{$books->review}}</p>
           </div>
       </div>
-        </div>
-      </div> <br>
-              <h4 class="card-title">Description</h4>
+      {{-- <div class="row py-2">
+        <div class="col"> 
+              <h5 class="card-title">Description</h5>
               <p class="card-text">{{$books->description}}</p>
-               <div class="card-footer">
-                    
-                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#reportbookmodal">
-                  Report this Book
-                </button>          
-                @include('layouts.partial.reportbookmodal')
-            </div>
+            </div>              
+      </div> --}}
+        </div>
+      </div> 
             </div>
           </div>
         </div>
@@ -143,6 +144,7 @@
                         <form class="form-horizontal" method="POST"  action='{{ url("/post/{$books->id}") }}' >
                           {{csrf_field()}}
                           <div class="row">
+                            @if( !( App\Comment::where([['user_id', $users],['book_id', $books->id]])->first() ) )
                             <div class="col-10">
                               <div class="form-group  has-feedback{{ $errors->has('review') ? 'has-error' : '' }}">
                                   <label for="Content" class="thick">Review</label>
@@ -154,7 +156,6 @@
                                   @endif --}}
                               </div>
                             </div>
-                            @if( !( App\Comment::where([['user_id', $users],['book_id', $books->id]])->first() ) )
                             <div class="col-2">
                                 <div class="form-group">
                                     <label for="rating" class="thick">Rating</label>
@@ -168,8 +169,18 @@
                                 </div>
                             </div>
                             @else
-                            <label for="" class="thick">Rating</label> <br>
-                            <p>You already rate this book!</p>
+                            <div class="col-12">
+                                <div class="form-group  has-feedback{{ $errors->has('review') ? 'has-error' : '' }}">
+                                    <label for="Content" class="thick">Review</label>
+                                    <textarea name="review" rows="5" class="form-control"></textarea>
+                                    {{-- @if($errors->has('content'))
+                                        <span style="color:red" class="help-block">
+                                            <p>{{ $errors->first('content') }}</p>
+                                        </span>
+                                    @endif --}}
+                                </div>
+                              </div>
+                            {{-- <label for="" class="thick">Rating</label> --}}
                             @endif
 
 

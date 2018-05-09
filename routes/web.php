@@ -76,6 +76,9 @@ Route::get('/accept/{id}','TransaksiController@lend');
 Route::get('/reject/{id}','TransaksiController@reject');
 Route::get('/return/{id}','TransaksiController@back');
 
+// messaging function
+Route::get('/messages','MessagesController@retrieve');
+
 
 //prototypw
 Auth::routes();

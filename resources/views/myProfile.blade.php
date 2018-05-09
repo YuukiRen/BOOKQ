@@ -7,7 +7,6 @@
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>   
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
@@ -104,13 +103,13 @@
                         <div class="card-body">
                             @foreach($activities->all() as $activity)
                                 @if($activity->status==0)
-                                <p><small class="text-muted">{{ $activity->request_date }} </small>Sent request to {{App\User::find($activity->id_lender)->name}} to borrow {{ App\Book::find($activity->book_id)->title }}</p>
+                                    <p><small class="text-muted">{{ $activity->request_date }} </small>Sent request to {{App\User::find($activity->id_lender)->name}} to borrow {{ App\Book::find($activity->book_id)->title }}</p>
                                 @endif
                                 @if($activity->status==1)
-                                <p><small class="text-muted">{{ $activity->lend_date }} </small>{{App\User::find($activity->id_lender)->name}} accepted your request for borrowing "{{ App\Book::find($activity->book_id)->title }}"!</p>
+                                    <p><small class="text-muted">{{ $activity->lend_date }} </small>{{App\User::find($activity->id_lender)->name}} accepted your request for borrowing "{{ App\Book::find($activity->book_id)->title }}"!</p>
                                 @endif
                                 @if($activity->status==2)
-                                <p><small class="text-muted">{{ $activity->return_date }} </small>You have returned {{App\User::find($activity->id_lender)->name}}'s "{{ App\Book::find($activity->book_id)->title }}" book</p>
+                                    <p><small class="text-muted">{{ $activity->return_date }} </small>You have returned {{App\User::find($activity->id_lender)->name}}'s "{{ App\Book::find($activity->book_id)->title }}" book</p>
                                 @endif
                                 @endforeach
                         </div>    
@@ -119,10 +118,10 @@
                         <div class="card-body">
                                 @foreach($requests_borrow->all() as $request_b)
                                 @if($request_b->status==0)
-                                <p><small class="text-muted">{{ $request_b->request_date }} </small>Sent request to {{App\User::find($request_b->id_lender)->name}} to borrow {{ App\Book::find($request_b->book_id)->title }}</p>
+                                    <p><small class="text-muted">{{ $request_b->request_date }} </small>Sent request to {{App\User::find($request_b->id_lender)->name}} to borrow {{ App\Book::find($request_b->book_id)->title }}</p>
                                 @endif
                                 @if($request_b->status==1)
-                                <p><small class="text-muted">{{ $request_b->lend_date }} </small>{{App\User::find($request_b->id_lender)->name}} accepted your request for borrowing "{{ App\Book::find($request_b->book_id)->title }}"!</p>
+                                    <p><small class="text-muted">{{ $request_b->lend_date }} </small>{{App\User::find($request_b->id_lender)->name}} accepted your request for borrowing "{{ App\Book::find($request_b->book_id)->title }}"!</p>
                                 @endif
                                 @if($request_b->status==2)
                                 <p><small class="text-muted">{{ $request_b->return_date }} </small>You have returned {{App\User::find($request_b->id_lender)->name}}'s "{{ App\Book::find($request_b->book_id)->title }}" book</p>
@@ -136,15 +135,17 @@
                     </div>
                     <div class="tab-pane fade" id="lend" role="tabpanel" aria-labelledby="lend-tab">
                         <div class="card-body">
-                                @foreach($requests_lend->all() as $request_l)
+                                @foreach($requests_lend->all() as $request_l) 
                                 @if($request_l->status==0)
-                                    <p><small class="text-muted">{{ $request_l->request_date }} </small>{{App\User::find($request_l->id_booker)->name}} wants to borrow "{{ App\Book::find($request_l->book_id)->title }}"</p>
-                                    <a href='{{ url("/accept/{$request_l->id}") }}' class="btn btn-primary">Accept</a>
-                                    <a href='{{ url("/reject/{$request_l->id}") }}' class="btn btn-primary">Decline</a>
+                                    <p><small class="text-muted">{{ $request_l->request_date }} </small>{{App\User::find($request_l->id_booker)->name}} wants to borrow "{{ App\Book::find($request_l->book_id)->title }}" 
+                                        <a href='{{ url("/accept/{$request_l->id}") }}' class="btn btn-primary pull-right">Accept</a>
+                                        <a href='{{ url("/reject/{$request_l->id}") }}' class="btn btn-primary pull-right">Decline</a>
+                                    </p>
+
                                 @endif
                                 @if($request_l->status==1)
-                                <p><small class="text-muted">{{ $request_l->lend_date }} </small>You lended "{{ App\Book::find($request_l->book_id)->title }}" to {{App\User::find($request_l->id_booker)->name}}</p>
-                                <a href='{{ url("/return/{$request_l->id}") }}' class="btn btn-primary">I have Recieved my Book back</a>
+                                <p><small class="text-muted">{{ $request_l->lend_date }} </small>You lended "{{ App\Book::find($request_l->book_id)->title }}" to {{App\User::find($request_l->id_booker)->name}} <a href='{{ url("/return/{$request_l->id}") }}' class="btn btn-primary pull-right">I have Received my Book back</a></p>
+                                
                                 @endif
                                 @if($request_l->status==2)
                                 <p><small class="text-muted">{{ $request_l->return_date }} </small>{{App\User::find($request_l->id_booker)->name}} have returned your "{{ App\Book::find($request_l->book_id)->title }}"</p>

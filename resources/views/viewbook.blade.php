@@ -7,7 +7,6 @@
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
@@ -41,7 +40,7 @@
             <div class="modal-dialog modal-dialog-centered" role="document">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h5 class="modal-title" id="borrowmodalLongTitle">Book Information</h5>
+                  <h5 class="modal-title" id="borrowmodalLongTitle">Owner's Information</h5>
                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                   </button>
@@ -49,22 +48,20 @@
                 <div class="modal-body">
                     <table>
                       <tr>
-                        <td valign="top"> Owner </td> <td valign="top">&nbsp;:&nbsp;</td> <td> {{App\User::find($books->user_id)->name}} </td>
+                        <td valign="top">Name </td> <td valign="top">&nbsp;:&nbsp;</td> <td> {{App\User::find($books->user_id)->name}} </td>
                       </tr>
                       <tr>
-                        <td valign="top"> Author </td> <td valign="top">&nbsp;:&nbsp;</td>  <td> {{$books->author}} </td>
+                        <td valign="top"> Phone No. </td> <td valign="top">&nbsp;:&nbsp;</td>  <td> {{App\User::find($books->user_id)->phone_number}} </td>
                       </tr> 
                       <tr>
-                        <td valign="top"> Publisher </td><td valign="top">&nbsp;:&nbsp;</td><td> {{$books->publisher}} </td>
+                        <td valign="top"> LINE ID </td><td valign="top">&nbsp;:&nbsp;</td><td> {{App\User::find($books->user_id)->line_id}} </td>
                       </tr> 
                       <tr>
-                        <td valign="top"> Published </td><td valign="top">&nbsp;:&nbsp;</td><td> {{$books->year}} </td>
+                        <td valign="top"> Address </td><td valign="top">&nbsp;:&nbsp;</td><td> {{App\User::find($books->user_id)->address}} </td>
                       </tr> 
                   </table>
                 </div>
                 <div class="modal-footer">
-
-                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                   <a href='{{ url("/request/$books->id") }}' class="btn btn-primary">Send Request</a>
                 </div>
               </div>

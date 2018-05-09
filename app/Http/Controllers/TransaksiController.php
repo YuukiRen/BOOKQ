@@ -19,7 +19,7 @@ class TransaksiController extends Controller
         $trans->book_id = $id;
         $trans->save();
         //return ke mana kek
-        return 'request sent';
+        return redirect()->back()->withInfo('Request Sent!');
     }
     public function lend($id){//id transaksi
         $data = Transaction::find($id);
@@ -35,14 +35,14 @@ class TransaksiController extends Controller
         $data->lend_date = date('Y-m-d H:i:s');
         $data->save();  
         //return apalah
-        return 'accepted nigga';  
+        return redirect()->back()->withInfo('You accepted the request!');  
     }
     public function reject($id){//id transaksi
         $data = Transaction::find($id);
         $data->status = 3;
         $data->reject_date = date('Y-m-d H:i:s');
         $data->save();
-        return 'bye nigga';  
+        return redirect()->back()->withDanger('You rejected the request!');    
     }
 
     public function back($id){//id transaksi
@@ -57,7 +57,7 @@ class TransaksiController extends Controller
         }
         $data->save();  
         //return apalah
-        return 'returned nigga';  
+        return redirect()->back()->withInfo('He returned your book');  
     }
 
 

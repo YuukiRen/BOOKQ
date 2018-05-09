@@ -74,6 +74,9 @@ a:hover .fa-circle{
 a:active .fa-circle{
   color:blue;
 }
+tr{
+  line-height: 2;
+}
 
 #navb{
   font-family : Montserrat,  sans-serif;
@@ -106,6 +109,7 @@ a:active .fa-circle{
 body {
   overflow-x: hidden;
   font-family : 'Montserrat',  sans-serif;
+  background-color: whitesmoke;
 }
 
 p {

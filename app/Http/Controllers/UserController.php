@@ -131,7 +131,7 @@ class UserController extends Controller
         $users->fav_book = $request->input('fav_book');
         $users->save();     
  
-        return redirect()->back()->with('info','New profile saved');    
+        return redirect('profile')->with('info','New profile saved');    
     }
 
     /**

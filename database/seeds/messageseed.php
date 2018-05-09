@@ -21,6 +21,9 @@ class messageseed extends Seeder
                 if($i < $j){
                     $signat = strval($i).':'.strval($j);
                 }
+                else{
+                    $signat = strval($j).':'.strval($i);    
+                }
                 Messages::insert( 
                     [
                         'signature' => $signat,
@@ -39,6 +42,9 @@ class messageseed extends Seeder
                 if($i === $j) continue;
                 if($i < $j){
                     $signat = strval($i).':'.strval($j);
+                }
+                else{
+                    $signat = strval($j).':'.strval($i);    
                 }
                 Messages::insert( 
                     [

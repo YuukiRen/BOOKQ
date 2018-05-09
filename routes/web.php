@@ -77,7 +77,8 @@ Route::get('/reject/{id}','TransaksiController@reject');
 Route::get('/return/{id}','TransaksiController@back');
 
 // messaging function
-Route::get('/messages','MessagesController@retrieve');
+Route::get('/messages/{id}','MessagesController@retrieve');
+Route::get('/messages','MessagesController@show');
 
 
 //prototypw

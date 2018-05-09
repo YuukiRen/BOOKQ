@@ -61,6 +61,10 @@
                                             <label for="Content">Review</label>
                                             <textarea name="review" rows="5" class="input100 form-control" required autofocus name="review"></textarea>
                                         </div>
+                                        <div class="form-group wrap-input100">
+                                            <label for="Content">Description</label>
+                                            <textarea name="description" rows="5" class="input100 form-control"  name="description"></textarea>
+                                        </div>
                                         <div class="form-group">
                                                 <input type="submit" class="btn btn-primary btn-block" value="SUBMIT" >
                                             </div>

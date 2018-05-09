@@ -39,7 +39,7 @@ class SearchController extends Controller
             ->get()
             ->paginate(12);
         }
-        dd($books);
+        // dd($books);
         return view('search', compact('books'));
         
     }

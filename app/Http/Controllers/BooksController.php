@@ -117,6 +117,10 @@ class BooksController extends Controller
         if($request->input('description') !== NULL){
             $books->description = $request->input('description');
         }
+        else{
+            $books->description = 'none';
+            
+        }
         $books->review = $request->input('review');
         $books->tag = $request->input('tag');
         $books->category = $request->input('category');

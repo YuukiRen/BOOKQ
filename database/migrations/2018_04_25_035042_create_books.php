@@ -22,7 +22,7 @@ class CreateBooks extends Migration
             $table->string('review');
             $table->integer('year');
             $table->string('publisher');
-            $table->longText('description')->default('none');
+            $table->longText('description');
             $table->string('category');
             $table->string('tag');
             $table->string('image')->default('images/no-cover.jpeg');//uncomment kalo mau ada gambar

@@ -98,7 +98,9 @@ class MessagesController extends Controller
     public function retrieve(messages $messages)
     {
     	$from_id = Auth::user()->id;
-        $books=\DB::table('messages')->paginate(12);
+        $books=\DB::table('messages')->
+        where('to', '=', 'from')
+        c->paginate(12);
 		 
     	$dd();
 		// dd($messages);        

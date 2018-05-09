@@ -84,7 +84,7 @@
                                     </script>
                                     <div class="form-group wrap-input100 validate-input" onclick="myFunction()" data-validate = "Valid about_me is required">
                                         <label for="about_me">About Me</label>
-                                        <textarea type="text" id="about_me" rows=5 class="input100 form-control" required autofocus name="about_me" value="{{$users->about_me}}"></textarea>
+                                        <textarea type="text" id="about_me" rows=5 class="input100 form-control" required autofocus name="about_me">{{$users->about_me}}</textarea>
                                     </div>
                                     <div class="form-group">
                                             <input type="submit" class="btn btn-primary btn-block" value="SAVE" >

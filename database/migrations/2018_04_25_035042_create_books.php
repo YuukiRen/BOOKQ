@@ -25,6 +25,7 @@ class CreateBooks extends Migration
             $table->longText('description');
             $table->string('category');
             $table->string('tag');
+            $table->integer('report')->default(0);
             $table->string('image')->default('images/no-cover.jpeg');//uncomment kalo mau ada gambar
             $table->timestamps();
             $table->integer('show')->default('1');

@@ -6,6 +6,8 @@ use App\Messages_t;
 use App\User;
 use Auth;
 use Illuminate\Http\Request;
+use Illuminate\Database\Eloquent\Collection;
+use Illuminate\Pagination\LengthAwarePaginator;
 
 class MessagesController extends Controller
 {
@@ -94,7 +96,7 @@ class MessagesController extends Controller
         ->groupBy('signature')
         ->get()
         ->pluck('signature');
-        $arr =  array();   
+        $arr =  array();
         foreach ($mess as $sign) {
             $objek = \DB::table('messages_ts')
             ->leftjoin('users', 'messages_ts.from', '=', 'users.id')
@@ -112,9 +114,25 @@ class MessagesController extends Controller
             ->first()
             ;
             $arr[] = $objek;
+            // $arr[] = $arr;
+            // $arr->merge($objek);
+                            
         }
-        // dd($arr);
-        return $arr;
+        $col = collect($arr);
+        $jumlah = $col->count();
+        
+        $currentPage = LengthAwarePaginator::resolveCurrentPage();
+        $perPage = 10;
+        $currentResults = $col->slice(($currentPage - 1) * $perPage, $perPage)->all();
+        $messages_res = new LengthAwarePaginator($currentResults, $col->count(), $perPage);
+        // cara nampilin nya
+        // $results->withPath('messages')->links();
+        // $dd($results);
+        compact($messages_res, $from_id);
+        // return $results;
+        // return view('messages', [
+            // 'results' => $results,
+        // ]);
         
     }
 

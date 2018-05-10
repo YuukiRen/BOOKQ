@@ -10,7 +10,7 @@ class SearchController extends Controller
 {
     public function index()
     {
-    	return view('search');
+    	// return view('search');
     }
 
     public function search(Request $request)
@@ -39,7 +39,6 @@ class SearchController extends Controller
             ->get()
             ->paginate(12);
         }
-        // dd($books);
         return view('search', compact('books'));
         
     }

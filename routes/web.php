@@ -31,7 +31,7 @@ Route::get('/register', function () {
 // 	return view('lend');
 // });
 
-Route::get('/search','SearchController@index');
+// Route::get('/search','SearchController@index');
 Route::get('/lend','BooksController@lendBook');//siapa yg bikin ini?
 Route::post('/save','BooksController@addBook');
 
@@ -92,3 +92,6 @@ Route::POST('admin-password/email','Admin\ForgotPasswordController@sendResetLink
 Route::GET('admin-password/reset','Admin\ForgotPasswordController@showLinkRequestForm')->name('admin.password.request');
 Route::POST('admin-password/reset','Admin\ResetPasswordController@reset');
 Route::GET('admin-password/reset/{token}','Admin\ResetPasswordController@showResetForm');
+
+
+// admin functionality

@@ -16,5 +16,6 @@ class DatabaseSeeder extends Seeder
         $this->call(seedcategory::class);
         $this->call(commentseed::class);
         $this->call(messageseed::class);
+        $this->call(adminseed::class);
     }
 }

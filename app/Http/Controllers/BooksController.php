@@ -20,7 +20,7 @@ class BooksController extends Controller
     public function show(){
     	// $books=Book::all();
         //membuat paginasi
-		$books=\DB::table('books')->paginate(12);
+        $books=\DB::table('books')->paginate(12);
 		// dd($books);
         // var_dump($books);
     	return view('search', compact('books'));
@@ -35,9 +35,6 @@ class BooksController extends Controller
         $books = Book::where('id', $id)->first();
         
         if($books === NULL){
-            // $books=\DB::table('books')->paginate(12);
-            // dd($books);
-            // var_dump($books);
             return redirect('/search')->with('danger','No book found');
         }
         $comments = Comment::where('book_id',$id)->get();//comment pertama

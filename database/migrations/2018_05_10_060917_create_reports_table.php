@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateAdminTable extends Migration
+class CreateReportsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,12 @@ class CreateAdminTable extends Migration
      */
     public function up()
     {
-        Schema::create('admins', function (Blueprint $table) {
+        Schema::create('reports', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name');
-            $table->string('email')->unique();
-            $table->string('password');
-            $table->string('s_password');
-            $table->rememberToken();
+            $table->integer('user_id');
+            $table->integer('book_id');
+            $table->string('report_desc')->default('none');
+            $table->integer('status')->default(0);   // 0 : not read. 1 : sudah di read. 2 di decline. 3 ; di acc       
             $table->timestamps();
         });
     }
@@ -31,6 +30,6 @@ class CreateAdminTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('Admins');
+        Schema::dropIfExists('reports');
     }
 }

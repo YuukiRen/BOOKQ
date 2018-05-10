@@ -33,10 +33,31 @@ class AdminController extends Controller
     }
 
 
+    public function list_report(){
+
+
+    }
+
+    public function detail_report(){
+
+        
+    }
+
+
     public function accept_report(){
 
 
     }
 
+
+    public function ban_user(){
+
+
+    }
+
+    public function ban_book(){
+
+
+    }
     
 }

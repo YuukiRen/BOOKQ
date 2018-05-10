@@ -97,17 +97,21 @@
                     <div class="tab-content" id="myTabContent">
                     <div class="tab-pane fade show active" id="history" role="tabpanel" aria-labelledby="history-tab">
                         <div class="card-body">
+                        
                             @foreach($activities->all() as $activity)
                                 @if($activity->status==0)
-                                <p><small class="text-muted">{{ $activity->request_date }} </small>Sent request to {{App\User::find($activity->id_lender)->name}} to borrow {{ App\Book::find($activity->book_id)->title }}</p>
+                                <p><small class="text-muted">{{ $activity->request_date }} </small>{{App\User::find($activity->id_booker)->name}} have sent request to {{App\User::find($activity->id_lender)->name}} to borrow {{ App\Book::find($activity->book_id)->title }}</p>
                                 @endif
                                 @if($activity->status==1)
-                                <p><small class="text-muted">{{ $activity->lend_date }} </small>{{App\User::find($activity->id_lender)->name}} accepted your request for borrowing "{{ App\Book::find($activity->book_id)->title }}"!</p>
+                                <p><small class="text-muted">{{ $activity->lend_date }} </small>{{App\User::find($activity->id_lender)->name}} accepted {{App\User::find($activity->id_borrow)->name}} request for borrowing "{{ App\Book::find($activity->book_id)->title }}"!</p>
                                 @endif
                                 @if($activity->status==2)
-                                <p><small class="text-muted">{{ $activity->return_date }} </small>You have returned {{App\User::find($activity->id_lender)->name}}'s "{{ App\Book::find($activity->book_id)->title }}" book</p>
+                                <p><small class="text-muted">{{ $activity->return_date }} </small>{{App\User::find($activity->id_booker)->name}} have returned {{App\User::find($activity->id_lender)->name}}'s "{{ App\Book::find($activity->book_id)->title }}" book</p>
                                 @endif
-                                @endforeach
+                                @if($activity->status==3 )
+                                <p><small class="text-muted">{{ $activity->reject_date }} </small>{{App\User::find($activity->id_booker)->name}} request have been rejected by {{App\User::find($activity->id_lender)->name}}'s request for "{{ App\Book::find($activity->book_id)->title }}" book</p>
+                                @endif
+                            @endforeach
                         </div>    
                     </div>
                     

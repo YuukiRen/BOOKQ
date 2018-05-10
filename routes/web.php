@@ -43,6 +43,7 @@ Route::post('/store','BooksController@dummy');//dummy
 Route::get('/search','BooksController@show');
 Route::post('/search_book','SearchController@search');
 Route::post('/post/{id}','BooksController@AddComment');
+Route::get('/reportbook/{book_id}', 'BooksController@report');
 
 // Route::get('/viewbook',function(){
 	// return view('viewbook');
@@ -95,6 +96,8 @@ Route::GET('admin-password/reset/{token}','Admin\ResetPasswordController@showRes
 
 // 10 Mei 2018
 
-Route::get('reportbook/{book_id}', 'BooksController@report');
 
 // admin functionality
+Route::GET('admin/home','AdminController@index');
+Route::GET('admin/list_report','AdminController@list_report');
+Route::GET('admin/accept_report/{report_id}','AdminController@accept_report');

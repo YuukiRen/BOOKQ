@@ -29,6 +29,7 @@ class CreateUsersTable extends Migration
             $table->string('user_image')->default('images/no-cover.jpeg');
             $table->string('fav_book')->nullable();
             $table->longText('about_me')->nullable();
+            $table->integer('banned')->default(0);
             
             $table->timestamps();
         });

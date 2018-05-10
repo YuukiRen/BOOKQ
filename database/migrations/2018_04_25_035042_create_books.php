@@ -26,6 +26,7 @@ class CreateBooks extends Migration
             $table->string('category');
             $table->string('tag')->nullable();
             $table->integer('report')->default(0);
+            $table->integer('banned')->default(0);
             $table->string('image')->default('images/no-cover.jpeg');//uncomment kalo mau ada gambar
             $table->timestamps();
             $table->integer('show')->default('1');

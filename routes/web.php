@@ -100,4 +100,6 @@ Route::GET('admin-password/reset/{token}','Admin\ResetPasswordController@showRes
 // admin functionality
 Route::GET('admin/home','AdminController@index');
 Route::GET('admin/list_report','AdminController@list_report');
+Route::GET('admin/list_user','AdminController@list_user');
 Route::GET('admin/accept_report/{report_id}','AdminController@accept_report');
+Route::GET('admin/detail_report/{report_id}','AdminController@detail_report');

@@ -54,13 +54,18 @@ class AdminController extends Controller
         ->orderby('reports.id', 'desc')
         ->paginate(12)
         ;
+        dd($rep);
         return $rep;
     }
 
-    public function detail_report(Request $request, $book_id){
-        // not yet
-        
+    public function detail_report(Request $request, $report_id){
+        $rep = Report::find($report_id)->first();
+        $book = Book::find($rep->books_id)->first();
+        $rep->read = 1;
+        return compact($rep, $book);
+    
     }
+
 
 
     public function accept_report(Request $request, $report_id){
@@ -79,23 +84,38 @@ class AdminController extends Controller
 
     }
 
-    public function list_user(){
+    public function list_user(Request $request){
+        $user = User::all()
+        ->orderby('report', 'desc')
+        ->orderby('id', 'desc')
+        ->paginate(12);
+        // dd($user);
 
     }
 
-    public function detail_user(){
-
-    }
-
-
-
-    public function ban_user(){
+    public function detail_user(Request $request, $user_id){
+        $user = User::find($user_id);
+        return $user;
 
 
     }
 
-    public function ban_book(){
+
+
+    public function ban_user(Request $request, $user_id){
+        $user = User::find($user_id);
+        $user->banned = 1;
+        $user->save();
 
     }
+
+    public function ban_book(Request $request, $user_book){
+        $book = User::find($user_book);
+        $book->banned = 1;
+        $book->save();
+
+    }
+
+    
     
 }

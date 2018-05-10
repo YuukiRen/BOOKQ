@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Book;
 use App\Category;
 use App\User;
+use App\Report;
 use Auth;
 use App\Rating;
 use App\Comment;
@@ -153,7 +154,21 @@ class BooksController extends Controller
         return redirect('/home')->with('info','Books Updated Successfully!');
     }
 
+    public function report(Request $request, $book_id){
+        $check = Report::where('book_id', $book_id)->where('user_id', Auth::user()->id)->get();
+        if(count($check)){
+            return 'book already reported';
+            die();
+        }
 
+        $report = new Report;
+        $report->user_id = Auth::user()->id;
+        $report->book_id = $book_id;
+        $report->status  = 0;
+        $report->report_desc = $request->input('report_desc');
+        $report->save();
+        return 'Book Reported, Admin will notice this later'; 
+    }
 
 
 }

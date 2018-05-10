@@ -93,5 +93,8 @@ Route::GET('admin-password/reset','Admin\ForgotPasswordController@showLinkReques
 Route::POST('admin-password/reset','Admin\ResetPasswordController@reset');
 Route::GET('admin-password/reset/{token}','Admin\ResetPasswordController@showResetForm');
 
+// 10 Mei 2018
+
+Route::get('reportbook/{book_id}', 'BooksController@report');
 
 // admin functionality

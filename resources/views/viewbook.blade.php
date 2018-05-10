@@ -62,7 +62,16 @@
                   </table>
                 </div>
                 <div class="modal-footer">
+                @if(( App\Book::where([['user_id', $users],['id', $books->id]])->first() ))
+                  <a class="disabled">Cannot Lend your own book :)</a>
+                @elseif( !( App\Transaction::where([['id_booker', $users],['book_id', $books->id]])->first() )  )
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                   <a href='{{ url("/request/$books->id") }}' class="btn btn-primary">Send Request</a>
+                @elseif(( App\Transaction::where([['id_booker', $users],['book_id', $books->id]])->first() ))
+                  <a class="disabled">Request Sent</a>
+                @else
+                 <a class="disabled">SOMETHING WRONG, CONTACT THE ADMIN</a>
+                @endif
                 </div>
               </div>
             </div>

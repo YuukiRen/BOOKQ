@@ -31,20 +31,26 @@
                 <div class="panel panel-info" >                
                     <h1 class="my-4"><span class="title px-3">Edit Profile</h1>                    
                     <div class="panel-body">
-                        <form class="form-horizontal login100-form validate-form" method="POST"  action="{{ url('/profile/edit/save') }}" enctype="multipart/form-data" >
+                        <form class="form-horizontal login100-form needs-validation" novalidate method="POST"  action="{{ url('/profile/edit/save') }}" enctype="multipart/form-data" >
                             {{ csrf_field() }}
                                 <div class="form-group">
                                         <label for="">   User image : </label>
                                 <input type="file" name="user_image" id="pic" value="{{$users->user_image}}">
-                                    <div class="form-group wrap-input100 validate-input" data-validate = "Valid complete_name is required">
+                                    <div class="form-group wrap-input100 validate-input">
                                             <label for="">Full Name</label>
-                                            <input type="text"  class="form-control input100" required autofocus name="complete_name" value="{{$users->complete_name}}">
-                                    </div>
+                                            <input type="text"  class="form-control input100" required name="complete_name" value="{{$users->complete_name}}">
+                                            <div class="invalid-feedback">
+                                                Please enter your full name
+                                            </div>
+                                        </div>
                                     <div class="row">
                                         <div class="col-6">
                                                 <div class="form-group">
                                                     <label for="nim">NIM</label>
-                                                    <input type="text" class="form-control" name="nim" value="{{$users->nim}}">
+                                                    <input type="text" class="form-control" name="nim" value="{{$users->nim}}" required>
+                                                    <div class="invalid-feedback">
+                                                        Please enter your NIM
+                                                    </div>
                                                 </div>
                                             </div>
                                         <div class="col-6">
@@ -62,28 +68,35 @@
                                             <div class="col-6">
                                                     <div class="form-group">
                                                         <label for="phone_number">Phone Number</label>
-                                                        <input type="text" class="form-control" name="phone_number" value="{{$users->phone_number}}">
+                                                        <input type="text" class="form-control" name="phone_number" required value="{{$users->phone_number}}">
+                                                        <div class="invalid-feedback">
+                                                            Please enter your phone number
+                                                        </div>
                                                     </div>
                                                 </div>
                                             <div class="col-6">
                                                 <div class="form-group">
                                                     <label for="line_id">Line ID</label>
                                                     <input type="text" class="form-control" name="line_id" value="{{$users->line_id}}"> 
+                                                    <div class="invalid-feedback">
+                                                        Please enter your LINE ID
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
                                     <div class="form-group wrap-input100 validate-input" data-validate = "Valid address is required">
                                         <label for="address">Address</label>
-                                        <input type="text" class="input100 form-control" required autofocus name="address" value="{{$users->address}}">
+                                        <input type="text" class="input100 form-control" required name="address" value="{{$users->address}}">
+                                        <div class="invalid-feedback">
+                                            Please enter your address
+                                        </div>
                                     </div>
-                                    <script>
-                                            function myFunction() {
-                                                document.getElementById("about_me").value = {{$users->about_me}};
-                                            }
-                                    </script>
                                     <div class="form-group wrap-input100 validate-input" onclick="myFunction()" data-validate = "Valid about_me is required">
                                         <label for="about_me">About Me</label>
-                                        <textarea type="text" id="about_me" rows=5 class="input100 form-control" required autofocus name="about_me">{{$users->about_me}}</textarea>
+                                        <textarea type="text" id="about_me" rows=5 class="input100 form-control" required name="about_me">{{$users->about_me}}</textarea>
+                                    </div>
+                                    <div class="invalid-feedback">
+                                        Please enter your bio
                                     </div>
                                     <div class="form-group">
                                             <input type="submit" class="btn btn-primary btn-block" value="SAVE" >
@@ -97,11 +110,6 @@
             </div>
         </div>
     </div>
-    <script>
-            function myFunction() {
-                document.getElementById("about_me").value = "{{$users->about_me}}";
-            }
-    </script>
 <!--===============================================================================================-->  
     <script src="../vendor/jquery/jquery-3.2.1.min.js"></script>
 <!--===============================================================================================-->

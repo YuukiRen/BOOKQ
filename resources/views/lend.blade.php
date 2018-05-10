@@ -9,27 +9,21 @@
                             <font size=3>Share your Knowledge!</font>
                         </span></h1>
                     <div class="panel-body">
-                        <form class="form-horizontal login100-form validate-form" method="POST"  action="{{ url('/save') }}" enctype="multipart/form-data" >
+                        <form class="form-horizontal needs-validation" novalidate method="POST"  action="{{ url('/save') }}" enctype="multipart/form-data" >
                                 {{ csrf_field() }}
                                     <div class="form-group">
-                                            <label for="">   Book image : </label>
-
-                                            <input type="file" name="image" id="pic"    data-validate = "Valid Title is required">
-                                            <div class="form-group wrap-input100 validate-input" data-validate = "Valid Title is required">
-                                                    <label for=""> Title </label>
-<!--                                                     @if ($errors->any())
-                                                        <div class="alert alert-danger">
-                                                            <ul>
-                                                                @foreach ($errors->all() as $error)
-                                                                    <li>{{ $error }}</li>
-                                                                @endforeach
-                                                            </ul>
-                                                        </div>
-                                                    @endif -->
-                                                    <input type="text"  class="form-control input100" required autofocus name="title">
-                                            </div>
-
-
+                                        <label for="">   Book image : </label>
+                                        <input type="file" req name="image" id="pic">
+                                                <div class="invalid-feedback">
+                                                    Please insert the book's image
+                                                </div>
+                                        <div class="form-group">
+                                            <label for=""> Title </label>
+                                            <input type="text"  class="form-control" required name="title">
+                                                <div class="invalid-feedback">
+                                                    Please insert the book's title
+                                                </div>
+                                        </div>
                                         <div class="row">
                                             <div class="col-4">
                                                 <div class="form-group">
@@ -43,39 +37,58 @@
                                             </div>
                                             <div class="col-4">
                                                 <div class="form-group wrap-input100 validate-input" data-validate = "Valid Year is required">
-                                                    <label for="genre">Year</label>
-                                                    <input type="number" class="form-control" name="year" onkeydown="return ( event.ctrlKey || event.altKey 
+                                                    <label for="genre">Year Published</label>
+                                                    <input type="number" class="form-control" required name="year" max=2100 onkeydown="return ( event.ctrlKey || event.altKey 
                                                                                                                     || (47<event.keyCode && event.keyCode<58 && event.shiftKey==false) 
                                                                                                                     || (95<event.keyCode && event.keyCode<106)
                                                                                                                         || (event.keyCode==8) || (event.keyCode==9) 
                                                                                                                     || (event.keyCode>34 && event.keyCode<40) 
                                                                                                                     || (event.keyCode==46) )" min=0 max=3000>
+                                                        <div class="invalid-feedback">
+                                                            Please input the year
+                                                        </div>
                                                 </div>
+                                            
                                             </div>
 
                                             <div class="col-4">
                                                     <div class="form-group">
                                                         <label for="genre">Tag</label>
-                                                        <input type="text" class="form-control" name="tag">
+                                                        <input type="text" class="form-control" name="tag" required>
+                                                        <div class="invalid-feedback">
+                                                            Please tag to briefly desribe the book
+                                                        </div>
                                                     </div>
                                                 </div>
                                         </div>
                                         <div class="form-group wrap-input100 validate-input" data-validate = "Valid author is required">
                                             <label for="">Author</label>
-                                            <input type="text" class="input100 form-control" required autofocus name="author">
+                                            <input type="text" class="input100 form-control" required name="author">
+                                                <div class="invalid-feedback">
+                                                    Please input the book's author
+                                                </div>
                                         </div>
                                       
                                         <div class="form-group wrap-input100 validate-input" data-validate = "Valid Publisher is required">
                                             <label for="">Publisher</label>
-                                            <input type="text" class="input100 form-control" required autofocus name="publisher">
+                                            <input type="text" class="input100 form-control" required name="publisher">
+                                                <div class="invalid-feedback">
+                                                    Please input the book's publisher
+                                                </div>  
                                         </div>
                                         <div class="form-group wrap-input100 validate-input">
                                             <label for="Content">Review</label>
-                                            <textarea name="review" rows="5" class="input100 form-control" required autofocus name="review"></textarea>
+                                            <textarea name="review" rows="5" class="input100 form-control" required name="review"></textarea>
+                                            <div class="invalid-feedback">
+                                                Please review this book first
+                                            </div>
                                         </div>
                                         <div class="form-group wrap-input100">
                                             <label for="Content">Description</label>
-                                            <textarea name="description" rows="5" class="input100 form-control"  name="description"></textarea>
+                                            <textarea name="description" rows="5" class="input100 form-control" required name="description"></textarea>
+                                            <div class="invalid-feedback">
+                                               Please describe the book first
+                                            </div>
                                         </div>
                                         <div class="form-group">
                                                 <input type="submit" class="btn btn-primary btn-block" value="SUBMIT" >
@@ -103,6 +116,26 @@
             scale: 1.1
         })
     </script>
+    <script>
+            // Example starter JavaScript for disabling form submissions if there are invalid fields
+            (function() {
+              'use strict';
+              window.addEventListener('load', function() {
+                // Fetch all the forms we want to apply custom Bootstrap validation styles to
+                var forms = document.getElementsByClassName('needs-validation');
+                // Loop over them and prevent submission
+                var validation = Array.prototype.filter.call(forms, function(form) {
+                  form.addEventListener('submit', function(event) {
+                    if (form.checkValidity() === false) {
+                      event.preventDefault();
+                      event.stopPropagation();
+                    }
+                    form.classList.add('was-validated');
+                  }, false);
+                });
+              }, false);
+            })();
+            </script>
 <!--===============================================================================================-->
     <script src="js/main.js"></script>
 </body>

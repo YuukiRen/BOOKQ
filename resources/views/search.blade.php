@@ -23,6 +23,7 @@
     
     <!-- Custom styles for this template -->
     <link href="{{ asset('css/agency.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="css/footer-distributed-with-address-and-phones.css">
 
   </head>
 

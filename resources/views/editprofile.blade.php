@@ -21,6 +21,7 @@
     
     <!-- Custom styles for this template -->
     <link href="{{ asset('css/agency.css') }}" rel="stylesheet">
+	<link rel="stylesheet" href="css/footer-distributed-with-address-and-phones.css">
 
   </head>
 <body>
@@ -56,7 +57,8 @@
                                         <div class="col-6">
                                             <div class="form-group">
                                                 <label for="fav_book">Favorite Book Category :</label>
-                                                <select name="fav_book" id="" class="form-control center">
+                                                <select name="fav_book" id="" class="form-control center" required>
+                                                    <option value="" disabled selected hidden>Select your option</option> 
                                                     @foreach ($category as $categories)
                                                     <option value="{{ $categories->name }}"> {{ $categories->name }}</option>
                                                     @endforeach

@@ -1,4 +1,27 @@
-@include('layouts.partial.head')
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Lend your Book!</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    
+    <!-- Custom styles for this template -->
+    <link href="{{ asset('css/agency.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="css/footer-distributed-with-address-and-phones.css">
+
+  </head>
 <body>
     @include('layouts.partial.header')
     <div class="container-fluid thick">
@@ -28,11 +51,15 @@
                                             <div class="col-4">
                                                 <div class="form-group">
                                                     <label for="genre">Category :</label>
-                                                    <select name="category" id="" class="form-control center">
+                                                    <select name="category" id="" class="form-control center" required>
+                                                        <option value="" disabled selected hidden>Select your option</option>                                                        
                                                         @foreach ($category as $categories)
                                                         <option value="{{ $categories->name }}"> {{ $categories->name }}</option>
                                                         @endforeach
                                                     </select> 
+                                                    <div class="invalid-feedback">
+                                                            Please choose the book's category
+                                                        </div>
                                                 </div>
                                             </div>
                                             <div class="col-4">
@@ -47,17 +74,12 @@
                                                         <div class="invalid-feedback">
                                                             Please input the year
                                                         </div>
-                                                </div>
-                                            
+                                                </div>                                      
                                             </div>
-
                                             <div class="col-4">
                                                     <div class="form-group">
-                                                        <label for="genre">Tag</label>
-                                                        <input type="text" class="form-control" name="tag" required>
-                                                        <div class="invalid-feedback">
-                                                            Please tag to briefly desribe the book
-                                                        </div>
+                                                        <label for="genre">Tag*</label>
+                                                        <input type="text" class="form-control" name="tag">
                                                     </div>
                                                 </div>
                                         </div>
@@ -76,20 +98,15 @@
                                                     Please input the book's publisher
                                                 </div>  
                                         </div>
-                                        <div class="form-group wrap-input100 validate-input">
-                                            <label for="Content">Review</label>
-                                            <textarea name="review" rows="5" class="input100 form-control" required name="review"></textarea>
-                                            <div class="invalid-feedback">
-                                                Please review this book first
-                                            </div>
+                                        <div class="form-group wrap-input100">
+                                            <label for="Content">Review*</label>
+                                            <textarea name="review" rows="5" class="input100 form-control" name="review"></textarea>
                                         </div>
                                         <div class="form-group wrap-input100">
-                                            <label for="Content">Description</label>
-                                            <textarea name="description" rows="5" class="input100 form-control" required name="description"></textarea>
-                                            <div class="invalid-feedback">
-                                               Please describe the book first
-                                            </div>
+                                            <label for="Content">Description*</label>
+                                            <textarea name="description" rows="5" class="input100 form-control" name="description"></textarea>
                                         </div>
+                                        <p>* : optional</p>
                                         <div class="form-group">
                                                 <input type="submit" class="btn btn-primary btn-block" value="SUBMIT" >
                                             </div>

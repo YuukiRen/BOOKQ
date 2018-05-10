@@ -13,6 +13,7 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
     <!-- Custom styles for this template -->
     <link href="{{asset('css/agency.css')}}" rel="stylesheet">
+    <link rel="stylesheet" href="css/footer-distributed-with-address-and-phones.css">
 
   </head>
   <body>
@@ -134,75 +135,71 @@
           <!-- /.card -->
 
           <div class="card card-outline-secondary my-4 col-9 center">
-            <div class="card-header">
-           <label for="" class="thick"> Book Reviews </label>  
-            </div>
             <div class="card-body">
+              <h4 for="Content" class="thick">Review  <a href="#comment" class=" btn btn-info btn-sm"> <u> <i class="fa fa-plus"></i> Leave a Review </u> </a></h4>
+              <hr>  
               @foreach($comments->all() as $comment)
-              <p>{{$comment->comment}}</p>
-              <small class="text-muted">Posted by {{App\User::find($comment->user_id)->name}} on {{$comment->updated_at}}</small>
-              <hr>
-              @endforeach
-              <button class="btn btn-success" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-                  Leave a Review
-                </button> 
-                <div class="collapse" id="collapseExample">
-                    <div class="card card-body">
-                        <form class="form-horizontal" method="POST"  action='{{ url("/post/{$books->id}") }}' >
-                          {{csrf_field()}}
-                          <div class="row">
-                            @if( !( App\Comment::where([['user_id', $users],['book_id', $books->id]])->first() ) )
-                            <div class="col-10">
-                              <div class="form-group  has-feedback{{ $errors->has('review') ? 'has-error' : '' }}">
-                                  <label for="Content" class="thick">Review</label>
-                                  <textarea name="review" rows="5" class="form-control"></textarea>
-                                  {{-- @if($errors->has('content'))
-                                      <span style="color:red" class="help-block">
-                                          <p>{{ $errors->first('content') }}</p>
-                                      </span>
-                                  @endif --}}
-                              </div>
-                            </div>
-                            <div class="col-2">
-                                <div class="form-group">
-                                    <label for="rating" class="thick">Rating</label>
-                                    <select name="rating" id="" class="form-control center">
-                                        <option value="5"> &#9733;&#9733;&#9733;&#9733;&#9733; </option>
-                                        <option value="4"> &#9733;&#9733;&#9733;&#9733; </option>
-                                        <option value="3"> &#9733;&#9733;&#9733; </option>
-                                        <option value="2"> &#9733;&#9733; </option>
-                                        <option value="1"> &#9733; </option> 
-                                    </select> 
-                                </div>
-                            </div>
-                            @else
-                            <div class="col-12">
-                                <div class="form-group  has-feedback{{ $errors->has('review') ? 'has-error' : '' }}">
-                                    <label for="Content" class="thick">Review</label>
-                                    <textarea name="review" rows="5" class="form-control"></textarea>
-                                    {{-- @if($errors->has('content'))
-                                        <span style="color:red" class="help-block">
-                                            <p>{{ $errors->first('content') }}</p>
-                                        </span>
-                                    @endif --}}
-                                </div>
-                              </div>
-                            {{-- <label for="" class="thick">Rating</label> --}}
-                            @endif
-
-
-                          </div>
-                            <div class="row">
-                              <div class="center col-md-10">
-                                <div class="form-group">
-                                    <input type="submit" class="btn btn-primary btn-block" value="SUBMIT" >
-                                </div>
-                                </div>
-                            </div>
-                          </div>
-                        </form>
-                    </div>
+                <div class="row">
+                  <div class="col-md-1">
+                    <img class="img-responsive img-user-comment" src="{{asset(App\User::find($comment->user_id)->user_image)}}" alt=""> 
                   </div>
+                  <div class="col-md-11">
+                    <p>{{$comment->comment}}</p>
+                    <small class="text-muted">Posted by {{App\User::find($comment->user_id)->name}} on {{$comment->updated_at->format('l, d F Y [H:i:s]')}}</small>
+                  </div>
+                </div>
+                <hr>
+                @endforeach
+                    <form class="form-horizontal" method="POST"  action='{{ url("/post/{$books->id}") }}' >
+                      {{csrf_field()}}
+                  <div class="row">
+                    @if( !( App\Comment::where([['user_id', $users],['book_id', $books->id]])->first() ) )
+                    <div class="col-10">
+                      <div class="form-group  has-feedback{{ $errors->has('review') ? 'has-error' : '' }}">
+                          <textarea id="comment" name="review" rows="5" class="form-control"></textarea>
+                          {{-- @if($errors->has('content'))
+                              <span style="color:red" class="help-block">
+                                  <p>{{ $errors->first('content') }}</p>
+                              </span>
+                          @endif --}}
+                      </div>
+                    </div>
+                    <div class="col-2">
+                        <div class="form-group">
+                            <label for="rating" class="thick">Rating</label>
+                            <select name="rating" id="" class="form-control center">
+                                <option value="5"> &#9733;&#9733;&#9733;&#9733;&#9733; </option>
+                                <option value="4"> &#9733;&#9733;&#9733;&#9733; </option>
+                                <option value="3"> &#9733;&#9733;&#9733; </option>
+                                <option value="2"> &#9733;&#9733; </option>
+                                <option value="1"> &#9733; </option> 
+                            </select> 
+                        </div>
+                    </div>
+                    @else
+                    <div class="col-12">
+                        <div class="form-group  has-feedback{{ $errors->has('review') ? 'has-error' : '' }}">
+                            <textarea name="review" id="comment" rows="5" class="form-control"></textarea>
+                            {{-- @if($errors->has('content'))
+                                <span style="color:red" class="help-block">
+                                    <p>{{ $errors->first('content') }}</p>
+                                </span>
+                            @endif --}}
+                        </div>
+                      </div>
+                    {{-- <label for="" class="thick">Rating</label> --}}
+                    @endif
+                  </div>
+                        <div class="row">
+                          <div class="center col-md-10">
+                            <div class="form-group">
+                                <input type="submit" class="btn btn-primary btn-block" value="SUBMIT" >
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </form>
+                    </div>
                   </div>
                 </div>
             </div>

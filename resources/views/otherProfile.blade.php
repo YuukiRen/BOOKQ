@@ -13,6 +13,7 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
     <!-- Custom styles for this template -->
     <link href="{{asset('css/agency.css')}}" rel="stylesheet">
+	<link rel="stylesheet" href="css/footer-distributed-with-address-and-phones.css">
 
   </head>
   <body>
@@ -31,10 +32,7 @@
                 </div>
             </div>
             <div class="card-body mt-4 col-md-8">
-                <h3 class="card-title">{{$users->name}}</h3>
-
-                <div class="row">
-                    <div class="col-md-6">
+                <h3 class="card-title">{{$users->name}}</h3> <hr>
                         <table>
                             <tr>
                                 @if ( !empty ( $users->nim ) ) 
@@ -68,9 +66,7 @@
                             <tr>
                                 <td valign="top"> Interest </td> <td valign="top">&nbsp;:&nbsp;</td> <td> {{$users->fav_book}} </td>
                             </tr>
-                        </table>
-                    </div>
-                </div>
+                        </table> <hr>
             </div>
                 <div class="row"> 
                     <div class="col-1"></div>

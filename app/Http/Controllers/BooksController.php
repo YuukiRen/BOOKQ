@@ -96,7 +96,6 @@ class BooksController extends Controller
     		'author'=>'required',
     		'year'=>'required',
     		'publisher'=>'required',
-    		'tag'=>'required',
     		'category'=>'required'
 		]);
 		// dd($request);
@@ -123,7 +122,7 @@ class BooksController extends Controller
         $books->tag = $request->input('tag');
         $books->category = $request->input('category');
         $books->save();
-    	return redirect('/home')->with('info','Book Saved Successfully!');
+    	return redirect('/viewbook/'.$books->id)->with('info','Book Saved Successfully!');
     }
 
    
@@ -151,7 +150,7 @@ class BooksController extends Controller
     		'publisher'=>$request->input('publisher')
     	);
         Book::where('book_id',$book_id)->update($data);
-        return redirect('/home')->with('info','Books Updated Successfully!');
+        return redirect('/viewbook/'.$books->id)->with('info','Books Updated Successfully!');
     }
 
     public function report(Request $request, $book_id){

@@ -19,12 +19,12 @@ class CreateBooks extends Migration
             $table->unsignedInteger('user_id');
             $table->string('author');
             $table->string('title');
-            $table->string('review');
+            $table->string('review')->nullable();
             $table->integer('year');
             $table->string('publisher');
-            $table->longText('description');
+            $table->longText('description')->nullable();
             $table->string('category');
-            $table->string('tag');
+            $table->string('tag')->nullable();
             $table->integer('report')->default(0);
             $table->string('image')->default('images/no-cover.jpeg');//uncomment kalo mau ada gambar
             $table->timestamps();

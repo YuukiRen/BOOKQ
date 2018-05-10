@@ -5,6 +5,9 @@
   margin-right: auto;
   width: 100%;
 }
+.text-center{
+  text-align: center;
+}
 .middle {
   top:10px;
   width: 100%;
@@ -64,6 +67,20 @@ table{
   width: 200px;
   height: 200px;
 }
+.img-user-nav{
+  object-fit: cover;
+  border-radius:50%;
+  width: 30px;
+  height: 30px;
+  border:2px solid white
+}
+.img-user-comment{
+  object-fit: cover;
+  border-radius:50%;
+  width: 70px;
+  height: 70px;
+  border:2px solid black
+}
 a .fa-circle{
   color:blue;
   transition: 0.3s;
@@ -101,6 +118,9 @@ tr{
 }
 .nav-tabs a:target{
   color: #343A40;
+}
+.pull-right {
+  float: right !important;
 }
 
 /* Font Used */

@@ -2,7 +2,7 @@
 <nav id="navb" class="navbar navbar-expand-md bg-dark navbar-laravel ">
     <div class="container">
         <a class="navbar-brand" href="{{url('/home')}}">
-          <strong>  BookQ </strong>
+          <strong> <i class="fa fa-book"></i> BookQ </strong>
         </a>
         @include('layouts.partial._alert')
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -23,10 +23,12 @@
                 @else
                     <li class="nav-item dropdown">
                         <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            {{ Auth::user()->name }} <span class="caret"></span>
+                                <img class="img-responsive img-user-nav" src="{{asset(Auth::user()->user_image)}}" alt="">
+                                 {{ Auth::user()->name }} <span class="caret"></span>
                         </a>
 
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="{{route('profile')}}">
                             <a class="dropdown-item" href="{{route('profile')}}">Profile</a>
                             <a class="dropdown-item" href="{{ route('logout') }}"
                                onclick="event.preventDefault();

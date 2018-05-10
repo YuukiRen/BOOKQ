@@ -13,6 +13,7 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
     <!-- Custom styles for this template -->
     <link href="{{asset('css/agency.css')}}" rel="stylesheet">
+	<link rel="stylesheet" href="css/footer-distributed-with-address-and-phones.css">
 
   </head>
   <body>
@@ -32,8 +33,6 @@
             </div>
             <div class="card-body mt-4 col-md-8">
                 <h3 class="card-title">{{$users->name}} <a href="{{url("/profile/{$users->id}/edit")}}" class="btn btn-primary btn-sm">Edit Profile</a></h3> 
-                <div class="row">
-                    <div class="col-md-6">
                         <table>
                             <tr>
                                 @if ( !empty ( $users->nim ) ) 
@@ -68,12 +67,10 @@
                                 <td valign="top"> Interest </td> <td valign="top">&nbsp;:&nbsp;</td> <td> {{$users->fav_book}} </td>
                             </tr>
                         </table>
-                    </div>
-                </div>
             </div>
+          </div>
                 <div class="row"> 
-                    <div class="col-1"></div>
-                    <div class="col"> <br>
+                    <div class="col-md-11 center"> <br>
                         <h4 class="card-title">About Me</h4>
                         <p class="card-text">{{ $users->about_me }}</p>
                     </div>
@@ -83,7 +80,6 @@
             </div>
           </div>
         </div>
-        <br>
           <!-- /.card -->
           <div class="row">
             <div class="card col-9 center pb-2">
@@ -130,6 +126,8 @@
                                     @endif
                                 @endif
                             @endforeach
+                            <hr>
+                            
                         </div>    
                     </div>
                     <div class="tab-pane fade" id="borrow" role="tabpanel" aria-labelledby="borrow-tab">
@@ -149,6 +147,7 @@
                                 @endif
                                 
                                 @endforeach
+                                <hr>
                         </div>    
                     </div>
                     <div class="tab-pane fade" id="lend" role="tabpanel" aria-labelledby="lend-tab">

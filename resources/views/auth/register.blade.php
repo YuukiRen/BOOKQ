@@ -11,7 +11,7 @@
                         @csrf
                         <div class="form-group row">
                             <div class="wrap-input100 validate-input" data-validate = "Name is required">
-                                <input  id="name" type="text" class="input100" name="name" value="{{ old('name') }}" placeholder="Name" required autofocus>
+                                <input  id="name" type="text" class="input100" name="name"  max=12 value="{{ old('name') }}" placeholder="Name" required autofocus>
                                 <span class="focus-input100"></span>
                                 <span class="symbol-input100">
                                 <i class="fa fa-user-circle" aria-hidden="true"></i>

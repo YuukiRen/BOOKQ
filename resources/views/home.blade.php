@@ -80,7 +80,7 @@
           <div class="col-md-4">
             <span class="fa-stack fa-4x">
               <i class="fa fa-circle fa-stack-2x"></i>
-         /     <i class="fa fa-wrench fa-stack-1x fa-inverse"></i>
+             <i class="fa fa-wrench fa-stack-1x fa-inverse"></i>
             </span>
             <h4 class="service-heading">Secure</h4>
             <p class="text-muted">We protect user's information and make sure the transaction is safe and secured.</p>
@@ -142,19 +142,6 @@
           </div>
         </div>
       </div>
-
-    <!-- Footer -->
-    <!-- <footer>
-      <div class="container">
-        <div class="row">
-          <div class="col-md-4">
-            <span class="copyright">Copyright &copy; Your Website 2018</span>
-          </div>
-        </div>
-      </div>
-    </footer> -->
-
-   
 
     <!-- Bootstrap core JavaScript -->
     <script src="vendor/jquery/jquery.min.js"></script>

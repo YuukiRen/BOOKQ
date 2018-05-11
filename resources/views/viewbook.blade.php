@@ -87,7 +87,7 @@
 
         <div class="card-body mt-4 col-md-8">
           
-          <h3 class="card-title">{{$books->title}}</h3>
+          <h3 class="card-title">{{$books->title}}</h3> <hr>
           <div class="row">
               <div class="col-md-6">
           <table>
@@ -115,12 +115,14 @@
         </div>
       </div>
       </div>
+      <hr>
       <div class="row"> 
-          <div class="col"> <br>
-            <h5 class="card-title">Book Owner's Review</h5>
-            <p class="card-text">{{$books->review}}</p>
+          <div class="col">
+            <h5>Book Owner's Review</h5>
+            <p>{{$books->review}}</p>
           </div>
       </div>
+      <hr>
       {{-- <div class="row py-2">
         <div class="col"> 
               <h5 class="card-title">Description</h5>

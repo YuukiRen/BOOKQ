@@ -11,18 +11,20 @@
                     <span class="login100-form-title"><h5>
                         Login</h5>
                     </span>
-                        <div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
-                            <input id="email" type="email" class="input100" name="email" value="{{ old('email') }}" required autofocus placeholder="Email">
-                            <span class="focus-input100"></span>
-                            <span class="symbol-input100">
-                                <i class="fa fa-envelope" aria-hidden="true"></i>
-                            </span>
-                        </div>
-                        @if ($errors->has('email'))
-                                <span class="invalid-feedback">
+                    <div class="form-group row">
+                            @if ($errors->has('email'))
+                                <span class="invalid-feedback thick" style="text-align:center;font-size:small;color:red">
                                     {{ $errors->first('email') }}
                                 </span>
-                        @endif
+                                @endif 
+                            <div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
+                                <input id="email" type="email" class="input100" name="email" value="{{ old('email') }}" required autofocus placeholder="Email">
+                                <span class="focus-input100"></span>
+                                <span class="symbol-input100">
+                                    <i class="fa fa-envelope" aria-hidden="true"></i>
+                                </span>
+                            </div>
+                        </div>
                     </div>
 
                     <div class="form-group row">

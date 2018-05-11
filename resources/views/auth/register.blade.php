@@ -18,45 +18,44 @@
                                 </span>
                                 @if ($errors->has('name'))
                                     <span class="invalid-feedback">
-                                        <strong>{{ $errors->first('name') }}</strong>
+                                        <small>{{ $errors->first('name') }}</small>
                                     </span>
                                 @endif
                             </div>
                         </div>
                          <div class="form-group row">
-                            <div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
-                                <input id="email" type="email" class="input100" name="email" value="{{ old('email') }}" required
-                                placeholder="Email">
-                                <span class="focus-input100"></span>
-                            <span class="symbol-input100">
-                                <i class="fa fa-envelope" aria-hidden="true"></i>
+                            @if ($errors->has('email'))
+                            <span class="invalid-feedback" style="font-size:small;color:red">
+                                {{ $errors->first('email') }}
                             </span>
-    
-                                @if ($errors->has('email'))
-                                    <span class="invalid-feedback">
-                                        <strong>{{ $errors->first('email') }}</strong>
-                                    </span>
-                                @endif
+                            @endif 
+                            <div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
+                                <input id="email" type="email" class="input100" name="email" value="{{ old('email') }}" required placeholder="Email">
+                                <span class="focus-input100"></span>
+                                <span class="symbol-input100">
+                                    <i class="fa fa-envelope" aria-hidden="true"></i>
+                                </span>
                             </div>
+                           
                         </div>
     
                         <div class="form-group row">
+                                @if ($errors->has('password'))
+                                <span class="invalid-feedback" style="text-align:center;font-size:small;color:red">
+                                    {{ $errors->first('password') }}
+                                </span>
+                                @endif 
                             <div class="wrap-input100 validate-input" data-validate = "Password is required!">
                                 <input id="password" type="password" class="input100" name="password" placeholder="Password" required>
                                 <span class="focus-input100"></span>
                             <span class="symbol-input100">
                                 <i class="fa fa-lock" aria-hidden="true"></i>
                             </span>
-                                @if ($errors->has('password'))
-                                    <span class="invalid-feedback">
-                                        <strong>{{ $errors->first('password') }}</strong>
-                                    </span>
-                                @endif
                             </div>
                         </div>
                         <div class="form-group row">
                             <div class="wrap-input100 validate-input" data-validate = "Password is required!">
-                                <input id="password-confirm" type="password" class="input100" name="password_confirmation"  placeholder="Confirm Password"required>
+                            <input id="password-confirm" type="password" class="input100" name="password_confirmation"  placeholder="Confirm Password"required>
                             <span class="focus-input100"></span>
                             <span class="symbol-input100">
                                 <i class="fa fa-lock" aria-hidden="true"></i>

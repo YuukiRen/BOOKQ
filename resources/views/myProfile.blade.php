@@ -32,7 +32,7 @@
                     </div>
                 </div>
                 <div class="card-body mt-4 col-md-8">
-                    <h3 class="card-title">{{$users->name}} <a href="{{url("/profile/{$users->id}/edit")}}" class="btn btn-primary btn-sm">Edit Profile</a></h3> 
+                    <h3 class="card-title">{{$users->name}} <a href="{{url("/profile/{$users->id}/edit")}}" class="btn btn-primary btn-sm">Edit Profile</a></h3> <hr>
                             <table>
                                 <tr>
                                     @if ( !empty ( $users->nim ) ) 
@@ -64,16 +64,24 @@
                                     @endif
                                 </tr>
                                 <tr>
+                                    @if ( !empty ($users->fav_book) )
                                     <td valign="top"> Interest </td> <td valign="top">&nbsp;:&nbsp;</td> <td> {{$users->fav_book}} </td>
+                                @else
+                                    <td valign="top"> Interest </td> <td valign="top">&nbsp;:&nbsp;</td> <td> - </td>
+                                @endif
                                 </tr>
-                            </table>
+                            </table> <hr>
                 </div>
             </div>
                     <div class="row"> 
-                        <div class="col-md-11 center"> <br>
+                        <div class="col-md-11 center">
                             <h4 class="card-title">About Me</h4>
-                            <p class="card-text">{{ $users->about_me }}</p>
-                        </div>
+                            @if(!empty($users->about_me))
+                                <p class="card-text">{{ $users->about_me }}</p>
+                            @else   
+                                <p class="card-text">-</p>
+                            @endif
+                            </div>
                     </div>
                 </div>
             </div> <br>

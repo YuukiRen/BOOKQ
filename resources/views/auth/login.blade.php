@@ -20,7 +20,7 @@
                         </div>
                         @if ($errors->has('email'))
                                 <span class="invalid-feedback">
-                                    <h6 class="bold center">{{ $errors->first('email') }}</h6>
+                                    {{ $errors->first('email') }}
                                 </span>
                         @endif
                     </div>

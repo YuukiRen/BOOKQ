@@ -1,21 +1,21 @@
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <title>{{$users->name}}'s Profile</title>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>{{$users->name}}'s Profile</title>
+    
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>   
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <!-- Custom styles for this template -->
+    <link href="{{asset('css/agency.css')}}" rel="stylesheet">
+    <link rel="stylesheet" href="css/footer-distributed-with-address-and-phones.css">
 
-        <!-- Bootstrap core CSS -->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>   
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
-        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
-        <!-- Custom styles for this template -->
-        <link href="{{asset('css/agency.css')}}" rel="stylesheet">
-        <link rel="stylesheet" href="css/footer-distributed-with-address-and-phones.css">
-
-    </head>
+</head>
     <body>
         <!-- Navigation -->
         @include('layouts.partial.header')
@@ -155,8 +155,10 @@
                                     @foreach($requests_lend->all() as $request_l) 
                                     @if($request_l->status==0)
                                         <p><small class="text-muted">{{ $request_l->request_date }} </small>{{App\User::find($request_l->id_booker)->name}} wants to borrow "{{ App\Book::find($request_l->book_id)->title }}" 
-                                            <a href='{{ url("/accept/{$request_l->id}") }}' class="btn btn-primary pull-right">Accept</a>
                                             <a href='{{ url("/reject/{$request_l->id}") }}' class="btn btn-primary pull-right">Decline</a>
+                                            <a href='{{ url("/accept/{$request_l->id}") }}' class="btn btn-primary pull-right">Accept</a>
+                                            <a href='{{ url("/accept/{$request_l->id}") }}' class="btn btn-primary pull-right">Messsage</a>
+
                                         </p>
 
                                     @endif

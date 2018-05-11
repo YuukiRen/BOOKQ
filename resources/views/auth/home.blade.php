@@ -1,13 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-
   <head>
-
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-
     <title>BookQ</title>
 
     <!-- Bootstrap core CSS -->
@@ -20,7 +17,6 @@
     <!-- Custom styles for this template -->
     <link href="{{ asset('css/agency.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="css/footer-distributed-with-address-and-phones.css">
-
   </head>
   <body>
     @include('layouts.partial.header')

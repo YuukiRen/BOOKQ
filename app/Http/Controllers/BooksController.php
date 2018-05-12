@@ -91,7 +91,7 @@ class BooksController extends Controller
 
     public function addBook(Request $request){
         $this->validate($request,[
-			'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+			'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
     		'title'=>'required',
     		'author'=>'required',
     		'year'=>'required',

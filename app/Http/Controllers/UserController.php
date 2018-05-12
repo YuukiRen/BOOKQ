@@ -127,6 +127,7 @@ class UserController extends Controller
         $users->address = $request->input('address');
         $users->line_id = $request->input('line_id');
         $users->phone_number = $request->input('phone_number');
+
         $users->about_me = $request->input('about_me');
         $users->fav_book = $request->input('fav_book');
         $users->save();     

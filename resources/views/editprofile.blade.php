@@ -60,7 +60,14 @@
                                                 <select name="fav_book" id="" class="form-control center" required>
                                                     <option value="" disabled selected hidden>Select your option</option> 
                                                     @foreach ($category as $categories)
-                                                    <option value="{{ $categories->name }}"> {{ $categories->name }}</option>
+                                                    @if($categories->name == $users->fav_book){
+                                                        <option value="{{ $categories->name }}" selected> {{ $categories->name }}</option>
+                                                    }
+                                                    @else{
+                                                        <option value="{{ $categories->name }}" > {{ $categories->name }}</option>
+                                                    }
+                                                    @endif
+                                                    
                                                     @endforeach
                                                 </select> 
                                             </div>
@@ -95,7 +102,7 @@
                                     </div>
                                     <div class="form-group wrap-input100 validate-input" onclick="myFunction()" data-validate = "Valid about_me is required">
                                         <label for="about_me">About Me</label>
-                                        <textarea type="text" id="about_me" rows=5 class="input100 form-control" required name="about_me">{{$users->about_me}}</textarea>
+                                        <textarea type="text" id="about_me" rows=5 class="input100 form-control" name="about_me">@if($users->about_me==NULL){{{$users->about_me}}}@else{-}@endif</textarea>
                                     </div>
                                     <div class="invalid-feedback">
                                         Please enter your bio

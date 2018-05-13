@@ -129,27 +129,30 @@ class BooksController extends Controller
 
     public function update($book_id){
         $books = Book::find($book_id);
-        return view('update', ['books'=>$books]);
+        $category=Category::all();
+        // dd($books);
+        return view('editbook', compact('books','category'));
     }
 
-    public function edit(Request $request, $book_id){
+    public function edit(Request $request, $id){
+        // dd($id);
     	$this->validate($request,[
     		'title'=>'required',
-    		'book_id'=>'required',
     		'author'=>'required',
     		'year'=>'required',
     		'publisher'=>'required'
-    	]);
+        ]);
     	$data=array(
 			'title'=>$request->input('title'),
-    		'author'=>$request->input('author'),
+            'author'=>$request->input('author'),
+            'category'=>$request->input('category'),
     		'description'=>$request->input('description'),
     		'review'=>$request->input('review'),
     		'year'=>$request->input('year'),
     		'publisher'=>$request->input('publisher')
-    	);
-        Book::where('book_id',$book_id)->update($data);
-        return redirect('/viewbook/'.$books->id)->with('info','Books Updated Successfully!');
+        );
+        Book::where('id',$id)->update($data);
+        return redirect('/viewbook/'.$id)->with('info','Books Updated Successfully!');
     }
 
     public function report(Request $request, $book_id){

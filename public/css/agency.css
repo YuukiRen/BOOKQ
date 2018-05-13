@@ -39,6 +39,12 @@ table{
   position: relative;
   overflow: hidden;
 }
+.img-frame-profile{
+  width: 150px;
+  height: 250px;
+  position: relative;
+  overflow: hidden;
+}
 .img-center {
   display: block;
   margin-left: auto;
@@ -51,7 +57,13 @@ table{
   max-width: 171.25px;
   min-width: 171.25px;
 }
-.img-frame .img-cover {
+.img-cover-profile{
+  max-height:250px;
+  min-height:50px;
+  max-width: 150px;
+  min-width: 150px;
+}
+.img-frame .img-cover,.img-frame-profile .img-cover-profile {
   max-height: 100%;  
   max-width: 100%; 
   position: absolute;  

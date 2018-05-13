@@ -87,7 +87,7 @@
 
         <div class="card-body mt-4 col-md-8">
           
-          <h3 class="card-title">{{$books->title}}</h3> <hr>
+          <h3 class="card-title">{{$books->title}}     @if(( App\Book::where([['user_id', $users],['id', $books->id]])->first() ))<a href="{{url("/profile/{$books->id}/edit")}}" class="btn btn-primary btn-sm">Edit Book</a>@endif</h3> <hr>
           <div class="row">
               <div class="col-md-6">
           <table>
@@ -136,7 +136,7 @@
         </div>
           <!-- /.card -->
 
-          <div class="card card-outline-secondary my-4 col-9 center">
+          <div class="card card-outline-secondary my-4 col-md-9 center">
             <div class="card-body">
               <h4 for="Content" class="thick">Review  <a href="#comment" class=" btn btn-info btn-sm"> <u> <i class="fa fa-plus"></i> Leave a Review </u> </a></h4>
               <hr>  
@@ -156,7 +156,7 @@
                       {{csrf_field()}}
                   <div class="row">
                     @if( !( App\Comment::where([['user_id', $users],['book_id', $books->id]])->first() ) )
-                    <div class="col-10">
+                    <div class="col-md-10">
                       <div class="form-group  has-feedback{{ $errors->has('review') ? 'has-error' : '' }}">
                           <textarea id="comment" name="review" rows="5" class="form-control"></textarea>
                           {{-- @if($errors->has('content'))
@@ -166,7 +166,7 @@
                           @endif --}}
                       </div>
                     </div>
-                    <div class="col-2">
+                    <div class="col-md-2">
                         <div class="form-group">
                             <label for="rating" class="thick">Rating</label>
                             <select name="rating" id="" class="form-control center">
@@ -193,7 +193,7 @@
                     @endif
                   </div>
                         <div class="row">
-                          <div class="center col-md-10">
+                          <div class="center col-md-10 ">
                             <div class="form-group">
                                 <input type="submit" class="btn btn-primary btn-block" value="SUBMIT" >
                             </div>

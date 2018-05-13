@@ -55,11 +55,12 @@ class UserController extends Controller
     {   
         $users = Auth::user();
         $id = $users->id;
+        $books = Book::where('user_id', $id)->get();
         $requests_lend = Transaction::where('id_lender',$id)->get();
         $requests_borrow = Transaction::where('id_booker',$id)->get();
         $activities = Transaction::where('id_booker',$id)->OrWhere('id_lender',$id)->get();
         
-        return view('myProfile', compact('users','requests_lend','requests_borrow','activities'));
+        return view('myProfile', compact('users','requests_lend','requests_borrow','activities','books'));
         
         // dd($users);
         

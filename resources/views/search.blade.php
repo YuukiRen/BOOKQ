@@ -75,7 +75,7 @@
         @if(($book->show==1))
           <div class="col-lg-2 col-md-3 col-sm-4 portfolio-item">
             <div class="card h-100" >
-              <div class="img-frame">
+              <div class="img-frame center">
               <a href="viewbook/{{$book->id}}"><img class="card-img-top img-responsive img-cover" src="{{asset($book->image)}}" alt=""></a>
               
             </div>

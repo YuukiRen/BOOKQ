@@ -23,70 +23,85 @@
         <!-- Page Content -->
         <div class="container">
         <div class="row"> 
-            <div class="center card col-lg-10 pb-2"> 
+            <div class="center card col-md-11 pb-2"> 
             <div class="row">
-                <div class="col-md-4 mt-4">
+                <div class="col-md-3 mt-4">
                     <img class="img-responsive img-user img-center" src="{{asset($users->user_image)}}" alt="">
                     <div class="row">
                     
                     </div>
                 </div>
-                <div class="card-body mt-4 col-md-8">
+                <div class="card-body mt-4 col-md-9">
                     <h3 class="card-title">{{$users->name}} <a href="{{url("/profile/{$users->id}/edit")}}" class="btn btn-primary btn-sm">Edit Profile</a></h3> <hr>
-                            <table>
-                                <tr>
-                                    @if ( !empty ( $users->nim ) ) 
-                                        <td valign="top"> NIM </td> <td valign="top">&nbsp;:&nbsp;</td> <td> {{$users->nim}} </td>
-                                    
+                        <div class="row">
+                            <div class="col-md-6">
+                                <table>
+                                    <tr>
+                                        @if ( !empty ( $users->nim ) ) 
+                                            <td valign="top"> NIM </td> <td valign="top">&nbsp;:&nbsp;</td> <td> {{$users->nim}} </td>
+                                        
+                                        @else
+                                            <td valign="top"> NIM </td> <td valign="top">&nbsp;:&nbsp;</td> <td> - </td>
+                                        @endif
+                                    </tr>
+                                    <tr>
+                                        @if ( !empty ( $users->address ) ) 
+                                            <td valign="top"> Address </td> <td valign="top">&nbsp;:&nbsp;</td> <td> {{$users->address}} </td>
+                                        @else
+                                            <td valign="top"> Address </td> <td valign="top">&nbsp;:&nbsp;</td> <td> - </td>
+                                        @endif
+                                    </tr> 
+                                    <tr>
+                                        @if ( !empty ($users->line_id) )
+                                            <td valign="top"> Line ID </td> <td valign="top">&nbsp;:&nbsp;</td> <td> {{$users->line_id}} </td>
+                                        @else
+                                            <td valign="top"> Line ID </td> <td valign="top">&nbsp;:&nbsp;</td> <td> - </td>
+                                        @endif
+                                    </tr> 
+                                    <tr>
+                                        @if ( !empty ($users->phone_number) )
+                                                <td valign="top"> Phone No. </td> <td valign="top">&nbsp;:&nbsp;</td> <td> {{$users->phone_number}} </td>
+                                        @else
+                                            <td valign="top"> Phone No. </td> <td valign="top">&nbsp;:&nbsp;</td> <td> - </td>
+                                        @endif
+                                    </tr>
+                                    <tr>
+                                        @if ( !empty ($users->fav_book) )
+                                        <td valign="top"> Interest </td> <td valign="top">&nbsp;:&nbsp;</td> <td> {{$users->fav_book}} </td>
                                     @else
-                                        <td valign="top"> NIM </td> <td valign="top">&nbsp;:&nbsp;</td> <td> - </td>
+                                        <td valign="top"> Interest </td> <td valign="top">&nbsp;:&nbsp;</td> <td> - </td>
                                     @endif
-                                </tr>
-                                <tr>
-                                    @if ( !empty ( $users->address ) ) 
-                                        <td valign="top"> Address </td> <td valign="top">&nbsp;:&nbsp;</td> <td> {{$users->address}} </td>
-                                    @else
-                                        <td valign="top"> Address </td> <td valign="top">&nbsp;:&nbsp;</td> <td> - </td>
-                                    @endif
-                                </tr> 
-                                <tr>
-                                    @if ( !empty ($users->line_id) )
-                                        <td valign="top"> Line ID </td> <td valign="top">&nbsp;:&nbsp;</td> <td> {{$users->line_id}} </td>
-                                    @else
-                                        <td valign="top"> Line ID </td> <td valign="top">&nbsp;:&nbsp;</td> <td> - </td>
-                                    @endif
-                                </tr> 
-                                <tr>
-                                    @if ( !empty ($users->phone_number) )
-                                            <td valign="top"> Phone No. </td> <td valign="top">&nbsp;:&nbsp;</td> <td> {{$users->phone_number}} </td>
-                                    @else
-                                        <td valign="top"> Phone No. </td> <td valign="top">&nbsp;:&nbsp;</td> <td> - </td>
-                                    @endif
-                                </tr>
-                                <tr>
-                                    @if ( !empty ($users->fav_book) )
-                                    <td valign="top"> Interest </td> <td valign="top">&nbsp;:&nbsp;</td> <td> {{$users->fav_book}} </td>
-                                @else
-                                    <td valign="top"> Interest </td> <td valign="top">&nbsp;:&nbsp;</td> <td> - </td>
-                                @endif
-                                </tr>
-                            </table> <hr>
-                </div>
-            </div>
-                    <div class="row"> 
-                        <div class="col-md-11 center">
-                            <h4 class="card-title">About Me</h4>
-                            @if(!empty($users->about_me))
-                                <p class="card-text">{{ $users->about_me }}</p>
-                            @else   
-                                <p class="card-text">-</p>
-                            @endif
+                                    </tr>
+                                </table>
+                              </div>
+                                <div class="col-md-6">
+                                    <h5 class="card-title">About Me</h5>
+                                            @if(!empty($users->about_me))
+                                                <p class="card-text">{{ $users->about_me }}</p>
+                                            @else   
+                                                <p class="card-text">-</p>
+                                            @endif
+                                </div> 
+                                </div>
                             </div>
+                        </div> <hr>
+                        <h4 class="card-title">Book's Owned</h4> 
+                    <div class="row"> 
+                            
+                            @foreach($books->all() as $book)
+                            @if(($book->show==1))
+                            <div class="col-lg-2 col-md-3 col-sm-4 portfolio-item">
+                                <div class="img-frame-profile">
+                                <a href="viewbook/{{$book->id}}"><img class="card-img-top img-responsive img-cover-profile" src="{{asset($book->image)}}" alt=""></a>
+                                </div>
+                            </div>
+                            @endif
+                            @endforeach  
+                        </div>
+                    </div>
+                </div> <br>
                     </div>
                 </div>
-            </div> <br>
-                </div>
-            </div>
             </div>
             <!-- /.card -->
             <div class="row">
@@ -102,6 +117,7 @@
                             <a class="nav-link" id="lend-tab" data-toggle="tab" href="#lend" role="tab" aria-controls="lend" aria-selected="false">Lend</a>
                         </li>
                         </ul>
+                        
                         <div class="tab-content" id="myTabContent">
                         <div class="tab-pane fade show active" id="history" role="tabpanel" aria-labelledby="history-tab">
                             <div class="card-body">

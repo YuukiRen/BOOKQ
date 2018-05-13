@@ -14,7 +14,6 @@ class DatabaseSeeder extends Seeder
         $this->call(bookseeder::class);
         $this->call(userseed::class);
         $this->call(seedcategory::class);
-        $this->call(commentseed::class);
         $this->call(messageseed::class);
         $this->call(adminseed::class);
     }

@@ -27,6 +27,7 @@ Route::get('/register', function () {
     return view('auth.register');
 });
 
+
 // Route::get('/lend',function(){
 // 	return view('lend');
 // });
@@ -82,6 +83,16 @@ Route::get('/messages/{id}','MessagesController@retrieve');
 Route::get('/messages','MessagesController@show');
 Route::post('/send_messages','MessagesController@send');
 // Route::get('/send_messages','MessagesController@send');
+
+
+Route::get('/admin', function () {
+    return view('admin.login');
+});
+
+Route::get('admin/control', function () {
+    return view('admin.control');
+});
+
 
 //prototypw
 Auth::routes();

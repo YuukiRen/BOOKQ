@@ -22,26 +22,26 @@
       </div>
       <div class="row text-center">
         <div class="col-md-4">
-          <span class="fa-stack fa-4x">
+          <a href="login"><span class="fa-stack fa-4x">
             <i class="fa fa-circle fa-stack-2x"></i>
             <i class="fa fa-book fa-stack-1x fa-inverse"></i>
-          </span>
+          </span></a>
           <h4 class="service-heading">Lend a Book</h4>
           <p class="text-muted">Users can lend their books so that it can be borrowed by another user. The books that are lended by the user is added to our database.</p>
         </div>
         <div class="col-md-4">
-          <span class="fa-stack fa-4x">
+          <a href="login"><span class="fa-stack fa-4x">
             <i class="fa fa-circle fa-stack-2x "></i>
             <i class="fas fa-people-carry fa-stack-1x fa-inverse"></i>
-          </span>
+          </span></a>
           <h4 class="service-heading">Borrow a Book</h4>
           <p class="text-muted">Users can borrow a book that are available in our database. Lenders will be connected to borrower, make an agreement, and then lend the book.</p>
         </div>
         <div class="col-md-4">
-          <span class="fa-stack fa-4x">
+          <a href="login"><span class="fa-stack fa-4x">
             <i class="fa fa-circle fa-stack-2x"></i>
             <i class="fa fa-star fa-stack-1x fa-inverse"></i>
-          </span>
+          </span></a>
           <h4 class="service-heading">Rate a Book</h4>
           <p class="text-muted">Users can give their thoughts on the book that are available in our database.</p>
         </div>
@@ -102,7 +102,7 @@
         <div class="row">
           <div class="col-sm-3">
             <div class="team-member">
-              <img class="mx-auto rounded-circle" src="img/team/1.jpg" alt="" style="border: 3px solid black">
+              <a href="admin"><img class="mx-auto rounded-circle" src="img/team/1.jpg" alt="" style="border: 3px solid black"></a>
               <h4>Alvin<br>Reinaldo</h4>
               <p> G64160065 </p>
               <p class="text-muted">Back-End</p>
@@ -111,7 +111,7 @@
           </div>
           <div class="col-sm-3">
             <div class="team-member">
-              <img class="mx-auto rounded-circle" src="img/team/3.png" alt="">
+              <a href="admin"><img class="mx-auto rounded-circle" src="img/team/3.png" alt=""></a>
               <h4>Maulvi<br>Alfansuri</h4>
               <p> G64160087 </p>
               <p class="text-muted">Back-End</p>
@@ -120,7 +120,7 @@
           </div>
           <div class="col-sm-3">
             <div class="team-member">
-              <img class="mx-auto rounded-circle" src="img/team/3.jpg" alt="" style="border: 3px solid black">
+             <a href="admin"> <img class="mx-auto rounded-circle" src="img/team/3.jpg" alt="" style="border: 3px solid black"> </a>
               <h4>Rheisa<br>Gusmendasari</h4>
               <p> G64160035 </p>
               <p class="text-muted">Front-End</p>
@@ -129,7 +129,7 @@
           </div>
         <div class="col-sm-3">
             <div class="team-member">
-              <img class="mx-auto rounded-circle" src="img/team/4.jpg" alt="" style="border: 3px solid black">
+             <a href="admin"> <img class="mx-auto rounded-circle" src="img/team/4.jpg" alt="" style="border: 3px solid black"> </a>
               <h4>Faldi<br>Sulistiawan</h4>
               <p> G64160068 </p>
               <p class="text-muted">Front-End</p>

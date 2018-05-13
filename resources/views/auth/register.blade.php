@@ -41,7 +41,7 @@
     
                         <div class="form-group row">
                                 @if ($errors->has('password'))
-                                <span class="invalid-feedback" style="text-align:center;font-size:small;color:red">
+                                <span class="invalid-feedback" style="text-align:center;font-size:x-small;color:red">
                                     {{ $errors->first('password') }}
                                 </span>
                                 @endif 

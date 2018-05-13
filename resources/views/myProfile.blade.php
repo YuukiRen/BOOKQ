@@ -108,7 +108,7 @@
                                 @foreach($activities->all() as $activity)
                                     @if(App\User::find($activity->id_booker) == $users)
                                         @if($activity->status==0)
-                                        <p><small class="text-muted">{{ $activity->request_date }} </small>You have sent request to {{App\User::find($activity->id_lender)->name}} to borrow {{ App\Book::find($activity->book_id)->title }}</p>
+                                        <p><small class="text-muted">{{ $activity->request_date }} </small>You have sent request to {{App\User::find($activity->id_lender)->name}} to borrow "{{ App\Book::find($activity->book_id)->title }}"</p>
                                         @endif
                                         @if($activity->status==1)
                                         <p><small class="text-muted">{{ $activity->lend_date }} </small>{{App\User::find($activity->id_lender)->name}} accepted your request for borrowing "{{ App\Book::find($activity->book_id)->title }}"!</p>
@@ -121,7 +121,7 @@
                                         @endif
                                     @elseif(App\User::find($activity->id_lender) == $users)
                                         @if($activity->status==0)
-                                        <p><small class="text-muted">{{ $activity->request_date }} </small>{{App\User::find($activity->id_booker)->name}} have sent request to you to borrow {{ App\Book::find($activity->book_id)->title }}</p>
+                                        <p><small class="text-muted">{{ $activity->request_date }} </small>{{App\User::find($activity->id_booker)->name}} have sent request to you to borrow "{{ App\Book::find($activity->book_id)->title }}"</p>
                                         @endif
                                         @if($activity->status==1)
                                         <p><small class="text-muted">{{ $activity->lend_date }} </small>You accepted {{App\User::find($activity->id_booker)->name}} request for borrowing "{{ App\Book::find($activity->book_id)->title }}"!</p>
@@ -142,7 +142,7 @@
                             <div class="card-body">
                                     @foreach($requests_borrow->all() as $request_b)
                                     @if($request_b->status==0)
-                                        <p><small class="text-muted">{{ $request_b->request_date }} </small>Sent request to {{App\User::find($request_b->id_lender)->name}} to borrow {{ App\Book::find($request_b->book_id)->title }}</p>
+                                        <p><small class="text-muted">{{ $request_b->request_date }} </small>Sent request to {{App\User::find($request_b->id_lender)->name}} to borrow "{{ App\Book::find($request_b->book_id)->title }}"</p>
                                     @endif
                                     @if($request_b->status==1)
                                         <p><small class="text-muted">{{ $request_b->lend_date }} </small>{{App\User::find($request_b->id_lender)->name}} accepted your request for borrowing "{{ App\Book::find($request_b->book_id)->title }}"!</p>
@@ -151,7 +151,7 @@
                                     <p><small class="text-muted">{{ $request_b->return_date }} </small>You have returned {{App\User::find($request_b->id_lender)->name}}'s "{{ App\Book::find($request_b->book_id)->title }}" book</p>
                                     @endif
                                     @if($request_b->status==3)
-                                    <p><small class="text-muted">{{ $request_b->reject_date }} </small>{{App\User::find($request_b->id_lender)->name}} have declined Your request for "{{ App\Book::find($request_b->book_id)->title }}"</p>
+                                    <p><small class="text-muted">{{ $request_b->reject_date }} </small>{{App\User::find($request_b->id_lender)->name}} have declined your request for "{{ App\Book::find($request_b->book_id)->title }}"</p>
                                     @endif
                                     
                                     @endforeach
@@ -163,12 +163,11 @@
                                     @foreach($requests_lend->all() as $request_l) 
                                     @if($request_l->status==0)
                                         <p><small class="text-muted">{{ $request_l->request_date }} </small>{{App\User::find($request_l->id_booker)->name}} wants to borrow "{{ App\Book::find($request_l->book_id)->title }}" 
-                                            <a href='{{ url("/reject/{$request_l->id}") }}' class="btn btn-primary pull-right">Decline</a>
-                                            <a href='{{ url("/accept/{$request_l->id}") }}' class="btn btn-primary pull-right">Accept</a>
-                                            <a href='{{ url("/accept/{$request_l->id}") }}' class="btn btn-primary pull-right">Messsage</a>
-
+                                            <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#b_notif_modal">
+                                                See Details
+                                            </button> 
                                         </p>
-
+                                        @include('layouts.partial.b_notif_modal')
                                     @endif
                                     @if($request_l->status==1)
                                     <p><small class="text-muted">{{ $request_l->lend_date }} </small>You lended "{{ App\Book::find($request_l->book_id)->title }}" to {{App\User::find($request_l->id_booker)->name}} <a href='{{ url("/return/{$request_l->id}") }}' class="btn btn-primary pull-right">I have Received my Book back</a></p>
@@ -185,9 +184,9 @@
                                 <hr>
                             </div>    
                         </div>
-                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
             <!-- /.card -->
 
             </div>

@@ -32,14 +32,14 @@
                 <div class="panel panel-info" >                
                     <h1 class="my-4"><span class="title px-3">Edit Profile</h1>                    
                     <div class="panel-body">
-                        <form class="form-horizontal login100-form needs-validation" novalidate method="POST"  action="{{ url('/profile/edit/save') }}" enctype="multipart/form-data" >
+                        <form class="form-horizontal needs-validation" novalidate method="POST"  action="{{ url('/profile/edit/save') }}" enctype="multipart/form-data" >
                             {{ csrf_field() }}
                                 <div class="form-group">
                                         <label for="">   User image : </label>
                                 <input type="file" name="user_image" id="pic" value="{{$users->user_image}}">
-                                    <div class="form-group wrap-input100 validate-input">
+                                    <div class="form-group">
                                             <label for="">Full Name</label>
-                                            <input type="text"  class="form-control input100" required name="complete_name" value="{{$users->complete_name}}">
+                                            <input type="text"  class="form-control" required name="complete_name" value="{{$users->complete_name}}">
                                             <div class="invalid-feedback">
                                                 Please enter your full name
                                             </div>
@@ -47,11 +47,8 @@
                                     <div class="row">
                                         <div class="col-6">
                                                 <div class="form-group">
-                                                    <label for="nim">NIM</label>
-                                                    <input type="text" class="form-control" name="nim" value="{{$users->nim}}" required>
-                                                    <div class="invalid-feedback">
-                                                        Please enter your NIM
-                                                    </div>
+                                                    <label for="nim">NIM*</label>
+                                                    <input type="text" class="form-control" name="nim" value="{{$users->nim}}" placeholder="This form is optional">
                                                 </div>
                                             </div>
                                         <div class="col-6">
@@ -85,28 +82,23 @@
                                                 </div>
                                             <div class="col-6">
                                                 <div class="form-group">
-                                                    <label for="line_id">Line ID</label>
-                                                    <input type="text" class="form-control" name="line_id" value="{{$users->line_id}}"> 
-                                                    <div class="invalid-feedback">
-                                                        Please enter your LINE ID
-                                                    </div>
+                                                    <label for="line_id">Line ID*</label>
+                                                    <input type="text" class="form-control" name="line_id" value="{{$users->line_id}}" placeholder="This form is optional"> 
                                                 </div>
                                             </div>
                                         </div>
-                                    <div class="form-group wrap-input100 validate-input" data-validate = "Valid address is required">
+                                    <div class="form-group">
                                         <label for="address">Address</label>
                                         <input type="text" class="input100 form-control" required name="address" value="{{$users->address}}">
                                         <div class="invalid-feedback">
                                             Please enter your address
                                         </div>
                                     </div>
-                                    <div class="form-group wrap-input100 validate-input" onclick="myFunction()" data-validate = "Valid about_me is required">
-                                        <label for="about_me">About Me</label>
-                                        <textarea type="text" id="about_me" rows=5 class="input100 form-control" name="about_me">@if($users->about_me==NULL){{{$users->about_me}}}@else{-}@endif</textarea>
+                                    <div class="form-group">
+                                        <label for="about_me">About Me*</label>
+                                        <textarea type="text" id="about_me" rows=5 class="form-control" name="about_me" placeholder="This form is optional">{{$users->about_me}}</textarea>
                                     </div>
-                                    <div class="invalid-feedback">
-                                        Please enter your bio
-                                    </div>
+                                    <p>* : Optional</p>
                                     <div class="form-group">
                                             <input type="submit" class="btn btn-primary btn-block" value="SAVE" >
                                         </div>

@@ -101,9 +101,7 @@ class UserController extends Controller
         $this->validate($request,[
             'user_image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'complete_name' => 'required',
-            'nim' => 'required',
             'address' => 'required',
-            'line_id' => 'required',
             'phone_number' => 'required',
             'fav_book' => 'required',
         ]);

@@ -35,11 +35,18 @@
                         <form class="form-horizontal needs-validation" novalidate method="POST"  action="{{ url('/save') }}" enctype="multipart/form-data" >
                                 {{ csrf_field() }}
                                     <div class="form-group">
-                                        <label for="">   Book image : </label>
-                                        <input type="file" req name="image" id="pic">
-                                                <div class="invalid-feedback">
-                                                    Please insert the book's image
-                                                </div>
+                                        @if ($errors->has('image'))
+                                        <span class="invalid-feedback" style="text-align:center;font-size:x-small;color:red">
+                                            {{ $errors->first('image') }}
+                                        </span>
+                                        @endif 
+                                        <div class="form-group">
+                                            <label for="">   Book image</label>
+                                            <input type="file" class="form-control" required name="image" id="pic">
+                                                    <div class="invalid-feedback">
+                                                        Please insert the book's image
+                                                    </div>
+                                            </div>
                                         <div class="form-group">
                                             <label for=""> Title </label>
                                             <input type="text"  class="form-control" required name="title">

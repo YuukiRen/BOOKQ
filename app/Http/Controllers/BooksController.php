@@ -91,7 +91,7 @@ class BooksController extends Controller
 
     public function addBook(Request $request){
         $this->validate($request,[
-			'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+			'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
     		'title'=>'required',
     		'author'=>'required',
     		'year'=>'required',
@@ -115,7 +115,7 @@ class BooksController extends Controller
             $books->description = $request->input('description');
         }
         else{
-            $books->description = 'none';
+            $books->description = '-';
             
         }
         $books->review = $request->input('review');
@@ -137,7 +137,6 @@ class BooksController extends Controller
     		'title'=>'required',
     		'book_id'=>'required',
     		'author'=>'required',
-    		'description'=>'required',
     		'year'=>'required',
     		'publisher'=>'required'
     	]);

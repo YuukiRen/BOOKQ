@@ -45,22 +45,15 @@ Route::get('/search','BooksController@show');
 Route::post('/search_book','SearchController@search');
 Route::post('/post/{id}','BooksController@AddComment');
 Route::get('/reportbook/{book_id}', 'BooksController@report');
+Route::get('/viewbook/{id}/edit','BooksController@update')->name('editbook');
+Route::post('/viewbook/{id}/edit/save','BooksController@edit');
 
-// Route::get('/viewbook',function(){
-	// return view('viewbook');
-// });
 
 Route::get('/viewbook/{id}', 'BooksController@show_detail')->name('viewbook');
-	// return view('viewbook');
-// });
 Route::get('/profile/','UserController@show')->name('profile');
 Route::get('/profile/{id}','UserController@showother');
 Route::get('/profile/{id}/edit','UserController@edit')->name('editprofile');
 Route::post('/profile/edit/save','UserController@edit_profile');
-
-Route::post('/coba',function(){
-	return view('coba');
-});
 
 // For testing newfeature
 // Route::post('/beta', );

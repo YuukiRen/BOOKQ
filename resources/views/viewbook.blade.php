@@ -87,7 +87,7 @@
 
         <div class="card-body mt-4 col-md-8">
           
-          <h3 class="card-title">{{$books->title}}     @if(( App\Book::where([['user_id', $users],['id', $books->id]])->first() ))<a href="{{url("/profile/{$books->id}/edit")}}" class="btn btn-primary btn-sm">Edit Book</a>@endif</h3> <hr>
+          <h3 class="card-title">{{$books->title}}     @if(( App\Book::where([['user_id', $users],['id', $books->id]])->first() ))<a href="{{url("/viewbook/{$books->id}/edit")}}" class="btn btn-primary btn-sm">Edit Book</a>@endif</h3> <hr>
           <div class="row">
               <div class="col-md-6">
           <table>

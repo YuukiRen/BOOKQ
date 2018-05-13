@@ -130,12 +130,10 @@ class BooksController extends Controller
     public function update($book_id){
         $books = Book::find($book_id);
         $category=Category::all();
-        // dd($books);
         return view('editbook', compact('books','category'));
     }
 
     public function edit(Request $request, $id){
-        // dd($id);
     	$this->validate($request,[
     		'title'=>'required',
     		'author'=>'required',

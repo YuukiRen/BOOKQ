@@ -41,7 +41,7 @@
         <font size=3>Explore the World!</font>
     </span></h1>
   </div>
-   <div id="example1_filter" class="dataTables_filter">
+   <div class="dataTables_filter">
         <div class="col-xs-8 col-xs-offset-2">
         <div class="input-group my-4">
           <div class="dropdown show">
@@ -60,7 +60,7 @@
               <a class="dropdown-item" href="#History">History</a>
           </div>
         </div>
-                <input type="search" name="search_param" id="search_param" class="form-control" placeholder="Search Book" aria-controls="example1">  
+                <input type="search" name="search_param" id="search_param" class="form-control" placeholder="Search Book">  
                 <span class="input-group-btn">
                     <button class="btn btn-default" type="button"> Search <span class="glyphicon glyphicon-search"></span></button>
                 </span>
@@ -70,7 +70,7 @@
 
 
 <br>
-        <div id="example1" class="row">
+        <div class="row">
         @foreach($books->all() as $book)
         @if(($book->show==1))
           <div class="col-lg-2 col-md-3 col-sm-4 portfolio-item">

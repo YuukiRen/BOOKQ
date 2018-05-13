@@ -7,7 +7,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>AdminLTE 3 | Dashboard</title>
+  <title>Control</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Font Awesome -->
@@ -298,176 +298,107 @@
                 <thead>
                 <tr>
                   <th>User Name</th>
+                  <th>Reported by</th>
                   <th>Number of Report</th>
-                  <th>Date</th>
                   <th>See User</th>
                   <th>Ban User</th>
                 </tr>
                 </thead>
                 <tbody>
                 <tr>
-                  <td>Trident</td>
-                  <td>Internet
-                    Explorer 4.0
+                  <td>User A</td>
+                  <td>User B
                   </td>
-                  <td>Win 95+</td>
-                  <td> 4</td>
-                  <td>X</td>
-                </tr>
-                <tr>
-                  <td>Trident</td>
-                  <td>Internet
-                    Explorer 5.0
+                  <td>10</td>
+                  <td><button type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#borrowmodal">
+            See the profile
+          </button> </td>
+         <td> <button type="button" class="btn btn-danger btn-block " data-toggle="modal" data-target="#reportbookmodal">
+              Ban User
+            </button></td>  
+                  <tr>
+                  <td>User A</td>
+                  <td>User C
                   </td>
-                  <td>Win 95+</td>
-                  <td>5</td>
-                  <td>C</td>
-                </tr>
-                <tr>
-                  <td>Trident</td>
-                  <td>Internet
-                    Explorer 5.5
+                  <td>9</td>
+                  <td><button type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#borrowmodal">
+            See the profile
+          </button> </td>
+         <td> <button type="button" class="btn btn-danger btn-block " data-toggle="modal" data-target="#reportbookmodal">
+              Ban User
+            </button></td>
+              <tr>
+                  <td>User A</td>
+                  <td>User D
                   </td>
-                  <td>Win 95+</td>
-                  <td>5.5</td>
-                  <td>A</td>
-                </tr>
-                <tr>
-                  <td>Trident</td>
-                  <td>Internet
-                    Explorer 6
+                  <td>8</td>
+                  <td><button type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#borrowmodal">
+            See the profile
+          </button> </td>
+         <td> <button type="button" class="btn btn-danger btn-block " data-toggle="modal" data-target="#reportbookmodal">
+              Ban User
+            </button></td>
+              <tr>
+                  <td>User A</td>
+                  <td>User B
                   </td>
-                  <td>Win 98+</td>
-                  <td>6</td>
-                  <td>A</td>
-                </tr>
-                <tr>
-                  <td>Trident</td>
-                  <td>Internet Explorer 7</td>
-                  <td>Win XP SP2+</td>
                   <td>7</td>
-                  <td>A</td>
-                </tr>
-                <tr>
-                  <td>Trident</td>
-                  <td>AOL browser (AOL desktop)</td>
-                  <td>Win XP</td>
+                  <td><button type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#borrowmodal">
+            See the profile
+          </button> </td>
+         <td> <button type="button" class="btn btn-danger btn-block " data-toggle="modal" data-target="#reportbookmodal">
+              Ban User
+            </button></td>
+              <tr>
+                  <td>User A</td>
+                  <td>User E
+                  </td>
                   <td>6</td>
-                  <td>A</td>
-                </tr>
- 
-   
-                <tr>
-                  <td>Gecko</td>
-                  <td>Seamonkey 1.1</td>
-                  <td>Win 98+ / OSX.2+</td>
-                  <td>1.8</td>
-                  <td>A</td>
-                </tr>
-                <tr>
-                  <td>Gecko</td>
-                  <td>Epiphany 2.20</td>
-                  <td>Gnome</td>
-                  <td>1.8</td>
-                  <td>A</td>
-                </tr>
-                <tr>
-                  <td>Webkit</td>
-                  <td>Safari 1.2</td>
-                  <td>OSX.3</td>
-                  <td>125.5</td>
-                  <td>A</td>
-                </tr>
-                <tr>
-                  <td>Webkit</td>
-                  <td>Safari 1.3</td>
-                  <td>OSX.3</td>
-                  <td>312.8</td>
-                  <td>A</td>
-                </tr>
-                <tr>
-                  <td>Webkit</td>
-                  <td>Safari 2.0</td>
-                  <td>OSX.4+</td>
-                  <td>419.3</td>
-                  <td>A</td>
-                </tr>
-                <tr>
-                  <td>Webkit</td>
-                  <td>Safari 3.0</td>
-                  <td>OSX.4+</td>
-                  <td>522.1</td>
-                  <td>A</td>
-                </tr>
-                <tr>
-                  <td>Webkit</td>
-                  <td>OmniWeb 5.5</td>
-                  <td>OSX.4+</td>
-                  <td>420</td>
-                  <td>A</td>
-                </tr>
-                <tr>
-                  <td>Webkit</td>
-                  <td>iPod Touch / iPhone</td>
-                  <td>iPod</td>
-                  <td>420.1</td>
-                  <td>A</td>
-                </tr>
-                <tr>
-                  <td>Webkit</td>
-                  <td>S60</td>
-                  <td>S60</td>
-                  <td>413</td>
-                  <td>A</td>
-                </tr>
-                <tr>
-                  <td>Presto</td>
-                  <td>Opera 7.0</td>
-                  <td>Win 95+ / OSX.1+</td>
-                  <td>-</td>
-                  <td>A</td>
-                </tr>
-                <tr>
-                  <td>Presto</td>
-                  <td>Opera 7.5</td>
-                  <td>Win 95+ / OSX.2+</td>
-                  <td>-</td>
-                  <td>A</td>
-                </tr>
-                <tr>
-                  <td>Presto</td>
-                  <td>Opera 8.0</td>
-                  <td>Win 95+ / OSX.2+</td>
-                  <td>-</td>
-                  <td>A</td>
-                </tr>
-                <tr>
-                  <td>Presto</td>
-                  <td>Opera 8.5</td>
-                  <td>Win 95+ / OSX.2+</td>
-                  <td>-</td>
-                  <td>A</td>
-                </tr>
-                <tr>
-                  <td>Presto</td>
-                  <td>Opera 9.0</td>
-                  <td>Win 95+ / OSX.3+</td>
-                  <td>-</td>
-                  <td>A</td>
-                </tr>
-                <tr>
-                  <td>Other browsers</td>
-                  <td>All others</td>
-                  <td>-</td>
-                  <td>-</td>
-                  <td>U</td>
-                </tr>
+                  <td><button type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#borrowmodal">
+            See the profile
+          </button> </td>
+         <td> <button type="button" class="btn btn-danger btn-block " data-toggle="modal" data-target="#reportbookmodal">
+              Ban User
+            </button></td>
+              <tr>
+                  <td>User B</td>
+                  <td>User D
+                  </td>
+                  <td>3</td>
+                  <td><button type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#borrowmodal">
+            See the profile
+          </button> </td>
+         <td> <button type="button" class="btn btn-danger btn-block " data-toggle="modal" data-target="#reportbookmodal">
+              Ban User
+            </button></td>
+              <tr>
+                  <td>User B</td>
+                  <td>User C
+                  </td>
+                  <td>2</td>
+                  <td><button type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#borrowmodal">
+            See the profile
+          </button> </td>
+         <td> <button type="button" class="btn btn-danger btn-block " data-toggle="modal" data-target="#reportbookmodal">
+              Ban User
+            </button></td>
+              <tr>
+                  <td>User B</td>
+                  <td>User C
+                  </td>
+                  <td>1</td>
+                  <td><button type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#borrowmodal">
+            See the profile
+          </button> </td>
+         <td> <button type="button" class="btn btn-danger btn-block " data-toggle="modal" data-target="#reportbookmodal">
+              Ban User
+            </button></td>
                 </tbody>
                 <tfoot>
-               <tr>
+              <tr>
                   <th>User Name</th>
+                  <th>Reported by</th>
                   <th>Number of Report</th>
-                  <th>Date</th>
                   <th>See User</th>
                   <th>Ban User</th>
                 </tr>
@@ -488,192 +419,56 @@
                 <thead>
                 <tr>
                   <th>Book Name</th>
-                  <th>Category</th>
-                  <th>Date</th>
+                  <th>Reported by</th>
+                  <th>Number of report</th>
                   <th>See Details</th>
                   <th>Delete</th>
                 </tr>
                 </thead>
                 <tbody>
                 <tr>
-                  <td>Trident</td>
-                  <td>Internet
-                    Explorer 4.0
+                  <td>Narkoba</td>
+                  <td>User A
                   </td>
-                  <td>Win 95+</td>
-                  <td> 4</td>
-                  <td>X</td>
+                  <td>10</td>
+                  <td><button type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#borrowmodal">
+            See Details
+          </button> </td>
+          <td><button type="button" class="btn btn-danger btn-block " data-toggle="modal" data-target="#reportbookmodal">
+              Delete Book
+            </button>  </td>
                 </tr>
-                <tr>
-                  <td>Trident</td>
-                  <td>Internet
-                    Explorer 5.0
+                   <tr>
+                  <td>Narkoba</td>
+                  <td>User B
                   </td>
-                  <td>Win 95+</td>
-                  <td>5</td>
-                  <td>C</td>
+                  <td>9</td>
+                  <td><button type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#borrowmodal">
+            See Details
+          </button> </td>
+          <td><button type="button" class="btn btn-danger btn-block " data-toggle="modal" data-target="#reportbookmodal">
+              Delete Book
+            </button>  </td>
                 </tr>
-                <tr>
-                  <td>Trident</td>
-                  <td>Internet
-                    Explorer 5.5
+                  <tr>
+                  <td>Narkoba</td>
+                  <td>User C
                   </td>
-                  <td>Win 95+</td>
-                  <td>5.5</td>
-                  <td>A</td>
+                  <td>8</td>
+                  <td><button type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#borrowmodal">
+            See Details
+          </button> </td>
+          <td><button type="button" class="btn btn-danger btn-block " data-toggle="modal" data-target="#reportbookmodal">
+              Delete Book
+            </button>  </td>
                 </tr>
-                <tr>
-                  <td>Trident</td>
-                  <td>Internet
-                    Explorer 6
-                  </td>
-                  <td>Win 98+</td>
-                  <td>6</td>
-                  <td>A</td>
-                </tr>
-                <tr>
-                  <td>Trident</td>
-                  <td>Internet Explorer 7</td>
-                  <td>Win XP SP2+</td>
-                  <td>7</td>
-                  <td>A</td>
-                </tr>
-                <tr>
-                  <td>Trident</td>
-                  <td>AOL browser (AOL desktop)</td>
-                  <td>Win XP</td>
-                  <td>6</td>
-                  <td>A</td>
-                </tr>
-                <tr>
-                  <td>Gecko</td>
-                  <td>Firefox 1.0</td>
-                  <td>Win 98+ / OSX.2+</td>
-                  <td>1.7</td>
-                  <td>A</td>
-                </tr>
-              
-
-
-                <tr>
-                  <td>Presto</td>
-                  <td>Opera 8.5</td>
-                  <td>Win 95+ / OSX.2+</td>
-                  <td>-</td>
-                  <td>A</td>
-                </tr>
-                <tr>
-                  <td>Presto</td>
-                  <td>Opera 9.0</td>
-                  <td>Win 95+ / OSX.3+</td>
-                  <td>-</td>
-                  <td>A</td>
-                </tr>
-                <tr>
-                  <td>Presto</td>
-                  <td>Opera 9.2</td>
-                  <td>Win 88+ / OSX.3+</td>
-                  <td>-</td>
-                  <td>A</td>
-                </tr>
-                <tr>
-                  <td>Presto</td>
-                  <td>Opera 9.5</td>
-                  <td>Win 88+ / OSX.3+</td>
-                  <td>-</td>
-                  <td>A</td>
-                </tr>
-                <tr>
-                  <td>Presto</td>
-                  <td>Opera for Wii</td>
-                  <td>Wii</td>
-                  <td>-</td>
-                  <td>A</td>
-                </tr>
-                <tr>
-                  <td>Presto</td>
-                  <td>Nokia N800</td>
-                  <td>N800</td>
-                  <td>-</td>
-                  <td>A</td>
-                </tr>
-                <tr>
-                  <td>Presto</td>
-                  <td>Nintendo DS browser</td>
-                  <td>Nintendo DS</td>
-                  <td>8.5</td>
-                  <td>C/A<sup>1</sup></td>
-                </tr>
-                <tr>
-                  <td>KHTML</td>
-                  <td>Konqureror 3.1</td>
-                  <td>KDE 3.1</td>
-                  <td>3.1</td>
-                  <td>C</td>
-                </tr>
-                <tr>
-                  <td>KHTML</td>
-                  <td>Konqureror 3.3</td>
-                  <td>KDE 3.3</td>
-                  <td>3.3</td>
-                  <td>A</td>
-                </tr>
-                <tr>
-                  <td>KHTML</td>
-                  <td>Konqureror 3.5</td>
-                  <td>KDE 3.5</td>
-                  <td>3.5</td>
-                  <td>A</td>
-                </tr>
-                <tr>
-                  <td>Tasman</td>
-                  <td>Internet Explorer 4.5</td>
-                  <td>Mac OS 8-9</td>
-                  <td>-</td>
-                  <td>X</td>
-                </tr>
-                <tr>
-                  <td>Tasman</td>
-                  <td>Internet Explorer 5.1</td>
-                  <td>Mac OS 7.6-9</td>
-                  <td>1</td>
-                  <td>C</td>
-                </tr>
-                <tr>
-                  <td>Tasman</td>
-                  <td>Internet Explorer 5.2</td>
-                  <td>Mac OS 8-X</td>
-                  <td>1</td>
-                  <td>C</td>
-                </tr>
-                <tr>
-                  <td>Misc</td>
-                  <td>NetFront 3.1</td>
-                  <td>Embedded devices</td>
-                  <td>-</td>
-                  <td>C</td>
-                </tr>
-                <tr>
-                  <td>Misc</td>
-                  <td>NetFront 3.4</td>
-                  <td>Embedded devices</td>
-                  <td>-</td>
-                  <td>A</td>
-                </tr>
-             
-                <tr>
-                  <td>Other browsers</td>
-                  <td>All others</td>
-                  <td>-</td>
-                  <td>-</td>
-                  <td>U</td>
-                </tr>
+                  
                 </tbody>
                 <tfoot>
                  <tr>
-                  <th>Book Name</th>
-                  <th>Category</th>
-                  <th>Date</th>
+                 <th>Book Name</th>
+                  <th>Reported by</th>
+                  <th>Number of report</th>
                   <th>See Details</th>
                   <th>Delete</th>
                 </tr>
@@ -691,13 +486,7 @@
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
-  <footer class="main-footer">
-    <div class="float-right d-none d-sm-block">
-      <b>Version</b> 3.0.0-alpha
-    </div>
-    <strong>Copyright &copy; 2014-2018 <a href="http://adminlte.io">AdminLTE.io</a>.</strong> All rights
-    reserved.
-  </footer>
+
 
   <!-- Control Sidebar -->
   <aside class="control-sidebar control-sidebar-dark">
@@ -828,15 +617,7 @@
                       <span class="direct-chat-name float-left">Alexander Pierce</span>
                       <span class="direct-chat-timestamp float-right">23 Jan 5:37 pm</span>
                     </div>
-                    <!-- /.direct-chat-info -->
-                    <img class="direct-chat-img" src="dist/img/user1-128x128.jpg" alt="message user image">
-                    <!-- /.direct-chat-img -->
-                    <div class="direct-chat-text">
-                      Working with AdminLTE on a great new app! Wanna join?
-                    </div>
-                    <!-- /.direct-chat-text -->
-                  </div>
-                  <!-- /.direct-chat-msg -->
+                
 
                   <!-- Message to the right -->
                   <div class="direct-chat-msg right">
@@ -862,7 +643,7 @@
                   <ul class="contacts-list">
                     <li>
                       <a href="#">
-                        <img class="contacts-list-img" src="dist/img/user1-128x128.jpg">
+                        <img class="contacts-list-img" src="assets/dist/img/user1-128x128.jpg">
 
                         <div class="contacts-list-info">
                           <span class="contacts-list-name">
@@ -877,7 +658,7 @@
                     <!-- End Contact Item -->
                     <li>
                       <a href="#">
-                        <img class="contacts-list-img" src="dist/img/user7-128x128.jpg">
+                        <img class="contacts-list-img" src="assets/dist/img/user7-128x128.jpg">
 
                         <div class="contacts-list-info">
                           <span class="contacts-list-name">
@@ -892,7 +673,7 @@
                     <!-- End Contact Item -->
                     <li>
                       <a href="#">
-                        <img class="contacts-list-img" src="dist/img/user3-128x128.jpg">
+                        <img class="contacts-list-img" src="assets/dist/img/user3-128x128.jpg">
 
                         <div class="contacts-list-info">
                           <span class="contacts-list-name">
@@ -907,7 +688,7 @@
                     <!-- End Contact Item -->
                     <li>
                       <a href="#">
-                        <img class="contacts-list-img" src="dist/img/user5-128x128.jpg">
+                        <img class="contacts-list-img" src="assets/dist/img/user5-128x128.jpg">
 
                         <div class="contacts-list-info">
                           <span class="contacts-list-name">
@@ -922,7 +703,7 @@
                     <!-- End Contact Item -->
                     <li>
                       <a href="#">
-                        <img class="contacts-list-img" src="dist/img/user6-128x128.jpg">
+                        <img class="contacts-list-img" src="assets/dist/img/user6-128x128.jpg">
 
                         <div class="contacts-list-info">
                           <span class="contacts-list-name">
@@ -937,7 +718,7 @@
                     <!-- End Contact Item -->
                     <li>
                       <a href="#">
-                        <img class="contacts-list-img" src="dist/img/user8-128x128.jpg">
+                        <img class="contacts-list-img" src="assets/dist/img/user8-128x128.jpg">
 
                         <div class="contacts-list-info">
                           <span class="contacts-list-name">
@@ -992,14 +773,6 @@
             <!-- /.card -->
 
            
-  <!-- /.content-wrapper -->
-  <footer class="main-footer">
-    <strong>Copyright &copy; 2014-2018 <a href="http://adminlte.io">AdminLTE.io</a>.</strong>
-    All rights reserved.
-    <div class="float-right d-none d-sm-inline-block">
-      <b>Version</b> 3.0.0-alpha
-    </div>
-  </footer>
 
   <!-- Control Sidebar -->
 
@@ -1042,6 +815,27 @@
 <script src="assets/dist/js/adminlte.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="assets/dist/js/demo.js"></script>
+<!-- jQuery -->
+<script src="assets/plugins/jquery/jquery.min.js"></script>
+<!-- Bootstrap 4 -->
+<script src="assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- DataTables -->
+<script src="assets/plugins/datatables/jquery.dataTables.min.js"></script>
+<script src="assets/plugins/datatables/dataTables.bootstrap4.min.js"></script>
+<!-- page script -->
+<script>
+  $(function () {
+    $("#example1").DataTable();
+    $('#example2').DataTable({
+      "paging": true,
+      "lengthChange": false,
+      "searching": false,
+      "ordering": true,
+      "info": true,
+      "autoWidth": false
+    });
+  });
+</script>
 </body>
 </html>
 

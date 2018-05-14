@@ -86,6 +86,10 @@ Route::get('admin/control', function () {
     return view('admin.control');
 });
 
+Route::get('admin/search', function () {
+    return view('admin.search');
+});
+
 
 //prototypw
 Auth::routes();

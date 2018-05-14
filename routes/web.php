@@ -90,6 +90,10 @@ Route::get('admin/search', function () {
     return view('admin.search');
 });
 
+Route::get('admin/book', function () {
+    return view('admin.book');
+});
+
 
 //prototypw
 Auth::routes();

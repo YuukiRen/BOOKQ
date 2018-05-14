@@ -73,7 +73,7 @@ Route::get('/return/{id}','TransaksiController@back');
 
 // messaging function
 Route::get('/messages/{id}','MessagesController@retrieve');
-Route::get('/messages','MessagesController@show');
+Route::get('/messages','MessagesController@show')->name('messages');
 Route::post('/send_messages','MessagesController@send');
 // Route::get('/send_messages','MessagesController@send');
 

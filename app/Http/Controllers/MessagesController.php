@@ -88,6 +88,7 @@ class MessagesController extends Controller
 
     public function show(messages_t $messages)
     {
+        return view('messages'); // buat route doang, nanti diapus
         $from_id = Auth::user()->id;
         $mess = \DB::table('messages_ts')
         ->select('signature')

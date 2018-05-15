@@ -77,13 +77,17 @@ Route::get('/messages','MessagesController@show')->name('messages');
 Route::post('/send_messages','MessagesController@send');
 // Route::get('/send_messages','MessagesController@send');
 
+// admin functionality
+Route::GET('admin/home','AdminController@index');
+Route::GET('admin/control','AdminController@list_report');
+Route::GET('admin/list_user','AdminController@list_user');
+Route::GET('admin/accept_report/{report_id}','AdminController@accept_report');
+Route::GET('admin/reject_report/{report_id}','AdminController@reject_report');
+Route::GET('admin/detail_report/{report_id}','AdminController@detail_report');
 
+//view Admin Report
 Route::get('/admin', function () {
     return view('admin.login');
-});
-
-Route::get('admin/control', function () {
-    return view('admin.control');
 });
 
 Route::get('admin/search', function () {
@@ -109,9 +113,3 @@ Route::GET('admin-password/reset/{token}','Admin\ResetPasswordController@showRes
 // 10 Mei 2018
 
 
-// admin functionality
-Route::GET('admin/home','AdminController@index');
-Route::GET('admin/list_report','AdminController@list_report');
-Route::GET('admin/list_user','AdminController@list_user');
-Route::GET('admin/accept_report/{report_id}','AdminController@accept_report');
-Route::GET('admin/detail_report/{report_id}','AdminController@detail_report');

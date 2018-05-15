@@ -92,7 +92,7 @@
                             @if(($book->show==1))
                             <div class="col-lg-2 col-md-3 col-sm-4 portfolio-item">
                                 <div class="img-frame-profile">
-                                <a href="viewbook/{{$book->id}}"><img class="card-img-top img-responsive img-cover-profile" src="{{asset($book->image)}}" alt=""></a>
+                                <a href='{{ url("viewbook/{$book->id}") }}'><img class="card-img-top img-responsive img-cover-profile" src="{{asset($book->image)}}" alt=""></a>
                                 </div>
                             </div>
                             @endif

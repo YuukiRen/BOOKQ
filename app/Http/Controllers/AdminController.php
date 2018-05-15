@@ -29,8 +29,8 @@ class AdminController extends Controller
         return view('admin.home');
     }
 
-
-    public function reject_report(){
+    //2 is reject , 3 is accept
+    public function reject_report($report_id){
         $rep = Report::find($report_id);
         if($rep->status === 2 || $rep->status === 3){
             return 'already accepted / decline';
@@ -40,7 +40,7 @@ class AdminController extends Controller
         $book = Book::find($book_id);
         $rep->status = 2;
         $rep->save();
-        return 'report accepted';
+        return 'report rejected';
 
     }
 
@@ -54,8 +54,8 @@ class AdminController extends Controller
         ->orderby('reports.id', 'desc')
         ->paginate(12)
         ;
-        dd($rep);
-        return $rep;
+        // return $rep;
+        return view('admin.control', compact('rep'));
     }
 
     public function detail_report(Request $request, $report_id){
@@ -68,7 +68,7 @@ class AdminController extends Controller
 
 
 
-    public function accept_report(Request $request, $report_id){
+    public function accept_report($report_id){
         $rep = Report::find($report_id);
         if($rep->status === 2 || $rep->status === 3){
             return 'already accepted / decline';

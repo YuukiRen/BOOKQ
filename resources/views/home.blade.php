@@ -22,26 +22,26 @@
       </div>
       <div class="row text-center">
         <div class="col-md-4">
-          <a href="login"><span class="fa-stack fa-4x">
+          <span class="fa-stack fa-4x">
             <i class="fa fa-circle fa-stack-2x"></i>
             <i class="fa fa-book fa-stack-1x fa-inverse"></i>
-          </span></a>
+          </span>
           <h4 class="service-heading">Lend a Book</h4>
           <p class="text-muted">Users can lend their books so that it can be borrowed by another user. The books that are lended by the user is added to our database.</p>
         </div>
         <div class="col-md-4">
-          <a href="login"><span class="fa-stack fa-4x">
+          <span class="fa-stack fa-4x">
             <i class="fa fa-circle fa-stack-2x "></i>
             <i class="fas fa-people-carry fa-stack-1x fa-inverse"></i>
-          </span></a>
+          </span>
           <h4 class="service-heading">Borrow a Book</h4>
           <p class="text-muted">Users can borrow a book that are available in our database. Lenders will be connected to borrower, make an agreement, and then lend the book.</p>
         </div>
         <div class="col-md-4">
-          <a href="login"><span class="fa-stack fa-4x">
+          <span class="fa-stack fa-4x">
             <i class="fa fa-circle fa-stack-2x"></i>
             <i class="fa fa-star fa-stack-1x fa-inverse"></i>
-          </span></a>
+          </span>
           <h4 class="service-heading">Rate a Book</h4>
           <p class="text-muted">Users can give their thoughts on the book that are available in our database.</p>
         </div>
@@ -80,7 +80,7 @@
           <div class="col-md-4">
             <span class="fa-stack fa-4x">
               <i class="fa fa-circle fa-stack-2x"></i>
-             <i class="fa fa-wrench fa-stack-1x fa-inverse"></i>
+             <i class="fas fa-lock fa-stack-1x fa-inverse"></i>
             </span>
             <h4 class="service-heading">Secure</h4>
             <p class="text-muted">We protect user's information and make sure the transaction is safe and secured.</p>

@@ -20,7 +20,30 @@
     <!-- Custom styles for this template -->
     <link href="{{ asset('css/agency.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="css/footer-distributed-with-address-and-phones.css">
-
+    <style>
+            /* width */
+            ::-webkit-scrollbar {
+                width: 10px;
+            }
+            
+            /* Track */
+            ::-webkit-scrollbar-track {
+                box-shadow: inset 0 0 5px white; 
+                border-radius: 10px;    
+            }
+             
+            /* Handle */
+            ::-webkit-scrollbar-thumb {
+                background: lightgrey; 
+                border-radius: 10px;
+                transition: 0.7s;
+            }
+            
+            /* Handle on hover */
+            ::-webkit-scrollbar-thumb:hover {
+                background: grey; 
+            }
+            </style>
   </head>
   <body style="min-height: 100%;">
       <!-- Navigation -->
@@ -32,114 +55,136 @@
                     <div class="col-md-4 bg-light">
                         <h5 class="pt-2 text-dark text-center thick">Chat Messages</h5> <hr style="background-color:white">
                         <div class="nav flex-column nav-pills row" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                            {{-- @foreach(blabla) --}}
-                            <a class="nav-link" id="v-pills-user1-tab" data-toggle="pill" href="#v-pills-user1" role="tab" aria-controls="v-pills-user1" aria-selected="true">
+                            @foreach($arr as $box)
+                            @if($loop->first)
+                            <a class="nav-link active" id="v-pills-user{{$box->other_id}}-tab" data-toggle="pill" href="#v-pills-user{{$box->other_id}}" role="tab" aria-controls="v-pills-user{{$box->other_id}}" aria-selected="true">
                                 <div class="row">
                                     <div class="col-md-3">
-                                            <img class="img-responsive img-user-message" src="{{asset('images/no-cover.jpeg')}}" alt=""> 
+                                            <img class="img-responsive img-user-message" src="{{asset(App\User::find($box->other_id)->user_image)}}" alt=""> 
                                     </div>
                                     <div class="col-md-9">
-                                            <p class="thick">Johnny</p>
-                                            <small style="position:relative;top:-15px">You want to check that place out?</small>
+                                            <p class="thick">{{App\User::find($box->other_id)->complete_name}}</p>
+                                            <small style="position:relative;top:-15px">{{str_limit($box->messages, 70, '...')}}</small>
                                     </div>
                                 </div>   
                             </a>
-                            {{-- @endforeach --}}
-                            <a class="nav-link" id="v-pills-user2-tab" data-toggle="pill" href="#v-pills-user2" role="tab" aria-controls="v-pills-user2" aria-selected="true">
+                            @else
+                                <a class="nav-link" id="v-pills-user{{$box->other_id}}-tab" data-toggle="pill" href="#v-pills-user{{$box->other_id}}" role="tab" aria-controls="v-pills-user{{$box->other_id}}" aria-selected="false">
                                     <div class="row">
                                         <div class="col-md-3">
-                                                <img class="img-responsive img-user-message" src="{{asset('images/no-cover.jpeg')}}" alt=""> 
+                                                <img class="img-responsive img-user-message" src="{{asset(App\User::find($box->other_id)->user_image)}}" alt=""> 
                                         </div>
                                         <div class="col-md-9">
-                                                <p class="thick">Emma</p>
-                                                <small style="position:relative;top:-15px">Shouldn't you be working?</small>
+                                                <p class="thick">{{App\User::find($box->other_id)->complete_name}}</p>
+                                                <small style="position:relative;top:-15px">{{str_limit($box->messages, 70, '...')}}</small>
                                         </div>
                                     </div>   
                                 </a>
+                            @endif
+                            @endforeach
                         </div>
                     </div>
-                    <div class="col-md-8" style="border-left:1px solid #dfdfdf">
-                        {{-- foreach(blabla) --}}
-                        <div class="tab-content" id="v-pills-tabContent">
-                            <div class="tab-pane fade show active" id="v-pills-user1" role="tabpanel" aria-labelledby="v-pills-user1-tab">
-                                    <div class="row chatbox m-1 p-2">
-                                            <div class="col-md-2">
-                                                <img class="img-responsive img-user-comment" src="{{asset('images/no-cover.jpeg')}}" alt=""> 
-                                            </div>
-                                            <div class="col-md-10">
-                                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam quibusdam soluta impedit! Explicabo accusantium blanditiis soluta placeat omnis distinctio quaerat sapiente alias dolor quam deleniti quos, dicta incidunt, odio quo.</p>
-                                            </div>
-                                        </div>
-                                        <div class="row chatbox m-1 p-2">
-                                            <div class="col-md-10">
-                                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis soluta quaerat magni, veniam eum atque, molestiae quia corrupti ea et eaque maiores inventore! Ipsam vel eum reprehenderit delectus repellat consequatur.</p>
-                                                </div>
-                                            <div class="col-md-2">
-                                                <img class="img-responsive img-user-comment pull-right" src="{{asset('images/no-cover.jpeg')}}" alt=""> 
-                                            </div>
-                                        </div>
-                                        <div class="row chatbox m-1 p-2">
-                                            <div class="col-md-2">
-                                                <img class="img-responsive img-user-comment" src="{{asset('images/no-cover.jpeg')}}" alt=""> 
-                                            </div>
-                                            <div class="col-md-10">
-                                                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Praesentium, aperiam? Incidunt nostrum quasi, quod sed minima veritatis sit reiciendis delectus qui vero, doloribus alias. Quae voluptates qui eligendi officiis. Ducimus.</p>
-                                            </div>
-                                        </div>
-                                        <div class="row"style="border-top:1px solid #dfdfdf">
-                                            <div class="col-md-10">
-                                                <div class="form-group">
-                                                    <textarea name="message" rows="2" class="form-control" style="overflow:auto;resize:none" placeholder="Type a message.."></textarea>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-2">
-                                                <button class="btn btn-primary btn-lg btn-block mt-2">SEND</button>
-                                            </div>
-                                        </div>
-                            </div>
-                            <div class="tab-pane fade" id="v-pills-user2" role="tabpanel" aria-labelledby="v-pills-user2-tab">
-                                    <div class="row chatbox m-1 p-2">
-                                            <div class="col-md-2">
-                                                <img class="img-responsive img-user-comment" src="{{asset('images/no-cover.jpeg')}}" alt=""> 
-                                            </div>
-                                            <div class="col-md-10">
-                                                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ad sed nihil ut quo numquam aspernatur sit maxime odit nesciunt omnis. Iste dolorum dicta non, voluptatem ipsum officia magnam possimus enim!</p>
-                                            </div>
-                                        </div>
-                                        <div class="row chatbox m-1 p-2">
-                                            <div class="col-md-10">
-                                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda nostrum ab, cupiditate numquam fuga illo eligendi minima? Sunt, modi ad aliquid provident laboriosam laudantium hic, quo atque error alias repudiandae!</p>
-                                                </div>
-                                            <div class="col-md-2">
-                                                <img class="img-responsive img-user-comment pull-right" src="{{asset('images/no-cover.jpeg')}}" alt=""> 
-                                            </div>
-                                        </div>
-                                        <div class="row chatbox m-1 p-2">
-                                            <div class="col-md-2">
-                                                <img class="img-responsive img-user-comment" src="{{asset('images/no-cover.jpeg')}}" alt=""> 
-                                            </div>
-                                            <div class="col-md-10">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nobis ab quisquam ut asperiores alias numquam quis laborum nesciunt iste molestiae tempora sapiente unde, sequi, vitae temporibus reprehenderit magni corporis officia!</p>
-                                            </div>
-                                        </div>
-                                        <div class="row"style="border-top:1px solid #dfdfdf">
-                                                <div class="col-md-10">
-                                                    <div class="form-group">
-                                                        <textarea name="message" rows="2" class="form-control" style="overflow:auto;resize:none" placeholder="Type a message.."></textarea>
+                    <div class="col-md-8" style="border-left:1px solid #dfdfdf;">
+                            <div class="tab-content" id="v-pills-tabContent" >
+                            @foreach($arr as $box)
+                                @if($loop->first)
+                                    <div class="tab-pane fade show active" id="v-pills-user{{$box->other_id}}" role="tabpanel" aria-labelledby="v-pills-user{{$box->other_id}}-tab" >
+                                        <div style="overflow-y:scroll;min-height:400px;max-height:400px">
+                                        @foreach($box->sebagian->reverse()->all() as $chat)
+                                            @if($chat->from == $box->other_id)
+                                            <div class="row m-1 p-2">
+                                                    <div class="col-md-2">
+                                                        <img class="img-responsive img-center img-user-message" src="{{asset(App\User::find($box->other_id)->user_image)}}" alt=""> 
+                                                    </div>
+                                                    <div class="col-md-8 chatbox">
+                                                        <p class="v-center">{{$chat->messages}}</p>                                                   
                                                     </div>
                                                 </div>
+                                            @endif
+                                            @if($chat->from == $self_id)
+                                            <div class="row m-1 p-2">
+                                                <div class="col-md-8 offset-md-2 chatbox">
+                                                    <p class="v-center" style="text-align:right">{{$chat->messages}}</p>
+                                                    </div>
                                                 <div class="col-md-2">
-                                                    <button class="btn btn-primary btn-lg btn-block mt-2">SEND</button>
+                                                    <img class="img-responsive img-user-message img-center" src="{{asset(App\User::find($self_id)->user_image)}}" alt=""> 
                                                 </div>
                                             </div>
-                                        {{-- @endforeach --}}
+                                            @endif
+                                        @endforeach
+                                    </div>
+                                        <div>
+                                            <form class="form-horizontal" method="POST"  action='{{ url("/messages/send") }}' >
+                                                {{csrf_field()}}
+                                                <input type="hidden" name="other_id" value="{{$box->other_id}}">
+                                                <div class="row" style="border-top:1px solid #dfdfdf">
+                                                    <div class="col-md-10">
+                                                        <div class="form-group">
+                                                            <textarea name="message" rows="2" class="form-control" style="overflow:auto;resize:none" placeholder="Type a message.."></textarea>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-2">
+                                                        <button class="btn btn-primary btn-lg btn-block mt-2">SEND</button>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                   
+                                @else
+                                <div class="tab-pane fade" id="v-pills-user{{$box->other_id}}" role="tabpanel" aria-labelledby="v-pills-user{{$box->other_id}}-tab" >
+                                        <div style="overflow-y:scroll;min-height:400px;max-height:400px">
+                                        @foreach($box->sebagian->reverse()->all() as $chat)
+                                            @if($chat->from == $box->other_id)
+                                            <div class="row m-1 p-2">
+                                                    <div class="col-md-2">
+                                                        <img class="img-responsive img-center img-user-message" src="{{asset(App\User::find($box->other_id)->user_image)}}" alt=""> 
+                                                    </div>
+                                                    <div class="col-md-8 chatbox">
+                                                        <p class="v-center">{{$chat->messages}}</p>                                                   
+                                                    </div>
+                                                </div>
+                                            @endif
+                                            @if($chat->from == $self_id)
+                                            <div class="row m-1 p-2">
+                                                <div class="col-md-8 offset-md-2 chatbox">
+                                                    <p class="v-center" style="text-align:right">{{$chat->messages}}</p>
+                                                    </div>
+                                                <div class="col-md-2">
+                                                    <img class="img-responsive img-user-message img-center" src="{{asset(App\User::find($self_id)->user_image)}}" alt=""> 
+                                                </div>
+                                            </div>
+                                            @endif
+                                        @endforeach
+                                    </div>
+                                        <div>
+                                            <form class="form-horizontal" method="POST"  action='{{ url("/messages/send") }}' >
+                                                {{csrf_field()}}
+                                                <input type="hidden" name="other_id" value="{{$box->other_id}}">
+                                                <div class="row" style="border-top:1px solid #dfdfdf">
+                                                    <div class="col-md-10">
+                                                        <div class="form-group">
+                                                            <textarea name="message" rows="2" class="form-control" style="overflow:auto;resize:none" placeholder="Type a message.."></textarea>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-2">
+                                                        <button class="btn btn-primary btn-lg btn-block mt-2">SEND</button>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                   
+                                @endif
+                            @endforeach
                             </div>
+                            
                         </div>
                         
                     </div>
                 </div>
                 
             </div>
-          </div>
       </div>
 
 

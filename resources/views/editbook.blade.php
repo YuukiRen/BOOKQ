@@ -45,7 +45,8 @@
                                         @endif
                                         <div class="form-group">
                                             <label for="">   Book image</label>
-                                            <input type="file" class="form-control" name="image" id="pic">
+                                            <img class="img-responsive img-cover img-center mb-3" id="preview" src="{{asset($books->image)}}">
+                                            <input type="file" class="form-control" name="image" id="img">
                                                     <!-- <div class="invalid-feedback">
                                                         Please insert the book's image
                                                     </div> -->
@@ -64,7 +65,14 @@
                                                     <select name="category" id="" class="form-control center" required>
                                                         <option value="" disabled selected hidden>Select your option</option>                                                        
                                                         @foreach ($category as $categories)
-                                                        <option value="{{ $categories->name }}"> {{ $categories->name }}</option>
+                                                        @if($categories->name == $books->category){
+                                                            <option value="{{ $categories->name }}" selected> {{ $categories->name }}</option>
+                                                        }
+                                                        @else{
+                                                            <option value="{{ $categories->name }}" > {{ $categories->name }}</option>
+                                                        }
+                                                        @endif
+                                                        
                                                         @endforeach
                                                     </select> 
                                                     <div class="invalid-feedback">
@@ -110,11 +118,11 @@
                                         </div>
                                         <div class="form-group wrap-input100">
                                             <label for="Content">Review*</label>
-                                            <textarea name="review" rows="5" class="input100 form-control" name="review" value="{{$books->review}}"></textarea>
+                                            <textarea name="review" rows="5" class="input100 form-control" name="review"> {{$books->review}}</textarea>
                                         </div>
                                         <div class="form-group wrap-input100">
                                             <label for="Content">Description*</label>
-                                            <textarea name="description" rows="5" class="input100 form-control" name="description" value="{{$books->description}}"></textarea>
+                                            <textarea name="description" rows="5" class="input100 form-control" name="description"> {{$books->description}}</textarea>
                                         </div>
                                         <p>* : optional</p>
                                         <div class="form-group">
@@ -163,6 +171,22 @@
               }, false);
             })();
             </script>
+                <script type="text/javascript">
+                    function preview(input) {
+                        if (input.files && input.files[0]) {
+                            var freader = new FileReader();
+                            freader.onload = function (e) {
+                                $("#preview").show();
+                                $('#preview').attr('src', e.target.result);
+                            }
+                            freader.readAsDataURL(input.files[0]);
+                        }
+                    }
+                    
+                    $("#img").change(function(){
+                        preview(this);
+                    });
+                </script>
 <!--===============================================================================================-->
     <script src="js/main.js"></script>
 </body>

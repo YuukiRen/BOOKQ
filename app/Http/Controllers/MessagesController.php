@@ -36,9 +36,9 @@ class MessagesController extends Controller
 
     public function send(Request $request, messages_t $messages)
     {
-         $to_id   = $request->input('to');
-         $from_id = Auth::user()->id;
-         $sign = $this->create_signature($to_id, $from_id);
+         $other_id   = $request->input('other_id');
+         $self_id = Auth::user()->id;
+         $sign = $this->create_signature($other_id, $self_id);
          if($sign === NULL){
              return 'error. You can\'t send yourself message to yourself';
          }                
@@ -47,27 +47,27 @@ class MessagesController extends Controller
          $new_message = new Messages_t;
          $new_message->signature = $sign;
          $new_message->messages  = $message;
-         $new_message->to        = $to_id;
-         $new_message->from      = $from_id;
+         $new_message->to        = $other_id;
+         $new_message->from      = $self_id;
          $new_message->save();             
-    
+        return redirect('/messages#v-pills-user'.$other_id)->with('info','Messages sent');
+
     }
 
-    public function retrieve(Request $request,messages_t $messages, $id)
+    public function retrieve($id)
     {
           
         // $to_id   = 1;
         // $from_id = 3;
+        $guest_id   = $id;
+        $self_id = Auth::user()->id;
 
-        $to_id   = $id;
-        $from_id = Auth::user()->id;
-
-        $sign = $this->create_signature($to_id, $from_id);
+        $sign = $this->create_signature($guest_id, $self_id);
         if($sign === NULL){
             return 'error. You can view yourself message to yourself';
         }                
-        Messages_t::where('from', $from_id)
-        ->where('to', $to_id)
+        Messages_t::where('from', $self_id)
+        ->where('to', $guest_id)
         ->where('read_status', 0)
         ->update(['read_status' => 1]);
 
@@ -84,23 +84,25 @@ class MessagesController extends Controller
             )
             ->where('signature','=',$sign)
             ->orderBy('messages_ts.id', 'desc')
-            ->paginate(12);
+            ->paginate(6);
         // dd($mess);   
 		return $mess;
     }
 
     public function show(messages_t $messages)
     {
-        return view('messages'); // buat route doang, nanti diapus
-        $from_id = Auth::user()->id;
+        // return view('messages'); // buat route doang, nanti diapus
+        $self_id = Auth::user()->id;
         $mess = \DB::table('messages_ts')
         ->select('signature')
-        ->where('signature', 'like', $from_id.':%')
-        ->orwhere('signature', 'like', '%:'.$from_id)
+        ->where('signature', 'like', $self_id.':%')
+        ->orwhere('signature', 'like', '%:'.$self_id)
         ->groupBy('signature')
         ->get()
         ->pluck('signature');
+
         $arr =  array();
+        $sebagian = array();
         foreach ($mess as $sign) {
             $objek = \DB::table('messages_ts')
             ->leftjoin('users', 'messages_ts.from', '=', 'users.id')
@@ -111,33 +113,43 @@ class MessagesController extends Controller
                 'messages_ts.to','users2.complete_name as name2',
                 'messages_ts.created_at',
                 'messages_ts.read_status',
-                'messages_ts.messages'
+                'messages_ts.messages',
+                'signature'
+
             )
             ->where('signature','=',$sign)
             ->orderBy('messages_ts.id', 'desc')
             ->first()
+
             ;
+
+            if( $objek->from !== $self_id){  $objek->other_id= $objek->from;}
+            else {$objek->other_id = $objek->to;}
+            $sebagian = $this->retrieve($objek->other_id);
+            $objek->sebagian = $sebagian;
+            // dd($sebagian);
             $arr[] = $objek;
-            // $arr[] = $arr;
-            // $arr->merge($objek);
-                            
         }
-        $col = collect($arr);
-        $jumlah = $col->count();
+        // $col = collect($arr);
+        // $jumlah = $col->count();
         
-        $currentPage = LengthAwarePaginator::resolveCurrentPage();
-        $perPage = 10;
-        $currentResults = $col->slice(($currentPage - 1) * $perPage, $perPage)->all();
-        $messages_res = new LengthAwarePaginator($currentResults, $col->count(), $perPage);
+        // $currentPage = LengthAwarePaginator::resolveCurrentPage();
+        // $perPage = 10;
+        // $currentResults = $col->slice(($currentPage - 1) * $perPage, $perPage)->all();
+        // $messages_res = new LengthAwarePaginator($currentResults, $col->count(), $perPage);
         // cara nampilin nya
         // $results->withPath('messages')->links();
         // $dd($results);
-        compact($messages_res, $from_id);
+
+        // compact($messages_res, $from_id);
         // return $results;
         // return view('messages', [
             // 'results' => $results,
         // ]);
-        
+        // dd($arr);        
+
+        return view('messages', compact('arr', 'self_id')); // buat route doang, nanti diapus
+           
     }
 
 

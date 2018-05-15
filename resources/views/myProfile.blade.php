@@ -85,7 +85,7 @@
                                 </div>
                             </div>
                         </div> <hr>
-                        <h4 class="card-title">Book's Owned</h4> 
+                        <h4 class="card-title text-center">Book's Owned</h4> 
                     <div class="row"> 
                             
                             @foreach($books->all() as $book)

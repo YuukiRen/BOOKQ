@@ -55,14 +55,14 @@
                                         {{$box->sebagian->links()}}  
                                     </div> 
                                     
-                                @foreach($box->sebagian->all() as $chat)
+                                @foreach($box->sebagian->reverse()->all() as $chat)
                                     @if($chat->from == $box->other_id)
                                     <div class="row chatbox m-1 p-2">
                                             <div class="col-md-2">
                                                 <img class="img-responsive img-user-comment" src="{{asset(App\User::find($box->other_id)->user_image)}}" alt=""> 
                                             </div>
                                             <div class="col-md-10">
-                                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam quibusdam soluta impedit! Explicabo accusantium blanditiis soluta placeat omnis distinctio quaerat sapiente alias dolor quam deleniti quos, dicta incidunt, odio quo.</p>
+                                                <p>{{$chat->messages}}</p>
                                             </div>
                                         </div>
                                     @endif
@@ -70,7 +70,7 @@
 
                                         <div class="row chatbox m-1 p-2">
                                             <div class="col-md-10">
-                                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis soluta quaerat magni, veniam eum atque, molestiae quia corrupti ea et eaque maiores inventore! Ipsam vel eum reprehenderit delectus repellat consequatur.</p>
+                                                <p>{{$chat->messages}}</p>
                                                 </div>
                                             <div class="col-md-2">
                                                 <img class="img-responsive img-user-comment pull-right" src="{{asset(App\User::find($self_id)->user_image)}}" alt=""> 
@@ -78,7 +78,10 @@
                                         </div>
                                     @endif
                                     @endforeach
-                                        <div class="row"style="border-top:1px solid #dfdfdf">
+                                    <form class="form-horizontal" method="POST"  action='{{ url("/messages/send") }}' >
+                                        {{csrf_field()}}
+                                        <input type="hidden" name="other_id" value="{{$box->other_id}}">
+                                        <div class="row" style="border-top:1px solid #dfdfdf">
                                             <div class="col-md-10">
                                                 <div class="form-group">
                                                     <textarea name="message" rows="2" class="form-control" style="overflow:auto;resize:none" placeholder="Type a message.."></textarea>
@@ -88,7 +91,8 @@
                                                 <button class="btn btn-primary btn-lg btn-block mt-2">SEND</button>
                                             </div>
                                         </div>
-                            </div>
+                                    </form>
+                                </div>
                             @endforeach
                             </div>
                         </div>
@@ -97,7 +101,6 @@
                 </div>
                 
             </div>
-          </div>
       </div>
 
 

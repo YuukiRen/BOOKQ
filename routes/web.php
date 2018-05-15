@@ -72,9 +72,9 @@ Route::get('/reject/{id}','TransaksiController@reject');
 Route::get('/return/{id}','TransaksiController@back');
 
 // messaging function
-Route::get('/messages/{id}','MessagesController@retrieve');
+// Route::get('/messages/{id}','MessagesController@retrieve');
 Route::get('/messages','MessagesController@show')->name('messages');
-Route::post('/send_messages','MessagesController@send');
+Route::post('/messages/send','MessagesController@send');
 // Route::get('/send_messages','MessagesController@send');
 
 // admin functionality

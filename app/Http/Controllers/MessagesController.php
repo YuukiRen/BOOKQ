@@ -36,9 +36,9 @@ class MessagesController extends Controller
 
     public function send(Request $request, messages_t $messages)
     {
-         $to_id   = $request->input('to');
-         $from_id = Auth::user()->id;
-         $sign = $this->create_signature($to_id, $from_id);
+         $other_id   = $request->input('other_id');
+         $self_id = Auth::user()->id;
+         $sign = $this->create_signature($other_id, $self_id);
          if($sign === NULL){
              return 'error. You can\'t send yourself message to yourself';
          }                
@@ -47,10 +47,11 @@ class MessagesController extends Controller
          $new_message = new Messages_t;
          $new_message->signature = $sign;
          $new_message->messages  = $message;
-         $new_message->to        = $to_id;
-         $new_message->from      = $from_id;
+         $new_message->to        = $other_id;
+         $new_message->from      = $self_id;
          $new_message->save();             
-    
+        return redirect('/messages#v-pills-user'.$other_id)->with('info','Messages sent');
+
     }
 
     public function retrieve($id)
@@ -83,7 +84,7 @@ class MessagesController extends Controller
             )
             ->where('signature','=',$sign)
             ->orderBy('messages_ts.id', 'desc')
-            ->paginate(12);
+            ->paginate(6);
         // dd($mess);   
 		return $mess;
     }
@@ -114,7 +115,7 @@ class MessagesController extends Controller
                 'messages_ts.read_status',
                 'messages_ts.messages',
                 'signature'
-                
+
             )
             ->where('signature','=',$sign)
             ->orderBy('messages_ts.id', 'desc')

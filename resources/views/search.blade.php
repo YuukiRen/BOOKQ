@@ -5,8 +5,6 @@
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
 
     <title>Search Your Book</title>
 
@@ -103,7 +101,7 @@
 
 
     <!-- Bootstrap core JavaScript -->
-    <script src="../vendor/jquery_search/jquery.  js"></script>
+    <script src="../vendor/jquery_search/jquery.js"></script>
     <script src="../vendor/bootstrap_search/js/bootstrap.bundle.min.js"></script>
 
     <!-- DataTables -->

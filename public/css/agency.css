@@ -93,6 +93,21 @@ table{
   height: 70px;
   border:2px solid black
 }
+.img-user-message{
+  object-fit: cover;
+  border-radius:50%;
+  width: 70px;
+  height: 70px;
+}
+.flex-column a.nav-link{
+  color:black;
+  transition: 0.3s;
+}
+.flex-column a.nav-link.active{
+  background-color:#e6e6e6; 
+  color:black;
+  border-radius: 0px;
+}
 a .fa-circle{
   color:blue;
   transition: 0.3s;
@@ -133,6 +148,10 @@ tr{
 }
 .pull-right {
   float: right !important;
+}
+.chatbox{
+  border:1px solid lightgray;
+  border-radius:25px;
 }
 
 /* Font Used */

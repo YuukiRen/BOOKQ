@@ -1,4 +1,3 @@
-<script src="{{ asset('js/app.js') }}"></script>
 <nav id="navb" class="navbar navbar-expand-md bg-dark navbar-laravel ">
     <div class="container">
         <a class="navbar-brand" href="{{url('/home')}}">
@@ -47,3 +46,9 @@
         </div>
     </div>
 </nav>
+<script src="{{asset('js/app.js')}}"></script>
+<script>
+$(document).ready(function(){
+    $(".dropdown-toggle").dropdown();
+});
+</script>

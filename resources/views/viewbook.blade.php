@@ -31,7 +31,7 @@
           <button type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#borrowmodal">
             Borrow this Book
           </button> 
-          <button type="button" class="btn btn-danger btn-block " data-toggle="modal" data-target="#reportbookmodal">
+          <button type="button" class="btn btn-danger btn-sm center mt-2" data-toggle="modal" data-target="#reportbookmodal">
               Report this Book
             </button>          
             @include('layouts.partial.reportbookmodal')     
@@ -87,16 +87,15 @@
 
         <div class="card-body mt-4 col-md-8">
           
-          <h3 class="card-title">{{$books->title}}     @if(( App\Book::where([['user_id', $users],['id', $books->id]])->first() ))<a href="{{url("/viewbook/{$books->id}/edit")}}" class="btn btn-primary btn-sm">Edit Book</a>@endif</h3> <hr>
+          <h3 class="card-title">{{$books->title}}     @if(( App\Book::where([['user_id', $users],['id', $books->id]])->first() ))<a href="{{url("/viewbook/{$books->id}/edit")}}" class="btn btn-primary btn-sm">Edit Book</a>@endif</h3>
+        <span class="thick">by <span style="color:grey">{{$books->author}}</span> </span>
+        <hr>
           <div class="row">
               <div class="col-md-6">
           <table>
-              <tr>
-                  <td valign="top"> Category </td> <td valign="top">&nbsp;:&nbsp;</td> <td> {{$books->category}} </td>
-                </tr>
             <tr>
-              <td valign="top"> Author </td> <td valign="top">&nbsp;:&nbsp;</td>  <td> {{$books->author}} </td>
-            </tr> 
+                <td valign="top"> Category </td> <td valign="top">&nbsp;:&nbsp;</td> <td> {{$books->category}} </td>
+              </tr>
             <tr>
               <td valign="top"> Publisher </td><td valign="top">&nbsp;:&nbsp;</td><td> {{$books->publisher}} </td>
             </tr> 
@@ -116,19 +115,19 @@
       </div>
       </div>
       <hr>
+      <div class="row py-2">
+        <div class="col"> 
+              <h5 class="card-title">Description</h5>
+              <font size=3>{{$books->description}}</font>
+            </div>              
+      </div> <hr>
       <div class="row"> 
           <div class="col">
             <h5>Book Owner's Review</h5>
-            <p>{{$books->review}}</p>
+            <font size=3>{{$books->review}}</font>
           </div>
       </div>
       <hr>
-      {{-- <div class="row py-2">
-        <div class="col"> 
-              <h5 class="card-title">Description</h5>
-              <p class="card-text">{{$books->description}}</p>
-            </div>              
-      </div> --}}
         </div>
       </div> 
             </div>
@@ -140,6 +139,7 @@
             <div class="card-body">
               <h4 for="Content" class="thick">Review  <a href="#comment" class=" btn btn-info btn-sm"> <u> <i class="fa fa-plus"></i> Leave a Review </u> </a></h4>
               <hr>  
+              
               @foreach($comments->all() as $comment)
                 <div class="row">
                   <div class="col-md-1">
@@ -201,9 +201,9 @@
                         </div>
                       </div>
                     </form>
-                    </div>
                   </div>
                 </div>
+              </div>
             </div>
           </div>
           <!-- /.card -->
@@ -218,9 +218,5 @@
 
 
     <!-- Bootstrap core JavaScript -->
-    <script src="../vendor/jquery_search/jquery.min.js"></script>
-    <script src="../vendor/bootstrap_search/js/bootstrap.bundle.min.js"></script>
-
   </body>
-
 </html>

@@ -67,17 +67,20 @@ class UserController extends Controller
     }
     public function showother(Request $request,$id)
     {
+        
         $users = Auth::user();
+        $books = Book::where('user_id',$id)->get();
+        // dd($books);
         $requests_lend = Transaction::where('id_lender',$id)->get();
         $requests_borrow = Transaction::where('id_booker',$id)->get();
         $activities = Transaction::where('id_booker',$id)->OrWhere('id_lender',$id)->get();
         
         if($users->id == $id){
-            return view('myProfile', compact('users','requests_lend','requests_borrow','activities'));
+            return view('myProfile', compact('users','requests_lend','requests_borrow','activities','books'));
         }
         else{
             $users = User::find($id);
-            return view('otherProfile', compact('users','activities'));
+            return view('otherProfile', compact('users','activities','books'));
         }
         // dd($users);
     }

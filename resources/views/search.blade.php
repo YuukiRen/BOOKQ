@@ -100,10 +100,9 @@
     <!-- /.container -->
 
 
-    <!-- Bootstrap core JavaScript -->
+    <!--  Bootstrap core JavaScript 
     <script src="../vendor/jquery_search/jquery.js"></script>
-    <script src="../vendor/bootstrap_search/js/bootstrap.bundle.min.js"></script>
-
+    <script src="../vendor/bootstrap_search/js/bootstrap.bundle.min.js"></script>-->
     <!-- DataTables -->
 <!-- jQuery -->
 <script src="../vendor/datatables/jquery/jquery.min.js"></script>

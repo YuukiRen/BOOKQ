@@ -13,7 +13,7 @@
                     <div class="col-md-5" style="border-left:1px solid grey">
                             <img class="img-responsive img-modal img-center" src="{{asset(App\User::find($request_l->id_booker)->user_image)}}" alt="">
                             <p class="text-center thick">{{App\User::find($request_l->id_booker)->name}}</p>
-                            <a href='{{ url("/accept/{$request_l->id}") }}' class="btn btn-dark btn-sm center">Message</a>
+                            <a href='{{ url("/message/{$request_l->id}") }}' class="btn btn-dark btn-sm center">Message</a>
                     </div>
                     <div class="col-md" style="position:relative">
                         <table>

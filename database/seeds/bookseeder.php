@@ -18,7 +18,7 @@ class bookseeder extends Seeder
         Book::insert([
         	[
         		'id' => '1',
-        		'user_id'=>'2',
+        		'user_id'=>'1',
                 'author'=> 'Imelda Saputra',
         		'title'=> '99 hari melesatkan bisnis',
 				'tag' => 'haha',

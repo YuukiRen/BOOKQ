@@ -10,6 +10,9 @@ use App\Book;
 
 class TransaksiController extends Controller
 {
+    public function __construct(){
+        $this->middleware('auth');//matiin kalo lagi testing mode
+    }
     public function borrow($id){//id book
         $trans = new Transaction;
         $trans->request_date = date('Y-m-d H:i:s');

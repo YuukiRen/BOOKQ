@@ -16,7 +16,7 @@ use Illuminate\Http\UploadedFile;
 class BooksController extends Controller
 {
     public function __construct(){
-    	// $this->middleware('auth');
+    	$this->middleware('auth');//matiin kalo lagi testing mode
     }
     public function show(){
     	// $books=Book::all();
@@ -27,12 +27,10 @@ class BooksController extends Controller
     	return view('search', compact('books'));
         //ganti search ama halaman search/ yang nampilin semua buku
     }
-
     //controller untuk ngeliat satu buku
     public function show_detail(Request $request, $id){
 
         //query cari buku
-        
         $books = Book::where('id', $id)->first();
         
         if($books === NULL){
@@ -42,7 +40,6 @@ class BooksController extends Controller
 		$users = Auth::user()->id;
         $tabs = Rating::where('book_id',$id)->get();
         $ratings = $tabs->avg('rate');
-        // dd($books);
         //ke detailed view
 
         return view('viewbook', compact('books','comments','users','ratings'));
@@ -50,7 +47,6 @@ class BooksController extends Controller
     }
 
     public function AddComment(Request $request, $id){
-        // dd($request);
         $this->validate($request,[
             'review' => 'required',
         ]);
@@ -75,7 +71,6 @@ class BooksController extends Controller
 	public function lendBook(Request $request){
 		$category = Category::all();
 		return view('lend',compact('category'));
-		// dd($category);
 	}
 
 	public function dummy(Request $request){
@@ -98,9 +93,7 @@ class BooksController extends Controller
     		'publisher'=>'required',
     		'category'=>'required'
 		]);
-		// dd($request);
 		$books = new Book;
-        // dd($books);
             
         if($request->hasFile('image')){
             $name = Storage::disk('local')->put('images', $request->image);
@@ -116,7 +109,6 @@ class BooksController extends Controller
         }
         else{
             $books->description = '-';
-            
         }
         $books->review = $request->input('review');
         $books->tag = $request->input('tag');
@@ -124,8 +116,6 @@ class BooksController extends Controller
         $books->save();
     	return redirect('/viewbook/'.$books->id)->with('info','Book Saved Successfully!');
     }
-
-   
 
     public function update($book_id){
         $books = Book::find($book_id);
@@ -166,7 +156,7 @@ class BooksController extends Controller
         $report->status  = 0;
         $report->report_desc = $request->input('report_desc');
         $report->save();
-        return 'Book Reported, Admin will notice this later'; 
+        return redirect('/viewbook/'.$book_id)->with('success','Report Success!');
     }
 
 

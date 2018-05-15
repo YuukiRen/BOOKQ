@@ -8,6 +8,9 @@ use DB;
 
 class SearchController extends Controller
 {
+    public function __construct(){
+        $this->middleware('auth');//matiin kalo lagi testing mode
+    }
     public function index()
     {
     	// return view('search');

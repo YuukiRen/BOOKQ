@@ -44,7 +44,7 @@ Route::post('/store','BooksController@dummy');//dummy
 Route::get('/search','BooksController@show');
 Route::post('/search_book','SearchController@search');
 Route::post('/post/{id}','BooksController@AddComment');
-Route::get('/reportbook/{book_id}', 'BooksController@report');
+Route::post('/report/{book_id}', 'BooksController@report');
 Route::get('/viewbook/{id}/edit','BooksController@update')->name('editbook');
 Route::post('/viewbook/{id}/edit/save','BooksController@edit');
 

@@ -6,6 +6,9 @@ use Illuminate\Http\Request;
 
 class LendController extends Controller
 {
+    public function __construct(){
+        $this->middleware('auth');//matiin kalo lagi testing mode
+    }
     /**
      * Display a listing of the resource.
      *

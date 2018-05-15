@@ -11,7 +11,10 @@ use Illuminate\Pagination\LengthAwarePaginator;
 
 class MessagesController extends Controller
 {
-
+    public function __construct(){
+        $this->middleware('auth');//matiin kalo lagi testing mode
+    }
+    
     public function create_signature(int $from_id, int $to_id){
         if($to_id > $from_id){
             $signat = strval($from_id).':'.strval($to_id);

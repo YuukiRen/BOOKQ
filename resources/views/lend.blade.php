@@ -35,21 +35,21 @@
                         <form class="form-horizontal needs-validation" novalidate method="POST"  action="{{ url('/save') }}" enctype="multipart/form-data" >
                                 {{ csrf_field() }}
                                     <div class="form-group">
-                                        
                                         @if(count($errors)>0)
                                             @foreach($errors->all() as $error)
                                                 <div class="alert alert-dismissible alert-danger">
-                                                  <button type="button" data-dismiss="alert">&times;</button>
                                                   {{$error}}
                                                 </div>
                                             @endforeach
                                         @endif
                                         <div class="form-group">
                                             <label for="">   Book image</label>
-                                            <input type="file" class="form-control" name="image" id="pic">
-                                                    <!-- <div class="invalid-feedback">
+                                            <img class="img-responsive img-cover img-center mb-2" id="preview" src="" style="display:none;">
+                                            <input type="file" class="form-control" name="image" id="img" required>
+                                                    <div class="invalid-feedback">
                                                         Please insert the book's image
-                                                    </div> -->
+                                                    </div>
+
                                         </div>
                                         <div class="form-group">
                                             <label for=""> Title </label>
@@ -83,7 +83,7 @@
                                                                                                                     || (event.keyCode>34 && event.keyCode<40) 
                                                                                                                     || (event.keyCode==46) )" min=0 max=3000>
                                                         <div class="invalid-feedback">
-                                                            Please input the year
+                                                            Please input the proper year
                                                         </div>
                                                 </div>                                      
                                             </div>
@@ -163,6 +163,22 @@
                 });
               }, false);
             })();
+            </script>
+            <script type="text/javascript">
+                function preview(input) {
+                    if (input.files && input.files[0]) {
+                        var freader = new FileReader();
+                        freader.onload = function (e) {
+                            $("#preview").show();
+                            $('#preview').attr('src', e.target.result);
+                        }
+                        freader.readAsDataURL(input.files[0]);
+                    }
+                }
+                
+                $("#img").change(function(){
+                    preview(this);
+                });
             </script>
 <!--===============================================================================================-->
     <script src="js/main.js"></script>

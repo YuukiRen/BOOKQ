@@ -36,7 +36,24 @@
                             {{ csrf_field() }}
                                 <div class="form-group">
                                         <label for="">   User image : </label>
-                                <input type="file" name="user_image" id="pic" value="{{$users->user_image}}">
+                                <input type="file" name="user_image" id="img" value="{{$users->user_image}}" onchange="PreviewImage();">
+                                <img class="img-responsive img-user img-center" id="preview" src="" style="display:none">
+                                <script type="text/javascript">
+                                    function preview(input) {
+                                        if (input.files && input.files[0]) {
+                                            var freader = new FileReader();
+                                            freader.onload = function (e) {
+                                                $("#preview").show();
+                                                $('#preview').attr('src', e.target.result);
+                                            }
+                                            freader.readAsDataURL(input.files[0]);
+                                        }
+                                    }
+                                    
+                                    $("#img").change(function(){
+                                        preview(this);
+                                    });
+                                </script>
                                     <div class="form-group">
                                             <label for="">Full Name</label>
                                             <input type="text"  class="form-control" required name="complete_name" value="{{$users->complete_name}}">

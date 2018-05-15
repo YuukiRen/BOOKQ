@@ -58,7 +58,7 @@
                                 </a>
                         </div>
                     </div>
-                    <div class="col-md-8" style=" overflow-y: scroll;">
+                    <div class="col-md-8" style="border-left:1px solid #dfdfdf">
                         {{-- foreach(blabla) --}}
                         <div class="tab-content" id="v-pills-tabContent">
                             <div class="tab-pane fade show active" id="v-pills-user1" role="tabpanel" aria-labelledby="v-pills-user1-tab">
@@ -86,29 +86,14 @@
                                                 <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Praesentium, aperiam? Incidunt nostrum quasi, quod sed minima veritatis sit reiciendis delectus qui vero, doloribus alias. Quae voluptates qui eligendi officiis. Ducimus.</p>
                                             </div>
                                         </div>
-                                        <div class="row chatbox m-1 p-2">
+                                        <div class="row"style="border-top:1px solid #dfdfdf">
                                             <div class="col-md-10">
-                                                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Mollitia tenetur quae reprehenderit, impedit perspiciatis totam aperiam! Esse quam vero nulla fugit earum consequuntur, incidunt mollitia, dicta sint natus, id culpa?</p>
+                                                <div class="form-group">
+                                                    <textarea name="message" rows="2" class="form-control" style="overflow:auto;resize:none" placeholder="Type a message.."></textarea>
                                                 </div>
+                                            </div>
                                             <div class="col-md-2">
-                                                <img class="img-responsive img-user-comment pull-right" src="{{asset('images/no-cover.jpeg')}}" alt=""> 
-                                            </div>
-                                        </div>
-                                        <div class="row chatbox m-1 p-2">
-                                            <div class="col-md-2">
-                                                    <img class="img-responsive img-user-comment" src="{{asset('images/no-cover.jpeg')}}" alt=""> 
-                                            </div>
-                                            <div class="col-md-10">
-                                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident delectus, libero minima harum error sed ea ad est ducimus molestias asperiores nesciunt, dignissimos modi praesentium earum repellendus tempore omnis doloribus!</p>
-                                            </div>
-                                        </div>
-                                        <div class="row chatbox m-1 p-2">
-                                            <div class="col-md-2">
-                                                <img class="img-responsive img-user-comment" src="{{asset('images/no-cover.jpeg')}}" alt=""> 
-                                                    
-                                            </div>
-                                            <div class="col-md-10">
-                                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe illum similique porro temporibus quis? Itaque fugit omnis, vel veniam accusamus laborum possimus dicta animi saepe neque quam beatae incidunt molestiae.</p>
+                                                <button class="btn btn-primary btn-lg btn-block mt-2">SEND</button>
                                             </div>
                                         </div>
                             </div>
@@ -136,31 +121,16 @@
                                             <div class="col-md-10">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nobis ab quisquam ut asperiores alias numquam quis laborum nesciunt iste molestiae tempora sapiente unde, sequi, vitae temporibus reprehenderit magni corporis officia!</p>
                                             </div>
                                         </div>
-                                        <div class="row chatbox m-1 p-2">
-                                            <div class="col-md-10">
-                                                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Mollitia tenetur quae reprehenderit, impedit perspiciatis totam aperiam! Esse quam vero nulla fugit earum consequuntur, incidunt mollitia, dicta sint natus, id culpa?</p>
+                                        <div class="row"style="border-top:1px solid #dfdfdf">
+                                                <div class="col-md-10">
+                                                    <div class="form-group">
+                                                        <textarea name="message" rows="2" class="form-control" style="overflow:auto;resize:none" placeholder="Type a message.."></textarea>
+                                                    </div>
                                                 </div>
-                                            <div class="col-md-2">
-                                                <img class="img-responsive img-user-comment pull-right" src="{{asset('images/no-cover.jpeg')}}" alt=""> 
+                                                <div class="col-md-2">
+                                                    <button class="btn btn-primary btn-lg btn-block mt-2">SEND</button>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="row chatbox m-1 p-2">
-                                            <div class="col-md-2">
-                                                    <img class="img-responsive img-user-comment" src="{{asset('images/no-cover.jpeg')}}" alt=""> 
-                                            </div>
-                                            <div class="col-md-10">
-                                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident delectus, libero minima harum error sed ea ad est ducimus molestias asperiores nesciunt, dignissimos modi praesentium earum repellendus tempore omnis doloribus!</p>
-                                            </div>
-                                        </div>
-                                        <div class="row chatbox m-1 p-2">
-                                            <div class="col-md-2">
-                                                <img class="img-responsive img-user-comment" src="{{asset('images/no-cover.jpeg')}}" alt=""> 
-                                                    
-                                            </div>
-                                            <div class="col-md-10">
-                                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe illum similique porro temporibus quis? Itaque fugit omnis, vel veniam accusamus laborum possimus dicta animi saepe neque quam beatae incidunt molestiae.</p>
-                                            </div>
-                                        </div>
                                         {{-- @endforeach --}}
                             </div>
                         </div>

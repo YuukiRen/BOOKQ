@@ -84,13 +84,10 @@ class AdminController extends Controller
 
     }
 
-    public function list_user(Request $request){
-        $user = User::all()
-        ->orderby('report', 'desc')
-        ->orderby('id', 'desc')
-        ->paginate(12);
+    public function list_book(Request $request){
+        $books = Book::all()->sortByDesc('report')->sortByDesc('id');
         // dd($user);
-
+        return view('admin.book', compact('books'));
     }
 
     public function detail_user(Request $request, $user_id){

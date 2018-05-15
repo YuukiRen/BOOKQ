@@ -80,7 +80,7 @@ Route::post('/send_messages','MessagesController@send');
 // admin functionality
 Route::GET('admin/home','AdminController@index');
 Route::GET('admin/control','AdminController@list_report');
-Route::GET('admin/list_user','AdminController@list_user');
+Route::GET('admin/list_book','AdminController@list_book');
 Route::GET('admin/accept_report/{report_id}','AdminController@accept_report');
 Route::GET('admin/reject_report/{report_id}','AdminController@reject_report');
 Route::GET('admin/detail_report/{report_id}','AdminController@detail_report');

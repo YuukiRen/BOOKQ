@@ -118,11 +118,11 @@
                                         </div>
                                         <div class="form-group wrap-input100">
                                             <label for="Content">Review*</label>
-                                            <textarea name="review" rows="5" class="input100 form-control" name="review" value="{{$books->review}}"></textarea>
+                                            <textarea name="review" rows="5" class="input100 form-control" name="review"> {{$books->review}}</textarea>
                                         </div>
                                         <div class="form-group wrap-input100">
                                             <label for="Content">Description*</label>
-                                            <textarea name="description" rows="5" class="input100 form-control" name="description" value="{{$books->description}}"></textarea>
+                                            <textarea name="description" rows="5" class="input100 form-control" name="description"> {{$books->description}}</textarea>
                                         </div>
                                         <p>* : optional</p>
                                         <div class="form-group">

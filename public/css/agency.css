@@ -12,6 +12,12 @@
   top:10px;
   width: 100%;
 }
+.v-center{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  height: 100%;
+}
 .thick{
   font-weight: 600;
 }
@@ -96,8 +102,9 @@ table{
 .img-user-message{
   object-fit: cover;
   border-radius:50%;
-  width: 70px;
-  height: 70px;
+  width: 50px;
+  height: 50px;
+  /* border:1px solid #d3d3d3; */
 }
 .flex-column a.nav-link{
   color:black;
@@ -127,7 +134,7 @@ tr{
 }
 .title{
   border-left: 10px solid #343A40;
-  background-color: whitesmoke ;
+  background-color: white ;
   border-right: 1px solid #343A40;
   border-bottom: 1px solid #343A40;
   border-top: 1px solid #343A40;
@@ -151,7 +158,7 @@ tr{
 }
 .chatbox{
   border:1px solid lightgray;
-  border-radius:25px;
+  border-radius:10px;
 }
 
 /* Font Used */

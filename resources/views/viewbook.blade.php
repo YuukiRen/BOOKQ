@@ -27,6 +27,7 @@
           <div class="row">
         <div class="col-md-4 mt-4">
         <img class="img-responsive img-book img-center" src="{{asset($books->image)}}" alt="">
+        @if(!App\Book::where([['user_id', $users],['id', $books->id]])->first())
         <div class="row center" style="margin-top:10px">
           <button type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#borrowmodal">
             Borrow this Book
@@ -35,7 +36,8 @@
               Report this Book
             </button>          
             @include('layouts.partial.reportbookmodal')     
-        </div>   
+        </div>
+        @endif
                   <!-- Modal -->
           <div class="modal fade" id="borrowmodal" tabindex="-1" role="dialog" aria-labelledby="borrowmodalTitle" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" role="document">

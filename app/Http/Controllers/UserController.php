@@ -102,14 +102,14 @@ class UserController extends Controller
 
     public function edit_profile(Request $request)
     {
+
         $this->validate($request,[
-            'user_image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'user_image' => 'required,image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'complete_name' => 'required',
             'address' => 'required',
             'phone_number' => 'required',
             'fav_book' => 'required',
         ]);
-        // dd($request);
         $users = User::find(Auth::user()->id);
         // if($request->user_image === NULL){
         //   $name = "images/no-cover.jpeg";  
@@ -120,6 +120,7 @@ class UserController extends Controller
         //bisa kaya gini juga
 
         if($request->hasFile('user_image')){
+        
             $name = Storage::disk('local')->put('images', $request->user_image);
             $users->user_image = $name;
         }

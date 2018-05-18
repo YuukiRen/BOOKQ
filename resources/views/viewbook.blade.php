@@ -120,7 +120,7 @@
       <div class="row py-2">
         <div class="col"> 
               <h5 class="card-title">Description</h5>
-              <font size=3>{{$books->description}}</font>
+              <font size=3 class="show-read-more">{{$books->description}}</font>
             </div>              
       </div> <hr>
       <div class="row"> 
@@ -220,5 +220,25 @@
 
 
     <!-- Bootstrap core JavaScript -->
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function(){
+      var maxLength = 300;
+      $(".show-read-more").each(function(){
+        var myStr = $(this).text();
+        if($.trim(myStr).length > maxLength){
+          var newStr = myStr.substring(0, maxLength);
+          var removedStr = myStr.substring(maxLength, $.trim(myStr).length);
+          $(this).empty().html(newStr);
+          $(this).append('<span class="read-more">.... <a href="javascript:void(0);" class="text-primary">(read more)</a></span>');
+          $(this).append('<span class="more-text">' + removedStr + '</span>');
+        }
+      });
+      $(".read-more").click(function(){
+        $(this).siblings(".more-text").contents().unwrap();
+        $(this).remove();
+      });
+    });
+    </script>
   </body>
 </html>

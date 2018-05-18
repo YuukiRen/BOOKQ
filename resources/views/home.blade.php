@@ -6,9 +6,9 @@
     <header class="masthead">
       <div class="container">
         <div class="intro-text">
-          <h4 > <span style="background-color: black; border-radius: 15px;padding: 5px 20px; opacity: 0.8; filter: alpha(opacity=80);"> Having trouble finding books that you want to read? </span></h4>
-          <div class="intro-heading text-uppercase" style="-webkit-text-stroke: 3px black;">BookQ</div>
-          <a class="btn btn-info btn-xl text-uppercase js-scroll-trigger" href='{{url("/login")}}' style="border: 5px solid black">Go to Homepage</a>
+          <div class="intro-heading text-uppercase" style="-webkit-text-stroke: 3px black;"> <i class="fa fa-book"></i>BookQ</div>
+          <h2 > <span style="padding: 5px 20px;-webkit-text-stroke: 2px black;" > Having trouble finding books that you want to read? </span></h4>
+          <a class="btn btn-dark btn-xl js-scroll-trigger" style="background-color: #2d1f93" href='{{url("/login")}}'>Go to Homepage</a>
         </div>
       </div>
     </header>

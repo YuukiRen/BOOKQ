@@ -39,6 +39,9 @@ table{
   max-height: 440px;
   min-height: 151px;
 }
+.img-cover:hover{
+  opacity: 0.9;
+}
 .img-frame{
   width: 171.25px;
   height: 250px;
@@ -62,6 +65,14 @@ table{
   min-height:100px;
   max-width: 171.25px;
   min-width: 171.25px;
+  transition: 0.3s ease-in-out;
+}
+.img-cover:hover{
+  opacity: 0.9;
+  border: 2px solid white;
+}
+.img-cover:active{
+  opacity: initial;
 }
 .img-cover-profile{
   max-height:250px;
@@ -116,14 +127,14 @@ table{
   border-radius: 0px;
 }
 a .fa-circle{
-  color:blue;
+  color:#2d1f93;
   transition: 0.3s;
 }
 a:hover .fa-circle{
-  color:darkblue;
+  color:#338bd5;
 }
 a:active .fa-circle{
-  color:blue;
+  color:#2d1f93;
 }
 tr{
   line-height: 2;
@@ -160,8 +171,11 @@ tr{
   border:1px solid lightgray;
   border-radius:10px;
 }
+.show-read-more .more-text{
+  display: none;
+}
 
-/* Font Used */
+/* Color Used */
 
 /* Main Template, picked from startbootstrap */
 body {
@@ -242,7 +256,7 @@ section h3.section-subheading {
 }
 
 ::selection {
-  background: #3366ff;
+  background: #338bd5;
   text-shadow: none;
 }
 
@@ -256,6 +270,7 @@ img::-moz-selection {
 
 #mainNav {
   background-color: #212529;
+  max-height: 50px;
 }
 
 #mainNav .navbar-toggler {
@@ -266,16 +281,18 @@ img::-moz-selection {
   color: white;
   border: 0;
   background-color: #3366ff;
-  font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }
 
 #mainNav .navbar-brand {
-  color: #3366ff;
+  color: white;
   font-family : 'Montserrat',  sans-serif;
+  transition: 1s ease;
 }
 
 #mainNav .navbar-brand.active, #mainNav .navbar-brand:active, #mainNav .navbar-brand:focus, #mainNav .navbar-brand:hover {
-  color: #3366ff;
+  color: lightblue;
+  font-size: 170%;
 }
 
 #mainNav .navbar-nav .nav-item .nav-link {
@@ -284,11 +301,11 @@ img::-moz-selection {
   padding: 0.75em 0;
   letter-spacing: 1px;
   color: white;
-  font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }
 
 #mainNav .navbar-nav .nav-item .nav-link.active, #mainNav .navbar-nav .nav-item .nav-link:hover {
-  color: #3366ff;
+  color: lightblue;
 }
 
 @media (min-width: 992px) {
@@ -305,7 +322,7 @@ img::-moz-selection {
     font-size: 1.75em;
     -webkit-transition: all 0.3s;
     -moz-transition: all 0.3s;
-    transition: all 0.3s;
+    transition: all 0.3s ease;
   }
   #mainNav .navbar-nav .nav-item .nav-link {
     padding: 1.1em 1em !important;

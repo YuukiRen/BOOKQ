@@ -63,7 +63,7 @@
                             </div>
                         </div>
                         <div class="container-login100-form-btn">
-                        <button class="login100-form-btn">
+                        <button class="login100-form-btn" style="background-color:#2d1f93">
                             Create My Account!
                         </button>
                         </div>
@@ -74,7 +74,7 @@
                 <div class="row" style="position:relative; top:0px;padding:7px;">
                         <h4 style=" text-align:center; "> Already Have An Account? </h4>    
                         
-                        <a type="button" class="login100-form-btn" href="login" style="text-decoration:none;background:blue"> Login using existing account
+                        <a type="button" class="login100-form-btn" href="login" style="text-decoration:none;background:black"> Login using existing account
                         </a>   
                     </div>
             </div>

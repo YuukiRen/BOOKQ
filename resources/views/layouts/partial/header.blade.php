@@ -1,4 +1,4 @@
-<nav id="navb" class="navbar navbar-expand-md bg-dark navbar-laravel ">
+<nav id="mainNav" class="navbar navbar-expand-md bg-dark navbar-laravel ">
     <div class="container">
         <a class="navbar-brand" href="{{url('/home')}}">
           <strong> <i class="fa fa-book"></i> BookQ </strong>
@@ -27,7 +27,6 @@
                         </a>
 
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="{{route('profile')}}">
                             <a class="dropdown-item" href="{{route('profile')}}">Profile</a>
                             <a class="dropdown-item" href="{{route('messages')}}">Message</a>
                             <a class="dropdown-item" href="{{ route('logout') }}"
@@ -51,4 +50,10 @@
 $(document).ready(function(){
     $(".dropdown-toggle").dropdown();
 });
+$('.dropdown').on('show.bs.dropdown', function() {
+    $(this).find('.dropdown-menu').first().stop(true, true).slideDown();
+  });
+  $('.dropdown').on('hide.bs.dropdown', function() {
+    $(this).find('.dropdown-menu').first().stop(true, true).slideUp();
+  });
 </script>

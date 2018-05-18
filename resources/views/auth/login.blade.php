@@ -55,7 +55,7 @@
                     </div>
 
                     <div class="container-login100-form-btn">
-                        <button class="login100-form-btn">
+                        <button class="login100-form-btn" style="background-color:#2d1f93">
                             Login
                         </button>
                     </div>
@@ -72,7 +72,7 @@
                <div class="row" style="position:relative; top:-30px;padding:7px;">
                         <h4 style=" text-align:center; "> Don't Have An Account? </h4>    
                         
-                        <a type="button" class="login100-form-btn" href="register" style="text-decoration:none;background:blue"> Register Now 
+                        <a type="button" class="login100-form-btn" href="register" style="text-decoration:none;background:black"> Register Now 
                         </a>   
             		</div>
             	</div>

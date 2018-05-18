@@ -114,7 +114,7 @@
                                         @endforeach
                                     </div>
                                         <div>
-                                            <form class="form-horizontal" method="POST"  action='{{ url("/messages/send") }}' >
+                                            <form class="form-horizontal" id="send" method="POST"  action='{{ url("/messages/send") }}' >
                                                 {{csrf_field()}}
                                                 <input type="hidden" name="other_id" value="{{$box->other_id}}">
                                                 <div class="row" style="border-top:1px solid #dfdfdf">
@@ -124,7 +124,7 @@
                                                         </div>
                                                     </div>
                                                     <div class="col-md-2">
-                                                        <button class="btn btn-primary btn-lg btn-block mt-2">SEND</button>
+                                                        <input type="submit" id="submitButton" class="btn btn-primary btn-lg btn-block mt-2" onclick="submitForm(this);" value="SEND">
                                                     </div>
                                                 </div>
                                             </form>
@@ -158,7 +158,7 @@
                                         @endforeach
                                     </div>
                                         <div>
-                                            <form class="form-horizontal" method="POST"  action='{{ url("/messages/send") }}' >
+                                            <form class="form-horizontal" id="send" method="POST"  action='{{ url("/messages/send") }}' >
                                                 {{csrf_field()}}
                                                 <input type="hidden" name="other_id" value="{{$box->other_id}}">
                                                 <div class="row" style="border-top:1px solid #dfdfdf">
@@ -168,7 +168,7 @@
                                                         </div>
                                                     </div>
                                                     <div class="col-md-2">
-                                                        <button class="btn btn-primary btn-lg btn-block mt-2">SEND</button>
+                                                            <input type="submit" id="submitButton" class="btn btn-primary btn-lg btn-block mt-2" onclick="submitForm(this);" value="SEND">
                                                     </div>
                                                 </div>
                                             </form>
@@ -187,7 +187,14 @@
             </div>
       </div>
 
-
+      <script>
+            function submitForm(btn) {
+                // disable the button
+                btn.disabled = true;
+                // submit the form    
+                btn.form.submit();
+            }
+        </script>
 
   </body>
 </html>

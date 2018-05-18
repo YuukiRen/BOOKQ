@@ -27,6 +27,7 @@
           <h5 class="section-subheading text-muted">Choose your role!</h5>
         </div>
       </div>
+      
       <div class="row text-center">
         <div class="col-md-6">
           <a href="lend">

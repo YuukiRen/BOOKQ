@@ -32,50 +32,52 @@
                     </div>
                 </div>
                 <div class="card-body mt-4 col-md-9">
-                    <h3 class="card-title">{{$users->name}} <a href="{{url("/profile/{$users->id}/edit")}}" class="btn btn-primary btn-sm">Edit Profile</a></h3> <hr>
+                    <h1 class="card-title">{{$users->complete_name}} </h1>
+                    <h3 class="card-title">{{$users->name}} 
+                     </h3><a href="{{url("/profile/{$users->id}/edit")}}" class="btn btn-primary btn-sm">Edit Profile</a> <hr>
+                    
                         <div class="row">
-                            <div class="col-md-6">
+                            <div >
                                 <table>
                                     <tr>
                                         @if ( !empty ( $users->nim ) ) 
-                                            <td valign="top"> NIM </td> <td valign="top">&nbsp;:&nbsp;</td> <td> {{$users->nim}} </td>
+                                            <td valign="top"><h4> NIM </h4></td> <td valign="top">&nbsp;:&nbsp;</td> <td><h4> {{$users->nim}} </h4></td>
                                         
                                         @else
-                                            <td valign="top"> NIM </td> <td valign="top">&nbsp;:&nbsp;</td> <td> - </td>
+                                            <td valign="top"><h4> NIM </h4></td> <td valign="top">&nbsp;:&nbsp;</td> <td><h4> - </h4> </td>
                                         @endif
                                     </tr>
                                     <tr>
                                         @if ( !empty ( $users->address ) ) 
-                                            <td valign="top"> Address </td> <td valign="top">&nbsp;:&nbsp;</td> <td> {{$users->address}} </td>
+                                            <td valign="top"><h4> Address </h4> </td> <td valign="top">&nbsp;:&nbsp;</td> <td> <h4> {{$users->address}} </h4></td>
                                         @else
-                                            <td valign="top"> Address </td> <td valign="top">&nbsp;:&nbsp;</td> <td> - </td>
+                                            <td valign="top"><h4> Address </h4></td> <td valign="top">&nbsp;:&nbsp;</td> <td><h4> -</h4> </td>
                                         @endif
                                     </tr> 
                                     <tr>
                                         @if ( !empty ($users->line_id) )
-                                            <td valign="top"> Line ID </td> <td valign="top">&nbsp;:&nbsp;</td> <td> {{$users->line_id}} </td>
+                                            <td valign="top"> <h4> Line ID </h4> </td> <td valign="top">&nbsp;:&nbsp;</td> <td> <h4> {{$users->line_id}} </h4></td>
                                         @else
-                                            <td valign="top"> Line ID </td> <td valign="top">&nbsp;:&nbsp;</td> <td> - </td>
+                                            <td valign="top"> <h4>Line ID </h4> </td> <td valign="top">&nbsp;:&nbsp;</td> <td> <h4> - </h4> </td>
                                         @endif
                                     </tr> 
                                     <tr>
                                         @if ( !empty ($users->phone_number) )
-                                                <td valign="top"> Phone No. </td> <td valign="top">&nbsp;:&nbsp;</td> <td> {{$users->phone_number}} </td>
+                                                <td valign="top"><h4> Phone Number </h4> </td> <td valign="top">&nbsp;:&nbsp;</td> <td><h4> {{$users->phone_number}} </h4></td>
                                         @else
-                                            <td valign="top"> Phone No. </td> <td valign="top">&nbsp;:&nbsp;</td> <td> - </td>
+                                            <td valign="top"> <h4>Phone Number </h4> </td> <td valign="top">&nbsp;:&nbsp;</td> <td> <h4> - </h4> </td>
                                         @endif
                                     </tr>
                                     <tr>
                                         @if ( !empty ($users->fav_book) )
-                                        <td valign="top"> Interest </td> <td valign="top">&nbsp;:&nbsp;</td> <td> {{$users->fav_book}} </td>
+                                        <td valign="top"><h4> Interest </h4> </td> <td valign="top">&nbsp;:&nbsp;</td> <td><h4> {{$users->fav_book}}</h4> </td>
                                     @else
-                                        <td valign="top"> Interest </td> <td valign="top">&nbsp;:&nbsp;</td> <td> - </td>
+                                        <td valign="top"><h4> Interest </h4> </td> <td valign="top">&nbsp;:&nbsp;</td> <td> <h4> - </h4> </td>
                                     @endif
                                     </tr>
                                 </table>
-                              </div>
-                                <div class="col-md-6">
-                                    <h5 class="card-title">About Me</h5>
+                                <br>
+                                    <h3 class="card-title">About Me</h3>
                                             @if(!empty($users->about_me))
                                                 <p class="card-text">{{ $users->about_me }}</p>
                                             @else   
@@ -83,8 +85,9 @@
                                             @endif
                                 </div> 
                                 </div>
+                                <hr>
                             </div>
-                        </div> <hr>
+                        </div> 
                         <h4 class="card-title text-center">Book's Owned</h4> 
                     <div class="row"> 
                             

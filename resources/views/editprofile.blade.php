@@ -36,10 +36,10 @@
                             {{ csrf_field() }}
                                 <div class="form-group">
                                         <label for="">   User image : </label>
-                                <img class="img-responsive img-user img-center" id="preview" src="{{asset($users->user_image)}}">
+                                <img class="img-responsive img-center" style="width:300px;height:300px;object-fit: cover;border-radius:8px"  id="preview" src="{{asset($users->user_image)}}">
                                 <input type="file" name="user_image" id="img" onchange="PreviewImage();">
                                     <div class="form-group">
-                                            <label for="">Full Name</label>
+                                            <label for="">Full Name  <font color="red">*</font></label>
                                             <input type="text"  class="form-control" required name="complete_name" value="{{$users->complete_name}}">
                                             <div class="invalid-feedback">
                                                 Please enter your full name
@@ -48,13 +48,13 @@
                                     <div class="row">
                                         <div class="col-6">
                                                 <div class="form-group">
-                                                    <label for="nim">NIM*</label>
+                                                    <label for="nim">NIM</label>
                                                     <input type="text" class="form-control" name="nim" value="{{$users->nim}}" placeholder="This form is optional">
                                                 </div>
                                             </div>
                                         <div class="col-6">
                                             <div class="form-group">
-                                                <label for="fav_book">Favorite Book Category :</label>
+                                                <label for="fav_book">Favorite Book Category : <font color="red">*</font> </label>
                                                 <select name="fav_book" id="" class="form-control center" required>
                                                     <option value="" disabled selected hidden>Select your option</option> 
                                                     @foreach ($category as $categories)
@@ -74,7 +74,7 @@
                                     <div class="row">
                                             <div class="col-6">
                                                     <div class="form-group">
-                                                        <label for="phone_number">Phone Number</label>
+                                                        <label for="phone_number">Phone Number  <font color="red">*</font></label>
                                                         <input type="text" class="form-control" name="phone_number" required value="{{$users->phone_number}}">
                                                         <div class="invalid-feedback">
                                                             Please enter your phone number
@@ -83,23 +83,23 @@
                                                 </div>
                                             <div class="col-6">
                                                 <div class="form-group">
-                                                    <label for="line_id">Line ID*</label>
+                                                    <label for="line_id">Line ID</label>
                                                     <input type="text" class="form-control" name="line_id" value="{{$users->line_id}}" placeholder="This form is optional"> 
                                                 </div>
                                             </div>
                                         </div>
                                     <div class="form-group">
-                                        <label for="address">Address</label>
+                                        <label for="address">Address  <font color="red">*</font></label>
                                         <input type="text" class="input100 form-control" required name="address" value="{{$users->address}}">
                                         <div class="invalid-feedback">
                                             Please enter your address
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label for="about_me">About Me*</label>
+                                        <label for="about_me">About Me</label>
                                         <textarea type="text" id="about_me" rows=5 class="form-control" name="about_me" placeholder="This form is optional">{{$users->about_me}}</textarea>
                                     </div>
-                                    <p>* : Optional</p>
+                                   <font color="red"> <p>* required</p> </font>
                                     <div class="form-group">
                                             <input type="submit" class="btn btn-primary btn-block" value="SAVE" >
                                         </div>

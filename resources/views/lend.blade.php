@@ -43,7 +43,7 @@
                                             @endforeach
                                         @endif
                                         <div class="form-group">
-                                            <label for="">   Book image</label>
+                                            <label for="">   Book image <font color="red">*</font></label>
                                             <img class="img-responsive img-cover img-center mb-2" id="preview" src="" style="display:none;">
                                             <input type="file" class="form-control" name="image" id="img" required>
                                                     <div class="invalid-feedback">
@@ -52,7 +52,7 @@
 
                                         </div>
                                         <div class="form-group">
-                                            <label for=""> Title </label>
+                                            <label for=""> Title <font color="red">*</font> </label>
                                             <input type="text"  class="form-control" required name="title">
                                                 <div class="invalid-feedback">
                                                     Please insert the book's title
@@ -61,7 +61,7 @@
                                         <div class="row">
                                             <div class="col-4">
                                                 <div class="form-group">
-                                                    <label for="genre">Category :</label>
+                                                    <label for="genre">Category : <font color="red">*</font></label>
                                                     <select name="category" id="" class="form-control center" required>
                                                         <option value="" disabled selected hidden>Select your option</option>                                                        
                                                         @foreach ($category as $categories)
@@ -75,7 +75,7 @@
                                             </div>
                                             <div class="col-4">
                                                 <div class="form-group wrap-input100 validate-input" data-validate = "Valid Year is required">
-                                                    <label for="genre">Year Published</label>
+                                                    <label for="genre">Year Published <font color="red">*</font></label>
                                                     <input type="number" class="form-control" required name="year" max=2100 onkeydown="return ( event.ctrlKey || event.altKey 
                                                                                                                     || (47<event.keyCode && event.keyCode<58 && event.shiftKey==false) 
                                                                                                                     || (95<event.keyCode && event.keyCode<106)
@@ -89,13 +89,13 @@
                                             </div>
                                             <div class="col-4">
                                                     <div class="form-group">
-                                                        <label for="genre">Tag*</label>
+                                                        <label for="genre">Tag</label>
                                                         <input type="text" class="form-control" name="tag">
                                                     </div>
                                                 </div>
                                         </div>
                                         <div class="form-group wrap-input100 validate-input" data-validate = "Valid author is required">
-                                            <label for="">Author</label>
+                                            <label for="">Author<font color="red">*</font></label>
                                             <input type="text" class="input100 form-control" required name="author">
                                                 <div class="invalid-feedback">
                                                     Please input the book's author
@@ -103,21 +103,21 @@
                                         </div>
                                       
                                         <div class="form-group wrap-input100 validate-input" data-validate = "Valid Publisher is required">
-                                            <label for="">Publisher</label>
+                                            <label for="">Publisher <font color="red">*</font></label>
                                             <input type="text" class="input100 form-control" required name="publisher">
                                                 <div class="invalid-feedback">
                                                     Please input the book's publisher
                                                 </div>  
                                         </div>
                                         <div class="form-group wrap-input100">
-                                            <label for="Content">Review*</label>
+                                            <label for="Content">Review</label>
                                             <textarea name="review" rows="5" class="input100 form-control" name="review"></textarea>
                                         </div>
                                         <div class="form-group wrap-input100">
-                                            <label for="Content">Description*</label>
+                                            <label for="Content">Description</label>
                                             <textarea name="description" rows="5" class="input100 form-control" name="description"></textarea>
                                         </div>
-                                        <p>* : optional</p>
+                                        <p><font color="red"> * required</font></p>
                                         <div class="form-group">
                                                 <input type="submit" class="btn btn-primary btn-block" value="SUBMIT" >
                                             </div>

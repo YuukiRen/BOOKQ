@@ -51,16 +51,16 @@
                 <div class="modal-body">
                     <table>
                       <tr>
-                        <td valign="top">Name </td> <td valign="top">&nbsp;:&nbsp;</td> <td> {{App\User::find($books->user_id)->name}} </td>
+                        <td valign="top"><h4>Name </h4> </td> <td valign="top">&nbsp;:&nbsp;</td> <td> <h4> {{App\User::find($books->user_id)->name}} </h4> </td>
                       </tr>
                       <tr>
-                        <td valign="top"> Phone No. </td> <td valign="top">&nbsp;:&nbsp;</td>  <td> {{App\User::find($books->user_id)->phone_number}} </td>
+                        <td valign="top"><h4> Phone Number </h4> </td> <td valign="top">&nbsp;:&nbsp;</td>  <td> <h4>{{App\User::find($books->user_id)->phone_number}} </h4></td>
                       </tr> 
                       <tr>
-                        <td valign="top"> LINE ID </td><td valign="top">&nbsp;:&nbsp;</td><td> {{App\User::find($books->user_id)->line_id}} </td>
+                        <td valign="top"><h4> LINE ID </h4> </td><td valign="top">&nbsp;:&nbsp;</td><td> <h4> {{App\User::find($books->user_id)->line_id}} </h4> </td>
                       </tr> 
                       <tr>
-                        <td valign="top"> Address </td><td valign="top">&nbsp;:&nbsp;</td><td> {{App\User::find($books->user_id)->address}} </td>
+                        <td valign="top"><h4> Address </h4> </td><td valign="top">&nbsp;:&nbsp;</td><td> <h4> {{App\User::find($books->user_id)->address}} </h4> </td>
                       </tr> 
                   </table>
                 </div>
@@ -89,20 +89,20 @@
 
         <div class="card-body mt-4 col-md-8">
           
-          <h3 class="card-title">{{$books->title}}     @if(( App\Book::where([['user_id', $users],['id', $books->id]])->first() ))<a href="{{url("/viewbook/{$books->id}/edit")}}" class="btn btn-primary btn-sm">Edit Book</a>@endif</h3>
+          <h1 class="card-title">{{$books->title}}     @if(( App\Book::where([['user_id', $users],['id', $books->id]])->first() ))<a href="{{url("/viewbook/{$books->id}/edit")}}" class="btn btn-primary btn-sm">Edit Book</a>@endif</h1>
         <span class="thick">by <span style="color:grey">{{$books->author}}</span> </span>
         <hr>
           <div class="row">
               <div class="col-md-6">
           <table>
             <tr>
-                <td valign="top"> Category </td> <td valign="top">&nbsp;:&nbsp;</td> <td> {{$books->category}} </td>
+                <td valign="top"><h4> Category </h4></td> <td valign="top">&nbsp;:&nbsp;</td> <td><h4> {{$books->category}} </h4> </td>
               </tr>
             <tr>
-              <td valign="top"> Publisher </td><td valign="top">&nbsp;:&nbsp;</td><td> {{$books->publisher}} </td>
+              <td valign="top"><h4> Publisher </h4> </td><td valign="top">&nbsp;:&nbsp;</td><td> <h4> {{$books->publisher}} </h4> </td>
             </tr> 
             <tr>
-              <td valign="top"> Published </td><td valign="top">&nbsp;:&nbsp;</td><td> {{$books->year}} </td></tr>
+              <td valign="top"><h4> Published </h4> </td><td valign="top">&nbsp;:&nbsp;</td><td><h4> {{$books->year}} </h4> </td></tr>
         </table>
       </div>
       <div id="rating" class="col-md-6">
@@ -119,13 +119,13 @@
       <hr>
       <div class="row py-2">
         <div class="col"> 
-              <h5 class="card-title">Description</h5>
+              <h4 class="card-title">Description</h4>
               <font size=3 class="show-read-more">{{$books->description}}</font>
             </div>              
       </div> <hr>
       <div class="row"> 
           <div class="col">
-            <h5>Book Owner's Review</h5>
+            <h4>Book Owner's Review</h4>
             <font size=3>{{$books->review}}</font>
           </div>
       </div>

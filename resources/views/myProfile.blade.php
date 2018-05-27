@@ -90,12 +90,11 @@
                         </div> 
                         <h4 class="card-title text-center">Book's Owned</h4> 
                     <div class="row"> 
-                            
                             @foreach($books->all() as $book)
                             @if(($book->show==1))
-                            <div class="col-lg-2 col-md-3 col-sm-4 portfolio-item">
+                            <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 portfolio-item">
                                 <div class="img-frame-profile">
-                                <a href='{{ url("viewbook/{$book->id}") }}'><img class="card-img-top img-responsive img-cover-profile" src="{{asset($book->image)}}" alt=""></a>
+                                  <a href='{{ url("viewbook/{$book->id}") }}'><img class="img-responsive img-cover-profile" src="{{asset($book->image)}}" alt=""></a>
                                 </div>
                             </div>
                             @endif

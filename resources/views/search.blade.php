@@ -33,46 +33,38 @@
     <!-- Page Content -->
     <div class="container">
       <div class="row">
-        <div class="col">
-      <!-- Page Heading -->
-      <h1 class="my-4"><span class="title px-2">Choose your Book
-        <font size=3>Explore the World!</font>
-    </span></h1>
-  </div>
-
-   <div id="example1_filter" class="dataTables_filter">
-        <div class="col-xs-8 col-xs-offset-2">
-        <form method="POST" action="{{ url('/search_book') }}"  enctype="multipart/form-data">
-          {{ csrf_field() }}
-        <div class="input-group my-4">
-          <div class="dropdown show">
-          
-              <select name="category" id=""  class="form-control btn btn-secondary">
-                  <option value="" disabled selected hidden>Category</option>                                                        
-                  @foreach ($category as $categories)
-                  <option value="{{ $categories->name }}" class="btn-secondary"> {{ $categories->name }}</option>
-                  @endforeach
-              </select> 
-          </div>
-                <input type="search" name="search_param" id="search_param" class="form-control" placeholder="Search Book" aria-controls="example1">  
-                <span class="input-group-btn">
-                    <button class="btn btn-default" type="submit"> Search <span class="glyphicon glyphicon-search"></span></button>
-                </span>
-          </form>
+        <div class="col-6">
+            <!-- Page Heading -->
+            <h1 class="my-4"><span class="title px-2">Choose your Book
+          </span></h1>
         </div>
-        <div class="invalid-feedback">
-                                                            Insert your query
-                                                        </div>
-                                                
+        <div id="example1_filter" class="col-6 dataTables_filter">
+            <form method="POST" action="{{ url('/search_book') }}"  enctype="multipart/form-data">
+              {{ csrf_field() }}
+            <div class="input-group my-4">
+              {{-- <div class="dropdown show">            
+                  <select name="category" id=""  class="form-control btn btn-secondary">
+                      <option value="" disabled selected hidden>Category</option>                                                        
+                      @foreach ($category as $categories)
+                      <option value="{{ $categories->name }}" class="btn-secondary"> {{ $categories->name }}</option>
+                      @endforeach
+                  </select> 
+              </div> --}}
+                    <input type="search" name="search_param" id="search_param" class="form-control" placeholder="Search Book" aria-controls="example1">  
+                    <span class="input-group-btn">
+                        <button class="btn btn-default" type="submit"> Search <span class="glyphicon glyphicon-search"></span></button>
+                    </span>
+              </form>
+              </div>
+          <div class="invalid-feedback"> Insert your query </div>
+                                                  
         </div>
-        </div>
-
-
+      </div>
 <br>
         <div id="example1" class="row">
         @foreach($books->all() as $book)
         @if(($book->show==1))
-          <div class="col-lg-2 col-md-3 col-sm-4 portfolio-item">
+          <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 portfolio-item">
             <div class="card h-100" >
               <div class="img-frame center">
               <a href="viewbook/{{$book->id}}"><img class="card-img-top img-responsive img-cover" src="{{asset($book->image)}}" alt=""></a>

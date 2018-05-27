@@ -25,7 +25,7 @@
       <div class="row"> 
         <div class="center card col-lg-10 px-2 py-2"> 
           <div class="row">
-        <div class="col-md-4 mt-4">
+        <div class="col-xl-4 mt-4">
         <img class="img-responsive img-book img-center" src="{{asset($books->image)}}" alt="">
         @if(!App\Book::where([['user_id', $users],['id', $books->id]])->first())
         <div class="row center" style="margin-top:10px">
@@ -38,6 +38,7 @@
             @include('layouts.partial.reportbookmodal')     
         </div>
         @endif
+        @if(( App\Book::where([['user_id', $users],['id', $books->id]])->first() ))<a href="{{url("/viewbook/{$books->id}/edit")}}" class="btn btn-primary btn-block mt-2">Edit Book</a>@endif
                   <!-- Modal -->
           <div class="modal fade" id="borrowmodal" tabindex="-1" role="dialog" aria-labelledby="borrowmodalTitle" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" role="document">
@@ -87,9 +88,9 @@
           </script>
         </div>
 
-        <div class="card-body mt-4 col-md-8">
+        <div class="card-body mt-4 px-4 col-xl-8">
           
-          <h1 class="card-title">{{$books->title}}     @if(( App\Book::where([['user_id', $users],['id', $books->id]])->first() ))<a href="{{url("/viewbook/{$books->id}/edit")}}" class="btn btn-primary btn-sm">Edit Book</a>@endif</h1>
+          <h1 class="card-title">{{$books->title}}     </h1>
         <span class="thick">by <span style="color:grey">{{$books->author}}</span> </span>
         <hr>
           <div class="row">

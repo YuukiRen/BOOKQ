@@ -4,6 +4,16 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\User;
+use App\Book;
+use App\Category;
+use App\Report;
+use Auth;
+use App\Rating;
+use App\Comment;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Http\UploadedFile;
+
 use DB;
 
 class SearchController extends Controller
@@ -21,28 +31,29 @@ class SearchController extends Controller
 
         // $books=Book::all();
         //membuat paginasi
-        $find_text = $request['query'];
+        $find_text = $request['search_param'];
         $find_cat = $request['category'];
         if($find_cat !== NULL){
         $books=\DB::table('books')
             ->where('category', '=', $find_cat)
-            ->orWhere('LOWER( author )', 'like', '%'.$find_text.'%')
-            ->orWhere('LOWER( title )', 'like', '%'.$find_text.'%')
-            ->orWhere('LOWER( publisher )', 'like', '%'.$find_text.'%')
-            ->orWhere('LOWER( tag )', 'like', '%'.$find_text.'%')
-            ->get()
-            ->paginate(12);
+            ->orWhere('author', 'like', '%'.$find_text.'%')
+            ->orWhere('title', 'like', '%'.$find_text.'%')
+            ->orWhere('publisher', 'like', '%'.$find_text.'%')
+            ->orWhere('tag', 'like', '%'.$find_text.'%')
+            ->paginate(12)
+            ;
         }
         else{
             $books=\DB::table('books')
-            ->Where('LOWER( author )', 'like', '%'.$find_text.'%')
-            ->orWhere('LOWER( title )', 'like', '%'.$find_text.'%')
-            ->orWhere('LOWER( publisher )', 'like', '%'.$find_text.'%')
-            ->orWhere('LOWER( tag )', 'like', '%'.$find_text.'%')
-            ->get()
+            ->Where('author', 'like', '%'.$find_text.'%')
+            ->orWhere('title', 'like', '%'.$find_text.'%')
+            ->orWhere('publisher', 'like', '%'.$find_text.'%')
+            ->orWhere('tag', 'like', '%'.$find_text.'%')
+            // ->get();
             ->paginate(12);
         }
-        return view('search', compact('books'));
+        $category = Category::all();
+        return view('/search', compact('books', 'category'));
         
     }
 }

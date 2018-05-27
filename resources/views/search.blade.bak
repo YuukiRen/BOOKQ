@@ -42,29 +42,31 @@
 
    <div id="example1_filter" class="dataTables_filter">
         <div class="col-xs-8 col-xs-offset-2">
-        <form method="POST" action="{{ url('/search_book') }}"  enctype="multipart/form-data">
-          {{ csrf_field() }}
         <div class="input-group my-4">
+
           <div class="dropdown show">
-          
-              <select name="category" id=""  class="form-control btn btn-secondary">
-                  <option value="" disabled selected hidden>Category</option>                                                        
-                  @foreach ($category as $categories)
-                  <option value="{{ $categories->name }}" class="btn-secondary"> {{ $categories->name }}</option>
-                  @endforeach
-              </select> 
+          <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Category
+          </a>
+
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+              <a class="dropdown-item" href="#Business">Business</a>
+              <a class="dropdown-item" href="#Novel">Novel</a>
+              <a class="dropdown-item" href="#Comic">Comic </a>
+              <a class="dropdown-item" href="#Health">Health </a>
+              <a class="dropdown-item" href="#Lifestyle">Lifestyle </a>
+              <a class="dropdown-item" href="#Education">Education </a>
+              <a class="dropdown-item" href="#Technology">Technology  </a>
+              <a class="dropdown-item" href="#Religion">Religion  </a>
+              <a class="dropdown-item" href="#History">History</a>
+          </div>
           </div>
                 <input type="search" name="search_param" id="search_param" class="form-control" placeholder="Search Book" aria-controls="example1">  
                 <span class="input-group-btn">
-                    <button class="btn btn-default" type="submit"> Search <span class="glyphicon glyphicon-search"></span></button>
+                    <button class="btn btn-default" type="button"> Search <span class="glyphicon glyphicon-search"></span></button>
                 </span>
-          </form>
-        </div>
-        <div class="invalid-feedback">
-                                                            Insert your query
-                                                        </div>
-                                                
-        </div>
+              </div>
+            </div>
         </div>
 
 

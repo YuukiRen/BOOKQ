@@ -22,26 +22,32 @@ class BooksController extends Controller
     	// $books=Book::all();
         //membuat paginasi
         $books=\DB::table('books')->paginate(12);
-		// dd($books);
+		$category = Category::all();
+        // dd($books);
         // var_dump($books);
-    	return view('search', compact('books'));
+    	return view('search', compact('books', 'category'));
         //ganti search ama halaman search/ yang nampilin semua buku
     }
     //controller untuk ngeliat satu buku
     public function show_detail(Request $request, $id){
 
         //query cari buku
-        $books = Book::where('id', $id)->first();
         
+        $books = Book::where('id', $id)->first();
+        // $books = Book::where('id', $id)->toSql();
+        // dd($books);
         if($books === NULL){
             return redirect('/search')->with('danger','No book found');
         }
         $comments = Comment::where('book_id',$id)->get();//comment pertama
-		$users = Auth::user()->id;
+        // $comments = Comment::where('book_id',$id)->toSql();//comment pertama
+		// dd($comments);
+        $users = Auth::user()->id;
         $tabs = Rating::where('book_id',$id)->get();
         $ratings = $tabs->avg('rate');
-        //ke detailed view
+        
 
+        
         return view('viewbook', compact('books','comments','users','ratings'));
 
     }
@@ -57,6 +63,7 @@ class BooksController extends Controller
         $comments->comment = $request->input('review');
         $comments->before = "1";
         $comments->save();
+        
         //bagian rating
         if($request->has('rating')){
             $ratings = new Rating;
@@ -64,6 +71,7 @@ class BooksController extends Controller
             $ratings->user_id = Auth::user()->id; 
             $ratings->rate = $request->input('rating');
             $ratings->save();
+
         }//ke detailed view
         return redirect('/viewbook/'.$id)->with('info','Review added Successfully');
     }
@@ -71,6 +79,7 @@ class BooksController extends Controller
 	public function lendBook(Request $request){
 		$category = Category::all();
 		return view('lend',compact('category'));
+
 	}
 
 	public function dummy(Request $request){
@@ -156,6 +165,7 @@ class BooksController extends Controller
         $report->status  = 0;
         $report->report_desc = $request->input('report_desc');
         $report->save();
+
         return redirect('/viewbook/'.$book_id)->with('success','Report Success!');
     }
 

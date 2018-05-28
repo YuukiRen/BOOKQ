@@ -81,7 +81,14 @@ table{
   min-height:50px;
   max-width: 150px;
   min-width: 150px;
-  
+  transition: 0.3s ease-in-out;
+}
+.img-cover-profile:hover{
+  opacity: 0.9;
+  border: 2px solid white;
+}
+.img-cover-profile:active{
+  opacity: initial;
 }
 .img-frame .img-cover,.img-frame-profile .img-cover-profile {
   max-height: 100%;  
@@ -144,7 +151,9 @@ a:active .fa-circle{
 tr{
   line-height: 2;
 }
-
+.fas.fa-star{
+  color: blue;
+}
 #navb{
   font-family : Montserrat,  sans-serif;
 }
@@ -187,12 +196,13 @@ html{
   overflow-x: scroll;
   overflow-y: scroll;
   display: block;
-  width: 100%;
+
 }
 body {
   overflow-x: hidden;
   font-family : 'Montserrat',  sans-serif;
   background-color: whitesmoke;
+  width: 100%;
 }
 
 p {

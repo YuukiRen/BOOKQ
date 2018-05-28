@@ -52,16 +52,16 @@
                 <div class="modal-body">
                     <table>
                       <tr>
-                        <td valign="top"><h4>Name </h4> </td> <td valign="top">&nbsp;:&nbsp;</td> <td> <h4> {{App\User::find($books->user_id)->name}} </h4> </td>
+                        <td valign="top"><h5>Name </h5> </td> <td valign="top">&nbsp;:&nbsp;</td> <td> <h5> {{App\User::find($books->user_id)->name}} </h5> </td>
                       </tr>
                       <tr>
-                        <td valign="top"><h4> Phone Number </h4> </td> <td valign="top">&nbsp;:&nbsp;</td>  <td> <h4>{{App\User::find($books->user_id)->phone_number}} </h4></td>
+                        <td valign="top"><h5> Phone Number </h5> </td> <td valign="top">&nbsp;:&nbsp;</td>  <td> <h5>{{App\User::find($books->user_id)->phone_number}} </h5></td>
                       </tr> 
                       <tr>
-                        <td valign="top"><h4> LINE ID </h4> </td><td valign="top">&nbsp;:&nbsp;</td><td> <h4> {{App\User::find($books->user_id)->line_id}} </h4> </td>
+                        <td valign="top"><h5> LINE ID </h5> </td><td valign="top">&nbsp;:&nbsp;</td><td> <h5> {{App\User::find($books->user_id)->line_id}} </h5> </td>
                       </tr> 
-                      <tr>
-                        <td valign="top"><h4> Address </h4> </td><td valign="top">&nbsp;:&nbsp;</td><td> <h4> {{App\User::find($books->user_id)->address}} </h4> </td>
+                      <h5>
+                        <td valign="top"><h5> Address </h5> </td><td valign="top">&nbsp;:&nbsp;</td><td> <h5> {{App\User::find($books->user_id)->address}} </h5> </td>
                       </tr> 
                   </table>
                 </div>
@@ -85,6 +85,7 @@
                 </form>
                  <!-- /Experimental -->
                 </div>
+
               </div>
             </div>
           </div>
@@ -98,39 +99,20 @@
 
         <div class="card-body mt-4 px-4 col-xl-8">
           
-          <h1 class="card-title">{{$books->title}}     </h1>
-        <span class="thick">by <span style="color:grey">{{$books->author}}</span> </span>
-        <hr>
-          <div class="row">
-              <div class="col-md-6">
-          <table>
-            <tr>
-                <td valign="top"><h4> Category </h4></td> <td valign="top">&nbsp;:&nbsp;</td> <td><h4> {{$books->category}} </h4> </td>
-              </tr>
-            <tr>
-              <td valign="top"><h4> Publisher </h4> </td><td valign="top">&nbsp;:&nbsp;</td><td> <h4> {{$books->publisher}} </h4> </td>
-            </tr> 
-            <tr>
-              <td valign="top"><h4> Published </h4> </td><td valign="top">&nbsp;:&nbsp;</td><td><h4> {{$books->year}} </h4> </td></tr>
-        </table>
-      </div>
-      <div id="rating" class="col-md-6">
+          <h2 class="card-title">{{$books->title}}     </h2>
+         <span class="thick">by <span style="color:grey">{{$books->author}}</span></span>
+         <div><font size=2 class="thick">Published in {{$books->year}} by {{$books->publisher}}</font><span>
         <div class="row">
-          <div class="col-3">
-            <span class="fas fa-star fa-4x center checked" style="color:#FFDF00"></span>
-          </div>
-          <div class="col">            
-            <h1 style="margin-top:10px">&nbsp;@if($ratings){{$ratings}}@else{{0}}@endif / 5</h1>
-          </div>                  
+          <div class="col">
+              @include('layouts.partial.rating')  
+          </div>         
         </div>
-      </div>
-      </div>
+        
       <hr>
       <div class="row py-2">
         <div class="col"> 
-              <h4 class="card-title">Description</h4>
-              <font size=3 class="show-read-more">{{$books->description}}</font>
-            </div>              
+          <font size=3 class="show-read-more">{{$books->description}}</font>
+        </div>              
       </div> <hr>
       <div class="row"> 
           <div class="col">
@@ -146,7 +128,7 @@
         </div>
           <!-- /.card -->
 
-          <div class="card card-outline-secondary my-4 col-md-9 center">
+          <div class="card card-outline-secondary my-4 col-md-11 center">
             <div class="card-body">
               <h4 for="Content" class="thick">Review  <a href="#comment" class=" btn btn-info btn-sm"> <u> <i class="fa fa-plus"></i> Leave a Review </u> </a></h4>
               <hr>  

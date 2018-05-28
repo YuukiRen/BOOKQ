@@ -35,13 +35,13 @@
       <div class="row">
         <div class="col-6">
             <!-- Page Heading -->
-            <h1 class="my-4"><span class="title px-2">Choose your Book
-          </span></h1>
+            <h2 class="mt-4"><span class="title px-2">Choose your Book
+          </span></h2>
         </div>
         <div id="example1_filter" class="col-6 dataTables_filter">
             <form method="POST" action="{{ url('/search_book') }}"  enctype="multipart/form-data">
               {{ csrf_field() }}
-            <div class="input-group my-4">
+            <div class="input-group mt-4">
               {{-- <div class="dropdown show">            
                   <select name="category" id=""  class="form-control btn btn-secondary">
                       <option value="" disabled selected hidden>Category</option>                                                        
@@ -50,9 +50,9 @@
                       @endforeach
                   </select> 
               </div> --}}
-                    <input type="search" name="search_param" id="search_param" class="form-control" placeholder="Search Book" aria-controls="example1">  
+                    <input type="search" name="search_param" id="search_param" class="form-control" placeholder="Search Book. . ." aria-controls="example1">  
                     <span class="input-group-btn">
-                        <button class="btn btn-default" type="submit"> Search <span class="glyphicon glyphicon-search"></span></button>
+                        <button class="btn btn-default" type="submit"> Search <span class="fas fa-search"></span></button>
                     </span>
               </form>
               </div>

@@ -111,7 +111,7 @@
           </div>
           <div class="col-sm-3">
             <div class="team-member">
-              <a href="admin"><img class="mx-auto rounded-circle" src="img/team/3.png" alt=""></a>
+              <a href="admin"><img class="mx-auto rounded-circle" src="img/team/2.jpg" alt="" style="border: 3px solid black"></a>
               <h4>Maulvi<br>Alfansuri</h4>
               <p> G64160087 </p>
               <p class="text-muted">Back-End</p>

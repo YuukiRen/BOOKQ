@@ -59,7 +59,8 @@ class UserController extends Controller
         $requests_lend = Transaction::where('id_lender',$id)->get();
         $requests_borrow = Transaction::where('id_booker',$id)->get();
         $activities = Transaction::where('id_booker',$id)->OrWhere('id_lender',$id)->get();
-        
+        $activities = Transaction::where('id_booker',$id)->OrWhere('id_lender',$id)->toSql();
+        dd($activities);
         return view('myProfile', compact('users','requests_lend','requests_borrow','activities','books'));
         
         // dd($users);
@@ -74,7 +75,6 @@ class UserController extends Controller
         $requests_lend = Transaction::where('id_lender',$id)->get();
         $requests_borrow = Transaction::where('id_booker',$id)->get();
         $activities = Transaction::where('id_booker',$id)->OrWhere('id_lender',$id)->get();
-        
         if($users->id == $id){
             return view('myProfile', compact('users','requests_lend','requests_borrow','activities','books'));
         }

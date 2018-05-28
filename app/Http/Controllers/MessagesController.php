@@ -84,6 +84,7 @@ class MessagesController extends Controller
             )
             ->where('signature','=',$sign)
             ->orderBy('messages_ts.id', 'desc')
+            // ->toSql();
             ->paginate(6);
         // dd($mess);   
 		return $mess;
@@ -119,6 +120,7 @@ class MessagesController extends Controller
             )
             ->where('signature','=',$sign)
             ->orderBy('messages_ts.id', 'desc')
+            
             ->first()
 
             ;

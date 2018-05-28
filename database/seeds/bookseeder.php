@@ -69,7 +69,7 @@ Banyak pengamat menganggap pemikiran-pemikiran Gramsci tidak gampang dicerna. It
         	],
         	[
         		'id' => '4',
-        		'user_id'=>'2',
+        		'user_id'=>'1',
                 'author'=> 'Tere Liye',
         		'title'=> 'Tentang Kamu',
 				'tag' => 'haha',
@@ -91,7 +91,7 @@ Tentang Kamu adalah novel terbaru Tere Liye. Sebuah karya yang tak hanya akan me
 
         	[
         		'id' => '5',
-        		'user_id'=>'2',
+        		'user_id'=>'3',
                 'author'=> 'Imam Heryanto,Budi Raharjo.Arif Haryono',
         		'title'=> 'Mudah belajar JAVA',
 				'tag' => 'haha',
@@ -109,7 +109,7 @@ Buku ini cocok untuk siapa saja yang berminat mempelajari dan mengimplementasika
         	],
         	[
         		'id' => '6',
-        		'user_id'=>'2',
+        		'user_id'=>'4',
                 'author'=> 'Dr. Aid Abdullah al-Qorni',
         		'title'=> 'La taghdhab',
 				'tag' => 'haha',
@@ -139,7 +139,7 @@ Buku ini cocok untuk siapa saja yang berminat mempelajari dan mengimplementasika
 			
 			[
 				'id' => '8',
-				'user_id'=>'2',
+				'user_id'=>'1',
                 'author'=> 'Habiburrahman El Shirazy',
 				'title'=> 'Ketika Cinta Bertasbih',
 				'tag' => 'haha',

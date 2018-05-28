@@ -16,7 +16,7 @@ use Illuminate\Http\UploadedFile;
 class BooksController extends Controller
 {
     public function __construct(){
-    	// $this->middleware('auth');//matiin kalo lagi testing mode
+    	$this->middleware('auth');//matiin kalo lagi testing mode
     }
     public function show(){
     	// $books=Book::all();

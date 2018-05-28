@@ -36,6 +36,7 @@ class MessagesController extends Controller
 
     public function send(Request $request, messages_t $messages)
     {
+         // dd($request);
          $other_id   = $request->input('other_id');
          $self_id = Auth::user()->id;
          $sign = $this->create_signature($other_id, $self_id);
@@ -99,9 +100,11 @@ class MessagesController extends Controller
         ->where('signature', 'like', $self_id.':%')
         ->orwhere('signature', 'like', '%:'.$self_id)
         ->groupBy('signature')
+        ->orderBy('messages_ts.created_at', 'desc')
         ->get()
-        ->pluck('signature');
-
+        ->pluck('signature')
+        ;
+        // dd($mess);
         $arr =  array();
         $sebagian = array();
         foreach ($mess as $sign) {

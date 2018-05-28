@@ -76,14 +76,6 @@
                 @else
                  <a class="disabled">SOMETHING WRONG, CONTACT THE ADMIN</a>
                 @endif
-                <!-- Experimental -->
-                <form class="form-horizontal" id="send" method="POST"  action='{{ url("/messages/send") }}' >
-                {{csrf_field()}}  
-                <input type="hidden" name="other_id" value="{{App\User::find($books->user_id)->id}}">
-                <input type="hidden" name="message" value="Apakah buku ''{{$books->title}}'' anda mau dipinjamkan?">
-                <button class="btn btn-info" type="submit">Messages</input>
-                </form>
-                 <!-- /Experimental -->
                 </div>
               </div>
             </div>

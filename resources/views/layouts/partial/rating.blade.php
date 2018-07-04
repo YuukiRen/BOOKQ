@@ -4,19 +4,19 @@
 <span class="far fa-star" style=""></span>
 <span class="far fa-star" style=""></span>
 <span class="far fa-star" style=""></span>
-@elseif($ratings<=2)
+@elseif($ratings<2)
 <span class="fas fa-star" style=""></span>
 <span class="far fa-star" style=""></span>
 <span class="far fa-star" style=""></span>
 <span class="far fa-star" style=""></span>
 <span class="far fa-star" style=""></span>
-@elseif($ratings<=3)
+@elseif($ratings<3)
 <span class="fas fa-star" style=""></span>
 <span class="fas fa-star" style=""></span>
 <span class="far fa-star" style=""></span>
 <span class="far fa-star" style=""></span>
 <span class="far fa-star" style=""></span>
-@elseif($ratings<=4)
+@elseif($ratings<4)
 <span class="fas fa-star" style=""></span>
 <span class="fas fa-star" style=""></span>
 <span class="fas fa-star" style=""></span>

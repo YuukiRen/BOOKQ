@@ -74,11 +74,11 @@
                 <div class="row" style="position:relative; top:0px;padding:7px;">
                         <h4 style=" text-align:center; "> Already Have An Account? </h4>    
                         
-                        <a type="button" class="login100-form-btn" href="login" style="text-decoration:none;background:black"> Login using existing account
+                        <a type="button" class="login100-form-btn" href="login" style="text-decoration:none;background:black"> Login 
                         </a>   
                     </div>
             </div>
-                </div>
+                </divd
                 
             </div>
             

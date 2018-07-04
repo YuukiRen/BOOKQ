@@ -90,6 +90,9 @@
                         </div> 
                         <h4 class="card-title text-center">Book's Owned</h4> 
                     <div class="row"> 
+                            @if($books->isEmpty())
+                                <p class="center thick ml-3" align="center">Empty.</p>  
+                            @endif
                             @foreach($books->all() as $book)
                             @if(($book->show==1))
                             <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 portfolio-item">
@@ -123,6 +126,9 @@
                         <div class="tab-content" id="myTabContent">
                         <div class="tab-pane fade show active" id="history" role="tabpanel" aria-labelledby="history-tab">
                             <div class="card-body">
+                                @if($activities->isEmpty())
+                                    <p class="center thick">No recent activities.</p>
+                                @endif  
                                 @foreach($activities->all() as $activity)
                                     @if(App\User::find($activity->id_booker) == $users)
                                         @if($activity->status==0)
@@ -158,6 +164,9 @@
                         </div>
                         <div class="tab-pane fade" id="borrow" role="tabpanel" aria-labelledby="borrow-tab">
                             <div class="card-body">
+                                @if($requests_borrow->isEmpty())
+                                    <p class="center thick">No recent activities.</p>
+                                @endif  
                                     @foreach($requests_borrow->all() as $request_b)
                                     @if($request_b->status==0)
                                         <p><small class="text-muted">{{ $request_b->request_date }} </small>Sent request to {{App\User::find($request_b->id_lender)->name}} to borrow "{{ App\Book::find($request_b->book_id)->title }}"</p>
@@ -178,6 +187,9 @@
                         </div>
                         <div class="tab-pane fade" id="lend" role="tabpanel" aria-labelledby="lend-tab">
                             <div class="card-body">
+                                @if($requests_lend->isEmpty())
+                                    <p class="center thick">No recent activities.</p>
+                                @endif  
                                     @foreach($requests_lend->all() as $request_l) 
                                     @if($request_l->status==0)
                                         <p><small class="text-muted">{{ $request_l->request_date }} </small>{{App\User::find($request_l->id_booker)->name}} wants to borrow "{{ App\Book::find($request_l->book_id)->title }}" 

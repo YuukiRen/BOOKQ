@@ -69,7 +69,7 @@
                 @if(( App\Book::where([['user_id', $users],['id', $books->id]])->first() ))
                   <a class="disabled">Cannot Lend your own book :)</a>
                 @elseif( !( App\Transaction::where([['id_booker', $users],['book_id', $books->id]])->first() )  )
-                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <a href='{{ url("/profile/$books->user_id") }}' class="btn btn-secondary">Profile</a>
                   <a href='{{ url("/request/$books->id") }}' class="btn btn-primary">Send Request</a>
                 @elseif(( App\Transaction::where([['id_booker', $users],['book_id', $books->id]])->first() ))
                   <a class="disabled">Request Sent</a>
@@ -128,17 +128,17 @@
         </div>
           <!-- /.card -->
 
-          <div class="card card-outline-secondary my-4 col-md-11 center">
+          <div class="card card-outline-secondary my-4  center">
             <div class="card-body">
-              <h4 for="Content" class="thick">Review  <a href="#comment" class=" btn btn-info btn-sm"> <u> <i class="fa fa-plus"></i> Leave a Review </u> </a></h4>
+              <h4 for="Content" class="thick">Review  <a href="#comment" class=" btn btn-info btn-sm pull-right"> <u> <i class="fa fa-plus"></i> Leave a Review </u> </a></h4>
               <hr>  
               
               @foreach($comments->all() as $comment)
                 <div class="row">
-                  <div class="col-md-1">
+                  <div class="col-md-1 col-sm-2">
                     <img class="img-responsive img-user-comment" src="{{asset(App\User::find($comment->user_id)->user_image)}}" alt=""> 
                   </div>
-                  <div class="col-md-11">
+                  <div class="col-md-11 col-sm-10">
                     <p>{{$comment->comment}}</p>
                     <small class="text-muted">Posted by {{App\User::find($comment->user_id)->name}} on {{$comment->updated_at->format('l, d F Y [H:i:s]')}}</small>
                   </div>
@@ -149,7 +149,7 @@
                       {{csrf_field()}}
                   <div class="row">
                     @if( !( App\Comment::where([['user_id', $users],['book_id', $books->id]])->first() ) )
-                    <div class="col-md-10">
+                    <div class="col-lg-10 col-md-8">
                       <div class="form-group  has-feedback{{ $errors->has('review') ? 'has-error' : '' }}">
                           <textarea id="comment" name="review" rows="5" class="form-control"></textarea>
                           {{-- @if($errors->has('content'))
@@ -159,7 +159,7 @@
                           @endif --}}
                       </div>
                     </div>
-                    <div class="col-md-2">
+                    <div class="col-lg-2 col-md-4">
                         <div class="form-group">
                             <label for="rating" class="thick">Rating</label>
                             <select name="rating" id="" class="form-control center">

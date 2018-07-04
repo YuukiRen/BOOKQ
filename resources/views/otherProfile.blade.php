@@ -87,7 +87,9 @@
                         </div> <hr>
                         <h4 class="card-title text-center">Book's Owned</h4> 
                     <div class="row"> 
-                            
+                           @if($books->isEmpty())
+                            <p class="center thick ml-3" align="center">Empty.</p>  
+                            @endif
                             @foreach($books->all() as $book)
                             @if(($book->show==1))
                             <div class="col-lg-2 col-md-3 col-sm-4 portfolio-item">
@@ -115,7 +117,9 @@
                     <div class="tab-content" id="myTabContent">
                     <div class="tab-pane fade show active" id="history" role="tabpanel" aria-labelledby="history-tab">
                         <div class="card-body">
-                        
+                            @if($activities->isEmpty())
+                                <p class="center thick">No recent activities.</p>
+                            @endif  
                             @foreach($activities->all() as $activity)
                                 @if($activity->status==0)
                                 <p><small class="text-muted">{{ $activity->request_date }} </small>{{App\User::find($activity->id_booker)->name}} have sent request to {{App\User::find($activity->id_lender)->name}} to borrow {{ App\Book::find($activity->book_id)->title }}</p>

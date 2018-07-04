@@ -75,7 +75,12 @@
                                             <div class="col-6">
                                                     <div class="form-group">
                                                         <label for="phone_number">Phone Number  <font color="red">*</font></label>
-                                                        <input type="text" class="form-control" name="phone_number" required value="{{$users->phone_number}}">
+                                                        <input type="text" class="form-control" name="phone_number" required value="{{$users->phone_number}}" onkeydown="return ( event.ctrlKey || event.altKey 
+                                                        || (47<event.keyCode && event.keyCode<58 && event.shiftKey==false) 
+                                                        || (95<event.keyCode && event.keyCode<106)
+                                                            || (event.keyCode==8) || (event.keyCode==9) 
+                                                        || (event.keyCode>34 && event.keyCode<40) 
+                                                        || (event.keyCode==46) )">
                                                         <div class="invalid-feedback">
                                                             Please enter your phone number
                                                         </div>

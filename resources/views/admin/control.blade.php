@@ -129,9 +129,9 @@
                   <th>User Name</th>
                   <th>Book Reported</th>
                   <th>Report Reason</th>
-                  <th></th>
-                  <th></th>
-                  <th></th>
+                  <th>Book Details</th>
+                  <th>ACTION 1</th>
+                  <th>ACTION 2</th>
                 </tr>
                 </thead>
                 <tbody>

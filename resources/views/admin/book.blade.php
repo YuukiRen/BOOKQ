@@ -140,6 +140,7 @@
                 <thead>
                 <tr>
                   <th>Book Name</th>
+                  <th>Book Owner</th>
                   <th>Number of Reported</th>
                   <th>BAN BOOK</th>
                   <th>BAN USER</th>
@@ -148,27 +149,22 @@
                 </tr>
                 </thead>
                 <tbody>
-                <tr>
-                  <td>Sang Pemimpi</td>
-                  <td>User A </td>
-                  <td>10 </td>
-                  <td><a type="button" href="{{ url('/profile/2') }}" class="btn btn-primary btn-block" >
-            See Details
-          </a> </td>
-         <td> <button type="button" class="btn btn-danger btn-block " data-toggle="modal" data-target="#reportbookmodal">
-              Decline
-            </button></td>  
-                  
+                  @foreach($books as $rep)
+                  @if($rep->report>0 && ($rep->banned==0))
+                  <tr>
+                  <td>{{$rep->title}}</td>
+                  <td>{{App\User::find($rep->user_id)->name}}</td>
+                  <td>{{$rep->report}}</td>
+                  <td><a type="button" href='{{ url("/admin/ban_book/{$rep->id}") }}' class="btn btn-primary btn-block" >
+              Ban Book
+            </a> </td>
+          <td> <a type="button" href='{{ url("/admin/ban_user/{$rep->user_id}") }}' class="btn btn-danger btn-block " >
+                Ban User
+              </a></td>
+            </tr>
+                  @endif  
+                  @endforeach
                 </tbody>
-                <tfoot>
-              <tr>
-                 <th>User Name</th>
-                  <th>Book Reported</th>
-                  <th></th>
-                  <th></th>
-                  <th></th>
-                </tr>
-                </tfoot>
               </table>
             </div>
             <!-- /.card-body -->

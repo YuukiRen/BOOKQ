@@ -45,7 +45,7 @@ class AdminController extends Controller
     }
 
 
-    public function list_report(Request $request){
+    public function list_report(){
         $rep = \DB::table('reports')
         ->leftjoin('users', 'reports.user_id', '=', 'users.id')
         ->leftjoin('books', 'reports.book_id', '=', 'books.id')        
@@ -63,10 +63,7 @@ class AdminController extends Controller
         $book = Book::find($rep->books_id)->first();
         $rep->read = 1;
         return compact($rep, $book);
-    
     }
-
-
 
     public function accept_report($report_id){
         $rep = Report::find($report_id);
@@ -81,38 +78,31 @@ class AdminController extends Controller
         $rep->save();
         $book->save();
         return 'report accepted';
-
     }
 
-    public function list_book(Request $request){
+    public function list_book(){
         $books = Book::all()->sortByDesc('report')->sortByDesc('id');
-        // dd($user);
+        // dd($books);
         return view('admin.book', compact('books'));
     }
 
     public function detail_user(Request $request, $user_id){
         $user = User::find($user_id);
         return $user;
-
-
     }
-
-
 
     public function ban_user(Request $request, $user_id){
         $user = User::find($user_id);
         $user->banned = 1;
         $user->save();
+        return "banned user";
 
     }
 
     public function ban_book(Request $request, $user_book){
-        $book = User::find($user_book);
+        $book = Book::find($user_book);
         $book->banned = 1;
         $book->save();
-
+        return "banned Book";
     }
-
-    
-    
 }

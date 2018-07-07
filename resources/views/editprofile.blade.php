@@ -34,6 +34,13 @@
                     <div class="panel-body">
                         <form class="form-horizontal needs-validation" novalidate method="POST"  action="{{ url('/profile/edit/save') }}" enctype="multipart/form-data" >
                             {{ csrf_field() }}
+                                    @if(count($errors)>0)
+                                        @foreach($errors->all() as $error)
+                                            <div class="alert alert-dismissible alert-danger">
+                                              {{$error}}
+                                            </div>
+                                        @endforeach
+                                    @endif
                                 <div class="form-group">
                                         <label for="">   User image : </label>
                                 <img class="img-responsive img-center" style="width:300px;height:300px;object-fit: cover;border-radius:8px"  id="preview" src="{{asset($users->user_image)}}">

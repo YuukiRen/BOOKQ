@@ -85,6 +85,9 @@
                         </div>
                     </div>
                     <div class="col-md-8" style="border-left:1px solid #dfdfdf;">
+                            @if(!$arr)
+                                <h5 class="mt-3">Your chat is empty.</h5>
+                            @endif
                             <div class="tab-content" id="v-pills-tabContent" >
                             @foreach($arr as $box)
                                 @if($loop->first)

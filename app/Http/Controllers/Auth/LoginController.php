@@ -5,6 +5,9 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
+use App\User;
+use Auth;
+
 
 class LoginController extends Controller
 {
@@ -27,8 +30,14 @@ class LoginController extends Controller
      * @var string
      */
     protected function authenticated(Request $request, $user)
-    {
-        return redirect('/home')->with('info','You are logged in!');
+    {    
+        if($user->banned == 1){
+            Auth::logout();
+            return redirect('/home')->with('danger', 'You are id was been banned');
+        }
+        else{
+            return redirect('/home')->with('info','You are logged in!');
+        }
     }
 
     /**

@@ -16,7 +16,8 @@ use Illuminate\Http\UploadedFile;
 class BooksController extends Controller
 {
     public function __construct(){
-    	$this->middleware('auth');//matiin kalo lagi testing mode
+        $this->middleware('auth');//matiin kalo lagi testing mode
+        
     }
     public function show(){
     	// $books=Book::all();
@@ -25,7 +26,8 @@ class BooksController extends Controller
 		$category = Category::all();
         // dd($books);
         // var_dump($books);
-    	return view('search', compact('books', 'category'));
+        
+        return view('search', compact('books', 'category'));
         //ganti search ama halaman search/ yang nampilin semua buku
     }
     //controller untuk ngeliat satu buku

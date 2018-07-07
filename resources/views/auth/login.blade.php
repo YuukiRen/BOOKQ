@@ -4,14 +4,17 @@
         <div class="container-login100">
             <div class="container-login200">
             <div class="card">
-                <form class="login100-form validate-form" method="POST" action="{{ route('login') }}">
-                    @csrf
-                    <div class="form-group row">
-                        <h1 style=" text-align:center; "> Let's Start </h1>
+                    <h1 style=" text-align:center; "> Let's Start </h1>
                     <span class="login100-form-title"><h5>
                         Login</h5>
                     </span>
+                <form class="login100-form validate-form" method="POST" action="{{ route('login') }}">
+                    @csrf
                     <div class="form-group row">
+                            
+                        
+                    <div class="form-group row">
+                        <div class="col-md-6 center">
                             @if ($errors->has('email'))
                                 <span class="invalid-feedback thick" style="text-align:center;font-size:small;color:red">
                                     {{ $errors->first('email') }}
@@ -26,21 +29,23 @@
                             </div>
                         </div>
                     </div>
+                </div>
 
                     <div class="form-group row">
-
-                        <div  class="wrap-input100 validate-input" data-validate = "Password is required">
-                            <input id="password" type="password" class="input100" name="password" required placeholder="Password">
-                            <span class="focus-input100"></span>
-                            <span class="symbol-input100">
-                                <i class="fa fa-lock" aria-hidden="true"></i>
-                            </span>
-
-                            @if ($errors->has('password'))
-                                <span class="invalid-feedback">
-                                    <strong>{{ $errors->first('password') }}</strong>
+                        <div class="col-md-6 center">
+                            <div  class="wrap-input100 validate-input" data-validate = "Password is required">
+                                <input id="password" type="password" class="input100" name="password" required placeholder="Password">
+                                <span class="focus-input100"></span>
+                                <span class="symbol-input100">
+                                    <i class="fa fa-lock" aria-hidden="true"></i>
                                 </span>
-                            @endif
+
+                                @if ($errors->has('password'))
+                                    <span class="invalid-feedback">
+                                        <strong>{{ $errors->first('password') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
                         </div>
                     </div>
 

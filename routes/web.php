@@ -80,7 +80,9 @@ Route::post('/messages/send','MessagesController@send');
 // admin functionality
 Route::GET('admin/home','AdminController@index');
 Route::GET('admin/control','AdminController@list_report');
-Route::GET('admin/list_book','AdminController@list_book');
+Route::GET('admin/book','AdminController@list_book');
+Route::GET('admin/ban_user/{id}','AdminController@ban_user');
+Route::GET('admin/ban_book/{id}','AdminController@ban_book');
 Route::GET('admin/accept_report/{report_id}','AdminController@accept_report');
 Route::GET('admin/reject_report/{report_id}','AdminController@reject_report');
 Route::GET('admin/detail_report/{report_id}','AdminController@detail_report');
@@ -94,9 +96,9 @@ Route::get('admin/search', function () {
     return view('admin.search');
 });
 
-Route::get('admin/book', function () {
-    return view('admin.book');
-});
+// Route::get('admin/book', function () {
+//     return view('admin.book');
+// });
 
 
 //prototypw

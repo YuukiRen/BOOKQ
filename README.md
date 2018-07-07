@@ -16,3 +16,6 @@
   github nickname: futsuunohito
 4. Maulvi Alfansuri(G64160081)
   github nickname: alfakatsuki
+
+  ###HOSTING###
+  link: kelompok2rpl.herokuapp.com

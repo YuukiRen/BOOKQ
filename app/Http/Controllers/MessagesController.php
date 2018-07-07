@@ -99,8 +99,8 @@ class MessagesController extends Controller
         ->select('signature')
         ->where('signature', 'like', $self_id.':%')
         ->orwhere('signature', 'like', '%:'.$self_id)
-        ->groupBy('signature')
-        // ->orderBy('messages_ts.created_at', 'desc')
+        ->groupBy('signature','messages_ts.created_at')
+        ->orderBy('messages_ts.created_at', 'desc')
         ->get()
         ->pluck('signature')
         ;

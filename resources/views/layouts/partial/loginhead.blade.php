@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->  
-    <link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
 <!--===============================================================================================-->
     <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
 <!--===============================================================================================-->
@@ -21,4 +20,6 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('css/main.css') }}">
 	<link rel="stylesheet" href="css/footer-distributed-with-address-and-phones.css">
 <!--===============================================================================================-->
+    <link rel="shortcut icon" href="http://himalkom.cs.ipb.ac.id/wp-content/uploads/2014/09/aaas-300x300.png">
+
 </head>

@@ -14,9 +14,9 @@ class messageseed extends Seeder
     public function run()
     {
         // User::truncate();
-        $x = 1;
-        for ($i=1; $i <= 4; $i++) { 
-            for ($j=1; $j <= 4; $j++, $x++) { 
+        $x = 10001;
+        for ($i=10001; $i <= 10004; $i++) { 
+            for ($j=10001; $j <= 10004; $j++, $x++) { 
                 if($i === $j) continue;
                 if($i < $j){
                     $signat = strval($i).':'.strval($j);
@@ -37,8 +37,8 @@ class messageseed extends Seeder
                  );        
             }
         }
-        for ($i=1; $i <= 4; $i++) { 
-            for ($j=1; $j <= 4; $j++, $x++) { 
+        for ($i=10001; $i <= 10004; $i++) { 
+            for ($j=10001; $j <= 10004; $j++, $x++) { 
                 if($i === $j) continue;
                 if($i < $j){
                     $signat = strval($i).':'.strval($j);

@@ -17,7 +17,7 @@ class userseed extends Seeder
 
         User::insert([
         	[
-        		'id'			=> '1',
+        		'id'			=> '10001',
         		'name'			=> 'alfan1',
         		'password'		=> bcrypt("alfan1"),
         		'email'			=> 'alfannn@gmail.com',
@@ -32,7 +32,7 @@ class userseed extends Seeder
 
         	],
             [
-                'id'            => '2',
+                'id'            => '10002',
                 'name'          => 'alvinreinaldo',
                 'password'      => bcrypt("secret"),
                 'email'         => 'coba@coba.com',
@@ -46,7 +46,7 @@ class userseed extends Seeder
                 'user_image'    => 'images/no-cover.jpeg',
             ],
             [
-                'id'            => '3',
+                'id'            => '10003',
                 'name'          => 'jajaja',
                 'password'      => bcrypt("secret"),
                 'email'         => 'ww@coba.com',
@@ -60,7 +60,7 @@ class userseed extends Seeder
                 'user_image'    => 'images/no-cover.jpeg',
             ],
             [
-                'id'            => '4',
+                'id'            => '10004',
                 'name'          => 'dummy',
                 'password'      => bcrypt("secret"),
                 'email'         => 'dum@coba.com',

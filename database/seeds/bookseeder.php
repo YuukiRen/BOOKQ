@@ -17,8 +17,8 @@ class bookseeder extends Seeder
         // inserting data
         Book::insert([
         	[
-        		'id' => '1',
-        		'user_id'=>'1',
+        		'id' => '10001',
+        		'user_id'=>'10001',
                 'author'=> 'Imelda Saputra',
         		'title'=> '99 hari melesatkan bisnis',
 				'tag' => 'haha',
@@ -31,8 +31,8 @@ Butuh persiapan panjang untuk itu. Namun jelas yang diperlukan setiap orang buka
         	   'image' => 'images/buku1.png'
             ],
         	[
-        		'id' => '2',
-        		'user_id'=>'2',
+        		'id' => '10002',
+        		'user_id'=>'10002',
                 'author'=> 'Andrea Hirata',
         		'title'=> 'Sang Pemimpi',
 				'tag' => 'haha',
@@ -50,8 +50,8 @@ Tampak komikal pada awalnya, selayaknya kenakalan remaja biasa, tapi kemudian ta
                'image' => 'images/buku2.jpg'
         	],
         	[
-        		'id' => '3',
-        		'user_id'=>'2',
+        		'id' => '10003',
+        		'user_id'=>'10002',
                 'author'=> 'Antonio ramsci',
         		'title'=> 'Sejarah dan Budaya',
 				'tag' => 'haha',
@@ -68,8 +68,8 @@ Banyak pengamat menganggap pemikiran-pemikiran Gramsci tidak gampang dicerna. It
  
         	],
         	[
-        		'id' => '4',
-        		'user_id'=>'1',
+        		'id' => '10004',
+        		'user_id'=>'10001',
                 'author'=> 'Tere Liye',
         		'title'=> 'Tentang Kamu',
 				'tag' => 'haha',
@@ -90,8 +90,8 @@ Tentang Kamu adalah novel terbaru Tere Liye. Sebuah karya yang tak hanya akan me
 
 
         	[
-        		'id' => '5',
-        		'user_id'=>'3',
+        		'id' => '10005',
+        		'user_id'=>'10003',
                 'author'=> 'Imam Heryanto,Budi Raharjo.Arif Haryono',
         		'title'=> 'Mudah belajar JAVA',
 				'tag' => 'haha',
@@ -108,8 +108,8 @@ Buku ini cocok untuk siapa saja yang berminat mempelajari dan mengimplementasika
                'image' => 'images/buku5.jpg'
         	],
         	[
-        		'id' => '6',
-        		'user_id'=>'4',
+        		'id' => '10006',
+        		'user_id'=>'10004',
                 'author'=> 'Dr. Aid Abdullah al-Qorni',
         		'title'=> 'La taghdhab',
 				'tag' => 'haha',
@@ -123,8 +123,8 @@ Buku ini cocok untuk siapa saja yang berminat mempelajari dan mengimplementasika
                'image' => 'images/buku6.jpg'
         	],
         	[
-        		'id' => '7',
-        		'user_id'=>'2',
+        		'id' => '10007',
+        		'user_id'=>'10002',
                 'author'=> 'Sarlito W. Sarwono',
         		'title'=> 'Psikologi Remaja',
 				'tag' => 'haha',
@@ -138,8 +138,8 @@ Buku ini cocok untuk siapa saja yang berminat mempelajari dan mengimplementasika
             ],
 			
 			[
-				'id' => '8',
-				'user_id'=>'1',
+				'id' => '10008',
+				'user_id'=>'10001',
                 'author'=> 'Habiburrahman El Shirazy',
 				'title'=> 'Ketika Cinta Bertasbih',
 				'tag' => 'haha',
